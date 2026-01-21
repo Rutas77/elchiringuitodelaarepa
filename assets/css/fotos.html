@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Chiringuito de la Arepa | Granada</title>
+  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas, tequeños, bebidas y postres. C. Obispo Hurtado, 27. WhatsApp +34 651 65 12 91." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <style>
+    :root{
+      --bg:#070b14;
+      --paper:#0b1220;
+      --card:rgba(255,255,255,.05);
+      --line:rgba(255,255,255,.12);
+      --text:#f6f7fb;
+      --muted:rgba(246,247,251,.76);
+      --gold:#d4b05a; /* dorado elegante */
+      --gold2:rgba(212,176,90,.18);
+      --wa:#25D366;
+      --radius:18px;
+      --shadow: 0 16px 50px rgba(0,0,0,.55);
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 18% 0%, rgba(212,176,90,.18), transparent 55%),
+        radial-gradient(1000px 600px at 90% 10%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--paper));
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:18px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(7,11,20,.72);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 18px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .mark{
+      width:42px; height:42px; border-radius:16px;
+      border:1px solid rgba(212,176,90,.35);
+      background: linear-gradient(135deg, rgba(212,176,90,.25), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      font-weight:800; letter-spacing:.5px;
+      color: rgba(212,176,90,.95);
+      font-family: ui-serif, Georgia, serif;
+    }
+    .brand h1{margin:0; font-size:16px; letter-spacing:.2px}
+    .brand p{margin:0; font-size:12px; color:var(--muted); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial}
+    nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size:13px;
+    }
+    .pill:hover{background: rgba(255,255,255,.09)}
+    .pill.gold{border-color: rgba(212,176,90,.40); background: var(--gold2)}
+
+    .hero{padding:22px 18px 8px}
+    .grid{display:grid; grid-template-columns: 1.1fr .9fr; gap:14px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .in{padding:18px}
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,176,90,.35);
+      background: rgba(212,176,90,.14);
+      color: rgba(212,176,90,.95);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size:12px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    h2{margin:14px 0 10px; font-size:34px; line-height:1.08}
+    .lead{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    }
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-weight:650;
+      font-size:14px;
+    }
+    .btn:hover{background: rgba(255,255,255,.09)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(212,176,90,.95), rgba(212,176,90,.75));
+      border-color: rgba(212,176,90,.55);
+      color:#121212;
+    }
+    .btn.wa{
+      background: rgba(37,211,102,.14);
+      border-color: rgba(37,211,102,.35);
+    }
+    .info{
+      margin-top:12px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .tag{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:10px 12px;
+      border-radius:14px;
+    }
+    .tag b{color:var(--text)}
+
+    .side{
+      min-height: 320px;
+      background:
+        radial-gradient(700px 300px at 40% 20%, rgba(212,176,90,.25), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      position:relative;
+    }
+    .side::after{
+      content:"";
+      position:absolute; inset:0;
+      background-image: radial-gradient(rgba(255,255,255,.12) 1px, transparent 1px);
+      background-size: 18px 18px;
+      opacity:.18;
+      pointer-events:none;
+    }
+    .addressBox{
+      position:absolute; left:16px; right:16px; bottom:16px;
+      border:1px solid var(--line);
+      background: rgba(7,11,20,.62);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .addressBox .t{margin:0 0 6px; color:var(--muted); font-family: ui-sans-serif, system-ui; font-size:12px}
+    .addressBox .b{margin:0; font-size:18px}
+    .addressBox .s{margin:6px 0 0; color:var(--muted); font-family: ui-sans-serif, system-ui; font-size:13px; line-height:1.5}
+
+    section{padding:14px 18px}
+    .sectionTitle{display:flex; justify-content:space-between; align-items:flex-end; gap:10px; flex-wrap:wrap; margin:8px 0 10px}
+    .sectionTitle h3{margin:0; font-size:22px}
+    .sectionTitle p{margin:0; color:var(--muted); font-family: ui-sans-serif, system-ui; font-size:13px}
+
+    .menuGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 860px){ .menuGrid{grid-template-columns:1fr} }
+    .menuCard{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding:16px;
+    }
+    .menuCard h4{
+      margin:0 0 10px;
+      font-family: ui-sans-serif, system-ui;
+      font-size:14px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      color: rgba(212,176,90,.95);
+    }
+    .item{
+      display:flex; justify-content:space-between; gap:12px;
+      padding:10px 0;
+      border-top:1px dashed rgba(255,255,255,.12);
+    }
+    .item:first-of-type{border-top:0; padding-top:0}
+    .name{
+      font-family: ui-sans-serif, system-ui;
+      font-weight:750;
+      font-size:14px;
+      color:var(--text);
+    }
+    .desc{
+      margin-top:3px;
+      font-family: ui-sans-serif, system-ui;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.45;
+    }
+    .price{
+      font-family: ui-sans-serif, system-ui;
+      font-weight:800;
+      font-size:14px;
+      color: rgba(212,176,90,.95);
+      white-space:nowrap;
+    }
+    .note{
+      margin-top:10px;
+      font-family: ui-sans-serif, system-ui;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .two{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 900px){ .two{grid-template-columns:1fr} }
+    .line{
+      font-family: ui-sans-serif, system-ui;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .line b{color:var(--text)}
+    .map{
+      width:100%; height:330px; border:0;
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: rgba(255,255,255,.04);
+    }
+
+    footer{
+      padding:22px 18px 70px;
+      border-top:1px solid var(--line);
+      color: rgba(246,247,251,.65);
+      font-family: ui-sans-serif, system-ui;
+      font-size:13px;
+      margin-top:16px;
+    }
+
+    .waFloat{
+      position:fixed; right:16px; bottom:16px;
+      width:56px; height:56px; border-radius:18px;
+      display:grid; place-items:center;
+      background: rgba(37,211,102,.18);
+      border:1px solid rgba(37,211,102,.35);
+      box-shadow: var(--shadow);
+      z-index:80;
+    }
+    .waFloat:hover{background: rgba(37,211,102,.24)}
+    .sr{position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;}
+
+    /* Redes */
+    .socialGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    @media (max-width: 700px){ .socialGrid{grid-template-columns:1fr} }
+    .sbtn{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      font-weight:700;
+      font-size:14px;
+    }
+    .sbtn:hover{background: rgba(255,255,255,.09)}
+    .sbtn .hint{
+      font-weight:600;
+      font-size:12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav wrap">
+      <div class="brand">
+        <div class="mark">CA</div>
+        <div>
+          <h1>El Chiringuito de la Arepa</h1>
+          <p>“Sabores que abrazan el alma” · Granada</p>
+        </div>
+      </div>
+
+      <nav>
+        <a class="pill" href="#carta">Carta</a>
+        <a class="pill" href="#horarios">Horarios</a>
+        <a class="pill" href="#ubicacion">Ubicación</a>
+        <a class="pill" href="#redes">Redes</a>
+        <a class="pill gold" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <div class="grid">
+        <div class="card">
+          <div class="in">
+            <span class="kicker">🫓 Tradicional venezolano · elegante</span>
+            <h2>Arepas hechas con cariño, en el corazón de Granada.</h2>
+            <p class="lead">
+              Te damos la bienvenida a un rincón venezolano auténtico: arepas, tequeños, bebidas y el postre de tres leches.
+              Escríbenos por WhatsApp o ven directo.
+            </p>
+
+            <div class="cta">
+              <a class="btn primary" href="#carta">Ver la carta</a>
+              <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">💬 WhatsApp</a>
+              <a class="btn" href="tel:+34858830186">☎️ Llamar</a>
+            </div>
+
+            <div class="info">
+              <div class="tag">📍 <b>Ronda</b> · Granada</div>
+              <div class="tag">🧀 <b>Tequeños</b> · 5/10 uds</div>
+              <div class="tag">🍰 <b>Tres leches</b> · casero</div>
+            </div>
+
+            <p class="note">
+              Dirección: <b>C. Obispo Hurtado, 27, Ronda, 18004 Granada</b> · Tel: <b>858 830 186</b> · WhatsApp: <b>+34 651 65 12 91</b>
+            </p>
+          </div>
+        </div>
+
+        <div class="card side">
+          <div class="addressBox">
+            <p class="t">Encuéntranos</p>
+            <p class="b">C. Obispo Hurtado, 27 · 18004 Granada</p>
+            <p class="s">Tel: 858 830 186 · WhatsApp: +34 651 65 12 91</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARTA -->
+    <section id="carta">
+      <div class="sectionTitle">
+        <h3>La carta</h3>
+        <p>Precios actualizados</p>
+      </div>
+
+      <div class="menuGrid">
+        <div class="menuCard">
+          <h4>Arepas</h4>
+
+          <div class="item">
+            <div>
+              <div class="name">Reina Pepiada</div>
+              <div class="desc">(Pollo, aguacate, mayonesa)</div>
+            </div>
+            <div class="price">6,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Huevo de codorniz</div>
+              <div class="desc">(En salsa rosa)</div>
+            </div>
+            <div class="price">5,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Jamón York</div>
+              <div class="desc">(Con queso blanco latino o Cheddar)</div>
+            </div>
+            <div class="price">4,90€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Ensalada de atún</div>
+              <div class="desc">(Pimiento rojo, aceitunas, tomate, cebolla)</div>
+            </div>
+            <div class="price">5,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Salchichas</div>
+              <div class="desc">(Con huevo revuelto, tomate y cebolla “guisado”)</div>
+            </div>
+            <div class="price">5,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Pabellón</div>
+              <div class="desc">(Carne mechada de ternera, alubias negras, plátano macho maduro frito y queso blanco latino)</div>
+            </div>
+            <div class="price">7,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Queso blanco latino y queso Cheddar</div>
+            </div>
+            <div class="price">5,00€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Queso blanco latino</div>
+              <div class="desc">(Sólo)</div>
+            </div>
+            <div class="price">4,60€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Queso Cheddar</div>
+              <div class="desc">(Sólo)</div>
+            </div>
+            <div class="price">4,60€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Malafollá</div>
+              <div class="desc">(Chorizo picante con queso blanco latino o cheddar)</div>
+            </div>
+            <div class="price">5,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Perico</div>
+              <div class="desc">(Huevo, tomate, cebolla y queso: latino o cheddar)</div>
+            </div>
+            <div class="price">5,60€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Catira</div>
+              <div class="desc">(Pollo y queso cheddar)</div>
+            </div>
+            <div class="price">5,90€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Carne picada</div>
+              <div class="desc">(Con queso blanco latino)</div>
+            </div>
+            <div class="price">6,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Pernil (jamón) al horno</div>
+              <div class="desc">(En salsa de vegetales y zumo de naranja)</div>
+            </div>
+            <div class="price">6,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Alubias con queso blanco latino</div>
+            </div>
+            <div class="price">5,30€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Alubias con queso cheddar</div>
+            </div>
+            <div class="price">5,30€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Mechada</div>
+              <div class="desc">(Sola)</div>
+            </div>
+            <div class="price">6,30€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Mechada con queso blanco latino</div>
+            </div>
+            <div class="price">6,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Mechada con queso cheddar</div>
+            </div>
+            <div class="price">6,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Pollo</div>
+              <div class="desc">(Solo)</div>
+            </div>
+            <div class="price">5,80€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Huevo revuelto</div>
+              <div class="desc">(Sólo)</div>
+            </div>
+            <div class="price">4,90€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Vegetariana / Vegana</div>
+              <div class="desc">(Por encargo)</div>
+            </div>
+            <div class="price">6,60€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">La viuda</div>
+              <div class="desc">(Arepa sin relleno)</div>
+            </div>
+            <div class="price">1,00€</div>
+          </div>
+
+          <p class="note">
+            Por cada relleno adicional: <b>0,90€</b> · Salsa para llevar (ajo o maíz): <b>0,60€</b> · Queso a la plancha: <b>1,50€</b>
+          </p>
+        </div>
+
+        <div class="menuCard">
+          <h4>Raciones</h4>
+
+          <div class="item">
+            <div>
+              <div class="name">Plátano macho maduro frito</div>
+              <div class="desc">(Con queso blanco latino y mantequilla)</div>
+            </div>
+            <div class="price">4,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Ensalada de atún con arepa</div>
+            </div>
+            <div class="price">6,50€</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="name">Pernil (jamón) al horno con aguacate</div>
+            </div>
+            <div class="price">8,00€</div>
+          </div>
+
+          <h4 style="margin-top:18px">Tequeños</h4>
+
+          <div class="item">
+            <div class="name">5 unidades</div>
+            <div class="price">6,00€</div>
+          </div>
+          <div class="item">
+            <div class="name">10 unidades</div>
+            <div class="price">11,00€</div>
+          </div>
+
+          <h4 style="margin-top:18px">Bebidas</h4>
+
+          <div class="item"><div class="name">Café solo</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Café con leche</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Infusión (Manzanilla)</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Coca Cola (Original o Zero)</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Fanta naranja</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Fuze Tea maracuyá</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Aquarius (Limón o Naranja)</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Zumo Don Simon</div><div class="price">1,00€</div></div>
+          <div class="item"><div class="name">Zumo natural</div><div class="price">4,00€</div></div>
+          <div class="item"><div class="name">Maltín Polar</div><div class="price">2,80€</div></div>
+          <div class="item"><div class="name">Postobón (Manzana o Uva)</div><div class="price">2,80€</div></div>
+          <div class="item"><div class="name">Frescolita</div><div class="price">2,80€</div></div>
+          <div class="item"><div class="name">Agua (0,5 L)</div><div class="price">1,00€</div></div>
+          <div class="item"><div class="name">Agua (1,5 L)</div><div class="price">1,50€</div></div>
+          <div class="item"><div class="name">Cerveza (Alhambra tradicional o especial)</div><div class="price">1,30€</div></div>
+          <div class="item"><div class="name">Cerveza (Mahou 0,0 tostada)</div><div class="price">1,30€</div></div>
+          <div class="item"><div class="name">Cerveza Polar</div><div class="price">2,90€</div></div>
+
+          <h4 style="margin-top:18px">Postres</h4>
+          <div class="item"><div class="name">Dulce Tres Leches</div><div class="price">4,00€</div></div>
+
+          <p class="note">
+            Si quieres, añadimos fotos (arepas/tequeños) y un botón directo a “Pedir para llevar”.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section id="horarios">
+      <div class="sectionTitle">
+        <h3>Horarios</h3>
+        <p>Actualizados</p>
+      </div>
+
+      <div class="card">
+        <div class="in">
+          <p class="line">🕒 <b>Lunes:</b> 19:00 – 23:00</p>
+          <p class="line">🕒 <b>Martes:</b> 19:00 – 23:00</p>
+          <p class="line">🕒 <b>Miércoles:</b> 19:00 – 23:00</p>
+          <p class="line">⛔ <b>Jueves:</b> CERRADO</p>
+          <p class="line">🕒 <b>Viernes:</b> 13:00 – 15:30</p>
+          <p class="line">🕒 <b>Sábado:</b> 19:00 – 23:00</p>
+          <p class="line">🕒 <b>Domingo:</b> 13:00 – 15:30 · 19:00 – 22:00</p>
+
+          <p class="note">
+            Reservas y consultas por WhatsApp: <b>+34 651 65 12 91</b>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UBICACION -->
+    <section id="ubicacion">
+      <div class="sectionTitle">
+        <h3>Ubicación</h3>
+        <p>Mapa integrado + botón Google Maps</p>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <div class="in">
+            <p class="line"><b>El Chiringuito de la Arepa</b></p>
+            <p class="line">📍 C. Obispo Hurtado, 27, Ronda, 18004 Granada</p>
+            <p class="line">☎️ <b>858 830 186</b> · 💬 <b>+34 651 65 12 91</b></p>
+
+            <div class="cta" style="margin-top:12px">
+              <a class="btn primary" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2C%2027%2C%20Ronda%2C%2018004%20Granada">
+                Abrir en Google Maps
+              </a>
+              <a class="btn wa" target="_blank" rel="noopener"
+                 href="https://wa.me/34651651291?text=Hola%2C%20quisiera%20hacer%20una%20consulta.">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <iframe class="map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%20Ronda%2C%2018004%20Granada&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <div class="sectionTitle">
+        <h3>Contacto</h3>
+        <p>Reserva o consulta en 1 toque</p>
+      </div>
+
+      <div class="card">
+        <div class="in">
+          <div class="cta">
+            <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quisiera%20reservar%20o%20hacer%20una%20consulta." target="_blank" rel="noopener">
+              💬 Escribir por WhatsApp
+            </a>
+            <a class="btn" href="tel:+34858830186">☎️ Llamar</a>
+          </div>
+
+          <p class="note">
+            📩 Correo: <a href="mailto:elchiringuitodelaarepa@gmail.com"><b>elchiringuitodelaarepa@gmail.com</b></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section id="redes">
+      <div class="sectionTitle">
+        <h3>Redes</h3>
+        <p>Síguenos y entérate de promos y menú</p>
+      </div>
+
+      <div class="card">
+        <div class="in">
+          <div class="socialGrid">
+            <a class="sbtn" target="_blank" rel="noopener" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==">
+              <span>📸 Instagram</span><span class="hint">@elchiringuitodelaarepa</span>
+            </a>
+
+            <a class="sbtn" target="_blank" rel="noopener" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93BJOicbxek">
+              <span>🎵 TikTok</span><span class="hint">@elchiringuitodelaarepa</span>
+            </a>
+
+            <a class="sbtn" target="_blank" rel="noopener" href="https://youtube.com/@elchiringuitodelaarepa?si=6MISSN2OGd021T9U">
+              <span>▶️ YouTube</span><span class="hint">Canal oficial</span>
+            </a>
+
+            <a class="sbtn" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61584130088879">
+              <span>📘 Facebook</span><span class="hint">Página oficial</span>
+            </a>
+
+            <a class="sbtn" target="_blank" rel="noopener" href="https://www.threads.com/@elchiringuitodelaarepa">
+              <span>🧵 Threads</span><span class="hint">@elchiringuitodelaarepa</span>
+            </a>
+
+            <a class="sbtn" target="_blank" rel="noopener" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">
+              <span>💚 Canal WhatsApp</span><span class="hint">Novedades & promos</span>
+            </a>
+          </div>
+
+          <p class="note" style="margin-top:14px">
+            Tip: pon el QR del canal en tu local y en la carta impresa para crecer rápido.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> El Chiringuito de la Arepa · Granada ·
+      <a href="tel:+34858830186">858 830 186</a> ·
+      <a target="_blank" rel="noopener" href="https://wa.me/34651651291">WhatsApp</a> ·
+      <a target="_blank" rel="noopener" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==">Instagram</a>
+      <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    </footer>
+
+  </main>
+
+  <a class="waFloat" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">
+    <span class="sr">Abrir WhatsApp</span>💚
+  </a>
+
+</body>
+</html>
