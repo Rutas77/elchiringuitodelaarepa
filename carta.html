@@ -1,1 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1010" />
+  <meta name="description" content="Carta - El Chiringuito de la Arepa (Granada). Arepas, tequeños y postres." />
+  <title>Carta · El Chiringuito de la Arepa</title>
 
+  <link rel="icon" href="assets/img/logo.png" />
+
+  <style>
+    :root{
+      --bg:#071010;
+      --panel:rgba(255,255,255,.06);
+      --text:#eaf1ef;
+      --muted:rgba(234,241,239,.72);
+      --brand:#b89452;
+      --wa:#25D366;
+      --r-lg:26px;
+      --shadow: 0 14px 40px rgba(0,0,0,.45);
+      --shadow2: 0 10px 24px rgba(0,0,0,.35);
+    }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.20), transparent 60%),
+        radial-gradient(700px 340px at 88% 14%, rgba(37,211,102,.14), transparent 62%),
+        linear-gradient(180deg, #071010 0%, #050b0b 100%);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      padding-bottom: 220px;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
+
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,16,16,.70);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{
+      max-width:980px; margin:0 auto;
+      padding: 12px 14px;
+      display:flex; align-items:center; gap:12px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
+    .brand img{ width:36px; height:36px; border-radius:12px; object-fit:cover; }
+    .brand .t{ min-width:0; display:flex; flex-direction:column; line-height:1.1; }
+    .brand .t b{ font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .brand .t span{ font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,.22);
+      font-weight: 800;
+      white-space:nowrap;
+    }
+    .pill.gold{
+      background: rgba(184,148,82,.18);
+      border-color: rgba(184,148,82,.25);
+      color:#f2e5cf;
+    }
+
+    .hero{
+      margin-top: 18px;
+      padding: 20px 18px;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+    }
+    .hero h1{ margin: 0 0 8px; font-size: 44px; letter-spacing:-.8px; }
+    .hero p{ margin:0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+    .nav{
+      margin-top: 14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 900;
+      box-shadow: var(--shadow2);
+      cursor:pointer;
+    }
+    .btn.gold{
+      background: rgba(184,148,82,.22);
+      border-color: rgba(184,148,82,.28);
+      color: #fff1d6;
+    }
+
+    .section{ margin-top: 22px; }
+    .section h2{ margin:0; font-size: 38px; letter-spacing:-.6px; }
+    .section .sub{ margin-top:6px; color: var(--muted); font-weight:700; }
+
+    .panel{
+      margin-top: 12px;
+      border-radius: var(--r-lg);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .item{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      padding: 14px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.06);
+      margin-top: 10px;
+    }
+    .item b{ font-size: 18px; }
+    .item span{ color: var(--muted); font-weight: 700; }
+
+    footer{
+      margin-top: 26px;
+      text-align:center;
+      color: rgba(234,241,239,.62);
+      font-weight: 700;
+      padding: 18px 6px 8px;
+    }
+    footer a{
+      color: rgba(234,241,239,.78);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .wa-float{
+      position: fixed;
+      right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index: 60;
+    }
+    .wa-float a{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: var(--wa);
+      color:#03210f;
+      font-weight: 950;
+      box-shadow: 0 18px 42px rgba(0,0,0,.50);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .wa-float a span{ font-size: 18px; }
+    .wa-float a small{ font-weight: 900; opacity: .9; font-size: 16px; }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+        <div class="t">
+          <b>El Chiringuito de la Arepa</b>
+          <span>Sabores que abrazan el alma</span>
+        </div>
+      </div>
+      <a class="pill gold" href="index.html">Inicio</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Carta</h1>
+      <p>Elige tu antojo y pídelo por WhatsApp. (Aquí podemos ir completando precios y opciones cuando me los pases.)</p>
+
+      <div class="nav">
+        <a class="btn gold" href="#arepas">Arepas</a>
+        <a class="btn" href="#tequenos">Tequeños</a>
+        <a class="btn" href="#postres">Postres</a>
+        <a class="btn" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="section" id="arepas">
+      <h2>Arepas</h2>
+      <div class="sub">Recién hechas. Rellenos generosos.</div>
+
+      <div class="panel">
+        <div class="item"><div><b>Reina Pepiada</b><div><span>Pollo y aguacate</span></div></div><b>—</b></div>
+        <div class="item"><div><b>Carne Mechada</b><div><span>Clásica venezolana</span></div></div><b>—</b></div>
+        <div class="item"><div><b>Carne Picada + Queso</b><div><span>Latino o cheddar</span></div></div><b>—</b></div>
+        <div class="item"><div><b>Queso Latino</b><div><span>Suave y sabroso</span></div></div><b>—</b></div>
+
+        <div style="margin-top:12px;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa." target="_blank" rel="noopener">Pedir Arepa</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tequenos">
+      <h2>Tequeños</h2>
+      <div class="sub">Crujientes. Perfectos para compartir.</div>
+
+      <div class="panel">
+        <div class="item"><div><b>Tequeños (ración)</b><div><span>Con salsa (opcional)</span></div></div><b>—</b></div>
+
+        <div style="margin-top:12px;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20teque%C3%B1os." target="_blank" rel="noopener">Pedir Tequeños</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="postres">
+      <h2>Postres</h2>
+      <div class="sub">Suave, cremoso y venezolano.</div>
+
+      <div class="panel">
+        <div class="item"><div><b>Tres Leches</b><div><span>Hecho en casa</span></div></div><b>—</b></div>
+
+        <div style="margin-top:12px;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFme%20guardas%20un%20tres%20leches%3F" target="_blank" rel="noopener">Pedir Postre</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 El Chiringuito de la Arepa ·
+      <a href="index.html">Inicio</a> ·
+      <a href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp</a>
+    </footer>
+  </main>
+
+  <div class="wa-float" aria-label="WhatsApp">
+    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+      <span>WhatsApp</span> <small>↗</small>
+    </a>
+  </div>
+</body>
+</html>
