@@ -2,221 +2,270 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0b1210" />
-  <title>El Chiringuito de la Arepa · Arepas venezolanas en Granada</title>
-  <meta name="description" content="Arepas, tequeños y tradición venezolana en Granada. Pedidos por WhatsApp. Carta online y ubicación." />
+  <title>El Chiringuito de la Arepa · Granada</title>
+  <meta name="description" content="Arepas, tequeños y tradición venezolana en Granada. Pedidos por WhatsApp. Horarios y ubicación." />
 
-  <!-- (Opcional) Si quieres icono del sitio -->
-  <link rel="icon" href="assets/img/logo.png" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="El Chiringuito de la Arepa" />
+  <meta property="og:description" content="Sabores que abrazan el alma · Arepas, tequeños y tradición venezolana en Granada." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/logo.png" />
 
   <style>
     :root{
-      --bg:#07110f;
-      --bg2:#0b1814;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.08);
-      --stroke:rgba(255,255,255,.10);
-      --text:#eaf3ef;
-      --muted:rgba(234,243,239,.72);
-      --muted2:rgba(234,243,239,.55);
-      --gold:#c8a35d;
-      --gold2:#b8924f;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r:22px;
-      --r2:28px;
-
+      --bg:#07110e;
+      --bg2:#06100d;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.045);
+      --stroke: rgba(255,255,255,.10);
+      --text:#f4f6f5;
+      --muted: rgba(244,246,245,.72);
+      --muted2: rgba(244,246,245,.55);
+      --gold:#b48a4a;
+      --gold2:#d6b37a;
+      --shadow: 0 18px 50px rgba(0,0,0,.55);
+      --radius: 22px;
+      --radius2: 28px;
       --max: 980px;
-      --pad: 18px;
 
       --wa:#25D366;
-      --danger: rgba(255,80,80,.10);
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box;}
+    html,body{height:100%;}
     body{
       margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(200,163,93,.20), transparent 55%),
-        radial-gradient(900px 550px at 5% 10%, rgba(70,180,140,.12), transparent 55%),
+        radial-gradient(1100px 600px at 30% -10%, rgba(180,138,74,.26), transparent 55%),
+        radial-gradient(900px 500px at 80% 20%, rgba(37,211,102,.12), transparent 55%),
         linear-gradient(180deg, var(--bg), var(--bg2));
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-bottom: 110px; /* espacio para botón WhatsApp flotante */
+      padding-bottom: 120px; /* evita que el WhatsApp tape contenido */
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
+    a{color:inherit; text-decoration:none;}
+    img{max-width:100%; display:block;}
 
     .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad);
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
     }
 
     /* Header */
-    .topbar{
+    header{
       position: sticky;
       top: 0;
-      z-index: 30;
+      z-index: 40;
       backdrop-filter: blur(10px);
-      background: rgba(6,14,12,.72);
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,17,14,.88), rgba(7,17,14,.68));
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .topbar .inner{
+
+    .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
-      padding: 12px var(--pad);
-      max-width: var(--max);
-      margin: 0 auto;
+      gap:16px;
+      padding: 14px 0;
     }
+
     .brand{
       display:flex;
       align-items:center;
-      gap: 12px;
-      min-width: 0;
+      gap:12px;
+      min-width:0;
     }
-    .brand .logo{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
+
+    .brand img{
+      width:46px;
+      height:46px;
+      border-radius: 16px;
+      object-fit:cover;
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      background: rgba(255,255,255,.05);
+    }
+
+    .brandText{
+      min-width:0;
+      line-height:1.1;
+    }
+    .brandText .name{
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+      white-space:nowrap;
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      flex: 0 0 auto;
-      background: rgba(255,255,255,.06);
+      text-overflow:ellipsis;
     }
-    .brand .title{
-      display:flex;
-      flex-direction:column;
-      line-height: 1.1;
-      min-width: 0;
-    }
-    .brand .title strong{
-      font-size: 15px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .brand .title span{
-      font-size: 12px;
+    .brandText .tag{
+      margin-top: 3px;
+      font-size: 12.5px;
       color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap: 10px;
-      padding: 12px 14px;
+      gap:10px;
+      padding: 12px 16px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
       color: var(--text);
-      font-weight: 650;
-      letter-spacing: .2px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.22);
-      transition: transform .08s ease, background .15s ease, border-color .15s ease;
-      cursor:pointer;
-      user-select:none;
+      font-weight: 800;
+      letter-spacing:.2px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.25);
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      white-space:nowrap;
     }
-    .btn:active{ transform: translateY(1px); }
-    .btn.gold{
-      background: linear-gradient(180deg, rgba(200,163,93,.95), rgba(184,146,79,.95));
-      color: #1d1406;
-      border-color: rgba(255,255,255,.18);
+    .btn:active{transform: scale(.98);}
+    .btnGold{
+      background: linear-gradient(180deg, rgba(214,179,122,.95), rgba(180,138,74,.95));
+      border-color: rgba(255,255,255,.14);
+      color: #1b140c;
+      box-shadow: 0 18px 45px rgba(180,138,74,.25);
     }
-    .btn.ghost{
-      background: rgba(255,255,255,.05);
+    .btnGhost{
+      background: rgba(255,255,255,.03);
     }
-    .btn.small{
-      padding: 10px 12px;
+    .btnSmall{
+      padding: 10px 14px;
       font-size: 14px;
     }
 
     /* Hero */
     .hero{
-      padding: 22px 0 8px;
+      padding: 22px 0 10px;
+    }
+    .heroCard{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow:hidden;
+      position:relative;
     }
     .pill{
       display:inline-flex;
       align-items:center;
-      gap: 8px;
-      padding: 8px 12px;
+      gap:10px;
       border-radius: 999px;
+      padding: 10px 14px;
       border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      background: rgba(0,0,0,.18);
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 13px;
     }
-    h1{
+    .hero h1{
       margin: 14px 0 10px;
-      font-size: 44px;
-      line-height: 1.03;
-      letter-spacing: -1.2px;
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.02;
+      letter-spacing: -1px;
+      font-weight: 950;
     }
-    h1 .gold{ color: var(--gold); }
-    .lead{
+    .hero h1 .gold{color: var(--gold2);}
+    .hero p{
+      margin: 0 0 18px;
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.45;
-      margin: 0 0 16px;
-      max-width: 60ch;
+      line-height: 1.35;
+      max-width: 56ch;
     }
 
-    .ctaRow{
+    .heroActions{
       display:flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 12px 0 14px;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
     }
 
-    .chips{
+    .miniGrid{
       display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0 18px;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 14px;
     }
-    .chip{
+    .miniTag{
       display:inline-flex;
       align-items:center;
-      gap: 10px;
+      gap:8px;
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      color: var(--text);
-      font-weight: 650;
-      font-size: 14px;
-      box-shadow: 0 14px 44px rgba(0,0,0,.22);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 13.5px;
     }
-    .chip span{ color: var(--muted); font-weight: 600; }
 
-    /* Cards / sections */
-    .section{
-      padding: 22px 0;
+    /* Info card */
+    .infoCard{
+      margin-top: 16px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.35);
     }
-    .section h2{
-      margin: 0 0 8px;
+    .infoRow{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .kv{
+      display:flex;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.14);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .kv .k{
+      color: var(--muted2);
+      font-weight: 800;
+      min-width: 92px;
+    }
+    .kv .v{
+      text-align:right;
+      font-weight: 900;
+      color: var(--gold2);
+    }
+    .kv a{
+      color: var(--gold2);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Sections */
+    section{
+      padding: 22px 0 0;
+    }
+    .sectionTitle{
+      margin: 0 0 10px;
       font-size: 44px;
+      line-height: 1.02;
+      font-weight: 950;
       letter-spacing: -1px;
-      line-height: 1.05;
     }
-    .section .sub{
+    .sectionSub{
       margin: 0 0 16px;
       color: var(--muted);
-      font-size: 16px;
+      font-size: 18px;
     }
 
+    /* Cards grid */
     .grid{
       display:grid;
       grid-template-columns: 1fr;
@@ -224,392 +273,370 @@
     }
 
     .card{
-      border-radius: var(--r2);
+      border-radius: var(--radius2);
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
     }
-    .card .media{
-      aspect-ratio: 16 / 10;
+
+    .cardMedia{
       width:100%;
-      overflow:hidden;
-      background: rgba(0,0,0,.25);
-    }
-    .card .media img{
-      width:100%;
-      height:100%;
+      aspect-ratio: 16/9;
       object-fit: cover;
-      transform: scale(1.02);
+      background: rgba(255,255,255,.04);
     }
-    .card .body{
-      padding: 18px;
+
+    .cardBody{
+      padding: 16px 16px 18px;
     }
-    .card h3{
-      margin:0 0 6px;
+    .cardTitle{
+      margin: 0 0 4px;
       font-size: 30px;
-      letter-spacing: -.4px;
+      font-weight: 950;
+      letter-spacing: -0.4px;
     }
-    .card p{
-      margin:0 0 14px;
+    .cardText{
+      margin: 0 0 14px;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.45;
+      font-size: 18px;
+      line-height: 1.35;
     }
-    .card .actions{
+
+    .cardActions{
       display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .panel{
-      border-radius: var(--r2);
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .panel h3{
-      margin: 0 0 10px;
-      font-size: 20px;
-      letter-spacing: -.2px;
-      color: var(--text);
-    }
-    .panel p{
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
-      font-size: 16px;
-    }
-
-    /* Horarios */
+    /* Hours list */
     .hours{
-      display:grid;
-      gap: 12px;
-      margin-top: 14px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      padding: 16px;
     }
     .row{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 16px;
-      padding: 14px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-    }
-    .row b{
-      font-size: 18px;
-      letter-spacing: -.2px;
-    }
-    .row span{
-      font-weight: 800;
-      font-size: 18px;
-      color: rgba(234,243,239,.92);
-    }
-    .row.closed{
-      background: linear-gradient(180deg, rgba(255,80,80,.10), rgba(255,80,80,.06));
-      border-color: rgba(255,80,80,.20);
-    }
-    .row.closed span{
-      color: rgba(255,220,220,.95);
-      letter-spacing: .2px;
-    }
-
-    /* Ubicación / contacto */
-    .kv{
-      display:grid;
       gap: 10px;
-      margin-top: 12px;
-    }
-    .kv .item{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
       padding: 14px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+      border-radius: 22px;
+      background: rgba(0,0,0,.14);
+      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 12px;
+      font-weight: 900;
+      font-size: 18px;
     }
-    .kv .item .k{
+    .row:last-child{margin-bottom:0;}
+    .row .day{color: var(--text);}
+    .row .time{color: var(--text); opacity:.95;}
+    .row.closed{
+      background: linear-gradient(180deg, rgba(140,55,55,.20), rgba(0,0,0,.12));
+      border-color: rgba(200,90,90,.25);
+    }
+    .row.closed .time{letter-spacing:.6px;}
+
+    .service{
+      margin-top: 14px;
+      font-size: 18px;
       color: var(--muted);
-      font-weight: 700;
-      min-width: 90px;
     }
-    .kv .item .v{
-      font-weight: 800;
-      color: rgba(234,243,239,.92);
-      text-align:right;
+    .service b{color: var(--text);}
+
+    /* About */
+    .about{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      padding: 18px 18px 20px;
     }
-    .link{
-      color: var(--gold);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      font-weight: 800;
+    .about h3{
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing:-.3px;
+    }
+    .about p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.45;
     }
 
     /* Footer */
     footer{
-      padding: 22px 0 30px;
-      color: var(--muted2);
+      margin-top: 26px;
+      padding: 18px 0 30px;
+      color: rgba(244,246,245,.55);
       text-align:center;
+      font-weight: 700;
     }
-    footer a{ color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+    footer a{
+      color: rgba(244,246,245,.75);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-    /* WhatsApp floating */
+    /* Floating WhatsApp */
     .waFloat{
       position: fixed;
-      right: max(14px, env(safe-area-inset-right));
-      bottom: max(14px, env(safe-area-inset-bottom));
+      right: max(12px, env(safe-area-inset-right));
+      bottom: max(12px, env(safe-area-inset-bottom));
       z-index: 50;
       display:flex;
       align-items:center;
-      gap: 10px;
-      padding: 12px 14px;
+      gap: 8px;
+      padding: 10px 12px;
       border-radius: 999px;
       background: var(--wa);
-      color: #07210f;
+      color: #06210f;
       font-weight: 900;
-      border: 1px solid rgba(255,255,255,.22);
-      box-shadow: 0 18px 50px rgba(0,0,0,.35);
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 14px 36px rgba(0,0,0,.35);
     }
-    .waFloat small{
-      font-weight: 800;
-      opacity: .85;
+    .waFloat svg{width:18px;height:18px;display:block;}
+    .waFloat:active{transform: scale(.98);}
+
+    /* Desktop grid */
+    @media (min-width: 860px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+      }
+      .infoRow{
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    /* Desktop tweaks */
-    @media (min-width: 820px){
-      h1{ font-size: 54px; }
-      .section h2{ font-size: 54px; }
-      .grid{ grid-template-columns: 1fr 1fr; }
-      .card .media{ aspect-ratio: 16 / 9; }
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important; transition:none !important;}
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="inner">
-      <div class="brand">
-        <div class="logo">
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="#top" aria-label="Ir arriba">
           <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa" />
-        </div>
-        <div class="title">
-          <strong>El Chiringuito de la Arepa</strong>
-          <span>Sabores que abrazan el alma</span>
-        </div>
-      </div>
+          <div class="brandText">
+            <div class="name">El Chiringuito de la Arepa</div>
+            <div class="tag">Sabores que abrazan el alma</div>
+          </div>
+        </a>
 
-      <a class="btn gold small" href="carta.html" aria-label="Ver la carta">Ver la carta</a>
+        <a class="btn btnGold" href="carta.html">Ver la carta</a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main class="wrap">
-    <section class="hero" id="inicio">
-      <div class="pill">🍽️ Cocina venezolana en Granada</div>
+  <main id="top" class="wrap">
 
-      <h1>
-        Arepas, tequeños y tradición.
-        <span class="gold">Recién hecho.</span>
-      </h1>
+    <!-- Hero -->
+    <section class="hero" aria-label="Portada">
+      <div class="heroCard">
+        <span class="pill">Cocina venezolana en Granada</span>
 
-      <p class="lead">
-        Un rincón donde la tradición se sirve caliente: masas hechas al momento,
-        rellenos generosos y el sabor auténtico de Venezuela.
-      </p>
+        <h1>
+          Arepas, tequeños y tradición. <span class="gold">Recién hecho.</span>
+        </h1>
 
-      <div class="ctaRow">
-        <a class="btn gold" href="carta.html">Ver la carta</a>
-        <a class="btn ghost" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%87%BB%F0%9F%87%AA" target="_blank" rel="noopener">
-          Pedir por WhatsApp
-        </a>
-      </div>
+        <p>
+          Un rincón donde la tradición se sirve caliente: masas hechas al momento,
+          rellenos generosos y el sabor auténtico de Venezuela.
+        </p>
 
-      <div class="chips">
-        <div class="chip">🍴 <b>Comer aquí</b></div>
-        <div class="chip">📦 <b>Para llevar</b></div>
-        <a class="chip" href="#horarios">🍲 <b>Sancocho</b> <span>(días seleccionados)</span></a>
-      </div>
+        <div class="heroActions">
+          <a class="btn btnGold" href="carta.html">Ver la carta</a>
+          <a class="btn btnGhost" href="#contacto">Pedir por WhatsApp</a>
+        </div>
 
-      <div class="panel" style="margin-top:14px">
-        <div class="kv">
-          <div class="item">
-            <div class="k">Dirección</div>
-            <div class="v">C. Obispo Hurtado, 27, Ronda, 18004 Granada</div>
-          </div>
-          <div class="item">
-            <div class="k">Mapa</div>
-            <div class="v">
-              <a class="link" href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2C%2027%2C%20Ronda%2C%2018004%20Granada" target="_blank" rel="noopener">
-                Abrir en Google Maps →
-              </a>
+        <div class="miniGrid" aria-label="Servicios">
+          <span class="miniTag">🍽️ Comer aquí</span>
+          <span class="miniTag">📦 Para llevar</span>
+          <span class="miniTag">🍲 Sancocho (días seleccionados)</span>
+        </div>
+
+        <!-- Contact quick -->
+        <div class="infoCard" id="contacto-rapido" aria-label="Contacto rápido">
+          <div class="infoRow">
+            <div class="kv">
+              <div class="k">Dirección</div>
+              <div class="v">
+                C. Obispo Hurtado, 27, Ronda, 18004 Granada<br />
+                <a href="https://maps.google.com/?q=C.+Obispo+Hurtado,+27,+Ronda,+18004+Granada" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+              </div>
+            </div>
+
+            <div class="kv">
+              <div class="k">Teléfono</div>
+              <div class="v"><a href="tel:+34858830186">858 83 01 86</a></div>
+            </div>
+
+            <div class="kv">
+              <div class="k">WhatsApp</div>
+              <div class="v"><a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- DESTACADOS (UNA SOLA VEZ - SIN DUPLICAR) -->
-    <section class="section" id="destacados">
-      <h2>Destacados</h2>
-      <p class="sub">Lo más pedido. Lo más querido.</p>
+    <!-- Destacados -->
+    <section id="destacados" aria-label="Destacados">
+      <h2 class="sectionTitle">Destacados</h2>
 
       <div class="grid">
         <article class="card">
-          <div class="media">
-            <img src="assets/img/arepa.png" alt="Arepa" />
-          </div>
-          <div class="body">
-            <h3>Arepa</h3>
-            <p>Clásica, contundente y recién hecha.</p>
-            <div class="actions">
-              <a class="btn gold small" href="carta.html">Ver opciones</a>
-              <a class="btn small" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa.%20%F0%9F%AB%93" target="_blank" rel="noopener">Pedir</a>
+          <img class="cardMedia" src="assets/img/arepa.png" alt="Arepa" />
+          <div class="cardBody">
+            <h3 class="cardTitle">Arepa</h3>
+            <p class="cardText">Clásica, contundente y recién hecha.</p>
+            <div class="cardActions">
+              <a class="btn btnSmall btnGhost" href="carta.html#arepas">Ver opciones</a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="media">
-            <img src="assets/img/sancocho.png" alt="Sancocho de gallina y ternera" />
-          </div>
-          <div class="body">
-            <h3>Sancocho <span style="color:var(--muted); font-weight:700;">(según disponibilidad)</span></h3>
-            <p>Caldo profundo, maíz y tubérculos.</p>
-            <div class="actions">
-              <a class="btn gold small" href="#horarios">Ver horarios</a>
-              <a class="btn small" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFhoy%20hay%20sancocho%3F%20%F0%9F%8D%B2" target="_blank" rel="noopener">Preguntar</a>
+          <img class="cardMedia" src="assets/img/sancocho.png" alt="Sancocho de gallina y ternera" />
+          <div class="cardBody">
+            <h3 class="cardTitle">Sancocho (según disponibilidad)</h3>
+            <p class="cardText">Caldo profundo, maíz y tubérculos.</p>
+            <div class="cardActions">
+              <a class="btn btnSmall btnGhost" href="#horarios">Ver horarios</a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="media">
-            <img src="assets/img/tequenos.png" alt="Tequeños" />
-          </div>
-          <div class="body">
-            <h3>Tequeños</h3>
-            <p>Crujientes, perfectos para compartir.</p>
-            <div class="actions">
-              <a class="btn gold small" href="carta.html">Ver carta</a>
-              <a class="btn small" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20teque%C3%B1os.%20%F0%9F%A7%80" target="_blank" rel="noopener">Pedir</a>
+          <img class="cardMedia" src="assets/img/tequenos.png" alt="Tequeños" />
+          <div class="cardBody">
+            <h3 class="cardTitle">Tequeños</h3>
+            <p class="cardText">Crujientes, perfectos para compartir.</p>
+            <div class="cardActions">
+              <a class="btn btnSmall btnGhost" href="carta.html#entrantes">Ver carta</a>
             </div>
           </div>
         </article>
 
         <article class="card">
-          <div class="media">
-            <img src="assets/img/tresleches.png" alt="Tres leches" />
-          </div>
-          <div class="body">
-            <h3>Tres leches</h3>
-            <p>Postre venezolano, suave y cremoso.</p>
-            <div class="actions">
-              <a class="btn gold small" href="carta.html">Ver postres</a>
-              <a class="btn small" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20un%20tres%20leches.%20%F0%9F%8D%B0" target="_blank" rel="noopener">Pedir</a>
+          <img class="cardMedia" src="assets/img/tresleches.png" alt="Tres leches" />
+          <div class="cardBody">
+            <h3 class="cardTitle">Tres leches</h3>
+            <p class="cardText">Postre venezolano, suave y cremoso.</p>
+            <div class="cardActions">
+              <a class="btn btnSmall btnGhost" href="carta.html#postres">Ver postres</a>
             </div>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
-    <section class="section" id="nosotros">
-      <h2>Sobre nosotros</h2>
-      <p class="sub">Tradición, hogar y encuentro.</p>
+    <!-- Horarios -->
+    <section id="horarios" aria-label="Horarios">
+      <h2 class="sectionTitle">Horarios</h2>
+      <p class="sectionSub">Actualizados.</p>
 
-      <div class="panel">
+      <div class="hours" role="list">
+        <div class="row" role="listitem">
+          <span class="day">Lunes</span>
+          <span class="time">19:00–23:00</span>
+        </div>
+        <div class="row" role="listitem">
+          <span class="day">Martes</span>
+          <span class="time">19:00–23:00</span>
+        </div>
+        <div class="row" role="listitem">
+          <span class="day">Miércoles</span>
+          <span class="time">19:00–23:00</span>
+        </div>
+        <div class="row closed" role="listitem" aria-label="Jueves cerrado">
+          <span class="day">Jueves</span>
+          <span class="time">CERRADO</span>
+        </div>
+        <div class="row" role="listitem">
+          <span class="day">Viernes</span>
+          <span class="time">13:00–15:30 · 19:00–23:00</span>
+        </div>
+        <div class="row" role="listitem">
+          <span class="day">Sábado</span>
+          <span class="time">13:00–15:30 · 19:00–23:00</span>
+        </div>
+        <div class="row" role="listitem">
+          <span class="day">Domingo</span>
+          <span class="time">13:00–15:30 · 19:00–22:00</span>
+        </div>
+
+        <div class="service"><b>Servicio:</b> Comer aquí y para llevar.</div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="ubicacion" aria-label="Ubicación">
+      <h2 class="sectionTitle">Ubicación</h2>
+      <p class="sectionSub">Cómo llegar.</p>
+
+      <div class="about">
+        <h3>Dirección</h3>
+        <p>
+          C. Obispo Hurtado, 27, Ronda, 18004 Granada
+        </p>
+        <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:10px;">
+          <a class="btn btnGhost" href="https://maps.google.com/?q=C.+Obispo+Hurtado,+27,+Ronda,+18004+Granada" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btnGold" href="#contacto">Contacto rápido</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre nosotros -->
+    <section id="nosotros" aria-label="Sobre nosotros">
+      <h2 class="sectionTitle">Sobre nosotros</h2>
+
+      <div class="about">
         <h3>Tradición, hogar y encuentro.</h3>
         <p>
           El Chiringuito de la Arepa es un rincón de cocina venezolana en Granada donde la tradición se sirve caliente
-          y recién hecha. Aquí la arepa no es solo comida: es memoria, es hogar y es encuentro.
-          <br><br>
+          y recién hecha. Aquí la arepa no es solo comida: es memoria, es hogar y es encuentro.<br><br>
           Trabajamos con recetas tradicionales, masas hechas al momento y rellenos generosos que respetan el sabor
-          auténtico de Venezuela. Desde nuestras arepas clásicas hasta uno de nuestros platos más esperados:
-          el sancocho, cocinado a fuego lento con caldo profundo, maíz, tubérculos y el sabor de siempre.
+          auténtico de Venezuela. Desde nuestras arepas clásicas hasta uno de nuestros platos más esperados: el sancocho,
+          cocinado a fuego lento con caldo profundo, maíz, tubérculos y el sabor de siempre.
         </p>
       </div>
     </section>
 
-    <!-- HORARIOS (UNA SOLA VEZ - SIN DUPLICAR) -->
-    <section class="section" id="horarios">
-      <h2>Horarios</h2>
-      <p class="sub">Actualizados.</p>
+    <!-- Contacto -->
+    <section id="contacto" aria-label="Contacto">
+      <h2 class="sectionTitle">Contacto rápido</h2>
 
-      <div class="panel">
-        <div class="hours">
-          <div class="row"><b>Lunes</b><span>19:00–23:00</span></div>
-          <div class="row"><b>Martes</b><span>19:00–23:00</span></div>
-          <div class="row"><b>Miércoles</b><span>19:00–23:00</span></div>
-          <div class="row closed"><b>Jueves</b><span>CERRADO</span></div>
-          <div class="row"><b>Viernes</b><span>13:00–15:30 · 19:00–23:00</span></div>
-          <div class="row"><b>Sábado</b><span>13:00–15:30 · 19:00–23:00</span></div>
-          <div class="row"><b>Domingo</b><span>13:00–15:30 · 19:00–22:00</span></div>
-        </div>
-
-        <p style="margin-top:14px; color:var(--muted);">
-          <b style="color:rgba(234,243,239,.92)">Servicio:</b> Comer aquí y para llevar.
-        </p>
-      </div>
-    </section>
-
-    <!-- UBICACIÓN -->
-    <section class="section" id="ubicacion">
-      <h2>Ubicación</h2>
-      <p class="sub">Cómo llegar.</p>
-
-      <div class="panel">
-        <div class="kv">
-          <div class="item">
-            <div class="k">Dirección</div>
-            <div class="v">C. Obispo Hurtado, 27, Ronda, 18004 Granada</div>
-          </div>
-          <div class="item">
-            <div class="k">Mapa</div>
-            <div class="v">
-              <a class="btn gold small" href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2C%2027%2C%20Ronda%2C%2018004%20Granada" target="_blank" rel="noopener">
-                Abrir en Google Maps
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section class="section" id="contacto">
-      <h2>Contacto rápido</h2>
-      <p class="sub">Te respondemos por WhatsApp.</p>
-
-      <div class="panel">
-        <div class="kv">
-          <div class="item">
+      <div class="infoCard">
+        <div class="infoRow">
+          <div class="kv">
             <div class="k">Llamar</div>
-            <div class="v">
-              <a class="link" href="tel:+34858830186">858 83 01 86</a>
-            </div>
+            <div class="v"><a href="tel:+34858830186">858 83 01 86</a></div>
           </div>
-          <div class="item">
-            <div class="k">WhatsApp</div>
-            <div class="v">
-              <a class="link" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%91%8B" target="_blank" rel="noopener">
-                +34 651 65 12 91
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <div style="margin-top:14px">
-          <div class="panel" style="padding:16px; background: rgba(255,255,255,.05); border-radius: 18px;">
-            <h3 style="margin:0 0 6px;">Pedidos rápidos</h3>
-            <p style="margin:0;">
-              Te respondemos por WhatsApp. <a class="link" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Escribir ahora →</a>
-            </p>
+          <div class="kv">
+            <div class="k">WhatsApp</div>
+            <div class="v"><a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></div>
+          </div>
+
+          <div class="kv">
+            <div class="k">Pedidos</div>
+            <div class="v">
+              Te respondemos por WhatsApp.<br />
+              <a href="https://wa.me/34651651291" target="_blank" rel="noopener">Escribir ahora →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -622,13 +649,16 @@
     </footer>
   </main>
 
-  <!-- WhatsApp flotante (más pequeño y sin tapar tanto) -->
-  <a class="waFloat" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%91%8B" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-    WhatsApp <small>↗</small>
+  <!-- WhatsApp Floating Button -->
+  <a class="waFloat" href="https://wa.me/34651651291" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path d="M19.11 17.45c-.27-.14-1.61-.79-1.86-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.21-1.38-.82-.73-1.37-1.63-1.53-1.9-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.54-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.29 0 1.35.99 2.66 1.13 2.84.14.18 1.95 2.98 4.74 4.18.66.28 1.17.45 1.57.57.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M26.58 5.42A13.03 13.03 0 0 0 16.02 1C8.85 1 3 6.85 3 14.02c0 2.28.6 4.51 1.74 6.48L3 31l10.77-1.7a12.95 12.95 0 0 0 6.25 1.6h.01c7.17 0 13.02-5.85 13.02-13.02 0-3.48-1.35-6.76-3.47-9.46zM20.02 28.7h-.01a10.8 10.8 0 0 1-5.52-1.52l-.4-.24-6.39 1.01 1.04-6.23-.26-.43a10.77 10.77 0 0 1-1.65-5.73c0-5.96 4.85-10.81 10.81-10.81 2.88 0 5.59 1.12 7.63 3.16a10.73 10.73 0 0 1 3.17 7.64c0 5.96-4.85 10.81-10.82 10.81z"/>
+    </svg>
+    WhatsApp
   </a>
 
   <script>
-    // Año automático
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
