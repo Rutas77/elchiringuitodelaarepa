@@ -4,30 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1010" />
-  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas, tequeños, sancocho (días seleccionados) y postres. Pedidos por WhatsApp." />
-  <title>El Chiringuito de la Arepa</title>
+  <meta name="description" content="El Chiringuito de la Arepa · Tradicional venezolano elegante en Granada. Arepas, tequeños, sancocho y tres leches." />
+  <title>El Chiringuito de la Arepa · Granada</title>
 
-  <!-- Favicon (opcional, usa tu logo) -->
   <link rel="icon" href="assets/img/logo.png" />
 
   <style>
     :root{
       --bg:#071010;
       --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.085);
-      --stroke:rgba(255,255,255,.10);
       --text:#eaf1ef;
       --muted:rgba(234,241,239,.72);
-      --brand:#b89452;   /* dorado */
+      --brand:#b89452;
       --wa:#25D366;
-
       --r-lg:26px;
-      --r-md:18px;
-
       --shadow: 0 14px 40px rgba(0,0,0,.45);
       --shadow2: 0 10px 24px rgba(0,0,0,.35);
     }
-
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
@@ -38,546 +31,225 @@
         linear-gradient(180deg, #071010 0%, #050b0b 100%);
       color:var(--text);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      letter-spacing:.1px;
-
-      /* CLAVE: evita que el botón flotante tape el footer */
       padding-bottom: 220px;
     }
-
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
 
-    /* TOP BAR */
+    /* TOPBAR */
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
       background: rgba(7,16,16,.70);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .topbar-inner{
-      max-width:980px;
-      margin:0 auto;
+      max-width:980px; margin:0 auto;
       padding: 12px 14px;
-      display:flex;
-      align-items:center;
-      gap:12px;
+      display:flex; align-items:center; gap:12px;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-      flex: 1 1 auto;
-    }
-    .brand img{
-      width:36px; height:36px;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.35);
-      object-fit:cover;
-    }
-    .brand .t{
-      min-width:0;
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand .t b{
-      font-size: 16px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand .t span{
-      font-size: 13px;
-      color: var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
+    .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
+    .brand img{ width:38px; height:38px; border-radius:12px; object-fit:cover; }
+    .brand .t b{ font-size:16px; }
+    .brand .t span{ font-size:13px; color:var(--muted); }
 
     .pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,.22);
-      font-weight: 700;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    }
-    .pill.gold{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.25);
-      color: #f2e5cf;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:900;
+      border:1px solid rgba(184,148,82,.35);
+      background: rgba(184,148,82,.22);
+      color:#fff1d6;
     }
 
     /* HERO */
     .hero{
-      margin-top: 18px;
-      padding: 22px 18px;
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(255,255,255,.08);
+      margin-top:18px;
+      padding:26px 22px;
+      border-radius:var(--r-lg);
+      border:1px solid rgba(255,255,255,.08);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
       box-shadow: var(--shadow);
     }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-    }
     .hero h1{
-      margin: 14px 0 10px;
-      font-size: 46px;
-      line-height: 1.02;
-      letter-spacing: -1px;
-    }
-    .hero h1 .accent{
-      color: var(--brand);
-      font-weight: 900;
+      margin:0;
+      font-size:46px;
+      letter-spacing:-.8px;
     }
     .hero p{
-      margin:0;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.55;
-      max-width: 56ch;
+      margin-top:10px;
+      font-size:17px;
+      color:var(--muted);
+      line-height:1.6;
+      max-width:720px;
     }
-    .cta{
-      margin-top: 16px;
+
+    .hero-actions{
+      margin-top:18px;
       display:flex;
       gap:12px;
       flex-wrap:wrap;
     }
     .btn{
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight: 800;
+      padding:14px 18px;
+      border-radius:999px;
+      font-weight:950;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
       box-shadow: var(--shadow2);
     }
     .btn.gold{
-      background: rgba(184,148,82,.22);
-      border-color: rgba(184,148,82,.28);
-      color: #fff1d6;
+      background: rgba(184,148,82,.25);
+      border-color: rgba(184,148,82,.35);
+      color:#fff1d6;
     }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn:active{ transform: translateY(0px); }
-
-    .chips{
-      margin-top: 14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      color: rgba(234,241,239,.86);
-      font-weight:700;
-      font-size: 14px;
+    .btn.wa{
+      background: rgba(37,211,102,.18);
+      border-color: rgba(37,211,102,.30);
     }
 
-    /* SECTION TITLES */
-    .section{
-      margin-top: 26px;
-    }
-    .section h2{
-      margin: 0;
-      font-size: 44px;
-      letter-spacing:-.6px;
-    }
-    .section .sub{
-      margin-top: 6px;
-      color: var(--muted);
-      font-weight: 600;
+    /* SECTIONS */
+    .section{ margin-top:26px; }
+    .section h2{ font-size:38px; margin:0; }
+    .sub{ margin-top:6px; color:var(--muted); font-weight:800; }
+
+    .panel{
+      margin-top:14px;
+      padding:18px;
+      border-radius:var(--r-lg);
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
     }
 
-    /* CARDS GRID */
-    .grid{
-      margin-top: 14px;
+    .info{
       display:grid;
       grid-template-columns: 1fr;
-      gap: 14px;
-    }
-    @media (min-width: 720px){
-      .grid{ grid-template-columns: 1fr 1fr; }
-    }
-
-    .card{
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card img{
-      width:100%;
-      height: 250px;
-      object-fit: cover;
-      display:block;
-      background: rgba(255,255,255,.04);
-    }
-    .card .body{
-      padding: 16px 16px 18px;
-    }
-    .card .body h3{
-      margin:0;
-      font-size: 34px;
-      letter-spacing:-.4px;
-    }
-    .card .body p{
-      margin: 6px 0 12px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.5;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-
-    /* INFO PANEL */
-    .panel{
-      margin-top: 14px;
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      padding: 16px;
-    }
-    .row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
       gap:14px;
-      padding: 14px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.04);
-      margin-top: 10px;
-      font-weight: 800;
     }
-    .row span{ color: rgba(234,241,239,.88); font-weight: 700; }
-    .row b{ font-size: 18px; }
-
-    .row.closed{
-      background: rgba(184,62,62,.16);
-      border-color: rgba(184,62,62,.25);
+    .info div{
+      padding:14px;
+      border-radius:16px;
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      font-weight:800;
     }
 
-    .kv{
-      margin-top: 12px;
-      display:grid;
-      gap: 10px;
-    }
-    .kv .k{
-      color: var(--muted);
-      font-weight:700;
-      font-size:14px;
-    }
-    .kv .v{
-      font-weight:900;
-      font-size:18px;
-    }
-
-    /* FOOTER */
     footer{
-      margin-top: 26px;
-      padding: 18px 6px 8px;
+      margin-top:32px;
       text-align:center;
-      color: rgba(234,241,239,.62);
-      font-weight: 700;
-    }
-    footer a{
-      color: rgba(234,241,239,.78);
-      text-decoration: underline;
-      text-underline-offset: 4px;
+      color:rgba(234,241,239,.65);
+      font-weight:800;
     }
 
-    /* FLOATING WHATSAPP */
+    /* WHATSAPP FLOAT */
     .wa-float{
-      position: fixed;
-      right: 16px;
-      bottom: calc(16px + env(safe-area-inset-bottom));
-      z-index: 60;
+      position:fixed;
+      right:16px;
+      bottom:calc(16px + env(safe-area-inset-bottom));
+      z-index:60;
     }
     .wa-float a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      background: var(--wa);
+      padding:14px 20px;
+      border-radius:999px;
+      background:var(--wa);
       color:#03210f;
-      font-weight: 950;
-      box-shadow: 0 18px 42px rgba(0,0,0,.50);
-      border: 1px solid rgba(255,255,255,.10);
-    }
-    .wa-float a span{ font-size: 18px; }
-    .wa-float a small{
-      font-weight: 900;
-      opacity: .9;
-      font-size: 16px;
+      font-weight:950;
+      box-shadow:0 18px 42px rgba(0,0,0,.5);
     }
 
-    /* SMALL SCREENS */
-    @media (max-width: 420px){
-      .hero h1{ font-size: 40px; }
-      .section h2{ font-size: 40px; }
-      .card .body h3{ font-size: 32px; }
+    @media(max-width:520px){
+      .hero h1{ font-size:40px; }
+      .section h2{ font-size:34px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-        <div class="t">
-          <b>El Chiringuito de la Arepa</b>
-          <span>Sabores que abrazan el alma</span>
-        </div>
-      </div>
 
-      <a class="pill gold" href="carta.html">Ver la carta</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="assets/img/logo.png" alt="El Chiringuito de la Arepa">
+      <div class="t">
+        <b>El Chiringuito de la Arepa</b>
+        <span>Sabores que abrazan el alma</span>
+      </div>
     </div>
-  </header>
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="inicio">
-      <div class="tag">🍽️ Cocina venezolana en Granada</div>
-
-      <h1>
-        Arepas, tequeños y tradición.
-        <span class="accent">Recién hecho.</span>
-      </h1>
-
-      <p>
-        Un rincón donde la tradición se sirve caliente: masas hechas al momento,
-        rellenos generosos y el sabor auténtico de Venezuela.
-      </p>
-
-      <div class="cta">
-        <a class="btn gold" href="carta.html">Ver la carta</a>
-        <a class="btn" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      </div>
-
-      <div class="chips">
-        <div class="chip">🍽️ Comer aquí</div>
-        <div class="chip">📦 Para llevar</div>
-        <div class="chip">🍲 Sancocho (días seleccionados)</div>
-      </div>
-    </section>
-
-    <!-- UBICACION MINI (RESUMEN) -->
-    <section class="section" id="info">
-      <div class="panel">
-        <div class="kv">
-          <div class="k">Dirección</div>
-          <div class="v">C. Obispo Hurtado, 27, Ronda, 18004 Granada</div>
-        </div>
-
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Abrir en Google Maps →</a>
-          <a class="btn" href="#horarios">Ver horarios</a>
-        </div>
-
-        <div class="kv" style="margin-top:14px;">
-          <div class="k">Teléfono</div>
-          <div class="v"><a href="tel:+34858830186">858 83 01 86</a></div>
-
-          <div class="k" style="margin-top:8px;">WhatsApp</div>
-          <div class="v"><a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DESTACADOS -->
-    <section class="section" id="destacados">
-      <h2>Destacados</h2>
-      <div class="sub">Lo más pedido. Lo más querido.</div>
-
-      <div class="grid">
-        <article class="card">
-          <img src="assets/img/arepa.png" alt="Arepa venezolana">
-          <div class="body">
-            <h3>Arepa</h3>
-            <p>Clásica, contundente y recién hecha.</p>
-            <div class="actions">
-              <a class="btn gold" href="carta.html#arepas">Ver opciones</a>
-              <a class="btn" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa." target="_blank" rel="noopener">Pedir</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/img/sancocho.png" alt="Sancocho venezolano">
-          <div class="body">
-            <h3>Sancocho <span style="color:rgba(234,241,239,.62); font-weight:800;">(según disponibilidad)</span></h3>
-            <p>Caldo profundo, maíz y tubérculos.</p>
-            <div class="actions">
-              <a class="btn gold" href="#horarios">Ver horarios</a>
-              <a class="btn" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFhoy%20hay%20sancocho%3F" target="_blank" rel="noopener">Preguntar</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/img/tequenos.png" alt="Tequeños venezolanos">
-          <div class="body">
-            <h3>Tequeños</h3>
-            <p>Crujientes, perfectos para compartir.</p>
-            <div class="actions">
-              <a class="btn gold" href="carta.html#tequenos">Ver carta</a>
-              <a class="btn" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20teque%C3%B1os." target="_blank" rel="noopener">Pedir</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/img/tresleches.png" alt="Postre Tres Leches">
-          <div class="body">
-            <h3>Tres leches</h3>
-            <p>Postre venezolano, suave y cremoso.</p>
-            <div class="actions">
-              <a class="btn gold" href="carta.html#postres">Ver postres</a>
-              <a class="btn" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFme%20guardas%20un%20tres%20leches%3F" target="_blank" rel="noopener">Pedir</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SOBRE NOSOTROS -->
-    <section class="section" id="sobre">
-      <h2>Sobre nosotros</h2>
-      <div class="sub">Tradición, hogar y encuentro.</div>
-
-      <div class="panel">
-        <div style="font-weight:900; font-size:18px; margin-bottom:10px;">Tradición, hogar y encuentro.</div>
-
-        <div style="color:var(--muted); font-size:16px; line-height:1.65;">
-          El Chiringuito de la Arepa es un rincón de cocina venezolana en Granada donde la tradición se sirve caliente y recién hecha.
-          Aquí la arepa no es solo comida: es memoria, es hogar y es encuentro.
-          <br><br>
-          Trabajamos con recetas tradicionales, masas hechas al momento y rellenos generosos que respetan el sabor auténtico de Venezuela.
-          Desde nuestras arepas clásicas hasta uno de nuestros platos más esperados: el sancocho, cocinado a fuego lento con caldo profundo,
-          maíz, tubérculos y el sabor de siempre.
-        </div>
-      </div>
-    </section>
-
-    <!-- HORARIOS -->
-    <section class="section" id="horarios">
-      <h2>Horarios</h2>
-      <div class="sub">Actualizados.</div>
-
-      <div class="panel">
-        <div class="row"><span>Lunes</span><b>19:00–23:00</b></div>
-        <div class="row"><span>Martes</span><b>19:00–23:00</b></div>
-        <div class="row"><span>Miércoles</span><b>19:00–23:00</b></div>
-        <div class="row closed"><span>Jueves</span><b>CERRADO</b></div>
-        <div class="row"><span>Viernes</span><b>13:00–15:30 · 19:00–23:00</b></div>
-        <div class="row"><span>Sábado</span><b>13:00–15:30 · 19:00–23:00</b></div>
-        <div class="row"><span>Domingo</span><b>13:00–15:30 · 19:00–22:00</b></div>
-
-        <div style="margin-top:14px; color:rgba(234,241,239,.70); font-weight:800;">
-          <span style="color:rgba(234,241,239,.90);">Servicio:</span> Comer aquí y para llevar.
-        </div>
-      </div>
-    </section>
-
-    <!-- UBICACION (UNA SOLA VEZ) -->
-    <section class="section" id="ubicacion">
-      <h2>Ubicación</h2>
-      <div class="sub">Cómo llegar.</div>
-
-      <div class="panel">
-        <div class="kv">
-          <div class="k">Dirección</div>
-          <div class="v">C. Obispo Hurtado, 27, Ronda, 18004 Granada</div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada" target="_blank" rel="noopener">
-            Abrir en Google Maps →
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO (UNA SOLA VEZ) -->
-    <section class="section" id="contacto">
-      <h2>Contacto rápido</h2>
-      <div class="sub">Te respondemos por WhatsApp.</div>
-
-      <div class="panel">
-        <div style="display:grid; gap:10px;">
-          <a class="row" href="tel:+34858830186">
-            <span>Llamar</span>
-            <b style="color:var(--brand)">858 83 01 86</b>
-          </a>
-
-          <a class="row" href="https://wa.me/34651651291" target="_blank" rel="noopener">
-            <span>WhatsApp</span>
-            <b style="color:var(--brand)">+34 651 65 12 91</b>
-          </a>
-
-          <div class="panel" style="margin:0; background: rgba(255,255,255,.035); border-color: rgba(255,255,255,.08);">
-            <div style="font-weight:950; font-size:20px;">Pedidos rápidos</div>
-            <div style="color:var(--muted); font-weight:700; margin-top:4px;">Te respondemos por WhatsApp.</div>
-            <div style="margin-top:10px;">
-              <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
-                Escribir ahora →
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 El Chiringuito de la Arepa ·
-      <a href="carta.html">Carta</a> ·
-      <a href="#contacto">Contacto</a>
-    </footer>
-  </main>
-
-  <!-- WHATSAPP FLOATING -->
-  <div class="wa-float" aria-label="WhatsApp">
-    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
-      <span>WhatsApp</span> <small>↗</small>
-    </a>
+    <a class="pill" href="carta.html">Carta</a>
   </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Tradicional venezolano elegante</h1>
+    <p>
+      Arepas recién hechas, rellenos generosos y recetas que vienen del corazón.
+      Tequeños crujientes, sancocho especial y nuestro tres leches casero.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn gold" href="carta.html">Ver la carta</a>
+      <a class="btn wa" href="https://wa.me/34651651291" target="_blank">Pedir por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="section" id="ubicacion">
+    <h2>Ubicación</h2>
+    <div class="sub">Cómo llegar</div>
+
+    <div class="panel info">
+      <div>📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada</div>
+      <div>
+        <a class="btn gold" href="https://maps.google.com/?q=C.%20Obispo%20Hurtado%2027%20Granada" target="_blank">
+          Abrir en Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIOS -->
+  <section class="section" id="horarios">
+    <h2>Horarios</h2>
+    <div class="panel info">
+      <div>Lunes · 19:00 – 23:00</div>
+      <div>Martes · 19:00 – 23:00</div>
+      <div>Miércoles · 19:00 – 23:00</div>
+      <div>Jueves · CERRADO</div>
+      <div>Viernes · 13:00 – 15:30</div>
+      <div>Sábado · 19:00 – 23:00</div>
+      <div>Domingo · 13:00 – 15:30 · 19:00 – 22:00</div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <h2>Contacto rápido</h2>
+    <div class="sub">Te respondemos por WhatsApp</div>
+
+    <div class="panel info">
+      <div>📞 Teléfono: 858 83 01 86</div>
+      <div>💬 WhatsApp: +34 651 65 12 91</div>
+      <div>
+        <a class="btn gold" href="https://wa.me/34651651291" target="_blank">
+          Escribir ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 El Chiringuito de la Arepa · Granada
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/34651651291" target="_blank">WhatsApp ↗</a>
+</div>
+
 </body>
-                                                                  </html>
+</html>
