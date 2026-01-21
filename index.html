@@ -3,291 +3,245 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Chiringuito de la Arepa – Arepas venezolanas en Granada</title>
-  <meta name="description" content="El Chiringuito de la Arepa: cocina venezolana en Granada. Arepas, tequeños, tres leches y sancocho. Comer aquí o para llevar. Pedidos por WhatsApp." />
 
-  <!-- ✅ Conexión con tu CSS -->
-  <link <link rel="stylesheet" href="assets/css/style.css">
+  <title>El Chiringuito de la Arepa | Arepas venezolanas en Granada</title>
+  <meta name="description" content="Arepas venezolanas en Granada. Comer aquí o para llevar. Sancocho, tequeños y tres leches artesanal. Pedidos por WhatsApp." />
 
-  <!-- Fuente (segura y bonita) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- ✅ IMPORTANTE: enlaza el CSS donde realmente está -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="header">
+  <header class="header" id="top">
     <div class="container header__inner">
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <img class="brand__logo" src="assets/logo.png" alt="Logo El Chiringuito de la Arepa">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <img class="brand__logo" src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
         <div class="brand__text">
           <div class="brand__name">El Chiringuito de la Arepa</div>
-          <div class="brand__tagline">Sabores que abrazan el alma</div>
+          <div class="brand__tag">Sabores que abrazan el alma · Granada</div>
         </div>
       </a>
 
       <nav class="nav" aria-label="Navegación principal">
-        <a class="nav__link" href="#carta">Carta</a>
-        <a class="nav__link" href="#horarios">Horarios</a>
-        <a class="nav__link" href="#ubicacion">Ubicación</a>
-        <a class="nav__link" href="#redes">Redes</a>
-        <a class="nav__link nav__link--cta" href="#contacto">Contacto</a>
+        <a href="#carta">Carta</a>
+        <a href="#horarios">Horarios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#redes">Redes</a>
+        <a class="btn btn--ghost" href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="inicio">
+  <main>
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="pill">Cocina venezolana en Granada</p>
-          <h1>Arepas, tequeños y tradición. <span class="accent">Recién hecho</span>.</h1>
-          <p class="lead">
-            Un rincón donde la tradición se sirve caliente: masas hechas al momento, rellenos generosos
-            y el sabor auténtico de Venezuela.
+          <div class="pill">Cocina venezolana en Granada</div>
+          <h1>Arepas, tequeños y tradición. Recién hecho.</h1>
+          <p>
+            Un rincón donde la tradición se sirve caliente: masas hechas al momento,
+            rellenos generosos y el sabor auténtico de Venezuela.
           </p>
 
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="carta.html">Ver la carta</a>
-            <a class="btn btn--wa" target="_blank" rel="noopener" href="https://wa.me/34651651291">
-              Pedir por WhatsApp
-            </a>
+          <div class="cta">
+            <a class="btn" href="carta.html">Ver la carta</a>
+            <a class="btn btn--wa" href="https://wa.me/34651651291" target="_blank" rel="noopener">Pedir por WhatsApp</a>
           </div>
 
-          <div class="hero__badges">
-            <div class="badge">🫓 Comer aquí</div>
-            <div class="badge">🥡 Para llevar</div>
-            <div class="badge">🍲 Sancocho (días seleccionados)</div>
-          </div>
-
-          <div class="hero__mini">
-            <div class="mini">
-              <div class="mini__k">Dirección</div>
-              <div class="mini__v">C. Obispo Hurtado, 27, Ronda, 18004 Granada</div>
-            </div>
-            <div class="mini">
-              <div class="mini__k">Teléfono</div>
-              <div class="mini__v"><a href="tel:+34858830186">858 83 01 86</a> · <a href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp +34 651 65 12 91</a></div>
-            </div>
-          </div>
+          <ul class="bullets">
+            <li>🫓 Comer aquí</li>
+            <li>📦 Para llevar</li>
+            <li>🍲 Sancocho (días seleccionados)</li>
+          </ul>
         </div>
 
-        <div class="hero__media" aria-label="Galería destacada">
-          <div class="media__grid">
-            <figure class="media media--big">
-              <img src="assets/fachada.jpg" alt="Fachada de El Chiringuito de la Arepa">
-            </figure>
-            <figure class="media">
-              <img src="assets/arepa.jpg" alt="Arepa de carne mechada">
-            </figure>
-            <figure class="media">
-              <img src="assets/sancocho.jpg" alt="Sancocho de gallina y ternera">
-            </figure>
-            <figure class="media">
-              <img src="assets/tequenos.jpg" alt="Tequeños y Frescolita">
-            </figure>
-            <figure class="media">
-              <img src="assets/tresleches.jpg" alt="Tres leches artesanal">
-            </figure>
-            <figure class="media">
-              <img src="assets/local.jpg" alt="Interior del local">
-            </figure>
-          </div>
+        <div class="hero__media" aria-label="Imagen principal">
+          <img src="assets/img/fachada.jpg" alt="Fachada de El Chiringuito de la Arepa" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- Bio -->
-    <section class="section">
+    <section class="section" id="sobre">
       <div class="container">
-        <div class="card">
-          <div class="card__header">
-            <h2>Sobre nosotros</h2>
-            <p class="muted">Tradición, hogar y encuentro.</p>
-          </div>
-          <div class="card__content">
-            <p>
-              El Chiringuito de la Arepa es un rincón de cocina venezolana en Granada donde la tradición se sirve caliente y recién hecha.
-              Aquí la arepa no es solo comida: es memoria, es hogar y es encuentro.
-            </p>
-            <p>
-              Trabajamos con recetas tradicionales, masas hechas al momento y rellenos generosos que respetan el sabor auténtico de Venezuela.
-              Desde nuestras arepas clásicas —carne mechada, reina pepiada, quesos— hasta uno de nuestros platos más esperados:
-              el <strong>sancocho de gallina y ternera</strong>, cocinado a fuego lento, con caldo profundo, maíz, tubérculos y el sabor de siempre.
-            </p>
-            <p>
-              Cada plato está pensado para reconectar con lo esencial: comida honesta, sabor real y porciones que reconfortan.
-              Porque creemos que comer bien también es sentirse acompañado.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Carta -->
-    <section id="carta" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>La carta</h2>
-          <p class="muted">Precios y productos actualizados.</p>
-        </div>
-
-        <div class="grid2">
-          <div class="card">
-            <div class="card__content">
-              <h3>Ver carta completa</h3>
-              <p class="muted">
-                Accede a la carta con todos los productos y precios.
-              </p>
-              <div class="actions">
-                <a class="btn btn--primary" href="carta.html">Abrir carta</a>
-                <a class="btn" href="#contacto">Hacer pedido</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__content">
-              <h3>Recomendados</h3>
-              <ul class="list">
-                <li>🫓 Arepas clásicas: carne mechada, reina pepiada, quesos</li>
-                <li>🥟 Tequeños</li>
-                <li>🍰 Tres leches artesanal</li>
-                <li>🍲 Sancocho (según disponibilidad)</li>
-              </ul>
-              <p class="tiny muted">*Si quieres, luego agregamos “especiales de la semana”.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Horarios -->
-    <section id="horarios" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Horarios</h2>
-          <p class="muted">Actualizados.</p>
-        </div>
+        <h2>Sobre nosotros</h2>
+        <p class="lead">Tradición, hogar y encuentro.</p>
 
         <div class="card">
-          <div class="card__content">
-            <div class="hours">
-              <div class="hours__row"><span class="hours__day">Lunes</span><span class="hours__time">19:00–23:00</span></div>
-              <div class="hours__row"><span class="hours__day">Martes</span><span class="hours__time">19:00–23:00</span></div>
-              <div class="hours__row"><span class="hours__day">Miércoles</span><span class="hours__time">19:00–23:00</span></div>
-              <div class="hours__row"><span class="hours__day">Jueves</span><span class="hours__time is-closed">CERRADO</span></div>
-              <div class="hours__row"><span class="hours__day">Viernes</span><span class="hours__time">13:00–15:30 · 19:00–23:00</span></div>
-              <div class="hours__row"><span class="hours__day">Sábado</span><span class="hours__time">13:00–15:30 · 19:00–23:00</span></div>
-              <div class="hours__row"><span class="hours__day">Domingo</span><span class="hours__time">13:00–15:30 · 19:00–22:00</span></div>
-            </div>
-            <div class="note">
-              <strong>Servicio:</strong> Comer aquí y para llevar.
-            </div>
-          </div>
+          <p>
+            El Chiringuito de la Arepa es un rincón de cocina venezolana en Granada donde la tradición se sirve caliente y recién hecha.
+            Aquí la arepa no es solo comida: es memoria, es hogar y es encuentro.
+          </p>
+          <p>
+            Trabajamos con recetas tradicionales, masas hechas al momento y rellenos generosos que respetan el sabor auténtico de Venezuela.
+            Desde nuestras arepas clásicas —carne mechada, reina pepiada, quesos— hasta uno de nuestros platos más esperados:
+            <strong>el sancocho de gallina y ternera</strong>, cocinado a fuego lento, con caldo profundo, maíz, tubérculos y el sabor de siempre.
+          </p>
+          <p>
+            Cada plato está pensado para reconectar con lo esencial: comida honesta, sabor real y porciones que reconfortan.
+            Porque creemos que comer bien también es sentirse acompañado.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Ubicación -->
-    <section id="ubicacion" class="section">
+    <section class="section" id="carta">
       <div class="container">
-        <div class="section__head">
-          <h2>Ubicación</h2>
-          <p class="muted">Cómo llegar.</p>
-        </div>
+        <h2>La carta</h2>
+        <p class="lead">Precios y productos actualizados.</p>
 
-        <div class="grid2">
-          <div class="card">
-            <div class="card__content">
-              <h3>Dirección</h3>
-              <p class="muted">C. Obispo Hurtado, 27, Ronda, 18004 Granada</p>
-
-              <div class="actions">
-                <a class="btn btn--primary" target="_blank" rel="noopener"
-                   href="https://www.google.com/maps/search/?api=1&query=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada">
-                  Abrir en Google Maps
-                </a>
-              </div>
-
-              <div class="mini mini--stack">
-                <div class="mini__k">Teléfono</div>
-                <div class="mini__v"><a href="tel:+34858830186">858 83 01 86</a></div>
-                <div class="mini__k">WhatsApp</div>
-                <div class="mini__v"><a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card card--photo">
-            <img src="assets/local.jpg" alt="Interior del local">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Redes -->
-    <section id="redes" class="section">
-      <div class="container">
-        <div class="section__head">
-          <h2>Redes sociales</h2>
-          <p class="muted">Síguenos y entérate de promos, menú y novedades.</p>
-        </div>
-
-        <div class="grid3">
-          <a class="social" target="_blank" rel="noopener" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==">
-            <div class="social__name">Instagram</div><div class="social__hint">Fotos y promos</div>
-          </a>
-          <a class="social" target="_blank" rel="noopener" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93FmyyRmc3K">
-            <div class="social__name">TikTok</div><div class="social__hint">Vídeos</div>
-          </a>
-          <a class="social" target="_blank" rel="noopener" href="https://youtube.com/@elchiringuitodelaarepa?si=Fxf7ztHuyeMNgYOY">
-            <div class="social__name">YouTube</div><div class="social__hint">Contenido</div>
-          </a>
-          <a class="social" target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61584130088879">
-            <div class="social__name">Facebook</div><div class="social__hint">Comunidad</div>
-          </a>
-          <a class="social" target="_blank" rel="noopener" href="https://www.threads.com/@elchiringuitodelaarepa">
-            <div class="social__name">Threads</div><div class="social__hint">Novedades</div>
-          </a>
-          <a class="social social--wa" target="_blank" rel="noopener" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">
-            <div class="social__name">Canal WhatsApp</div><div class="social__hint">Menú, horarios y promos</div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="section section--cta">
-      <div class="container">
         <div class="cta">
-          <div class="cta__text">
-            <h2>¿Quieres pedir o preguntar algo?</h2>
-            <p class="muted">Escríbenos por WhatsApp o llámanos. Respondemos rápido.</p>
+          <a class="btn" href="carta.html">Abrir carta completa</a>
+          <a class="btn btn--wa" href="https://wa.me/34651651291" target="_blank" rel="noopener">Hacer pedido</a>
+        </div>
+
+        <div class="grid">
+          <article class="food">
+            <img src="assets/img/arepa.jpg" alt="Arepa de carne mechada" loading="lazy">
+            <div class="food__body">
+              <h3>Arepa de carne mechada</h3>
+              <p>Clásica, contundente y recién hecha.</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <img src="assets/img/sancocho.jpg" alt="Sancocho de gallina y ternera" loading="lazy">
+            <div class="food__body">
+              <h3>Sancocho (según disponibilidad)</h3>
+              <p>Caldo profundo, maíz y tubérculos.</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <img src="assets/img/tequenos.jpg" alt="Tequeños y Frescolita" loading="lazy">
+            <div class="food__body">
+              <h3>Tequeños</h3>
+              <p>Crujientes, perfectos para compartir.</p>
+            </div>
+          </article>
+
+          <article class="food">
+            <img src="assets/img/tresleches.jpg" alt="Tres leches artesanal" loading="lazy">
+            <div class="food__body">
+              <h3>Tres leches artesanal</h3>
+              <p>Postre venezolano, suave y cremoso.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="card card--small">
+          <p><strong>Servicio:</strong> Comer aquí y para llevar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="horarios">
+      <div class="container">
+        <h2>Horarios</h2>
+        <p class="lead">Actualizados.</p>
+
+        <div class="card">
+          <div class="hours">
+            <div class="hours__row"><span>Lunes</span><span>19:00–23:00</span></div>
+            <div class="hours__row"><span>Martes</span><span>19:00–23:00</span></div>
+            <div class="hours__row"><span>Miércoles</span><span>19:00–23:00</span></div>
+            <div class="hours__row"><span>Jueves</span><span class="closed">CERRADO</span></div>
+            <div class="hours__row"><span>Viernes</span><span>13:00–15:30 · 19:00–23:00</span></div>
+            <div class="hours__row"><span>Sábado</span><span>13:00–15:30 · 19:00–23:00</span></div>
+            <div class="hours__row"><span>Domingo</span><span>13:00–15:30 · 19:00–22:00</span></div>
           </div>
-          <div class="cta__actions">
-            <a class="btn btn--wa btn--big" target="_blank" rel="noopener" href="https://wa.me/34651651291">Pedir por WhatsApp</a>
-            <a class="btn btn--big" href="tel:+34858830186">Llamar 858 83 01 86</a>
+          <div class="divider"></div>
+          <p><strong>Servicio:</strong> Comer aquí y para llevar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ubicacion">
+      <div class="container">
+        <h2>Ubicación</h2>
+        <p class="lead">Cómo llegar.</p>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <p class="label">Dirección</p>
+            <p><strong>C. Obispo Hurtado, 27, Ronda, 18004 Granada</strong></p>
+
+            <div class="cta">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=C.+Obispo+Hurtado+27+18004+Granada">
+                Abrir en Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <img class="cover" src="assets/img/interior.jpg" alt="Interior del local" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="redes">
+      <div class="container">
+        <h2>Redes sociales</h2>
+        <p class="lead">Síguenos y entérate de promos, menú y novedades.</p>
+
+        <div class="card">
+          <div class="social">
+            <a target="_blank" rel="noopener" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==">Instagram · Fotos y promos</a>
+            <a target="_blank" rel="noopener" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93FmyyRmc3K">TikTok · Vídeos</a>
+            <a target="_blank" rel="noopener" href="https://youtube.com/@elchiringuitodelaarepa?si=Fxf7ztHuyeMNgYOY">YouTube · Contenido</a>
+            <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61584130088879">Facebook · Comunidad</a>
+            <a target="_blank" rel="noopener" href="https://www.threads.com/@elchiringuitodelaarepa">Threads · Novedades</a>
+            <a target="_blank" rel="noopener" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">Canal WhatsApp · Menú, horarios y promos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="container">
+        <h2>¿Quieres pedir o preguntar algo?</h2>
+        <p class="lead">Escríbenos por WhatsApp o llámanos. Respondemos rápido.</p>
+
+        <div class="grid grid--2">
+          <div class="card">
+            <p class="label">Teléfono</p>
+            <p><a class="link" href="tel:+34858830186">858 83 01 86</a></p>
+
+            <p class="label">WhatsApp</p>
+            <p><a class="link" href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></p>
+
+            <div class="cta">
+              <a class="btn btn--wa" href="https://wa.me/34651651291" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+              <a class="btn btn--ghost" href="tel:+34858830186">Llamar 858 83 01 86</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <p class="label">Dirección</p>
+            <p><strong>C. Obispo Hurtado, 27, Ronda, 18004 Granada</strong></p>
+            <div class="cta">
+              <a class="btn btn--ghost" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/search/?api=1&query=C.+Obispo+Hurtado+27+18004+Granada">
+                Abrir en Google Maps
+              </a>
+            </div>
           </div>
         </div>
 
-        <footer class="footer">
-          <div class="footer__line"></div>
-          <div class="footer__bottom">
-            <div>© 2026 El Chiringuito de la Arepa · “Sabores que abrazan el alma”</div>
-            <div class="footer__mini">
-              <a href="carta.html">Carta</a>
-              <span>·</span>
-              <a href="#ubicacion">Ubicación</a>
-              <span>·</span>
-              <a href="#redes">Redes</a>
-            </div>
-          </div>
-        </footer>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© 2026 El Chiringuito de la Arepa · “Sabores que abrazan el alma”</div>
+      <div class="footer__links">
+        <a href="#carta">Carta</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#redes">Redes</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
