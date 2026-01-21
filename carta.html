@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1010" />
-  <meta name="description" content="Carta - El Chiringuito de la Arepa (Granada). Arepas, tequeños y postres." />
+  <meta name="description" content="Carta - El Chiringuito de la Arepa (Granada). Arepas, tequeños, sancocho y postres." />
   <title>Carta · El Chiringuito de la Arepa</title>
 
   <link rel="icon" href="assets/img/logo.png" />
@@ -20,6 +20,7 @@
       --r-lg:26px;
       --shadow: 0 14px 40px rgba(0,0,0,.45);
       --shadow2: 0 10px 24px rgba(0,0,0,.35);
+      --line: rgba(255,255,255,.10);
     }
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
@@ -34,8 +35,10 @@
       padding-bottom: 220px;
     }
     a{ color:inherit; text-decoration:none; }
+
     .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
 
+    /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
@@ -60,7 +63,7 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
       box-shadow: 0 10px 20px rgba(0,0,0,.22);
-      font-weight: 800;
+      font-weight: 900;
       white-space:nowrap;
     }
     .pill.gold{
@@ -69,6 +72,7 @@
       color:#f2e5cf;
     }
 
+    /* Hero */
     .hero{
       margin-top: 18px;
       padding: 20px 18px;
@@ -79,6 +83,17 @@
     }
     .hero h1{ margin: 0 0 8px; font-size: 44px; letter-spacing:-.8px; }
     .hero p{ margin:0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+
+    .note{
+      margin-top:12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(184,148,82,.35);
+      background: rgba(184,148,82,.10);
+      color: rgba(242,229,207,.92);
+      font-weight: 800;
+      line-height: 1.4;
+    }
 
     .nav{
       margin-top: 14px;
@@ -91,7 +106,7 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.06);
       color: var(--text);
-      font-weight: 900;
+      font-weight: 950;
       box-shadow: var(--shadow2);
       cursor:pointer;
     }
@@ -100,10 +115,15 @@
       border-color: rgba(184,148,82,.28);
       color: #fff1d6;
     }
+    .btn.wa{
+      background: rgba(37,211,102,.14);
+      border-color: rgba(37,211,102,.22);
+    }
 
+    /* Sections */
     .section{ margin-top: 22px; }
     .section h2{ margin:0; font-size: 38px; letter-spacing:-.6px; }
-    .section .sub{ margin-top:6px; color: var(--muted); font-weight:700; }
+    .section .sub{ margin-top:6px; color: var(--muted); font-weight:800; }
 
     .panel{
       margin-top: 12px;
@@ -111,12 +131,13 @@
       border: 1px solid rgba(255,255,255,.08);
       background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       box-shadow: var(--shadow);
-      padding: 16px;
+      padding: 14px;
     }
 
     .item{
       display:flex;
       justify-content:space-between;
+      align-items:flex-start;
       gap:14px;
       padding: 14px 12px;
       border-radius: 16px;
@@ -124,14 +145,65 @@
       border: 1px solid rgba(255,255,255,.06);
       margin-top: 10px;
     }
-    .item b{ font-size: 18px; }
-    .item span{ color: var(--muted); font-weight: 700; }
+    .item:first-child{ margin-top: 0; }
 
+    .item .left b{ font-size: 18px; display:block; }
+    .item .left small{ display:block; margin-top:4px; color: var(--muted); font-weight:800; line-height:1.35; }
+    .price{
+      font-size: 18px;
+      font-weight: 950;
+      color: #f2e5cf;
+      white-space: nowrap;
+    }
+
+    .divider{
+      height:1px;
+      margin: 12px 0 2px;
+      background: rgba(255,255,255,.08);
+      border-radius: 999px;
+    }
+
+    /* sticky category bar (mobile) */
+    .catbar{
+      position: sticky;
+      top: 64px;
+      z-index: 45;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,16,16,.55);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow2);
+      display:flex;
+      gap:10px;
+      overflow:auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .catbar::-webkit-scrollbar{ display:none; }
+
+    .chip{
+      display:inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .chip.gold{
+      background: rgba(184,148,82,.22);
+      border-color: rgba(184,148,82,.28);
+      color:#fff1d6;
+    }
+
+    /* Footer */
     footer{
       margin-top: 26px;
       text-align:center;
       color: rgba(234,241,239,.62);
-      font-weight: 700;
+      font-weight: 800;
       padding: 18px 6px 8px;
     }
     footer a{
@@ -140,6 +212,7 @@
       text-underline-offset: 4px;
     }
 
+    /* WhatsApp Floating */
     .wa-float{
       position: fixed;
       right: 16px;
@@ -158,6 +231,12 @@
     }
     .wa-float a span{ font-size: 18px; }
     .wa-float a small{ font-weight: 900; opacity: .9; font-size: 16px; }
+
+    /* Mobile tweaks */
+    @media (max-width: 520px){
+      .hero h1{ font-size: 40px; }
+      .section h2{ font-size: 34px; }
+    }
   </style>
 </head>
 
@@ -178,54 +257,159 @@
   <main class="wrap">
     <section class="hero">
       <h1>Carta</h1>
-      <p>Elige tu antojo y pídelo por WhatsApp. (Aquí podemos ir completando precios y opciones cuando me los pases.)</p>
+      <p>Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
+
+      <div class="note">
+        ✅ Si quieres, dime los precios y te lo dejo TODO rellenado sin “—”.
+      </div>
 
       <div class="nav">
         <a class="btn gold" href="#arepas">Arepas</a>
         <a class="btn" href="#tequenos">Tequeños</a>
+        <a class="btn" href="#sancocho">Sancocho</a>
         <a class="btn" href="#postres">Postres</a>
-        <a class="btn" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn" href="#bebidas">Bebidas</a>
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      </div>
+
+      <div class="catbar" aria-label="Categorías">
+        <a class="chip gold" href="#arepas">Arepas</a>
+        <a class="chip" href="#tequenos">Tequeños</a>
+        <a class="chip" href="#sancocho">Sancocho</a>
+        <a class="chip" href="#postres">Postres</a>
+        <a class="chip" href="#bebidas">Bebidas</a>
       </div>
     </section>
 
+    <!-- AREPAS -->
     <section class="section" id="arepas">
       <h2>Arepas</h2>
       <div class="sub">Recién hechas. Rellenos generosos.</div>
 
       <div class="panel">
-        <div class="item"><div><b>Reina Pepiada</b><div><span>Pollo y aguacate</span></div></div><b>—</b></div>
-        <div class="item"><div><b>Carne Mechada</b><div><span>Clásica venezolana</span></div></div><b>—</b></div>
-        <div class="item"><div><b>Carne Picada + Queso</b><div><span>Latino o cheddar</span></div></div><b>—</b></div>
-        <div class="item"><div><b>Queso Latino</b><div><span>Suave y sabroso</span></div></div><b>—</b></div>
+        <div class="item">
+          <div class="left">
+            <b>Reina Pepiada</b>
+            <small>Pollo desmechado + aguacate cremoso.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="item">
+          <div class="left">
+            <b>Carne Mechada</b>
+            <small>Clásica venezolana, jugosa y contundente.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="item">
+          <div class="left">
+            <b>Carne Picada + Queso</b>
+            <small>Queso latino o cheddar (a elección).</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="item">
+          <div class="left">
+            <b>Queso Latino</b>
+            <small>Suave, sabroso y bien servido.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="divider"></div>
 
         <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa." target="_blank" rel="noopener">Pedir Arepa</a>
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa.%20Mi%20elecci%C3%B3n%20es%3A%20" target="_blank" rel="noopener">Pedir Arepa</a>
         </div>
       </div>
     </section>
 
+    <!-- TEQUEÑOS -->
     <section class="section" id="tequenos">
       <h2>Tequeños</h2>
       <div class="sub">Crujientes. Perfectos para compartir.</div>
 
       <div class="panel">
-        <div class="item"><div><b>Tequeños (ración)</b><div><span>Con salsa (opcional)</span></div></div><b>—</b></div>
+        <div class="item">
+          <div class="left">
+            <b>Tequeños (ración)</b>
+            <small>Recién hechos. Salsa opcional.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="divider"></div>
 
         <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20teque%C3%B1os." target="_blank" rel="noopener">Pedir Tequeños</a>
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20teque%C3%B1os.%20Cantidad%3A%20" target="_blank" rel="noopener">Pedir Tequeños</a>
         </div>
       </div>
     </section>
 
+    <!-- SANCOCHO -->
+    <section class="section" id="sancocho">
+      <h2>Sancocho</h2>
+      <div class="sub">Caldo profundo, maíz y tubérculos (según disponibilidad).</div>
+
+      <div class="panel">
+        <div class="item">
+          <div class="left">
+            <b>Sancocho de Gallina y Ternera</b>
+            <small>Plato especial. Pregunta por disponibilidad y horarios.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFhoy%20hay%20sancocho%3F%20%C2%BFA%20qu%C3%A9%20hora%20lo%20tienen%20listo%3F" target="_blank" rel="noopener">Preguntar</a>
+          <a class="btn" href="index.html#horarios">Ver horarios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTRES -->
     <section class="section" id="postres">
       <h2>Postres</h2>
       <div class="sub">Suave, cremoso y venezolano.</div>
 
       <div class="panel">
-        <div class="item"><div><b>Tres Leches</b><div><span>Hecho en casa</span></div></div><b>—</b></div>
+        <div class="item">
+          <div class="left">
+            <b>Tres Leches</b>
+            <small>Hecho en casa. Producto artesanal.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div class="divider"></div>
 
         <div style="margin-top:12px;">
           <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFme%20guardas%20un%20tres%20leches%3F" target="_blank" rel="noopener">Pedir Postre</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEBIDAS (placeholder) -->
+    <section class="section" id="bebidas">
+      <h2>Bebidas</h2>
+      <div class="sub">Para acompañar tu arepa.</div>
+
+      <div class="panel">
+        <div class="item">
+          <div class="left">
+            <b>Refresco / Agua</b>
+            <small>Pregunta por opciones disponibles.</small>
+          </div>
+          <div class="price">—</div>
+        </div>
+
+        <div style="margin-top:12px;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFqu%C3%A9%20bebidas%20tienen%20hoy%3F" target="_blank" rel="noopener">Preguntar bebidas</a>
         </div>
       </div>
     </section>
@@ -243,4 +427,4 @@
     </a>
   </div>
 </body>
-</html>
+  </html>
