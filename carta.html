@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#071010" />
-  <meta name="description" content="Carta con precios - El Chiringuito de la Arepa (Granada). Arepas, raciones, bebidas y postres. Pedidos por WhatsApp." />
+  <meta name="description" content="Carta con precios de El Chiringuito de la Arepa (Granada). Arepas, tequeños, bebidas y postres." />
   <title>Carta · El Chiringuito de la Arepa</title>
 
   <link rel="icon" href="assets/img/logo.png" />
@@ -12,7 +12,6 @@
   <style>
     :root{
       --bg:#071010;
-      --panel:rgba(255,255,255,.06);
       --text:#eaf1ef;
       --muted:rgba(234,241,239,.72);
       --brand:#b89452;
@@ -36,6 +35,7 @@
       padding-bottom: 220px;
     }
     a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
     .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
 
     .topbar{
@@ -73,18 +73,30 @@
 
     .hero{
       margin-top: 18px;
-      padding: 20px 18px;
+      padding: 22px 18px;
       border-radius: var(--r-lg);
       border: 1px solid rgba(255,255,255,.08);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
       box-shadow: var(--shadow);
     }
-    .hero h1{ margin: 0 0 8px; font-size: 44px; letter-spacing:-.8px; }
-    .hero p{ margin:0; color: var(--muted); font-size: 16px; line-height: 1.6; }
+    .hero h1{
+      margin: 0 0 8px;
+      font-size: 54px;
+      letter-spacing:-.9px;
+      line-height: 1.02;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 70ch;
+      font-weight: 800;
+    }
 
-    .nav{
+    .tabs{
       margin-top: 14px;
-      display:flex; gap:10px; flex-wrap:wrap;
+      display:flex; flex-wrap:wrap; gap:10px;
     }
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -96,6 +108,7 @@
       font-weight: 950;
       box-shadow: var(--shadow2);
       cursor:pointer;
+      gap:10px;
     }
     .btn.gold{
       background: rgba(184,148,82,.22);
@@ -109,7 +122,7 @@
     }
 
     .section{ margin-top: 22px; }
-    .section h2{ margin:0; font-size: 38px; letter-spacing:-.6px; }
+    .section h2{ margin:0; font-size: 44px; letter-spacing:-.9px; }
     .section .sub{ margin-top:6px; color: var(--muted); font-weight:800; }
 
     .panel{
@@ -121,34 +134,48 @@
       padding: 16px;
     }
 
+    .headline{
+      display:flex; align-items:center; gap:12px;
+      padding: 12px;
+      border-radius: 22px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow2);
+    }
+    .thumb{
+      width: 76px; height: 76px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      flex:0 0 auto;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .headline b{ font-size: 22px; letter-spacing:-.3px; }
+    .headline span{ color: var(--muted); font-weight:800; margin-top:2px; display:block; }
+
     .item{
-      display:flex;
-      justify-content:space-between;
-      gap:14px;
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px;
       padding: 14px 12px;
-      border-radius: 16px;
+      border-radius: 18px;
       background: rgba(255,255,255,.035);
       border: 1px solid rgba(255,255,255,.06);
       margin-top: 10px;
     }
-    .item b{ font-size: 18px; }
-    .item .desc{ color: var(--muted); font-weight: 800; margin-top: 4px; line-height: 1.35; }
+    .item b{ display:block; font-size: 18px; letter-spacing:-.2px; }
+    .item small{ display:block; color: var(--muted); font-weight: 800; margin-top: 3px; line-height:1.35; }
     .price{
-      font-size: 18px;
+      white-space:nowrap;
       font-weight: 950;
-      color: #f2e5cf;
-      white-space: nowrap;
+      color:#f2e5cf;
+      padding-left: 10px;
     }
-
     .note{
       margin-top: 12px;
-      padding: 12px 12px;
-      border-radius: 16px;
-      border: 1px dashed rgba(184,148,82,.35);
-      background: rgba(184,148,82,.10);
-      color: rgba(242,229,207,.92);
-      font-weight: 850;
-      line-height: 1.4;
+      color: rgba(234,241,239,.68);
+      font-weight: 800;
+      line-height:1.5;
     }
 
     footer{
@@ -196,318 +223,4 @@
         </div>
       </div>
       <a class="pill gold" href="index.html">Inicio</a>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero">
-      <h1>Carta</h1>
-      <p>Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
-
-      <div class="note">✅ Si quieres, dime qué suele pedir la gente (TOP 5) y te armo “Recomendados” arriba.</div>
-
-      <div class="nav">
-        <a class="btn gold" href="#arepas">Arepas</a>
-        <a class="btn" href="#raciones">Raciones</a>
-        <a class="btn" href="#bebidas">Bebidas</a>
-        <a class="btn" href="#postres">Postres</a>
-        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      </div>
-    </section>
-
-    <!-- AREPAS -->
-    <section class="section" id="arepas">
-      <h2>Arepas</h2>
-      <div class="sub">Recién hechas. Rellenos generosos.</div>
-
-      <div class="panel">
-        <div class="item">
-          <div>
-            <b>Reina Pepiada</b>
-            <div class="desc">Pollo, aguacate, mayonesa.</div>
-          </div>
-          <div class="price">6,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Huevo de Codorniz</b>
-            <div class="desc">En salsa rosa.</div>
-          </div>
-          <div class="price">5,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Jamón York</b>
-            <div class="desc">Con queso blanco latino o cheddar.</div>
-          </div>
-          <div class="price">4,90€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Ensalada de Atún</b>
-            <div class="desc">Pimiento rojo, aceitunas, tomate, cebolla.</div>
-          </div>
-          <div class="price">5,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Salchichas</b>
-            <div class="desc">Con huevo revuelto, tomate y cebolla “guisado”.</div>
-          </div>
-          <div class="price">5,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Pabellón</b>
-            <div class="desc">Carne mechada de ternera, alubias negras, plátano macho maduro frito y queso blanco latino.</div>
-          </div>
-          <div class="price">7,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Queso Blanco Latino y Queso Cheddar</b>
-          </div>
-          <div class="price">5,00€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Queso Blanco Latino</b>
-            <div class="desc">Sólo.</div>
-          </div>
-          <div class="price">4,60€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Queso Cheddar</b>
-            <div class="desc">Sólo.</div>
-          </div>
-          <div class="price">4,60€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Malofalla</b>
-            <div class="desc">Chorizo picante con queso blanco latino o cheddar.</div>
-          </div>
-          <div class="price">5,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Perico</b>
-            <div class="desc">Huevo, tomate, cebolla (en salsa) y queso blanco latino o cheddar.</div>
-          </div>
-          <div class="price">5,60€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Catira</b>
-            <div class="desc">Pollo y queso cheddar.</div>
-          </div>
-          <div class="price">5,90€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Carne Picada</b>
-            <div class="desc">Con queso blanco latino o cheddar.</div>
-          </div>
-          <div class="price">6,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Pernil (Jamón) al Horno</b>
-            <div class="desc">En salsa vegetales y zumo de naranja.</div>
-          </div>
-          <div class="price">6,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Alubias con Queso Blanco Latino</b>
-          </div>
-          <div class="price">5,30€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Alubias con Queso Cheddar</b>
-          </div>
-          <div class="price">5,30€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Mechada Sola</b>
-          </div>
-          <div class="price">6,30€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Mechada con Queso Blanco Latino</b>
-          </div>
-          <div class="price">6,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Mechada con Queso Cheddar</b>
-          </div>
-          <div class="price">6,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Pollo Sólo</b>
-          </div>
-          <div class="price">5,80€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Huevo Revuelto</b>
-            <div class="desc">Sólo.</div>
-          </div>
-          <div class="price">4,90€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Vegetariana / Vegana</b>
-            <div class="desc">Por encargo.</div>
-          </div>
-          <div class="price">6,60€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>La Viuda</b>
-            <div class="desc">Arepa sin relleno.</div>
-          </div>
-          <div class="price">1,00€</div>
-        </div>
-
-        <div class="note">
-          • Por cada relleno adicional: <b>0,90€</b><br>
-          • Salsa para llevar (ajo o maíz): <b>0,60€</b><br>
-          • Queso a la plancha: <b>1,50€</b>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20arepa." target="_blank" rel="noopener">Pedir Arepa</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RACIONES -->
-    <section class="section" id="raciones">
-      <h2>Raciones</h2>
-      <div class="sub">Para compartir (o no 😉).</div>
-
-      <div class="panel">
-        <div class="item">
-          <div>
-            <b>Plátano Macho Maduro Frito</b>
-            <div class="desc">Con queso blanco latino y mantequilla.</div>
-          </div>
-          <div class="price">4,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Ensalada de Atún con Arepa</b>
-          </div>
-          <div class="price">6,50€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Pernil (Jamón) al Horno con Aguacate</b>
-          </div>
-          <div class="price">8,00€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Tequeños (5 u.)</b>
-          </div>
-          <div class="price">6,00€</div>
-        </div>
-
-        <div class="item">
-          <div>
-            <b>Tequeños (10 u.)</b>
-          </div>
-          <div class="price">11,00€</div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20pedir%20una%20raci%C3%B3n." target="_blank" rel="noopener">Pedir Ración</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- BEBIDAS -->
-    <section class="section" id="bebidas">
-      <h2>Bebidas</h2>
-      <div class="sub">Para acompañar tu arepa.</div>
-
-      <div class="panel">
-        <div class="item"><div><b>Agua</b></div><div class="price">1,50€</div></div>
-        <div class="item"><div><b>Coca-Cola</b></div><div class="price">2,00€</div></div>
-        <div class="item"><div><b>Coca-Cola Zero</b></div><div class="price">2,00€</div></div>
-        <div class="item"><div><b>Fanta Naranja</b></div><div class="price">2,00€</div></div>
-        <div class="item"><div><b>Fanta Limón</b></div><div class="price">2,00€</div></div>
-        <div class="item"><div><b>Nestea</b></div><div class="price">2,00€</div></div>
-
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20quiero%20agregar%20bebidas%20al%20pedido." target="_blank" rel="noopener">Pedir Bebidas</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- POSTRES -->
-    <section class="section" id="postres">
-      <h2>Postres</h2>
-      <div class="sub">Suave, cremoso y venezolano.</div>
-
-      <div class="panel">
-        <div class="item">
-          <div>
-            <b>Tres Leches</b>
-            <div class="desc">Hecho en casa. Producto artesanal.</div>
-          </div>
-          <div class="price">4,90€</div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%2C%20%C2%BFme%20guardas%20un%20tres%20leches%3F" target="_blank" rel="noopener">Pedir Postre</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 El Chiringuito de la Arepa ·
-      <a href="index.html">Inicio</a> ·
-      <a href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp</a>
-    </footer>
-  </main>
-
-  <div class="wa-float" aria-label="WhatsApp">
-    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
-      <span>WhatsApp</span> <small>↗</small>
-    </a>
-  </div>
-</body>
-</html>
+    </
