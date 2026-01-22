@@ -36,6 +36,7 @@
       padding-bottom: 220px;
     }
     a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
     .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
 
     .topbar{
@@ -78,6 +79,8 @@
       border: 1px solid rgba(255,255,255,.08);
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
       box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
     }
     .hero h1{
       margin: 0 0 8px;
@@ -107,6 +110,7 @@
       font-weight: 950;
       box-shadow: var(--shadow2);
       cursor:pointer;
+      gap:10px;
     }
     .btn.gold{
       background: rgba(184,148,82,.22);
@@ -132,6 +136,38 @@
       padding: 16px;
     }
 
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 640px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    .card{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      display:flex;
+      gap:12px;
+      padding: 12px;
+      align-items:center;
+    }
+    .thumb{
+      width: 76px; height: 76px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      flex: 0 0 auto;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .card b{ display:block; font-size: 18px; letter-spacing:-.2px; }
+    .card span{ display:block; color: var(--muted); font-weight: 800; margin-top: 3px; }
+
     .row{
       display:flex; align-items:center; justify-content:space-between;
       gap: 12px;
@@ -142,7 +178,6 @@
       margin-top: 10px;
       font-weight: 900;
     }
-    .row small{ color: var(--muted); font-weight: 800; }
     .row .right{ color: #f2e5cf; }
 
     .address{
@@ -154,6 +189,15 @@
     }
     .address b{ display:block; margin-bottom:4px; }
     .address span{ color: var(--muted); font-weight: 800; }
+
+    .socials{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+    .icon{
+      width: 18px; height: 18px; display:inline-block;
+      opacity:.9;
+    }
 
     footer{
       margin-top: 26px;
@@ -213,7 +257,44 @@
 
       <div class="cta-row">
         <a class="btn gold" href="carta.html">Ver la carta</a>
-        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+          WhatsApp <span style="font-weight:900;opacity:.9">↗</span>
+        </a>
+      </div>
+
+      <!-- Fotos / categorías -->
+      <div class="grid" aria-label="Categorías">
+        <a class="card" href="carta.html#arepas">
+          <div class="thumb"><img src="assets/img/arepa.png" alt="Arepas"></div>
+          <div>
+            <b>Arepas</b>
+            <span>Reina Pepiada · Pabellón · Mechada…</span>
+          </div>
+        </a>
+
+        <a class="card" href="carta.html#tequenos">
+          <div class="thumb"><img src="assets/img/tequenos.png" alt="Tequeños"></div>
+          <div>
+            <b>Tequeños</b>
+            <span>5 o 10 unidades</span>
+          </div>
+        </a>
+
+        <a class="card" href="carta.html#sancocho">
+          <div class="thumb"><img src="assets/img/sancocho.png" alt="Sancocho"></div>
+          <div>
+            <b>Sancocho</b>
+            <span>Consulta días y horarios</span>
+          </div>
+        </a>
+
+        <a class="card" href="carta.html#postres">
+          <div class="thumb"><img src="assets/img/tresleches.png" alt="Tres leches"></div>
+          <div>
+            <b>Postres</b>
+            <span>Tres Leches casero</span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -250,6 +331,40 @@
       </div>
     </section>
 
+    <section class="section" id="redes">
+      <h2>Redes sociales</h2>
+      <div class="sub">Síguenos y mira novedades</div>
+
+      <div class="panel">
+        <!-- CAMBIA AQUÍ LOS LINKS A TUS REDES -->
+        <div class="socials">
+          <a class="btn" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.6-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+            Instagram
+          </a>
+
+          <a class="btn" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.8 7.3c-.1 0-.5-.2-.7-.3-1-.4-2-.7-3.1-.7-.7 0-1.3.1-1.9.4v8.1c0 2.3-1.9 4.2-4.2 4.2S5.7 17.1 5.7 14.8 7.6 10.6 10 10.6c.3 0 .6 0 .9.1V8.7c-.3 0-.6-.1-.9-.1-3.4 0-6.2 2.8-6.2 6.2S6.6 21 10 21s6.2-2.8 6.2-6.2V9.5c1.2.8 2.6 1.2 4.1 1.2V8.8c-.2 0-.4 0-.4-.1Z"/></svg>
+            TikTok
+          </a>
+
+          <a class="btn" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 15V9l6 3-6 3Zm12-3a9.97 9.97 0 0 1-3.1 7.2A9.97 9.97 0 0 1 12 22a9.97 9.97 0 0 1-7.2-3.1A9.97 9.97 0 0 1 2 12a9.97 9.97 0 0 1 3.1-7.2A9.97 9.97 0 0 1 12 2a9.97 9.97 0 0 1 7.2 3.1A9.97 9.97 0 0 1 22 12Z"/></svg>
+            YouTube
+          </a>
+
+          <a class="btn" href="#" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8.1V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.4l-.4 2.9h-2v7A10 10 0 0 0 22 12Z"/></svg>
+            Facebook
+          </a>
+        </div>
+
+        <div style="margin-top:12px; color: var(--muted); font-weight:800;">
+          Si me pasas los links exactos de tus redes, te los dejo ya puestos.
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="contacto">
       <h2>Contacto rápido</h2>
       <div class="sub">Te respondemos por WhatsApp</div>
@@ -272,7 +387,7 @@
     </section>
 
     <footer>
-      © 2026 El Chiringuito de la Arepa · Granada
+      © 2026 El Chiringuito de la Arepa · Granada · <a href="carta.html">Carta</a>
     </footer>
   </main>
 
