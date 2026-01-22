@@ -178,6 +178,25 @@
       line-height:1.5;
     }
 
+    /* 📸 Banner real para bebidas */
+    .photo{
+      margin-top: 12px;
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      box-shadow: var(--shadow2);
+    }
+    .photo img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+    @media (max-width: 520px){
+      .photo img{ height: 200px; }
+    }
+
     footer{
       margin-top: 26px;
       text-align:center;
@@ -237,6 +256,7 @@
         <a class="btn" href="#tequenos">Tequeños</a>
         <a class="btn" href="#bebidas">Bebidas</a>
         <a class="btn" href="#postres">Postres</a>
+        <a class="btn" href="#sancocho">Sancocho</a>
         <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
       </div>
     </section>
@@ -341,11 +361,16 @@
 
       <div class="panel">
         <div class="headline">
-          <div class="thumb"><img src="assets/img/logo.png" alt="Bebidas"></div>
+          <div class="thumb"><img src="assets/img/bebidas.png" alt="Bebidas"></div>
           <div>
             <b>Bebidas</b>
             <span>Frías y calientes.</span>
           </div>
+        </div>
+
+        <!-- Imagen real y llamativa (banner) -->
+        <div class="photo">
+          <img src="assets/img/bebidas.png" alt="Selección de bebidas">
         </div>
 
         <div class="item"><div><b>Café solo</b><small>—</small></div><div class="price">1,50€</div></div>
@@ -412,6 +437,7 @@
         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20%C2%BFhay%20sancocho%20hoy%3F%20%C2%BFMe%20confirmas%20horarios%3F" target="_blank" rel="noopener">Preguntar</a>
           <a class="btn" href="index.html#horarios">Ver horarios</a>
+          <a class="btn" href="#top">Ir arriba</a>
         </div>
       </div>
     </section>
