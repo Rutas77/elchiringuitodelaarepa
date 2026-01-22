@@ -190,6 +190,53 @@
     .address b{ display:block; margin-bottom:4px; }
     .address span{ color: var(--muted); font-weight: 800; }
 
+    /* ⭐⭐⭐⭐⭐ reseñas */
+    .rating{
+      margin-top: 12px;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(184,148,82,.12);
+      border: 1px solid rgba(184,148,82,.22);
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .stars{
+      display:flex; align-items:center; gap:4px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #ffda86;
+    }
+    .stars span{
+      display:inline-block;
+      transform-origin: center;
+      animation: starPulse 2.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+    }
+    .stars span:nth-child(2){ animation-delay:.12s; }
+    .stars span:nth-child(3){ animation-delay:.24s; }
+    .stars span:nth-child(4){ animation-delay:.36s; }
+    .stars span:nth-child(5){ animation-delay:.48s; }
+
+    @keyframes starPulse{
+      0%, 100% { transform: translateY(0) scale(1); opacity: .92; }
+      50% { transform: translateY(-2px) scale(1.06); opacity: 1; }
+    }
+
+    .map{
+      margin-top: 12px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+    }
+    .map iframe{
+      width:100%;
+      height: 280px;
+      border:0;
+      display:block;
+    }
+
     .socials{
       display:flex; flex-wrap:wrap; gap:10px;
       margin-top: 12px;
@@ -306,13 +353,54 @@
         <div class="address">
           <div style="font-size:18px; line-height:1;">📍</div>
           <div>
-            <b>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</b>
-            <span>Te esperamos en el corazón de Granada.</span>
+            <b>El Chiringuito de la Arepa · Granada</b>
+            <span>Haz clic para abrir la ruta en Google Maps.</span>
           </div>
         </div>
 
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn gold" href="https://share.google/rXQNjjwit6sxKtJXI" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn" href="#resenas">★★★★★ en Google</a>
+        </div>
+
+        <!-- 🗺️ MAPA EMBEBIDO (NECESITA LINK "Insertar un mapa" DE GOOGLE MAPS) -->
+        <div class="map" aria-label="Mapa">
+          <!-- Reemplaza el src por el link embed real -->
+          <iframe
+            src=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa de El Chiringuito de la Arepa">
+          </iframe>
+        </div>
+
+        <div style="margin-top:10px; color:var(--muted); font-weight:800; font-size:14px;">
+          Nota: para que el mapa se vea aquí, pega el enlace “Insertar un mapa” (iframe) de Google Maps en el src.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resenas">
+      <h2>Reseñas</h2>
+      <div class="sub">Tu apoyo nos ayuda muchísimo</div>
+
+      <div class="panel">
+        <div class="rating">
+          <div>
+            <div style="font-weight:950;">★★★★★ en Google</div>
+            <div style="color:var(--muted); font-weight:800; margin-top:4px;">
+              Si te gustó, ayúdanos con una reseña.
+            </div>
+          </div>
+
+          <div class="stars" aria-label="5 estrellas">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn gold" href="https://share.google/4Q3fXHu8YROQmdp7u" target="_blank" rel="noopener">Dejar reseña</a>
+          <a class="btn" href="https://share.google/rXQNjjwit6sxKtJXI" target="_blank" rel="noopener">Ver en Maps</a>
         </div>
       </div>
     </section>
@@ -336,31 +424,17 @@
       <div class="sub">Síguenos y mira novedades</div>
 
       <div class="panel">
-        <!-- CAMBIA AQUÍ LOS LINKS A TUS REDES -->
         <div class="socials">
-          <a class="btn" href="#" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.6-.9a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
-            Instagram
-          </a>
-
-          <a class="btn" href="#" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.8 7.3c-.1 0-.5-.2-.7-.3-1-.4-2-.7-3.1-.7-.7 0-1.3.1-1.9.4v8.1c0 2.3-1.9 4.2-4.2 4.2S5.7 17.1 5.7 14.8 7.6 10.6 10 10.6c.3 0 .6 0 .9.1V8.7c-.3 0-.6-.1-.9-.1-3.4 0-6.2 2.8-6.2 6.2S6.6 21 10 21s6.2-2.8 6.2-6.2V9.5c1.2.8 2.6 1.2 4.1 1.2V8.8c-.2 0-.4 0-.4-.1Z"/></svg>
-            TikTok
-          </a>
-
-          <a class="btn" href="#" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 15V9l6 3-6 3Zm12-3a9.97 9.97 0 0 1-3.1 7.2A9.97 9.97 0 0 1 12 22a9.97 9.97 0 0 1-7.2-3.1A9.97 9.97 0 0 1 2 12a9.97 9.97 0 0 1 3.1-7.2A9.97 9.97 0 0 1 12 2a9.97 9.97 0 0 1 7.2 3.1A9.97 9.97 0 0 1 22 12Z"/></svg>
-            YouTube
-          </a>
-
-          <a class="btn" href="#" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8.1V12h2.3V9.8c0-2.3 1.4-3.6 3.5-3.6 1 0 2 .2 2 .2v2.2h-1.1c-1.1 0-1.4.7-1.4 1.4V12h2.4l-.4 2.9h-2v7A10 10 0 0 0 22 12Z"/></svg>
-            Facebook
-          </a>
+          <a class="btn" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93GocN9fh26" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn" href="https://youtube.com/@elchiringuitodelaarepa?si=t8Q8OkkwGcGzGnQD" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads</a>
+          <a class="btn" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp</a>
         </div>
 
         <div style="margin-top:12px; color: var(--muted); font-weight:800;">
-          Si me pasas los links exactos de tus redes, te los dejo ya puestos.
+          Síguenos para ver promos, horarios especiales y novedades.
         </div>
       </div>
     </section>
