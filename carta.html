@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#071010" />
-  <meta name="description" content="Carta con precios de El Chiringuito de la Arepa (Granada). Arepas, tequeños, bebidas, postres y sancocho." />
+  <meta name="description" content="Carta de El Chiringuito de la Arepa (Granada). Arepas, tequeños, bebidas y postres." />
   <title>Carta · El Chiringuito de la Arepa</title>
 
   <link rel="icon" href="assets/img/logo.png" />
@@ -16,11 +16,9 @@
       --muted:rgba(234,241,239,.72);
       --brand:#b89452;
       --wa:#25D366;
-
       --r-lg:26px;
       --shadow: 0 14px 40px rgba(0,0,0,.45);
       --shadow2: 0 10px 24px rgba(0,0,0,.35);
-      --line: rgba(255,255,255,.08);
     }
 
     *{ box-sizing:border-box; }
@@ -59,9 +57,16 @@
     .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
     .brand img{ width:36px; height:36px; border-radius:12px; object-fit:cover; }
 
-    .brand .t{ min-width:0; display:flex; flex-direction:column; line-height:1.1; }
-    .brand .t b{ font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .brand .t span{ font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .lang-toggle{
+      display:inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: #fff;
+      font-weight: 900;
+      cursor:pointer;
+    }
 
     .pill{
       display:inline-flex; align-items:center; justify-content:center;
@@ -69,36 +74,13 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,.22);
       font-weight: 900;
-      white-space:nowrap;
     }
 
     .pill.gold{
       background: rgba(184,148,82,.18);
       border-color: rgba(184,148,82,.25);
       color:#f2e5cf;
-    }
-
-    .lang-switch{
-      display:flex;
-      gap:8px;
-    }
-
-    .lang-btn{
-      padding:8px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);
-      color:white;
-      font-weight:900;
-      cursor:pointer;
-    }
-
-    .lang-btn.active{
-      background: rgba(184,148,82,.22);
-      border-color: rgba(184,148,82,.28);
-      color: #fff1d6;
     }
 
     .hero{
@@ -117,15 +99,6 @@
       line-height: 1.02;
     }
 
-    .hero p{
-      margin:0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 70ch;
-      font-weight: 800;
-    }
-
     .tabs{
       margin-top: 14px;
       display:flex; flex-wrap:wrap; gap:10px;
@@ -137,9 +110,7 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.06);
-      color: var(--text);
       font-weight: 950;
-      box-shadow: var(--shadow2);
       cursor:pointer;
       gap:10px;
     }
@@ -158,7 +129,6 @@
 
     .section{ margin-top: 22px; }
     .section h2{ margin:0; font-size: 44px; letter-spacing:-.9px; }
-    .section .sub{ margin-top:6px; color: var(--muted); font-weight:800; }
 
     .panel{
       margin-top: 12px;
@@ -175,7 +145,6 @@
       border-radius: 22px;
       border:1px solid rgba(255,255,255,.08);
       background: rgba(255,255,255,.035);
-      box-shadow: var(--shadow2);
     }
 
     .thumb{
@@ -184,14 +153,10 @@
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.25);
-      flex:0 0 auto;
     }
 
-    .thumb img{ width:100%; height:100%; object-fit:cover; }
-
     .item{
-      display:flex; align-items:flex-start; justify-content:space-between;
-      gap:12px;
+      display:flex; justify-content:space-between;
       padding: 14px 12px;
       border-radius: 18px;
       background: rgba(255,255,255,.035);
@@ -200,26 +165,38 @@
     }
 
     .price{
-      white-space:nowrap;
       font-weight: 950;
       color:#f2e5cf;
-      padding-left: 10px;
     }
 
-    /* QR SECTION */
+    .photo{
+      margin-top: 12px;
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
     .qr-box{
       margin-top: 16px;
-      padding: 14px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
+      padding: 16px;
       text-align:center;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
     }
 
     .qr-box img{
-      width:140px;
-      margin:10px auto;
-      border-radius:12px;
+      width: 160px;
+      margin: 8px auto;
+      border-radius: 12px;
+    }
+
+    footer{
+      margin-top: 26px;
+      text-align:center;
+      color: rgba(234,241,239,.62);
+      font-weight: 800;
+      padding: 18px 6px 8px;
     }
 
     .wa-float{
@@ -230,114 +207,128 @@
     }
 
     .wa-float a{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      display:inline-flex;
       padding: 14px 18px;
       border-radius: 999px;
       background: var(--wa);
       color:#03210f;
       font-weight: 950;
-      box-shadow: 0 18px 42px rgba(0,0,0,.50);
-      border: 1px solid rgba(255,255,255,.10);
     }
   </style>
+
+  <script>
+    function toggleLang(){
+      const es = document.querySelectorAll(".es");
+      const en = document.querySelectorAll(".en");
+      const btn = document.getElementById("langBtn");
+
+      if(btn.textContent === "EN"){
+        btn.textContent = "ES";
+        es.forEach(e => e.style.display="none");
+        en.forEach(e => e.style.display="block");
+      } else {
+        btn.textContent = "EN";
+        es.forEach(e => e.style.display="block");
+        en.forEach(e => e.style.display="none");
+      }
+    }
+  </script>
 </head>
 
 <body>
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-      <div class="t">
-        <b>El Chiringuito de la Arepa</b>
-        <span>Sabores que abrazan el alma</span>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+        <div>
+          <b>El Chiringuito de la Arepa</b><br>
+          <span>Sabores que abrazan el alma</span>
+        </div>
       </div>
+      <button id="langBtn" class="lang-toggle" onclick="toggleLang()">EN</button>
+      <a class="pill gold" href="index.html">Inicio</a>
     </div>
+  </header>
 
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-    </div>
+  <main class="wrap">
 
-    <a class="pill gold" href="index.html">Inicio</a>
-  </div>
-</header>
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="es">Carta</h1>
+      <h1 class="en" style="display:none">Menu</h1>
 
-<main class="wrap">
+      <p class="es">Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
+      <p class="en" style="display:none">Choose what you crave and order via WhatsApp. Clear prices, fast order.</p>
 
-<section class="hero" id="top">
-  <h1 id="title-es">Carta</h1>
-  <h1 id="title-en" style="display:none;">Menu</h1>
-
-  <p id="hero-es">Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
-  <p id="hero-en" style="display:none;">Choose what you crave and order via WhatsApp. Clear prices, fast order.</p>
-
-  <div class="tabs">
-    <a class="btn gold" href="#arepas">Arepas</a>
-    <a class="btn" href="#raciones">Raciones</a>
-    <a class="btn" href="#tequenos">Tequeños</a>
-    <a class="btn" href="#bebidas">Bebidas</a>
-    <a class="btn" href="#postres">Postres</a>
-    <a class="btn" href="#sancocho">Sancocho</a>
-    <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">Pedir por WhatsApp ↗</a>
-  </div>
-</section>
-
-<!-- QR -->
-<div class="qr-box">
-  <strong id="qr-es">Escanea y abre la carta en tu móvil</strong>
-  <strong id="qr-en" style="display:none;">Scan to open the menu</strong>
-  <img src="assets/img/qr-menu.png" alt="QR Carta">
-</div>
-
-<!-- SANCOCHO (con precio) -->
-<section class="section" id="sancocho">
-  <h2>Sancocho</h2>
-  <div class="sub">Caldo profundo, maíz y tubérculos (según disponibilidad).</div>
-
-  <div class="panel">
-    <div class="headline">
-      <div class="thumb"><img src="assets/img/sancocho.png" alt="Sancocho"></div>
-      <div>
-        <b>Sancocho de Gallina y Ternera</b>
-        <span>Plato especial. Pregunta por disponibilidad y horarios.</span>
+      <div class="tabs">
+        <a class="btn gold" href="#arepas">Arepas</a>
+        <a class="btn" href="#raciones">Raciones</a>
+        <a class="btn" href="#tequenos">Tequeños</a>
+        <a class="btn" href="#bebidas">Bebidas</a>
+        <a class="btn" href="#postres">Postres</a>
+        <a class="btn" href="#sancocho">Sancocho</a>
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">Pedir por WhatsApp ↗</a>
       </div>
+    </section>
+
+    <!-- QR DEL MENÚ -->
+    <div class="qr-box">
+      <b class="es">Escanea y abre el menú en tu móvil</b>
+      <b class="en" style="display:none">Scan to open the menu on your phone</b>
+      <img src="assets/img/qr-menu.png" alt="QR Menú Digital">
     </div>
 
-    <div class="item">
-      <div><b>Sancocho</b><small>Plato del día (según disponibilidad)</small></div>
-      <div class="price">9,50€</div>
-    </div>
+    <!-- AREPAS -->
+    <section class="section" id="arepas">
+      <h2>Arepas</h2>
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/arepa.png" alt="Arepas"></div>
+          <div>
+            <b>Arepas</b>
+            <span class="es">Tradición venezolana en Granada.</span>
+            <span class="en" style="display:none">Venezuelan tradition in Granada.</span>
+          </div>
+        </div>
+
+        <div class="item"><div><b>Reina Pepiada</b><small class="es">Pollo, aguacate, mayonesa.</small><small class="en" style="display:none">Chicken, avocado, mayo.</small></div><div class="price">6,50€</div></div>
+      </div>
+    </section>
+
+    <!-- SANCOCHO -->
+    <section class="section" id="sancocho">
+      <h2>Sancocho</h2>
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/sancocho.png" alt="Sancocho"></div>
+          <div>
+            <b class="es">Sancocho de Gallina y Ternera</b>
+            <b class="en" style="display:none">Chicken & Beef Sancocho</b>
+            <span class="es">Consultar disponibilidad y horarios.</span>
+            <span class="en" style="display:none">Ask for availability and schedule.</span>
+          </div>
+        </div>
+
+        <div class="item">
+          <div>
+            <b class="es">Ración de Sancocho</b>
+            <b class="en" style="display:none">Sancocho Portion</b>
+          </div>
+          <div class="price es">Consultar</div>
+          <div class="price en" style="display:none">Ask</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 El Chiringuito de la Arepa · <a href="index.html">Inicio</a>
+    </footer>
+  </main>
+
+  <div class="wa-float">
+    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">
+      WhatsApp ↗
+    </a>
   </div>
-</section>
-
-</main>
-
-<div class="wa-float">
-  <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">
-    <span>WhatsApp</span> <small>↗</small>
-  </a>
-</div>
-
-<script>
-function setLang(lang){
-  if(lang === 'es'){
-    document.getElementById('title-es').style.display = 'block';
-    document.getElementById('title-en').style.display = 'none';
-    document.getElementById('hero-es').style.display = 'block';
-    document.getElementById('hero-en').style.display = 'none';
-    document.getElementById('qr-es').style.display = 'block';
-    document.getElementById('qr-en').style.display = 'none';
-  } else {
-    document.getElementById('title-es').style.display = 'none';
-    document.getElementById('title-en').style.display = 'block';
-    document.getElementById('hero-es').style.display = 'none';
-    document.getElementById('hero-en').style.display = 'block';
-    document.getElementById('qr-es').style.display = 'none';
-    document.getElementById('qr-en').style.display = 'block';
-  }
-}
-</script>
-
 </body>
 </html>
