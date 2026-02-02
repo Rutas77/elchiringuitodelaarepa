@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#071010" />
 
   <!-- Verificación Google -->
   <meta name="google-site-verification" content="wtSPSMo8RQoyttAs3DnVvIGF-RRALAuNy5CWo0d54_M" />
@@ -10,141 +11,680 @@
   <!-- SEO -->
   <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
   <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas artesanales, tequeños, bebidas latinas. Sabores que abrazan el alma." />
-  <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, chiringuito de la arepa" />
+  <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, El Chiringuito de la Arepa, tequeños Granada" />
   <meta name="author" content="El Chiringuito de la Arepa" />
+  <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
+  <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="El Chiringuito de la Arepa" />
+  <meta property="og:title" content="El Chiringuito de la Arepa | Granada" />
   <meta property="og:description" content="Arepas venezolanas artesanales en Granada. Sabores que abrazan el alma." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
+  <meta property="og:locale" content="es_ES" />
 
-  <!-- Estilos -->
+  <!-- Icono -->
+  <link rel="icon" href="assets/img/logo.png" />
+
+  <!-- Datos estructurados (Local SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "El Chiringuito de la Arepa",
+    "url": "https://elchiringuitodelaarepa.es/",
+    "telephone": "+34858830186",
+    "servesCuisine": ["Venezolana", "Latina"],
+    "priceRange": "€",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. Obispo Hurtado, 27",
+      "addressLocality": "Granada",
+      "postalCode": "18004",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==",
+      "https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93GocN9fh26",
+      "https://youtube.com/@elchiringuitodelaarepa?si=t8Q8OkkwGcGzGnQD",
+      "https://www.threads.com/@elchiringuitodelaarepa",
+      "https://www.facebook.com/profile.php?id=61584130088879",
+      "https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d"
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "00:00", "closes": "00:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "13:00", "closes": "15:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "13:00", "closes": "15:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "19:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "13:00", "closes": "15:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "19:00", "closes": "22:00" }
+    ]
+  }
+  </script>
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f2a1d;
-      color: #fff;
+    :root{
+      --bg:#071010;
+      --bg2:#050b0b;
+      --panel:rgba(255,255,255,.06);
+      --line:rgba(255,255,255,.10);
+      --text:#eaf1ef;
+      --muted:rgba(234,241,239,.74);
+      --brand:#b89452;
+      --brand2: rgba(184,148,82,.20);
+      --wa:#25D366;
+
+      --r:22px;
+      --r2:28px;
+      --shadow: 0 18px 50px rgba(0,0,0,.50);
+      --shadow2: 0 10px 24px rgba(0,0,0,.35);
+
+      --bottom-nav-h: 64px;
+      --cookies-h: 0px;
     }
 
-    header {
-      text-align: center;
-      padding: 30px 20px;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.20), transparent 60%),
+        radial-gradient(700px 340px at 88% 14%, rgba(37,211,102,.14), transparent 62%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      color:var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      padding-bottom: calc(var(--bottom-nav-h) + var(--cookies-h) + 24px + env(safe-area-inset-bottom));
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
+    .wrap{max-width: 1020px; margin:0 auto; padding: 18px 14px 42px}
+
+    /* Header */
+    .topbar{
+      position: sticky; top:0; z-index: 60;
+      backdrop-filter: blur(14px);
+      background: rgba(7,16,16,.70);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .topbar-inner{
+      max-width: 1020px; margin:0 auto;
+      padding: 12px 14px;
+      display:flex; align-items:center; gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; min-width:0; flex: 1;
+    }
+    .brand img{ width:38px; height:38px; border-radius: 14px; object-fit: cover; border: 1px solid rgba(255,255,255,.10); }
+    .brand .t{ min-width:0; display:flex; flex-direction:column; line-height: 1.1; }
+    .brand .t b{ font-size: 16px; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; }
+    .brand .t span{ font-size: 13px; color: var(--muted); white-space:nowrap; overflow:hidden; text-overflow: ellipsis; font-weight: 800; }
+
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,.22);
+      font-weight: 950;
+      white-space: nowrap;
+      gap: 8px;
+    }
+    .pill.gold{ background: var(--brand2); border-color: rgba(184,148,82,.28); color: #fff1d6; }
+
+    /* Hero */
+    .hero{
+      margin-top: 16px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      padding: 22px 18px;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: 44px;
+      letter-spacing: -1px;
+      line-height: 1.05;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 70ch;
+      font-weight: 800;
+    }
+    .cta{
+      margin-top: 14px;
+      display:flex; gap:10px; flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow2);
+      font-weight: 950;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .btn.gold{ background: rgba(184,148,82,.22); border-color: rgba(184,148,82,.28); color: #fff1d6; }
+    .btn.wa{ background: rgba(37,211,102,.18); border-color: rgba(37,211,102,.26); color: #eafff1; }
+
+    /* Sections */
+    .section{ margin-top: 22px; }
+    .section h2{ margin:0; font-size: 36px; letter-spacing: -0.8px; }
+    .sub{ margin-top: 6px; color: var(--muted); font-weight: 850; }
+
+    .panel{
+      margin-top: 12px;
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      box-shadow: var(--shadow);
+      padding: 16px;
     }
 
-    h1 {
-      margin: 10px 0;
-      font-size: 2rem;
+    /* Category grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    @media (max-width: 720px){
+      .grid{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 40px; }
+    }
+    .card{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      display:flex;
+      gap:12px;
+      padding: 12px;
+      align-items:center;
+      transition: transform .12s ease;
+    }
+    .card:hover{ transform: translateY(-2px); }
+    .thumb{
+      width: 78px; height: 78px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      flex: 0 0 auto;
+      position: relative;
+    }
+    .thumb::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(200px 120px at 20% 10%, rgba(184,148,82,.22), transparent 60%);
+      pointer-events:none;
+      opacity:.85;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; position:relative; z-index:1; }
+    .card b{ display:block; font-size: 18px; letter-spacing: -.2px; }
+    .card span{ display:block; color: var(--muted); font-weight: 800; margin-top: 3px; }
+
+    /* Address + rows */
+    .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.06);
+      margin-top: 10px;
+      font-weight: 950;
+    }
+    .row .right{ color: #fff1d6; font-weight: 950; }
+    .address{
+      display:flex; gap:12px; align-items:flex-start;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.06);
+    }
+    .address b{ display:block; margin-bottom: 4px; }
+    .address span{ color: var(--muted); font-weight: 850; }
+
+    /* Stars */
+    .ratingBox{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+      padding: 14px 12px;
+      border-radius: 18px;
+      background: rgba(184,148,82,.10);
+      border: 1px solid rgba(184,148,82,.22);
+      margin-top: 12px;
+    }
+    .stars{
+      font-size: 18px;
+      letter-spacing: 2px;
+      color: #ffd78a;
+      display:inline-block;
+      animation: starPulse 1.8s ease-in-out infinite;
+      text-shadow: 0 0 12px rgba(255,215,138,.18);
+    }
+    @keyframes starPulse{
+      0%,100%{ transform: translateY(0); filter: brightness(1); opacity: .95;}
+      50%{ transform: translateY(-1px); filter: brightness(1.15); opacity: 1;}
+    }
+    .ratingText{
+      color: #fff1d6;
+      font-weight: 950;
     }
 
-    .stars {
-      font-size: 1.5rem;
-      color: gold;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { opacity: 0.6; }
-    }
-
-    .cta {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      margin: 25px 0;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      background: #1db954;
-      color: #fff;
-      padding: 14px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn.secondary {
-      background: #c9a24d;
-      color: #000;
-    }
-
-    section {
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .review-text {
-      text-align: center;
-      margin-top: 15px;
-      font-style: italic;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
+    /* Map */
+    .map{
+      width:100%;
+      height: 320px;
       border: 0;
-      border-radius: 15px;
-      margin-top: 15px;
+      border-radius: 18px;
+      overflow:hidden;
+      margin-top: 12px;
+      background: rgba(255,255,255,.04);
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      opacity: 0.8;
+    /* Socials */
+    .socials{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+    .socials .btn{ padding: 10px 14px; font-weight: 950; }
+    .badge{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 900;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    footer{
+      margin-top: 22px;
+      text-align:center;
+      color: rgba(234,241,239,.62);
+      font-weight: 850;
+      padding: 18px 6px 6px;
+    }
+    footer a{ color: rgba(234,241,239,.80); text-decoration: underline; text-underline-offset: 4px; }
+
+    /* Bottom nav fixed */
+    .bottomNav{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: calc(env(safe-area-inset-bottom) + 10px + var(--cookies-h));
+      width: min(980px, calc(100% - 18px));
+      z-index: 80;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,16,16,.80);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      display:flex;
+      gap: 8px;
+      padding: 8px;
+    }
+    .bottomNav a{
+      flex: 1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 12px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      font-weight: 950;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .bottomNav a.primary{
+      background: rgba(37,211,102,.16);
+      border-color: rgba(37,211,102,.26);
+      color: #eafff1;
+    }
+    .bottomNav a.gold{
+      background: rgba(184,148,82,.18);
+      border-color: rgba(184,148,82,.26);
+      color: #fff1d6;
+    }
+
+    /* Cookies bar */
+    .cookies{
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: env(safe-area-inset-bottom);
+      width: min(980px, calc(100% - 18px));
+      z-index: 90;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(7,16,16,.88);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      display:none;
+    }
+    .cookies.show{ display:block; }
+    .cookies .top{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap: 10px;
+    }
+    .cookies p{
+      margin:0;
+      color: var(--muted);
+      font-weight: 850;
+      line-height: 1.45;
+      font-size: 13px;
+    }
+    .cookies .actions{
+      margin-top: 10px;
+      display:flex; gap:10px; flex-wrap: wrap;
+    }
+    .cookies .actions button{
+      appearance:none;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 950;
+      cursor:pointer;
+    }
+    .cookies .actions button.accept{
+      border-color: rgba(184,148,82,.30);
+      background: rgba(184,148,82,.18);
+      color: #fff1d6;
+    }
+    .cookies .links{
+      margin-top: 8px;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .cookies .links a{
+      color: rgba(234,241,239,.82);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Helpful tiny note */
+    .note{
+      margin-top: 12px;
+      color: rgba(234,241,239,.68);
+      font-weight: 850;
+      line-height: 1.55;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
-
-  <header>
-    <h1>El Chiringuito de la Arepa</h1>
-    <p>Arepas venezolanas artesanales en Granada</p>
-
-    <div class="stars">★★★★★ en Google</div>
-
-    <div class="cta">
-      <a class="btn" href="https://wa.me/34TU_NUMERO_AQUI" target="_blank">WhatsApp</a>
-      <a class="btn secondary" href="https://share.google/rXQNjjwit6sxKtJXI" target="_blank">Ver reseñas</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+        <div class="t">
+          <b>El Chiringuito de la Arepa</b>
+          <span>Sabores que abrazan el alma</span>
+        </div>
+      </div>
+      <a class="pill gold" href="carta.html">Carta</a>
     </div>
-
-    <p><strong>Sabores que abrazan el alma</strong></p>
   </header>
 
-  <section>
-    <h2>¿Por qué elegirnos?</h2>
-    <p>
-      En El Chiringuito de la Arepa cocinamos como en casa: productos naturales,
-      sin ultraprocesados, recetas tradicionales venezolanas y mucho cariño.
-    </p>
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <h1>Arepas venezolanas en Granada</h1>
+      <p>
+        Tradicional venezolano elegante: arepas recién hechas, rellenos generosos, tequeños crujientes y nuestro tres leches casero.
+        También tenemos servicio para comer aquí y para llevar.
+      </p>
 
-    <p class="review-text">
-      ⭐ Si te gustó tu experiencia, ayúdanos dejando una reseña en Google.
-      A nosotros nos impulsa, y a otros les ayuda a encontrarnos.
-    </p>
-  </section>
+      <div class="cta">
+        <a class="btn gold" href="carta.html">Ver la carta</a>
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
+        <span class="badge">📍 Ronda · Granada · 18004</span>
+      </div>
 
-  <section>
-    <h2>Dónde estamos</h2>
-    <p>Granada, España</p>
+      <div class="grid" aria-label="Categorías">
+        <a class="card" href="carta.html#arepas">
+          <div class="thumb"><img src="assets/img/arepa.png" alt="Arepas"></div>
+          <div>
+            <b>Arepas</b>
+            <span>Reina Pepiada · Pabellón · Mechada…</span>
+          </div>
+        </a>
 
-    <!-- MAPA -->
-    <iframe
-      src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa&output=embed"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </section>
+        <a class="card" href="carta.html#tequenos">
+          <div class="thumb"><img src="assets/img/tequenos.png" alt="Tequeños"></div>
+          <div>
+            <b>Tequeños</b>
+            <span>5 o 10 unidades</span>
+          </div>
+        </a>
 
-  <footer>
-    © 2026 El Chiringuito de la Arepa · Granada  
-  </footer>
+        <a class="card" href="carta.html#bebidas">
+          <div class="thumb"><img src="assets/img/bebidas.png" alt="Bebidas"></div>
+          <div>
+            <b>Bebidas</b>
+            <span>Frías y calientes</span>
+          </div>
+        </a>
 
+        <a class="card" href="carta.html#postres">
+          <div class="thumb"><img src="assets/img/tresleches.png" alt="Postres"></div>
+          <div>
+            <b>Postres</b>
+            <span>Tres leches casero</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="note">
+        📌 Si alguna foto no se ve: revisa que existan exactamente estos archivos:
+        <b>assets/img/arepa.png</b>, <b>assets/img/tequenos.png</b>, <b>assets/img/bebidas.png</b>, <b>assets/img/tresleches.png</b> y <b>assets/img/logo.png</b>.
+      </div>
+    </section>
+
+    <!-- UBICACIÓN + MAPA + RESEÑAS -->
+    <section class="section" id="ubicacion">
+      <h2>Ubicación</h2>
+      <div class="sub">Cómo llegar</div>
+
+      <div class="panel">
+        <div class="address">
+          <div style="font-size:18px; line-height:1;">📍</div>
+          <div>
+            <b>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</b>
+            <span>El Chiringuito de la Arepa — comida venezolana auténtica en Granada.</span>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn gold" href="https://www.google.com/maps?q=Chiringuito%20de%20la%20arepa%20Granada" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn" href="#horarios">Ver horarios</a>
+        </div>
+
+        <!-- Mapa embebido -->
+        <iframe class="map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Chiringuito%20de%20la%20arepa%20Granada&output=embed"
+          title="Mapa · El Chiringuito de la Arepa">
+        </iframe>
+
+        <!-- Estrellas + CTA reseña -->
+        <div class="ratingBox" aria-label="Valoración en Google">
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <div class="ratingText">★★★★★ en Google</div>
+          </div>
+          <a class="btn gold" href="https://share.google/rXQNjjwit6sxKtJXI" target="_blank" rel="noopener">Ayúdanos con una reseña ↗</a>
+        </div>
+
+        <div class="note">
+          Si te gustó, <b>ayúdanos con una reseña</b>. Nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌
+        </div>
+      </div>
+    </section>
+
+    <!-- HORARIOS -->
+    <section class="section" id="horarios">
+      <h2>Horarios</h2>
+      <div class="sub">Apertura semanal</div>
+
+      <div class="panel">
+        <div class="row"><div>Lunes</div><div class="right">19:00 – 23:00</div></div>
+        <div class="row"><div>Martes</div><div class="right">19:00 – 23:00</div></div>
+        <div class="row"><div>Miércoles</div><div class="right">19:00 – 23:00</div></div>
+        <div class="row"><div>Jueves</div><div class="right">CERRADO</div></div>
+        <div class="row"><div>Viernes</div><div class="right">13:00 – 15:30 · 19:00 – 23:00</div></div>
+        <div class="row"><div>Sábado</div><div class="right">13:00 – 15:30 · 19:00 – 23:00</div></div>
+        <div class="row"><div>Domingo</div><div class="right">13:00 – 15:30 · 19:00 – 22:00</div></div>
+
+        <div class="note">
+          ✅ Servicio para comer aquí y para llevar.
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES -->
+    <section class="section" id="redes">
+      <h2>Redes sociales</h2>
+      <div class="sub">Síguenos y mira novedades</div>
+
+      <div class="panel">
+        <div class="socials">
+          <a class="btn" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram ↗</a>
+          <a class="btn" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93GocN9fh26" target="_blank" rel="noopener">TikTok ↗</a>
+          <a class="btn" href="https://youtube.com/@elchiringuitodelaarepa?si=t8Q8OkkwGcGzGnQD" target="_blank" rel="noopener">YouTube ↗</a>
+          <a class="btn" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads ↗</a>
+          <a class="btn" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook ↗</a>
+          <a class="btn gold" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp ↗</a>
+        </div>
+
+        <div class="note">
+          📌 Activa la campanita en nuestras redes para enterarte de promos y novedades.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section" id="contacto">
+      <h2>Contacto</h2>
+      <div class="sub">Te respondemos por WhatsApp</div>
+
+      <div class="panel">
+        <div class="row">
+          <div>📞 Teléfono</div>
+          <div class="right"><a href="tel:858830186">858 83 01 86</a></div>
+        </div>
+        <div class="row">
+          <div>💬 WhatsApp</div>
+          <div class="right"><a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Escribir ahora ↗</a>
+          <a class="btn" href="carta.html">Ver carta</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 El Chiringuito de la Arepa · Granada ·
+      <a href="politica-privacidad.html">Privacidad</a> ·
+      <a href="politica-cookies.html">Cookies</a>
+    </footer>
+  </main>
+
+  <!-- Barra inferior fija -->
+  <nav class="bottomNav" aria-label="Accesos rápidos">
+    <a class="gold" href="#inicio">🏠 Inicio</a>
+    <a class="gold" href="carta.html">🫓 Carta</a>
+    <a class="primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a href="https://www.google.com/maps?q=Chiringuito%20de%20la%20arepa%20Granada" target="_blank" rel="noopener">🗺️ Llegar</a>
+  </nav>
+
+  <!-- Cookies -->
+  <div id="cookies" class="cookies" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="top">
+      <p>
+        Usamos cookies para mejorar tu experiencia y analizar el tráfico básico del sitio.
+        Puedes aceptar o rechazar. Más info en nuestras políticas.
+      </p>
+    </div>
+    <div class="actions">
+      <button class="accept" id="cookieAccept">Aceptar</button>
+      <button id="cookieReject">Rechazar</button>
+    </div>
+    <div class="links">
+      <a href="politica-cookies.html">Política de Cookies</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var key = "chiringuito_cookie_choice";
+      var box = document.getElementById("cookies");
+
+      function setCookiesHeight(px){
+        document.documentElement.style.setProperty("--cookies-h", px + "px");
+      }
+
+      function show(){
+        box.classList.add("show");
+        // calcula altura real para empujar la barra inferior
+        requestAnimationFrame(function(){
+          var h = box.getBoundingClientRect().height;
+          setCookiesHeight(Math.ceil(h + 10));
+        });
+      }
+
+      function hide(){
+        box.classList.remove("show");
+        setCookiesHeight(0);
+      }
+
+      var choice = null;
+      try{ choice = localStorage.getItem(key); } catch(e){}
+
+      if(!choice){ show(); }
+
+      document.getElementById("cookieAccept").addEventListener("click", function(){
+        try{ localStorage.setItem(key, "accepted"); } catch(e){}
+        hide();
+      });
+
+      document.getElementById("cookieReject").addEventListener("click", function(){
+        try{ localStorage.setItem(key, "rejected"); } catch(e){}
+        hide();
+      });
+    })();
+  </script>
 </body>
 </html>
