@@ -4,69 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#071010" />
-  <meta name="description" content="Carta de El Chiringuito de la Arepa (Granada). Arepas, tequeños, bebidas y postres." />
-  <title>Carta · El Chiringuito de la Arepa</title>
+  <meta name="description" content="Menu with prices for El Chiringuito de la Arepa (Granada). Arepas, tequeños, drinks and desserts." />
+  <title>Menu · El Chiringuito de la Arepa</title>
 
   <link rel="icon" href="assets/img/logo.png" />
 
   <style>
     :root{
       --bg:#071010;
+      --bg2:#050b0b;
       --text:#eaf1ef;
       --muted:rgba(234,241,239,.72);
       --brand:#b89452;
+      --brand2:#e7d2a3;
       --wa:#25D366;
+
       --r-lg:26px;
       --shadow: 0 14px 40px rgba(0,0,0,.45);
       --shadow2: 0 10px 24px rgba(0,0,0,.35);
+      --line: rgba(255,255,255,.08);
     }
-
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
-
     body{
       margin:0;
       background:
-        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.20), transparent 60%),
-        radial-gradient(700px 340px at 88% 14%, rgba(37,211,102,.14), transparent 62%),
-        linear-gradient(180deg, #071010 0%, #050b0b 100%);
+        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.22), transparent 60%),
+        radial-gradient(700px 340px at 88% 14%, rgba(231,210,163,.12), transparent 62%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color:var(--text);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       padding-bottom: 220px;
     }
-
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
-
     .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 56px; }
 
-    /* TOP BAR */
     .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: rgba(7,16,16,.70);
+      background: rgba(7,16,16,.72);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
-
     .topbar-inner{
       max-width:980px; margin:0 auto;
       padding: 12px 14px;
-      display:flex; align-items:center; gap:12px;
+      display:flex; align-items:center; gap:10px;
     }
-
     .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
     .brand img{ width:36px; height:36px; border-radius:12px; object-fit:cover; }
-
-    .lang-toggle{
-      display:inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      color: #fff;
-      font-weight: 900;
-      cursor:pointer;
-    }
+    .brand .t{ min-width:0; display:flex; flex-direction:column; line-height:1.1; }
+    .brand .t b{ font-size:16px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .brand .t span{ font-size:13px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
     .pill{
       display:inline-flex; align-items:center; justify-content:center;
@@ -74,13 +63,26 @@
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,.22);
       font-weight: 900;
+      white-space:nowrap;
     }
-
     .pill.gold{
       background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.25);
+      border-color: rgba(184,148,82,.28);
       color:#f2e5cf;
+    }
+    .pill.lang{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.10);
+      color: rgba(234,241,239,.9);
+      padding: 10px 12px;
+      min-width: 54px;
+    }
+    .pill.lang.active{
+      background: rgba(184,148,82,.20);
+      border-color: rgba(184,148,82,.30);
+      color:#fff1d6;
     }
 
     .hero{
@@ -88,39 +90,56 @@
       padding: 22px 18px;
       border-radius: var(--r-lg);
       border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
       box-shadow: var(--shadow);
+      position: relative;
+      overflow:hidden;
     }
-
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(800px 260px at 30% -10%, rgba(184,148,82,.18), transparent 60%);
+      pointer-events:none;
+    }
     .hero h1{
       margin: 0 0 8px;
       font-size: 54px;
       letter-spacing:-.9px;
       line-height: 1.02;
+      position:relative;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 70ch;
+      font-weight: 800;
+      position:relative;
     }
 
     .tabs{
       margin-top: 14px;
       display:flex; flex-wrap:wrap; gap:10px;
+      position:relative;
     }
-
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 12px 16px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.06);
+      color: var(--text);
       font-weight: 950;
+      box-shadow: var(--shadow2);
       cursor:pointer;
       gap:10px;
     }
-
     .btn.gold{
       background: rgba(184,148,82,.22);
-      border-color: rgba(184,148,82,.28);
+      border-color: rgba(184,148,82,.30);
       color: #fff1d6;
     }
-
     .btn.wa{
       background: rgba(37,211,102,.18);
       border-color: rgba(37,211,102,.24);
@@ -129,12 +148,13 @@
 
     .section{ margin-top: 22px; }
     .section h2{ margin:0; font-size: 44px; letter-spacing:-.9px; }
+    .section .sub{ margin-top:6px; color: var(--muted); font-weight:800; }
 
     .panel{
       margin-top: 12px;
       border-radius: var(--r-lg);
       border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
       box-shadow: var(--shadow);
       padding: 16px;
     }
@@ -144,29 +164,46 @@
       padding: 12px;
       border-radius: 22px;
       border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.035);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow2);
     }
-
     .thumb{
       width: 76px; height: 76px;
       border-radius: 18px;
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.25);
+      flex:0 0 auto;
     }
+    .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .headline b{ font-size: 22px; letter-spacing:-.3px; }
+    .headline span{ color: var(--muted); font-weight:800; margin-top:2px; display:block; }
 
     .item{
-      display:flex; justify-content:space-between;
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap:12px;
       padding: 14px 12px;
       border-radius: 18px;
-      background: rgba(255,255,255,.035);
+      background: rgba(255,255,255,.03);
       border: 1px solid rgba(255,255,255,.06);
       margin-top: 10px;
     }
-
+    .item b{ display:block; font-size: 18px; letter-spacing:-.2px; }
+    .item small{ display:block; color: var(--muted); font-weight: 800; margin-top: 3px; line-height:1.35; }
     .price{
+      white-space:nowrap;
       font-weight: 950;
       color:#f2e5cf;
+      padding-left: 10px;
+    }
+
+    .note{
+      margin-top: 12px;
+      color: rgba(234,241,239,.70);
+      font-weight: 800;
+      line-height:1.5;
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 12px;
     }
 
     .photo{
@@ -174,22 +211,42 @@
       border-radius: 22px;
       overflow:hidden;
       border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      box-shadow: var(--shadow2);
+    }
+    .photo img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+    @media (max-width: 520px){
+      .photo img{ height: 200px; }
     }
 
-    .qr-box{
-      margin-top: 16px;
-      padding: 16px;
-      text-align:center;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.04);
+    .qr-card{
+      margin-top: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow2);
+      padding: 14px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      flex-wrap:wrap;
     }
-
-    .qr-box img{
-      width: 160px;
-      margin: 8px auto;
-      border-radius: 12px;
+    .qr-img{
+      width:110px; height:110px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(184,148,82,.28);
+      background: rgba(0,0,0,.25);
+      display:flex; align-items:center; justify-content:center;
     }
+    .qr-img img{ width:100%; height:100%; object-fit:cover; }
+    .qr-txt b{ display:block; font-size:16px; }
+    .qr-txt span{ display:block; color: var(--muted); font-weight:800; margin-top:4px; }
 
     footer{
       margin-top: 26px;
@@ -198,6 +255,11 @@
       font-weight: 800;
       padding: 18px 6px 8px;
     }
+    footer a{
+      color: rgba(234,241,239,.78);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
     .wa-float{
       position: fixed;
@@ -205,34 +267,24 @@
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 60;
     }
-
     .wa-float a{
-      display:inline-flex;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding: 14px 18px;
       border-radius: 999px;
       background: var(--wa);
       color:#03210f;
       font-weight: 950;
+      box-shadow: 0 18px 42px rgba(0,0,0,.50);
+      border: 1px solid rgba(255,255,255,.10);
     }
+    .wa-float a span{ font-size: 18px; }
+    .wa-float a small{ font-weight: 900; opacity: .9; font-size: 16px; }
+
+    /* Language swap */
+    [data-lang]{ display:none; }
+    html[data-lang="es"] [data-lang="es"]{ display:block; }
+    html[data-lang="en"] [data-lang="en"]{ display:block; }
   </style>
-
-  <script>
-    function toggleLang(){
-      const es = document.querySelectorAll(".es");
-      const en = document.querySelectorAll(".en");
-      const btn = document.getElementById("langBtn");
-
-      if(btn.textContent === "EN"){
-        btn.textContent = "ES";
-        es.forEach(e => e.style.display="none");
-        en.forEach(e => e.style.display="block");
-      } else {
-        btn.textContent = "EN";
-        es.forEach(e => e.style.display="block");
-        en.forEach(e => e.style.display="none");
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -240,95 +292,313 @@
     <div class="topbar-inner">
       <div class="brand">
         <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-        <div>
-          <b>El Chiringuito de la Arepa</b><br>
-          <span>Sabores que abrazan el alma</span>
+        <div class="t">
+          <b>El Chiringuito de la Arepa</b>
+          <span data-lang="es">Sabores que abrazan el alma</span>
+          <span data-lang="en">Flavors that hug the soul</span>
         </div>
       </div>
-      <button id="langBtn" class="lang-toggle" onclick="toggleLang()">EN</button>
-      <a class="pill gold" href="index.html">Inicio</a>
+
+      <button class="pill lang" id="btnES" type="button">ES</button>
+      <button class="pill lang" id="btnEN" type="button">EN</button>
+
+      <a class="pill gold" href="index.html" data-lang="es">Inicio</a>
+      <a class="pill gold" href="index.html" data-lang="en">Home</a>
     </div>
   </header>
 
   <main class="wrap">
+    <section class="hero" id="top">
+      <h1 data-lang="es">Carta</h1>
+      <h1 data-lang="en">Menu</h1>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1 class="es">Carta</h1>
-      <h1 class="en" style="display:none">Menu</h1>
-
-      <p class="es">Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
-      <p class="en" style="display:none">Choose what you crave and order via WhatsApp. Clear prices, fast order.</p>
+      <p data-lang="es">Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
+      <p data-lang="en">Choose what you crave and order via WhatsApp. Clear prices, fast order.</p>
 
       <div class="tabs">
-        <a class="btn gold" href="#arepas">Arepas</a>
-        <a class="btn" href="#raciones">Raciones</a>
-        <a class="btn" href="#tequenos">Tequeños</a>
-        <a class="btn" href="#bebidas">Bebidas</a>
-        <a class="btn" href="#postres">Postres</a>
-        <a class="btn" href="#sancocho">Sancocho</a>
-        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">Pedir por WhatsApp ↗</a>
+        <a class="btn gold" href="#arepas" data-lang="es">Arepas</a>
+        <a class="btn gold" href="#arepas" data-lang="en">Arepas</a>
+
+        <a class="btn" href="#raciones" data-lang="es">Raciones</a>
+        <a class="btn" href="#raciones" data-lang="en">Sides</a>
+
+        <a class="btn" href="#tequenos" data-lang="es">Tequeños</a>
+        <a class="btn" href="#tequenos" data-lang="en">Tequeños</a>
+
+        <a class="btn" href="#bebidas" data-lang="es">Bebidas</a>
+        <a class="btn" href="#bebidas" data-lang="en">Drinks</a>
+
+        <a class="btn" href="#postres" data-lang="es">Postres</a>
+        <a class="btn" href="#postres" data-lang="en">Desserts</a>
+
+        <a class="btn" href="#sancocho" data-lang="es">Sancocho</a>
+        <a class="btn" href="#sancocho" data-lang="en">Sancocho</a>
+
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" data-lang="es">Pedir por WhatsApp ↗</a>
+        <a class="btn wa" href="https://wa.me/34651651291?text=Hello%20El%20Chiringuito%20de%20la%20Arepa%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener" data-lang="en">Order on WhatsApp ↗</a>
+      </div>
+
+      <!-- QR MENU -->
+      <div class="qr-card">
+        <div class="qr-img">
+          <img src="assets/img/qr-menu.png" alt="QR Menu">
+        </div>
+        <div class="qr-txt">
+          <b data-lang="es">Escanea y abre el menú en tu móvil</b>
+          <b data-lang="en">Scan to open the menu on your phone</b>
+          <span>elchiringuitodelaarepa.es/carta.html</span>
+        </div>
+        <a class="btn gold" href="carta.html" data-lang="es">Abrir menú</a>
+        <a class="btn gold" href="carta.html" data-lang="en">Open menu</a>
       </div>
     </section>
-
-    <!-- QR DEL MENÚ -->
-    <div class="qr-box">
-      <b class="es">Escanea y abre el menú en tu móvil</b>
-      <b class="en" style="display:none">Scan to open the menu on your phone</b>
-      <img src="assets/img/qr-menu.png" alt="QR Menú Digital">
-    </div>
 
     <!-- AREPAS -->
     <section class="section" id="arepas">
       <h2>Arepas</h2>
+      <div class="sub" data-lang="es">Recién hechas. Rellenos generosos.</div>
+      <div class="sub" data-lang="en">Made to order. Generous fillings.</div>
+
       <div class="panel">
         <div class="headline">
           <div class="thumb"><img src="assets/img/arepa.png" alt="Arepas"></div>
           <div>
             <b>Arepas</b>
-            <span class="es">Tradición venezolana en Granada.</span>
-            <span class="en" style="display:none">Venezuelan tradition in Granada.</span>
+            <span data-lang="es">Tradición venezolana en Granada.</span>
+            <span data-lang="en">Venezuelan tradition in Granada.</span>
           </div>
         </div>
 
-        <div class="item"><div><b>Reina Pepiada</b><small class="es">Pollo, aguacate, mayonesa.</small><small class="en" style="display:none">Chicken, avocado, mayo.</small></div><div class="price">6,50€</div></div>
+        <div class="item"><div><b>Reina Pepiada</b><small data-lang="es">Pollo, aguacate, mayonesa.</small><small data-lang="en">Chicken, avocado, mayo.</small></div><div class="price">6,50€</div></div>
+        <div class="item"><div><b>Huevo de codorniz</b><small data-lang="es">En salsa rosa.</small><small data-lang="en">In pink sauce.</small></div><div class="price">5,80€</div></div>
+        <div class="item"><div><b>Jamón York</b><small data-lang="es">Con queso blanco latino o cheddar.</small><small data-lang="en">With Latin white cheese or cheddar.</small></div><div class="price">4,90€</div></div>
+        <div class="item"><div><b>Ensalada de atún</b><small data-lang="es">Pimiento rojo, aceitunas, tomate, cebolla.</small><small data-lang="en">Red pepper, olives, tomato, onion.</small></div><div class="price">5,80€</div></div>
+        <div class="item"><div><b>Salchichas</b><small data-lang="es">Con huevo revuelto, tomate y cebolla “guisado”.</small><small data-lang="en">With scrambled egg, stewed tomato and onion.</small></div><div class="price">5,50€</div></div>
+        <div class="item"><div><b>Pabellón</b><small data-lang="es">Carne mechada, alubias negras, plátano maduro frito y queso blanco latino.</small><small data-lang="en">Shredded beef, black beans, fried sweet plantain and Latin white cheese.</small></div><div class="price">7,50€</div></div>
+
+        <div class="item"><div><b>Queso blanco latino y queso cheddar</b><small data-lang="es">Mixta.</small><small data-lang="en">Mixed.</small></div><div class="price">5,00€</div></div>
+        <div class="item"><div><b>Queso blanco latino</b><small data-lang="es">Solo.</small><small data-lang="en">Only.</small></div><div class="price">4,60€</div></div>
+        <div class="item"><div><b>Queso cheddar</b><small data-lang="es">Solo.</small><small data-lang="en">Only.</small></div><div class="price">4,60€</div></div>
+
+        <div class="item"><div><b>Malafollá</b><small data-lang="es">Chorizo picante con queso blanco latino o cheddar.</small><small data-lang="en">Spicy chorizo with Latin white cheese or cheddar.</small></div><div class="price">5,50€</div></div>
+        <div class="item"><div><b>Perico</b><small data-lang="es">Huevo, tomate, cebolla y queso (latino o cheddar).</small><small data-lang="en">Egg, tomato, onion and cheese (Latin or cheddar).</small></div><div class="price">5,60€</div></div>
+        <div class="item"><div><b>Catira</b><small data-lang="es">Pollo y queso cheddar.</small><small data-lang="en">Chicken and cheddar cheese.</small></div><div class="price">5,90€</div></div>
+
+        <div class="item"><div><b>Carne picada</b><small data-lang="es">Con queso blanco latino.</small><small data-lang="en">With Latin white cheese.</small></div><div class="price">6,50€</div></div>
+        <div class="item"><div><b>Pernil (jamón) al horno</b><small data-lang="es">En salsa de vegetales y zumo de naranja.</small><small data-lang="en">In vegetable sauce and orange juice.</small></div><div class="price">6,80€</div></div>
+        <div class="item"><div><b>Pernil (jamón) al horno con aguacate</b><small data-lang="es">Especial.</small><small data-lang="en">Special.</small></div><div class="price">8,00€</div></div>
+
+        <div class="item"><div><b>Alubias con queso blanco latino</b><small>—</small></div><div class="price">5,30€</div></div>
+        <div class="item"><div><b>Alubias con queso cheddar</b><small>—</small></div><div class="price">5,30€</div></div>
+
+        <div class="item"><div><b>Mechada sola</b><small>—</small></div><div class="price">6,30€</div></div>
+        <div class="item"><div><b>Mechada con queso blanco latino</b><small>—</small></div><div class="price">6,80€</div></div>
+        <div class="item"><div><b>Mechada con queso cheddar</b><small>—</small></div><div class="price">6,80€</div></div>
+
+        <div class="item"><div><b>Pollo solo</b><small>—</small></div><div class="price">5,80€</div></div>
+        <div class="item"><div><b>Huevo revuelto</b><small data-lang="es">Solo.</small><small data-lang="en">Only.</small></div><div class="price">4,90€</div></div>
+
+        <div class="item"><div><b>Vegetariana / Vegana</b><small data-lang="es">Por encargo.</small><small data-lang="en">By request.</small></div><div class="price">6,60€</div></div>
+        <div class="item"><div><b>La Viuda</b><small data-lang="es">Arepa sin relleno.</small><small data-lang="en">Arepa without filling.</small></div><div class="price">1,00€</div></div>
+
+        <div class="note">
+          <b data-lang="es">Extras</b>
+          <b data-lang="en">Extras</b><br>
+          <span data-lang="es">• Por cada relleno adicional: <b>0,90€</b><br>• Salsa para llevar (Ajo o Maíz): <b>0,60€</b><br>• Queso a la plancha: <b>1,50€</b></span>
+          <span data-lang="en">• Each extra filling: <b>0,90€</b><br>• Takeaway sauce (Garlic or Corn): <b>0,60€</b><br>• Grilled cheese: <b>1,50€</b></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RACIONES -->
+    <section class="section" id="raciones">
+      <h2 data-lang="es">Raciones</h2>
+      <h2 data-lang="en">Sides</h2>
+      <div class="sub" data-lang="es">Perfectas para compartir.</div>
+      <div class="sub" data-lang="en">Perfect to share.</div>
+
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/sancocho.png" alt="Raciones"></div>
+          <div>
+            <b data-lang="es">Raciones</b>
+            <b data-lang="en">Sides</b>
+            <span data-lang="es">Un acompañante que engancha.</span>
+            <span data-lang="en">A side you’ll crave again.</span>
+          </div>
+        </div>
+
+        <div class="item"><div><b data-lang="es">Plátano macho maduro frito</b><b data-lang="en">Fried sweet plantain</b><small data-lang="es">Con queso blanco latino y mantequilla.</small><small data-lang="en">With Latin white cheese and butter.</small></div><div class="price">4,50€</div></div>
+        <div class="item"><div><b data-lang="es">Ensalada de atún con arepa</b><b data-lang="en">Tuna salad with arepa</b><small>—</small></div><div class="price">6,50€</div></div>
+      </div>
+    </section>
+
+    <!-- TEQUEÑOS -->
+    <section class="section" id="tequenos">
+      <h2>Tequeños</h2>
+      <div class="sub" data-lang="es">Crujientes. Perfectos para compartir.</div>
+      <div class="sub" data-lang="en">Crispy. Perfect to share.</div>
+
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/tequenos.png" alt="Tequeños"></div>
+          <div>
+            <b>Tequeños</b>
+            <span data-lang="es">Recién hechos.</span>
+            <span data-lang="en">Freshly made.</span>
+          </div>
+        </div>
+
+        <div class="item"><div><b data-lang="es">5 unidades</b><b data-lang="en">5 pieces</b><small>—</small></div><div class="price">6,00€</div></div>
+        <div class="item"><div><b data-lang="es">10 unidades</b><b data-lang="en">10 pieces</b><small>—</small></div><div class="price">11,00€</div></div>
+      </div>
+    </section>
+
+    <!-- BEBIDAS -->
+    <section class="section" id="bebidas">
+      <h2 data-lang="es">Bebidas</h2>
+      <h2 data-lang="en">Drinks</h2>
+      <div class="sub" data-lang="es">Para acompañar tu arepa.</div>
+      <div class="sub" data-lang="en">To pair with your arepa.</div>
+
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/bebidas.png" alt="Bebidas"></div>
+          <div>
+            <b data-lang="es">Bebidas</b>
+            <b data-lang="en">Drinks</b>
+            <span data-lang="es">Frías y calientes.</span>
+            <span data-lang="en">Cold & hot.</span>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="assets/img/bebidas.png" alt="Selección de bebidas">
+        </div>
+
+        <div class="item"><div><b data-lang="es">Café solo</b><b data-lang="en">Espresso</b><small>—</small></div><div class="price">1,50€</div></div>
+        <div class="item"><div><b data-lang="es">Café con leche</b><b data-lang="en">Coffee with milk</b><small>—</small></div><div class="price">1,50€</div></div>
+        <div class="item"><div><b data-lang="es">Infusión (manzanilla)</b><b data-lang="en">Tea (chamomile)</b><small>—</small></div><div class="price">1,50€</div></div>
+
+        <div class="item"><div><b>Coca-Cola</b><small data-lang="es">Original o Zero.</small><small data-lang="en">Original or Zero.</small></div><div class="price">1,50€</div></div>
+        <div class="item"><div><b>Fanta naranja</b><small>—</small></div><div class="price">1,50€</div></div>
+        <div class="item"><div><b>Fuze Tea maracuyá</b><small>—</small></div><div class="price">1,50€</div></div>
+        <div class="item"><div><b>Aquarius</b><small data-lang="es">Limón o naranja.</small><small data-lang="en">Lemon or orange.</small></div><div class="price">1,50€</div></div>
+
+        <div class="item"><div><b data-lang="es">Zumo Don Simón</b><b data-lang="en">Don Simón juice</b><small>—</small></div><div class="price">1,00€</div></div>
+        <div class="item"><div><b data-lang="es">Zumo natural</b><b data-lang="en">Fresh juice</b><small>—</small></div><div class="price">4,00€</div></div>
+
+        <div class="item"><div><b>Maltín Polar</b><small>—</small></div><div class="price">2,80€</div></div>
+        <div class="item"><div><b>Postobón</b><small data-lang="es">Manzana o uva.</small><small data-lang="en">Apple or grape.</small></div><div class="price">2,80€</div></div>
+        <div class="item"><div><b>Frescolita</b><small>—</small></div><div class="price">2,80€</div></div>
+
+        <div class="item"><div><b data-lang="es">Agua (0,5 L)</b><b data-lang="en">Water (0.5 L)</b><small>—</small></div><div class="price">1,00€</div></div>
+        <div class="item"><div><b data-lang="es">Agua (1,5 L)</b><b data-lang="en">Water (1.5 L)</b><small>—</small></div><div class="price">1,50€</div></div>
+
+        <div class="item"><div><b data-lang="es">Cerveza (Alhambra tradicional o especial)</b><b data-lang="en">Beer (Alhambra)</b><small>—</small></div><div class="price">1,30€</div></div>
+        <div class="item"><div><b data-lang="es">Cerveza (Mahou 0,0 tostada)</b><b data-lang="en">Beer (Mahou 0.0)</b><small>—</small></div><div class="price">1,30€</div></div>
+        <div class="item"><div><b>Cerveza Polar</b><small>—</small></div><div class="price">2,90€</div></div>
+      </div>
+    </section>
+
+    <!-- POSTRES -->
+    <section class="section" id="postres">
+      <h2 data-lang="es">Postres</h2>
+      <h2 data-lang="en">Desserts</h2>
+      <div class="sub" data-lang="es">Suave, cremoso y venezolano.</div>
+      <div class="sub" data-lang="en">Creamy, homemade and Venezuelan.</div>
+
+      <div class="panel">
+        <div class="headline">
+          <div class="thumb"><img src="assets/img/tresleches.png" alt="Tres Leches"></div>
+          <div>
+            <b data-lang="es">Postres</b>
+            <b data-lang="en">Desserts</b>
+            <span data-lang="es">Hecho en casa.</span>
+            <span data-lang="en">Homemade.</span>
+          </div>
+        </div>
+
+        <div class="item"><div><b data-lang="es">Dulce tres leches</b><b data-lang="en">Tres Leches cake</b><small data-lang="es">Producto artesanal.</small><small data-lang="en">Handmade.</small></div><div class="price">4,00€</div></div>
+
+        <div class="note" data-lang="es">¿Quieres reservar o pedir para llevar? Escríbenos por WhatsApp y lo preparamos.</div>
+        <div class="note" data-lang="en">Want to reserve or take away? Message us on WhatsApp and we’ll prepare it.</div>
       </div>
     </section>
 
     <!-- SANCOCHO -->
     <section class="section" id="sancocho">
       <h2>Sancocho</h2>
+      <div class="sub" data-lang="es">Plato especial (según disponibilidad).</div>
+      <div class="sub" data-lang="en">Special dish (subject to availability).</div>
+
       <div class="panel">
         <div class="headline">
           <div class="thumb"><img src="assets/img/sancocho.png" alt="Sancocho"></div>
           <div>
-            <b class="es">Sancocho de Gallina y Ternera</b>
-            <b class="en" style="display:none">Chicken & Beef Sancocho</b>
-            <span class="es">Consultar disponibilidad y horarios.</span>
-            <span class="en" style="display:none">Ask for availability and schedule.</span>
+            <b data-lang="es">Sancocho de Gallina y Ternera</b>
+            <b data-lang="en">Chicken & Beef Sancocho</b>
+            <span data-lang="es">Pregunta por disponibilidad y horarios.</span>
+            <span data-lang="en">Ask for availability and schedule.</span>
           </div>
         </div>
 
+        <!-- Si luego decides el precio exacto, cambia "Consultar" / "Ask" por el número -->
         <div class="item">
           <div>
-            <b class="es">Ración de Sancocho</b>
-            <b class="en" style="display:none">Sancocho Portion</b>
+            <b data-lang="es">Ración de sancocho</b>
+            <b data-lang="en">Sancocho portion</b>
+            <small data-lang="es">Disponible algunos días. Confirma por WhatsApp.</small>
+            <small data-lang="en">Available on selected days. Confirm on WhatsApp.</small>
           </div>
-          <div class="price es">Consultar</div>
-          <div class="price en" style="display:none">Ask</div>
+          <div class="price" data-lang="es">Consultar</div>
+          <div class="price" data-lang="en">Ask</div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20%C2%BFhay%20sancocho%20hoy%3F%20%C2%BFMe%20confirmas%20horarios%20y%20precio%3F" target="_blank" rel="noopener" data-lang="es">Preguntar</a>
+          <a class="btn gold" href="https://wa.me/34651651291?text=Hello%20El%20Chiringuito%20de%20la%20Arepa%2C%20is%20there%20sancocho%20today%3F%20Can%20you%20confirm%20schedule%20and%20price%3F" target="_blank" rel="noopener" data-lang="en">Ask</a>
+          <a class="btn" href="#top" data-lang="es">Ir arriba</a>
+          <a class="btn" href="#top" data-lang="en">Top</a>
         </div>
       </div>
     </section>
 
     <footer>
-      © 2026 El Chiringuito de la Arepa · <a href="index.html">Inicio</a>
+      © 2026 El Chiringuito de la Arepa ·
+      <a href="index.html" data-lang="es">Inicio</a><a href="index.html" data-lang="en">Home</a> ·
+      <a href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp</a> ·
+      <a href="legal.html" data-lang="es">Legal</a><a href="legal.html" data-lang="en">Legal</a>
     </footer>
   </main>
 
-  <div class="wa-float">
-    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank">
-      WhatsApp ↗
+  <div class="wa-float" aria-label="WhatsApp">
+    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
+      <span>WhatsApp</span> <small>↗</small>
     </a>
   </div>
+
+  <script>
+    (function(){
+      const html = document.documentElement;
+
+      function setLang(lang){
+        html.setAttribute("data-lang", lang);
+        localStorage.setItem("lang", lang);
+        document.getElementById("btnES").classList.toggle("active", lang==="es");
+        document.getElementById("btnEN").classList.toggle("active", lang==="en");
+      }
+
+      const saved = localStorage.getItem("lang");
+      const qs = new URLSearchParams(location.search);
+      const qLang = qs.get("lang");
+
+      // default ES
+      setLang(qLang || saved || "es");
+
+      document.getElementById("btnES").addEventListener("click", ()=>setLang("es"));
+      document.getElementById("btnEN").addEventListener("click", ()=>setLang("en"));
+    })();
+  </script>
 </body>
 </html>
