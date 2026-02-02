@@ -9,8 +9,8 @@
 
   <!-- SEO -->
   <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
-  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas artesanales, sancocho, tequeños, bebidas latinas y tres leches casero. Sabores que abrazan el alma." />
-  <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, chiringuito de la arepa, sancocho Granada" />
+  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas artesanales, tequeños, sancocho, bebidas latinas y tres leches casero. Sabores que abrazan el alma." />
+  <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, chiringuito de la arepa" />
   <meta name="author" content="El Chiringuito de la Arepa" />
 
   <!-- Open Graph -->
@@ -25,7 +25,6 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #0f2a1d;
       color: #fff;
-      padding-bottom: 75px; /* para que no tape la barra inferior */
     }
 
     header {
@@ -44,32 +43,22 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      min-width: 0;
     }
 
     .logo-title img {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      flex: 0 0 auto;
     }
 
     h1 {
       margin: 0;
       font-size: 1.2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 58vw;
     }
 
     .subtitle {
       font-size: 0.85rem;
       opacity: 0.85;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 58vw;
     }
 
     .btn-carta {
@@ -80,8 +69,6 @@
       border-radius: 20px;
       text-decoration: none;
       font-weight: bold;
-      white-space: nowrap;
-      flex: 0 0 auto;
     }
 
     .section {
@@ -97,11 +84,6 @@
     .hero h2 {
       font-size: 1.8rem;
       margin-bottom: 10px;
-    }
-
-    .hero p {
-      opacity: 0.9;
-      line-height: 1.5;
     }
 
     .btn-primary {
@@ -143,17 +125,10 @@
     }
 
     .card img {
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       border-radius: 10px;
-      flex: 0 0 auto;
-    }
-
-    .card strong {
-      display: inline-block;
-      font-size: 1.05rem;
-      margin-bottom: 2px;
     }
 
     .map-container {
@@ -194,13 +169,6 @@
       border-radius: 10px;
       display: flex;
       justify-content: space-between;
-      gap: 10px;
-    }
-
-    .hour-row span:last-child {
-      color: #e6c67a;
-      font-weight: bold;
-      text-align: right;
     }
 
     .social-grid {
@@ -242,13 +210,7 @@
       text-decoration: none;
       color: #e6c67a;
       text-align: center;
-      font-size: 0.9rem;
-      padding: 6px 8px;
-      border-radius: 10px;
-    }
-
-    .bottom-bar a:active {
-      background: rgba(230,198,122,0.15);
+      font-size: 0.85rem;
     }
 
     .cookie-bar {
@@ -258,22 +220,10 @@
       width: 100%;
       background: #0a1a12;
       padding: 12px;
-      display: none; /* la controlamos por JS */
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 10px;
       z-index: 999;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .cookie-bar span {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    .cookie-bar a {
-      color: #e6c67a;
-      text-decoration: underline;
     }
 
     .cookie-bar button {
@@ -282,21 +232,18 @@
       border: 1px solid #e6c67a;
       padding: 6px 10px;
       border-radius: 15px;
-      cursor: pointer;
-      margin-left: 6px;
-      white-space: nowrap;
     }
 
     footer {
       text-align: center;
       opacity: 0.7;
       font-size: 0.8rem;
-      padding: 20px 10px 10px 10px;
+      padding: 20px 10px 80px 10px;
     }
   </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
   <div class="logo-title">
@@ -309,10 +256,10 @@
   <a href="#carta" class="btn-carta">Carta</a>
 </header>
 
-<section id="inicio" class="hero section">
+<section class="hero section">
   <h2>Arepas venezolanas en Granada</h2>
   <p>
-    Arepas recién hechas, rellenos generosos, tequeños crujientes, nuestro sancocho y tres leches casero.  
+    Arepas recién hechas, rellenos generosos, tequeños crujientes, nuestro sancocho tradicional y tres leches casero.  
     Servicio para comer aquí y para llevar.
   </p>
   <a href="#carta" class="btn-primary">Ver la carta</a>
@@ -331,18 +278,18 @@
     </div>
 
     <div class="card">
-      <img src="assets/img/sancocho.png" alt="Sancocho">
-      <div>
-        <strong>Sancocho</strong><br>
-        Gallina y ternera (según disponibilidad)
-      </div>
-    </div>
-
-    <div class="card">
       <img src="assets/img/tequenos.png" alt="Tequeños">
       <div>
         <strong>Tequeños</strong><br>
         5 o 10 unidades
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/sancocho.png" alt="Sancocho venezolano">
+      <div>
+        <strong>Sancocho</strong><br>
+        Gallina y ternera (fin de semana)
       </div>
     </div>
 
@@ -369,13 +316,9 @@
   <h2>Ubicación</h2>
   <p>📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada</p>
 
-  <a class="btn-primary" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2027%2018004%20Granada" target="_blank" rel="noopener">
-    Abrir en Google Maps →
-  </a>
-
   <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2027%2018004%20Granada&output=embed"
+    <iframe 
+      src="https://www.google.com/maps?q=Chiringuito%20de%20la%20Arepa%20Granada&output=embed"
       width="100%" height="250" style="border:0;" allowfullscreen loading="lazy">
     </iframe>
   </div>
@@ -383,19 +326,16 @@
   <div class="reviews-box">
     <div class="stars">★★★★★</div>
     <p><strong>en Google</strong></p>
-
-    <!-- Tu enlace real -->
-    <a href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener" class="btn-primary">
+    <a href="https://share.google/Z389me5gyMTsDlDG6" class="btn-primary">
       Ayúdanos con una reseña →
     </a>
-
     <p style="margin-top:10px; font-size:0.9rem;">
       Si te gustó, ayúdanos con una reseña. Nos ayuda a aparecer mejor en Google en Granada. 🙌
     </p>
   </div>
 </section>
 
-<section id="horarios" class="section">
+<section class="section">
   <h2>Horarios</h2>
   <div class="hours-list">
     <div class="hour-row"><span>Lunes</span><span>19:00 – 23:00</span></div>
@@ -406,85 +346,60 @@
     <div class="hour-row"><span>Sábado</span><span>13:00–15:30 · 19:00–23:00</span></div>
     <div class="hour-row"><span>Domingo</span><span>13:00–15:30 · 19:00–22:00</span></div>
   </div>
-  <p style="margin-top:10px; opacity:0.85;">✅ Servicio para comer aquí y para llevar.</p>
 </section>
 
-<section id="redes" class="section">
+<section class="section">
   <h2>Redes sociales</h2>
-  <p style="opacity:0.9;">Síguenos y mira novedades</p>
-
   <div class="social-grid">
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==">Instagram →</a>
-
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU">TikTok →</a>
-
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp">YouTube →</a>
-
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://www.threads.com/@elchiringuitodelaarepa">Threads →</a>
-
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://www.facebook.com/profile.php?id=61584130088879">Facebook →</a>
-
-    <a class="social-btn" target="_blank" rel="noopener"
-       href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">Canal WhatsApp →</a>
+    <a class="social-btn" href="https://www.instagram.com/elchiringuitodelaarepa">Instagram →</a>
+    <a class="social-btn" href="https://www.tiktok.com/@elchiringuitodelaarepa">TikTok →</a>
+    <a class="social-btn" href="https://youtube.com/@elchiringuitodelaarepa">YouTube →</a>
+    <a class="social-btn" href="https://www.threads.com/@elchiringuitodelaarepa">Threads →</a>
+    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61584130088879">Facebook →</a>
+    <a class="social-btn" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">Canal WhatsApp →</a>
   </div>
-
-  <p style="margin-top:10px; opacity:0.85;">📌 Activa la campanita en nuestras redes para enterarte de promos y novedades.</p>
 </section>
 
-<section id="contacto" class="section">
+<section class="section">
   <h2>Contacto</h2>
-  <p style="opacity:0.9;">Te respondemos por WhatsApp</p>
-
   <div class="contact-box">
     <p>📞 Teléfono: <strong>858 83 01 86</strong></p>
     <p>💬 WhatsApp: <strong>+34 651 65 12 91</strong></p>
     <a href="https://wa.me/34651651291" class="btn-whatsapp">Escribir ahora →</a>
-    <a href="#carta" class="btn-primary" style="margin-left:8px;">Ver carta →</a>
   </div>
 </section>
 
 <div class="cookie-bar" id="cookieBar">
   <span>
-    Usamos cookies para mejorar tu experiencia.
-    <a href="legal.html">Política de cookies</a> · <a href="legal.html">Política de privacidad</a>
+    Usamos cookies para mejorar tu experiencia.  
+    <a href="legal.html#privacidad">Política de privacidad</a> · 
+    <a href="legal.html#cookies">Política de cookies</a>
   </span>
   <div>
-    <button onclick="setCookies('accepted')">Aceptar</button>
-    <button onclick="setCookies('rejected')">Rechazar</button>
+    <button onclick="acceptCookies()">Aceptar</button>
+    <button onclick="rejectCookies()">Rechazar</button>
   </div>
 </div>
 
 <footer>
-  © 2026 El Chiringuito de la Arepa · Granada ·
-  <a href="legal.html" style="color:#e6c67a;">Privacidad</a> ·
-  <a href="legal.html" style="color:#e6c67a;">Cookies</a>
+  © 2026 El Chiringuito de la Arepa · Granada
 </footer>
 
 <nav class="bottom-bar">
-  <a href="#inicio">Inicio</a>
+  <a href="#top">Inicio</a>
   <a href="#carta">Carta</a>
-  <a href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="https://wa.me/34651651291">WhatsApp</a>
   <a href="#ubicacion">Cómo llegar</a>
 </nav>
 
 <script>
-  // Mostrar/ocultar banner de cookies guardando preferencia
-  function setCookies(value) {
-    localStorage.setItem('cookieConsent', value);
-    document.getElementById("cookieBar").style.display = "none";
-  }
+function acceptCookies() {
+  document.getElementById("cookieBar").style.display = "none";
+}
 
-  (function initCookies() {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      document.getElementById("cookieBar").style.display = "flex";
-    }
-  })();
+function rejectCookies() {
+  document.getElementById("cookieBar").style.display = "none";
+}
 </script>
 
 </body>
