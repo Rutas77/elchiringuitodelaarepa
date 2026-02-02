@@ -9,7 +9,7 @@
 
   <!-- SEO -->
   <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
-  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas artesanales, tequeños, bebidas latinas y tres leches casero. Sabores que abrazan el alma." />
+  <meta name="description" content="El Chiringuito de la Arepa en Granada. Arepas venezolanas artesanales, tequeños, sancocho, bebidas latinas y tres leches casero. Sabores que abrazan el alma." />
   <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, chiringuito de la arepa" />
   <meta name="author" content="El Chiringuito de la Arepa" />
 
@@ -245,6 +245,11 @@
       font-size: 0.8rem;
       padding: 20px 10px 80px 10px;
     }
+
+    /* Evita que el header tape el contenido al saltar por anclas */
+    #inicio, #carta, #ubicacion {
+      scroll-margin-top: 90px;
+    }
   </style>
 </head>
 
@@ -261,10 +266,11 @@
   <a href="#carta" class="btn-carta">Carta</a>
 </header>
 
-<section class="hero section">
+<section id="inicio" class="hero section">
   <h2>Arepas venezolanas en Granada</h2>
   <p>
-    Arepas recién hechas, rellenos generosos, tequeños crujientes y nuestro tres leches casero.  
+    Arepas recién hechas, rellenos generosos, tequeños crujientes,  
+    nuestro sancocho y tres leches casero.  
     Servicio para comer aquí y para llevar.
   </p>
   <a href="#carta" class="btn-primary">Ver la carta</a>
@@ -273,6 +279,7 @@
 
 <section id="carta" class="section">
   <div class="card-list">
+
     <div class="card">
       <img src="assets/img/arepa.png" alt="Arepas venezolanas">
       <div>
@@ -286,6 +293,14 @@
       <div>
         <strong>Tequeños</strong><br>
         5 o 10 unidades
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="assets/img/sancocho.png" alt="Sancocho">
+      <div>
+        <strong>Sancocho</strong><br>
+        Gallina y ternera
       </div>
     </div>
 
@@ -304,10 +319,11 @@
         Tres leches casero
       </div>
     </div>
+
   </div>
 </section>
 
-<section class="section">
+<section id="ubicacion" class="section">
   <h2>Ubicación</h2>
   <p>📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada</p>
 
@@ -321,7 +337,7 @@
   <div class="reviews-box">
     <div class="stars">★★★★★</div>
     <p><strong>en Google</strong></p>
-    <a href="https://g.page/r/4Q3fXHu8YROQmdp7u/review" class="btn-primary">
+    <a href="https://share.google/Z389me5gyMTsDlDG6" class="btn-primary" target="_blank" rel="noopener">
       Ayúdanos con una reseña →
     </a>
     <p style="margin-top:10px; font-size:0.9rem;">
@@ -346,12 +362,12 @@
 <section class="section">
   <h2>Redes sociales</h2>
   <div class="social-grid">
-    <a class="social-btn" href="#">Instagram →</a>
-    <a class="social-btn" href="#">TikTok →</a>
-    <a class="social-btn" href="#">YouTube →</a>
-    <a class="social-btn" href="#">Threads →</a>
-    <a class="social-btn" href="#">Facebook →</a>
-    <a class="social-btn" href="#">Canal WhatsApp →</a>
+    <a class="social-btn" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram →</a>
+    <a class="social-btn" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU" target="_blank" rel="noopener">TikTok →</a>
+    <a class="social-btn" href="https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp" target="_blank" rel="noopener">YouTube →</a>
+    <a class="social-btn" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads →</a>
+    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook →</a>
+    <a class="social-btn" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp →</a>
   </div>
 </section>
 
@@ -380,7 +396,7 @@
 </footer>
 
 <nav class="bottom-bar">
-  <a href="#">Inicio</a>
+  <a href="#inicio">Inicio</a>
   <a href="#carta">Carta</a>
   <a href="https://wa.me/34651651291">WhatsApp</a>
   <a href="#ubicacion">Cómo llegar</a>
