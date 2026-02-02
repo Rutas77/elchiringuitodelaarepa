@@ -1,396 +1,351 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- Verificación Google -->
   <meta name="google-site-verification" content="wtSPSMo8RQoyttAs3DnVvIGF-RRALAuNy5CWo0d54_M" />
 
-  <!-- SEO -->
-  <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
-  <meta name="description" content="El Chiringuito de la Arepa en Granada (Ronda). Arepas venezolanas artesanales, tequeños, sancocho, bebidas latinas y tres leches casero. Sabores que abrazan el alma." />
-  <meta name="keywords" content="arepas Granada, comida venezolana Granada, arepas venezolanas, sancocho Granada, tequeños Granada, El Chiringuito de la Arepa" />
+  <!-- SEO base (lo imprescindible) -->
+  <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada (Ronda)</title>
+  <meta name="description" content="Arepas venezolanas hechas al momento en Granada (Ronda). Tequeños, sancocho, bebidas y tres leches casero. Comer aquí o para llevar. Sabores que abrazan el alma." />
   <meta name="author" content="El Chiringuito de la Arepa" />
-  <meta name="theme-color" content="#0f2a1d" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://elchiringuitodelaarepa.es/index.html" />
+  <meta name="theme-color" content="#071510" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="El Chiringuito de la Arepa" />
-  <meta property="og:description" content="Arepas venezolanas artesanales en Granada (Ronda). Sabores que abrazan el alma." />
+  <meta property="og:description" content="Arepas venezolanas en Granada (Ronda). Hechas al momento. Comer aquí o para llevar." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
   <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
 
+  <!-- Fuentes premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Local SEO: Schema.org (clave para Google) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Restaurant",
+    "name":"El Chiringuito de la Arepa",
+    "image":"https://elchiringuitodelaarepa.es/assets/img/logo.png",
+    "url":"https://elchiringuitodelaarepa.es/",
+    "telephone":"+34 858 83 01 86",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"C. Obispo Hurtado, 27",
+      "addressLocality":"Granada",
+      "postalCode":"18004",
+      "addressCountry":"ES"
+    },
+    "servesCuisine":["Venezuelan","Latin"],
+    "priceRange":"€€",
+    "sameAs":[
+      "https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==",
+      "https://www.facebook.com/profile.php?id=61584130088879",
+      "https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU",
+      "https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp",
+      "https://www.threads.com/@elchiringuitodelaarepa",
+      "https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d"
+    ]
+  }
+  </script>
+
   <style>
     :root{
-      --bg:#071510;
-      --bg2:#0f2a1d;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.10);
-      --gold:#e6c67a;
+      --bg:#050d0a;
+      --bg2:#071510;
+      --glass: rgba(255,255,255,.06);
+      --glass2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.10);
+      --text:#f4f4f4;
+      --muted: rgba(244,244,244,.70);
+      --gold:#e7c77b;
       --gold2:#caa85b;
-      --text:#ffffff;
-      --muted:rgba(255,255,255,0.75);
-      --wa:#1fbf6d;
-      --wa2:#129a57;
+      --gold3: rgba(231,199,123,.22);
+      --wa1:#1fd070;
+      --wa2:#11a65a;
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --r16: 18px;
+      --r24: 22px;
+      --max: 920px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(230,198,122,0.12), transparent 60%),
-        radial-gradient(900px 500px at 85% 15%, rgba(31,191,109,0.10), transparent 55%),
-        linear-gradient(180deg, #06110d 0%, var(--bg2) 55%, #05110c 100%);
+        radial-gradient(1200px 700px at 15% -10%, rgba(231,199,123,.16), transparent 60%),
+        radial-gradient(900px 600px at 85% 8%, rgba(31,208,112,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, #040b08 100%);
       min-height:100vh;
     }
 
+    /* Header */
     header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.32);
+      border-bottom:1px solid rgba(255,255,255,.08);
       padding:14px 16px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      backdrop-filter: blur(8px);
-      background: rgba(0,0,0,0.28);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      display:flex; align-items:center; justify-content:space-between;
     }
-
-    .logo-title{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:0;
-    }
+    .logo-title{display:flex; align-items:center; gap:12px; min-width:0}
     .logo-title img{
-      width:46px;
-      height:46px;
-      border-radius:50%;
-      border:1px solid rgba(230,198,122,0.25);
+      width:46px; height:46px; border-radius:50%;
+      border:1px solid rgba(231,199,123,.35);
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
       flex:0 0 auto;
     }
     .title-wrap{min-width:0}
     h1{
       margin:0;
       font-size:1.05rem;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-weight:800;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
       max-width:62vw;
     }
     .subtitle{
-      font-size:0.85rem;
+      margin-top:2px;
+      font-size:.85rem;
       color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
       max-width:62vw;
     }
+    .header-actions{display:flex; gap:10px; align-items:center}
 
-    .header-actions{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex:0 0 auto;
-    }
-
-    .chip-btn{
+    .pill{
       appearance:none;
-      border:none;
-      background: rgba(255,255,255,0.06);
-      color:#fff;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
       padding:10px 14px;
-      border-radius:18px;
-      font-weight:700;
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,0.10);
-    }
-    .chip-btn:hover{background: rgba(255,255,255,0.09)}
-    .btn-carta{
-      background: rgba(230,198,122,0.08);
-      color:var(--gold);
-      border:1px solid rgba(230,198,122,0.55);
-      padding:10px 14px;
-      border-radius:18px;
-      text-decoration:none;
+      border-radius:999px;
       font-weight:800;
       cursor:pointer;
     }
+    .pill:hover{background: rgba(255,255,255,.08)}
 
-    .section{
-      padding:18px 16px;
-      max-width:920px;
-      margin:auto;
+    .btn-carta{
+      text-decoration:none;
+      color: var(--gold);
+      border:1px solid rgba(231,199,123,.55);
+      background: linear-gradient(180deg, rgba(231,199,123,.12), rgba(231,199,123,.06));
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
     }
 
-    .hero{
-      padding:22px 16px 10px 16px;
+    /* Layout */
+    .section{max-width:var(--max); margin:auto; padding:18px 16px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--r24);
+      box-shadow: var(--shadow);
     }
 
-    .hero-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:22px;
-      padding:18px 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
-    }
-
+    /* Hero */
+    .hero{padding-top:20px}
+    .hero-inner{padding:18px 16px}
     .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      display:inline-flex; align-items:center; gap:10px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(230,198,122,0.35);
-      background: rgba(230,198,122,0.08);
-      color:var(--gold);
-      font-weight:800;
-      letter-spacing:0.4px;
-      font-size:0.82rem;
-      margin-bottom:10px;
+      border:1px solid rgba(231,199,123,.35);
+      background: rgba(231,199,123,.08);
+      color: var(--gold);
+      font-weight:900;
+      letter-spacing:.35px;
+      font-size:.82rem;
     }
     .hero h2{
-      margin: 6px 0 10px 0;
-      font-size:2.05rem;
-      line-height:1.08;
-      letter-spacing:-0.5px;
+      margin:12px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size:2.15rem;
+      line-height:1.05;
+      letter-spacing:-.6px;
     }
     .hero p{
       margin:0;
-      color:var(--muted);
+      color: var(--muted);
       line-height:1.55;
       font-size:1.02rem;
+      font-weight:600;
     }
-    .hero-actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
 
     .btn-primary{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background: rgba(230,198,122,0.10);
-      color:var(--gold);
-      border: 1px solid rgba(230,198,122,0.55);
-      padding:12px 18px;
-      border-radius:18px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       text-decoration:none;
+      padding:12px 18px;
+      border-radius:999px;
       font-weight:900;
+      border:1px solid rgba(231,199,123,.55);
+      color: var(--gold);
+      background: linear-gradient(180deg, rgba(231,199,123,.10), rgba(231,199,123,.05));
+      box-shadow: 0 14px 35px rgba(0,0,0,.30);
       cursor:pointer;
     }
-    .btn-primary:active{transform:translateY(1px)}
+    .btn-primary:active{transform: translateY(1px)}
 
-    .btn-whatsapp{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background: linear-gradient(180deg, var(--wa), var(--wa2));
-      color:#07110d;
-      padding:12px 18px;
-      border-radius:18px;
+    .btn-wa{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       text-decoration:none;
-      font-weight:900;
-      border:1px solid rgba(0,0,0,0.12);
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:1000;
+      color:#04110b;
+      background: linear-gradient(180deg, var(--wa1), var(--wa2));
+      border:1px solid rgba(0,0,0,.15);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
       cursor:pointer;
     }
 
-    .card-list{
-      display:grid;
-      gap:12px;
-      margin-top:14px;
+    /* Sections titles */
+    .h{
+      margin:0;
+      font-family:"Playfair Display", serif;
+      font-size:2.05rem;
+      letter-spacing:-.4px;
     }
-    .card{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:20px;
-      display:flex;
-      align-items:center;
-      gap:12px;
+    .sub{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    /* Menu cards list (preview) */
+    .menu-list{display:grid; gap:12px; margin-top:14px}
+    .mini{
+      display:flex; gap:12px; align-items:center;
       padding:12px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+      border-radius: var(--r24);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,.22);
     }
-    .card img{
-      width:84px;
-      height:84px;
+    .mini img{
+      width:86px; height:86px; border-radius:18px;
       object-fit:cover;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,.12);
       flex:0 0 auto;
     }
-    .card .title{
-      font-weight:900;
-      font-size:1.1rem;
-      margin-bottom:4px;
-    }
-    .card .desc{
-      color:var(--muted);
-      font-weight:700;
-    }
+    .mini .t{font-weight:1000; font-size:1.12rem}
+    .mini .d{color:var(--muted); font-weight:700; margin-top:4px}
 
-    h3.section-title{
-      margin:0 0 6px 0;
-      font-size:2.0rem;
-      letter-spacing:-0.4px;
-    }
-    .section-sub{
-      margin:0 0 12px 0;
-      color:var(--muted);
-      font-weight:700;
-    }
-
-    .info-box{
-      background: var(--card2);
-      border:1px solid rgba(255,255,255,0.10);
-      border-radius:20px;
-      padding:14px;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
-    }
-
-    .map-container{
+    /* Location box */
+    .info{
       margin-top:12px;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
+      padding:14px;
+      border-radius: var(--r24);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,.22);
     }
+    .map{margin-top:12px; border-radius: var(--r24); overflow:hidden; border:1px solid rgba(255,255,255,.10)}
+    iframe{display:block}
 
-    .reviews-box{
-      margin-top:14px;
-      text-align:center;
-      padding:16px 14px;
-    }
+    /* Reviews */
     .stars{
-      font-size:1.5rem;
-      color:var(--gold);
+      text-align:center;
+      color: var(--gold);
       letter-spacing:2px;
-      opacity:0.9;
+      font-size:1.55rem;
       animation:pulse 2s infinite;
+      margin:0;
     }
-    @keyframes pulse{
-      0%{opacity:.65}
-      50%{opacity:1}
-      100%{opacity:.65}
-    }
+    @keyframes pulse{0%{opacity:.65}50%{opacity:1}100%{opacity:.65}}
 
-    .hours-list{
-      display:grid;
-      gap:10px;
-      margin-top:12px;
-    }
-    .hour-row{
-      background: var(--card);
-      border:1px solid rgba(255,255,255,0.10);
+    /* Hours */
+    .hours{display:grid; gap:10px; margin-top:12px}
+    .row{
+      display:flex; justify-content:space-between; align-items:center;
       padding:12px 14px;
-      border-radius:18px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-weight:800;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-weight:900;
     }
-    .hour-row span:last-child{color:rgba(230,198,122,0.95)}
+    .row span:last-child{color: rgba(231,199,123,.95); font-weight:1000}
 
-    .social-grid{
-      display:grid;
-      gap:10px;
-      margin-top:12px;
-    }
-    .social-btn{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      background: var(--card);
-      border:1px solid rgba(255,255,255,0.10);
-      color:#fff;
+    /* Social */
+    .social{display:grid; gap:10px; margin-top:12px}
+    .link{
+      display:flex; align-items:center; justify-content:space-between;
       padding:14px 14px;
-      border-radius:18px;
+      border-radius: var(--r24);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
       text-decoration:none;
-      font-weight:900;
+      color: var(--text);
+      font-weight:1000;
     }
-    .social-btn span{color:var(--muted); font-weight:800}
-    .social-btn:hover{background: rgba(255,255,255,0.085)}
+    .link span{color:var(--muted); font-weight:900}
+    .link:hover{background: rgba(255,255,255,.08)}
 
-    .contact-box{
-      margin-top:12px;
-      padding:16px 14px;
-    }
-    .contact-item{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
+    /* Contact */
+    .contact{margin-top:12px}
+    .citem{
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
       padding:14px;
-      border-radius:18px;
-      background: var(--card);
-      border:1px solid rgba(255,255,255,0.10);
-      font-weight:900;
+      border-radius: var(--r24);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-weight:1000;
       margin-bottom:10px;
     }
-    .contact-item .label{color:var(--muted); font-weight:800}
+    .label{color:var(--muted); font-weight:800}
 
     footer{
       text-align:center;
-      opacity:0.7;
-      font-size:0.85rem;
-      padding:18px 10px 92px 10px;
+      opacity:.75;
+      padding:18px 10px 92px;
     }
-
-    .footer-links a{
-      color:rgba(230,198,122,0.9);
+    footer a{
+      color: rgba(231,199,123,.95);
       text-decoration:none;
-      font-weight:900;
+      font-weight:1000;
     }
-    .footer-links a:hover{text-decoration:underline}
+    footer a:hover{text-decoration:underline}
 
-    .bottom-bar{
-      position:fixed;
-      bottom:0;
-      left:0;
-      width:100%;
-      background: rgba(0,0,0,0.38);
-      backdrop-filter: blur(10px);
-      display:flex;
-      justify-content:space-around;
+    /* Bottom bar + WA float */
+    .bottom{
+      position:fixed; left:0; bottom:0; width:100%; z-index:1000;
+      background: rgba(0,0,0,.40);
+      backdrop-filter: blur(12px);
+      border-top:1px solid rgba(255,255,255,.10);
+      display:flex; justify-content:space-around;
       padding:10px 0;
-      border-top:1px solid rgba(255,255,255,0.10);
-      z-index:1000;
     }
-    .bottom-bar a{
+    .bottom a{
+      color: rgba(231,199,123,.95);
       text-decoration:none;
-      color:rgba(230,198,122,0.95);
-      text-align:center;
-      font-weight:900;
-      font-size:0.9rem;
+      font-weight:1000;
     }
 
     .wa-float{
-      position:fixed;
-      right:14px;
-      bottom:64px;
-      z-index:1100;
-      background: linear-gradient(180deg, var(--wa), var(--wa2));
-      color:#07110d;
-      font-weight:1000;
+      position:fixed; right:14px; bottom:64px; z-index:1100;
       padding:14px 16px;
-      border-radius:22px;
+      border-radius:999px;
       text-decoration:none;
-      box-shadow:0 16px 40px rgba(0,0,0,0.35);
-      border:1px solid rgba(0,0,0,0.12);
+      font-weight:1100;
+      color:#04110b;
+      background: linear-gradient(180deg, var(--wa1), var(--wa2));
+      box-shadow: 0 18px 45px rgba(0,0,0,.45);
+      border:1px solid rgba(0,0,0,.15);
     }
 
-    /* Separación para que la barra no tape el contenido */
-    .spacer-bottom{height:70px;}
+    .spacer{height:70px}
   </style>
 </head>
 
@@ -406,333 +361,362 @@
   </div>
 
   <div class="header-actions">
-    <!-- Botón idioma REAL -->
-    <button class="chip-btn" id="langBtn" type="button" aria-label="Cambiar idioma">
-      EN
-    </button>
+    <!-- Idioma: ES/EN/FR -->
+    <button class="pill" id="langBtn" type="button" aria-label="Cambiar idioma">EN</button>
 
-    <!-- Botón carta -->
-    <a href="#carta" class="btn-carta" data-i18n="menuBtn">Carta</a>
+    <!-- Carta: archivo en repo -->
+    <a class="btn-carta" href="carta.html" data-i18n="menuBtn">Carta</a>
   </div>
 </header>
 
-<section class="hero section" id="inicio">
-  <div class="hero-card">
+<section class="section hero" id="inicio">
+  <div class="card hero-inner">
     <div class="badge" data-i18n="badge">🥟 TRADICIÓN VENEZOLANA · PREMIUM</div>
     <h2 data-i18n="heroTitle">Arepas venezolanas en Granada (Ronda).</h2>
-    <p data-i18n="heroText">
-      Hechas al momento, con sabor auténtico y porciones que reconfortan. Comer aquí o para llevar.
-    </p>
+    <p data-i18n="heroText">Hechas al momento, con sabor auténtico y porciones que reconfortan. Comer aquí o para llevar.</p>
 
     <div class="hero-actions">
-      <a href="#carta" class="btn-primary" data-i18n="viewMenu">Ver la carta</a>
-      <a href="https://wa.me/34651651291" class="btn-whatsapp" data-i18n="orderWA">Pedir por WhatsApp ↗</a>
+      <a class="btn-primary" href="carta.html" data-i18n="viewMenu">Ver la carta</a>
+      <a class="btn-wa" href="https://wa.me/34651651291" target="_blank" rel="noopener" data-i18n="orderWA">Pedir por WhatsApp ↗</a>
     </div>
   </div>
 </section>
 
-<section id="carta" class="section">
-  <div class="card-list">
-
-    <div class="card">
-      <img src="assets/img/arepa.png" alt="Arepas venezolanas">
+<!-- Vista previa de carta (misma estructura/contenido) -->
+<section class="section" id="carta-preview">
+  <div class="menu-list">
+    <div class="mini">
+      <img src="assets/img/arepa.png" alt="Arepas">
       <div>
-        <div class="title" data-i18n="cardArepasTitle">Arepas</div>
-        <div class="desc" data-i18n="cardArepasDesc">Reina Pepiada · Pabellón · Mechada</div>
+        <div class="t" data-i18n="cardArepasTitle">Arepas</div>
+        <div class="d" data-i18n="cardArepasDesc">Reina Pepiada · Pabellón · Mechada</div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="mini">
       <img src="assets/img/tequenos.png" alt="Tequeños">
       <div>
-        <div class="title" data-i18n="cardTeqTitle">Tequeños</div>
-        <div class="desc" data-i18n="cardTeqDesc">5 o 10 unidades</div>
+        <div class="t" data-i18n="cardTeqTitle">Tequeños</div>
+        <div class="d" data-i18n="cardTeqDesc">5 o 10 unidades</div>
       </div>
     </div>
 
-    <!-- SANCOCHO -->
-    <div class="card">
+    <div class="mini">
       <img src="assets/img/sancocho.png" alt="Sancocho">
       <div>
-        <div class="title" data-i18n="cardSancochoTitle">Sancocho</div>
-        <div class="desc" data-i18n="cardSancochoDesc">Consulta días y disponibilidad</div>
+        <div class="t" data-i18n="cardSancochoTitle">Sancocho</div>
+        <div class="d" data-i18n="cardSancochoDesc">Consulta días y disponibilidad</div>
       </div>
     </div>
 
-    <div class="card">
+    <div class="mini">
       <img src="assets/img/bebidas.png" alt="Bebidas">
       <div>
-        <div class="title" data-i18n="cardDrinksTitle">Bebidas</div>
-        <div class="desc" data-i18n="cardDrinksDesc">Frías y calientes</div>
+        <div class="t" data-i18n="cardDrinksTitle">Bebidas</div>
+        <div class="d" data-i18n="cardDrinksDesc">Frías y calientes</div>
       </div>
     </div>
 
-    <!-- POSTRE (TRES LECHES) -->
-    <div class="card">
-      <img src="assets/img/tresleches.png" alt="Tres leches casero">
+    <div class="mini">
+      <img src="assets/img/tresleches.png" alt="Tres leches">
       <div>
-        <div class="title" data-i18n="cardDessertTitle">Postres</div>
-        <div class="desc" data-i18n="cardDessertDesc">Tres leches casero</div>
+        <div class="t" data-i18n="cardDessertTitle">Postres</div>
+        <div class="d" data-i18n="cardDessertDesc">Tres leches casero</div>
       </div>
     </div>
-
   </div>
 </section>
 
 <section class="section" id="mapa">
-  <h3 class="section-title" data-i18n="locTitle">Ubicación</h3>
-  <p class="section-sub" data-i18n="locSub">Cómo llegar</p>
+  <h2 class="h" data-i18n="locTitle">Ubicación</h2>
+  <p class="sub" data-i18n="locSub">Cómo llegar</p>
 
-  <div class="info-box">
-    <p style="margin:0; font-weight:900" data-i18n="addressLine">📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada</p>
-    <p style="margin:6px 0 0 0; color:var(--muted); font-weight:800" data-i18n="locHint">Te esperamos en el corazón de Granada.</p>
+  <div class="info">
+    <div style="font-weight:1000" data-i18n="addressLine">📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada</div>
+    <div style="margin-top:6px; color:var(--muted); font-weight:800" data-i18n="locHint">Te esperamos en el corazón de Granada.</div>
 
     <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-      <a class="btn-primary" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada"
+      <a class="btn-primary"
+         href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada"
          target="_blank" rel="noopener"
          data-i18n="openMaps">Abrir en Google Maps ↗</a>
     </div>
   </div>
 
-  <div class="map-container">
+  <div class="map">
     <iframe
       src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada&output=embed"
-      width="100%" height="260" style="border:0;" allowfullscreen loading="lazy">
-    </iframe>
+      width="100%" height="260" style="border:0" allowfullscreen loading="lazy"></iframe>
   </div>
 
-  <div class="reviews-box info-box">
-    <div class="stars">★★★★★</div>
-    <p style="margin:8px 0 10px 0; font-weight:900" data-i18n="googleLine">en Google</p>
-    <a href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener" class="btn-primary" data-i18n="reviewBtn">
-      Ayúdanos con una reseña ↗
-    </a>
-    <p style="margin:12px 0 0 0; color:var(--muted); font-weight:800" data-i18n="reviewText">
+  <div class="info" style="text-align:center; margin-top:14px;">
+    <p class="stars">★★★★★</p>
+    <div style="font-weight:1000; margin:8px 0 10px" data-i18n="googleLine">en Google</div>
+    <a class="btn-primary" href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener" data-i18n="reviewBtn">Ayúdanos con una reseña ↗</a>
+    <div style="margin-top:12px; color:var(--muted); font-weight:800" data-i18n="reviewText">
       Si te gustó, ayúdanos con una reseña. Nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌
-    </p>
+    </div>
   </div>
 </section>
 
 <section class="section" id="horarios">
-  <h3 class="section-title" data-i18n="hoursTitle">Horarios</h3>
-  <p class="section-sub" data-i18n="hoursSub">Servicio para comer aquí y para llevar</p>
+  <h2 class="h" data-i18n="hoursTitle">Horarios</h2>
+  <p class="sub" data-i18n="hoursSub">Servicio para comer aquí y para llevar</p>
 
-  <div class="hours-list">
-    <div class="hour-row"><span data-i18n="dMon">Lunes</span><span>19:00 – 23:00</span></div>
-    <div class="hour-row"><span data-i18n="dTue">Martes</span><span>19:00 – 23:00</span></div>
-    <div class="hour-row"><span data-i18n="dWed">Miércoles</span><span>19:00 – 23:00</span></div>
-    <div class="hour-row"><span data-i18n="dThu">Jueves</span><span data-i18n="closed">CERRADO</span></div>
-    <div class="hour-row"><span data-i18n="dFri">Viernes</span><span>13:00 – 15:30 · 19:00 – 23:00</span></div>
-    <div class="hour-row"><span data-i18n="dSat">Sábado</span><span>13:00 – 15:30 · 19:00 – 23:00</span></div>
-    <div class="hour-row"><span data-i18n="dSun">Domingo</span><span>13:00 – 15:30 · 19:00 – 22:00</span></div>
+  <div class="hours">
+    <div class="row"><span data-i18n="dMon">Lunes</span><span>19:00 – 23:00</span></div>
+    <div class="row"><span data-i18n="dTue">Martes</span><span>19:00 – 23:00</span></div>
+    <div class="row"><span data-i18n="dWed">Miércoles</span><span>19:00 – 23:00</span></div>
+    <div class="row"><span data-i18n="dThu">Jueves</span><span data-i18n="closed">CERRADO</span></div>
+    <div class="row"><span data-i18n="dFri">Viernes</span><span>13:00 – 15:30 · 19:00 – 23:00</span></div>
+    <div class="row"><span data-i18n="dSat">Sábado</span><span>13:00 – 15:30 · 19:00 – 23:00</span></div>
+    <div class="row"><span data-i18n="dSun">Domingo</span><span>13:00 – 15:30 · 19:00 – 22:00</span></div>
   </div>
 </section>
 
 <section class="section" id="redes">
-  <h3 class="section-title" data-i18n="socialTitle">Redes sociales</h3>
-  <p class="section-sub" data-i18n="socialSub">Síguenos y mira novedades</p>
+  <h2 class="h" data-i18n="socialTitle">Redes sociales</h2>
+  <p class="sub" data-i18n="socialSub">Síguenos y mira novedades</p>
 
-  <div class="social-grid">
-    <a class="social-btn" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">
-      Instagram <span>↗</span>
-    </a>
-    <a class="social-btn" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU" target="_blank" rel="noopener">
-      TikTok <span>↗</span>
-    </a>
-    <a class="social-btn" href="https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp" target="_blank" rel="noopener">
-      YouTube <span>↗</span>
-    </a>
-    <a class="social-btn" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">
-      Threads <span>↗</span>
-    </a>
-    <a class="social-btn" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">
-      Facebook <span>↗</span>
-    </a>
-    <a class="social-btn" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">
-      Canal WhatsApp <span>↗</span>
-    </a>
+  <div class="social">
+    <a class="link" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+    <a class="link" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU" target="_blank" rel="noopener">TikTok <span>↗</span></a>
+    <a class="link" href="https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp" target="_blank" rel="noopener">YouTube <span>↗</span></a>
+    <a class="link" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads <span>↗</span></a>
+    <a class="link" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook <span>↗</span></a>
+    <a class="link" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp <span>↗</span></a>
   </div>
 </section>
 
 <section class="section" id="contacto">
-  <h3 class="section-title" data-i18n="contactTitle">Contacto</h3>
-  <p class="section-sub" data-i18n="contactSub">Te respondemos por WhatsApp</p>
+  <h2 class="h" data-i18n="contactTitle">Contacto</h2>
+  <p class="sub" data-i18n="contactSub">Te respondemos por WhatsApp</p>
 
-  <div class="contact-box info-box">
-    <div class="contact-item">
+  <div class="contact">
+    <div class="citem">
       <div class="label" data-i18n="phoneLabel">📞 Teléfono</div>
       <div>858 83 01 86</div>
     </div>
-
-    <div class="contact-item">
+    <div class="citem">
       <div class="label">💬 WhatsApp</div>
       <div>+34 651 65 12 91</div>
     </div>
 
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-      <a href="https://wa.me/34651651291" class="btn-whatsapp" data-i18n="writeNow">Escribir ahora ↗</a>
-      <a href="legal.html" class="btn-primary" data-i18n="privacyBtn">Privacidad y cookies</a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+      <a class="btn-wa" href="https://wa.me/34651651291" target="_blank" rel="noopener" data-i18n="writeNow">Escribir ahora ↗</a>
+      <a class="btn-primary" href="legal.html" data-i18n="privacyBtn">Privacidad y cookies</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div>© 2026 <span data-i18n="brand">El Chiringuito de la Arepa</span> · Granada</div>
-  <div class="footer-links" style="margin-top:8px;">
-    <a href="#carta" data-i18n="menuBtn">Carta</a> ·
-    <a href="legal.html" data-i18n="legalBtn">Legal</a>
+  <div style="margin-top:8px;">
+    <a href="carta.html" data-i18n="menuBtn">Carta</a> · <a href="legal.html" data-i18n="legalBtn">Legal</a>
   </div>
 </footer>
 
-<div class="spacer-bottom"></div>
+<div class="spacer"></div>
 
-<!-- WhatsApp flotante -->
 <a class="wa-float" href="https://wa.me/34651651291" target="_blank" rel="noopener">WhatsApp ↗</a>
 
-<!-- Barra inferior -->
-<nav class="bottom-bar">
+<nav class="bottom">
   <a href="#inicio" data-i18n="navHome">Inicio</a>
-  <a href="#carta" data-i18n="navMenu">Carta</a>
+  <a href="carta.html" data-i18n="navMenu">Carta</a>
   <a href="#mapa" data-i18n="navMap">Mapa</a>
   <a href="#redes" data-i18n="navSocial">Redes</a>
   <a href="https://wa.me/34651651291" data-i18n="navWA">WhatsApp</a>
 </nav>
 
 <script>
-  // Diccionario ES/EN (lo que ves en pantalla)
+  // ES / EN / FR
+  const LANGS = ["es","en","fr"];
+
   const i18n = {
     es: {
-      brand: "El Chiringuito de la Arepa",
-      slogan: "Sabores que abrazan el alma",
-      badge: "🥟 TRADICIÓN VENEZOLANA · PREMIUM",
-      heroTitle: "Arepas venezolanas en Granada (Ronda).",
-      heroText: "Hechas al momento, con sabor auténtico y porciones que reconfortan. Comer aquí o para llevar.",
-      menuBtn: "Carta",
-      viewMenu: "Ver la carta",
-      orderWA: "Pedir por WhatsApp ↗",
+      brand:"El Chiringuito de la Arepa",
+      slogan:"Sabores que abrazan el alma",
+      badge:"🥟 TRADICIÓN VENEZOLANA · PREMIUM",
+      heroTitle:"Arepas venezolanas en Granada (Ronda).",
+      heroText:"Hechas al momento, con sabor auténtico y porciones que reconfortan. Comer aquí o para llevar.",
+      menuBtn:"Carta",
+      viewMenu:"Ver la carta",
+      orderWA:"Pedir por WhatsApp ↗",
 
-      cardArepasTitle: "Arepas",
-      cardArepasDesc: "Reina Pepiada · Pabellón · Mechada",
-      cardTeqTitle: "Tequeños",
-      cardTeqDesc: "5 o 10 unidades",
-      cardSancochoTitle: "Sancocho",
-      cardSancochoDesc: "Consulta días y disponibilidad",
-      cardDrinksTitle: "Bebidas",
-      cardDrinksDesc: "Frías y calientes",
-      cardDessertTitle: "Postres",
-      cardDessertDesc: "Tres leches casero",
+      cardArepasTitle:"Arepas",
+      cardArepasDesc:"Reina Pepiada · Pabellón · Mechada",
+      cardTeqTitle:"Tequeños",
+      cardTeqDesc:"5 o 10 unidades",
+      cardSancochoTitle:"Sancocho",
+      cardSancochoDesc:"Consulta días y disponibilidad",
+      cardDrinksTitle:"Bebidas",
+      cardDrinksDesc:"Frías y calientes",
+      cardDessertTitle:"Postres",
+      cardDessertDesc:"Tres leches casero",
 
-      locTitle: "Ubicación",
-      locSub: "Cómo llegar",
-      addressLine: "📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada",
-      locHint: "Te esperamos en el corazón de Granada.",
-      openMaps: "Abrir en Google Maps ↗",
+      locTitle:"Ubicación",
+      locSub:"Cómo llegar",
+      addressLine:"📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada",
+      locHint:"Te esperamos en el corazón de Granada.",
+      openMaps:"Abrir en Google Maps ↗",
 
-      googleLine: "en Google",
-      reviewBtn: "Ayúdanos con una reseña ↗",
-      reviewText: "Si te gustó, ayúdanos con una reseña. Nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌",
+      googleLine:"en Google",
+      reviewBtn:"Ayúdanos con una reseña ↗",
+      reviewText:"Si te gustó, ayúdanos con una reseña. Nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌",
 
-      hoursTitle: "Horarios",
-      hoursSub: "Servicio para comer aquí y para llevar",
-      dMon: "Lunes", dTue: "Martes", dWed: "Miércoles", dThu: "Jueves", dFri: "Viernes", dSat: "Sábado", dSun: "Domingo",
-      closed: "CERRADO",
+      hoursTitle:"Horarios",
+      hoursSub:"Servicio para comer aquí y para llevar",
+      dMon:"Lunes", dTue:"Martes", dWed:"Miércoles", dThu:"Jueves", dFri:"Viernes", dSat:"Sábado", dSun:"Domingo",
+      closed:"CERRADO",
 
-      socialTitle: "Redes sociales",
-      socialSub: "Síguenos y mira novedades",
+      socialTitle:"Redes sociales",
+      socialSub:"Síguenos y mira novedades",
 
-      contactTitle: "Contacto",
-      contactSub: "Te respondemos por WhatsApp",
-      phoneLabel: "📞 Teléfono",
-      writeNow: "Escribir ahora ↗",
-      privacyBtn: "Privacidad y cookies",
-      legalBtn: "Legal",
+      contactTitle:"Contacto",
+      contactSub:"Te respondemos por WhatsApp",
+      phoneLabel:"📞 Teléfono",
+      writeNow:"Escribir ahora ↗",
+      privacyBtn:"Privacidad y cookies",
+      legalBtn:"Legal",
 
-      navHome: "Inicio",
-      navMenu: "Carta",
-      navMap: "Mapa",
-      navSocial: "Redes",
-      navWA: "WhatsApp"
+      navHome:"Inicio",
+      navMenu:"Carta",
+      navMap:"Mapa",
+      navSocial:"Redes",
+      navWA:"WhatsApp"
     },
 
     en: {
-      brand: "El Chiringuito de la Arepa",
-      slogan: "Flavors that hug the soul",
-      badge: "🥟 VENEZUELAN TRADITION · PREMIUM",
-      heroTitle: "Venezuelan arepas in Granada (Ronda).",
-      heroText: "Made to order, authentic flavor and comforting portions. Eat here or takeaway.",
-      menuBtn: "Menu",
-      viewMenu: "View menu",
-      orderWA: "Order on WhatsApp ↗",
+      brand:"El Chiringuito de la Arepa",
+      slogan:"Flavors that hug the soul",
+      badge:"🥟 VENEZUELAN TRADITION · PREMIUM",
+      heroTitle:"Venezuelan arepas in Granada (Ronda).",
+      heroText:"Made to order, authentic flavor and comforting portions. Eat in or takeaway.",
+      menuBtn:"Menu",
+      viewMenu:"View menu",
+      orderWA:"Order on WhatsApp ↗",
 
-      cardArepasTitle: "Arepas",
-      cardArepasDesc: "Reina Pepiada · Pabellón · Mechada",
-      cardTeqTitle: "Tequeños",
-      cardTeqDesc: "5 or 10 pieces",
-      cardSancochoTitle: "Sancocho",
-      cardSancochoDesc: "Ask for days & availability",
-      cardDrinksTitle: "Drinks",
-      cardDrinksDesc: "Cold & hot",
-      cardDessertTitle: "Desserts",
-      cardDessertDesc: "Homemade tres leches",
+      cardArepasTitle:"Arepas",
+      cardArepasDesc:"Reina Pepiada · Pabellón · Mechada",
+      cardTeqTitle:"Tequeños",
+      cardTeqDesc:"5 or 10 pieces",
+      cardSancochoTitle:"Sancocho",
+      cardSancochoDesc:"Ask for days & availability",
+      cardDrinksTitle:"Drinks",
+      cardDrinksDesc:"Cold & hot",
+      cardDessertTitle:"Desserts",
+      cardDessertDesc:"Homemade tres leches",
 
-      locTitle: "Location",
-      locSub: "How to get here",
-      addressLine: "📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada",
-      locHint: "We’re waiting for you in the heart of Granada.",
-      openMaps: "Open in Google Maps ↗",
+      locTitle:"Location",
+      locSub:"How to get here",
+      addressLine:"📍 C. Obispo Hurtado, 27 · Ronda · 18004 Granada",
+      locHint:"We’re waiting for you in the heart of Granada.",
+      openMaps:"Open in Google Maps ↗",
 
-      googleLine: "on Google",
-      reviewBtn: "Leave us a review ↗",
-      reviewText: "If you enjoyed it, please leave us a review. It really helps us rank better in Granada. 🙌",
+      googleLine:"on Google",
+      reviewBtn:"Leave us a review ↗",
+      reviewText:"If you enjoyed it, please leave us a review. It helps us rank better in Granada. 🙌",
 
-      hoursTitle: "Opening hours",
-      hoursSub: "Eat-in and takeaway available",
-      dMon: "Monday", dTue: "Tuesday", dWed: "Wednesday", dThu: "Thursday", dFri: "Friday", dSat: "Saturday", dSun: "Sunday",
-      closed: "CLOSED",
+      hoursTitle:"Opening hours",
+      hoursSub:"Eat-in and takeaway available",
+      dMon:"Monday", dTue:"Tuesday", dWed:"Wednesday", dThu:"Thursday", dFri:"Friday", dSat:"Saturday", dSun:"Sunday",
+      closed:"CLOSED",
 
-      socialTitle: "Social media",
-      socialSub: "Follow us for updates",
+      socialTitle:"Social media",
+      socialSub:"Follow us for updates",
 
-      contactTitle: "Contact",
-      contactSub: "We reply on WhatsApp",
-      phoneLabel: "📞 Phone",
-      writeNow: "Message us ↗",
-      privacyBtn: "Privacy & cookies",
-      legalBtn: "Legal",
+      contactTitle:"Contact",
+      contactSub:"We reply on WhatsApp",
+      phoneLabel:"📞 Phone",
+      writeNow:"Message us ↗",
+      privacyBtn:"Privacy & cookies",
+      legalBtn:"Legal",
 
-      navHome: "Home",
-      navMenu: "Menu",
-      navMap: "Map",
-      navSocial: "Social",
-      navWA: "WhatsApp"
+      navHome:"Home",
+      navMenu:"Menu",
+      navMap:"Map",
+      navSocial:"Social",
+      navWA:"WhatsApp"
+    },
+
+    fr: {
+      brand:"El Chiringuito de la Arepa",
+      slogan:"Des saveurs qui réchauffent l’âme",
+      badge:"🥟 TRADITION VÉNÉZUÉLIENNE · PREMIUM",
+      heroTitle:"Arepas vénézuéliennes à Grenade (Ronda).",
+      heroText:"Préparées à la minute, saveur authentique et portions réconfortantes. Sur place ou à emporter.",
+      menuBtn:"Carte",
+      viewMenu:"Voir la carte",
+      orderWA:"Commander sur WhatsApp ↗",
+
+      cardArepasTitle:"Arepas",
+      cardArepasDesc:"Reina Pepiada · Pabellón · Mechada",
+      cardTeqTitle:"Tequeños",
+      cardTeqDesc:"5 ou 10 pièces",
+      cardSancochoTitle:"Sancocho",
+      cardSancochoDesc:"Demandez les jours & disponibilité",
+      cardDrinksTitle:"Boissons",
+      cardDrinksDesc:"Froides & chaudes",
+      cardDessertTitle:"Desserts",
+      cardDessertDesc:"Tres leches maison",
+
+      locTitle:"Adresse",
+      locSub:"Comment venir",
+      addressLine:"📍 C. Obispo Hurtado, 27 · Ronda · 18004 Grenade",
+      locHint:"On vous attend au cœur de Grenade.",
+      openMaps:"Ouvrir dans Google Maps ↗",
+
+      googleLine:"sur Google",
+      reviewBtn:"Laissez un avis ↗",
+      reviewText:"Si vous avez aimé, laissez-nous un avis. Cela nous aide à mieux apparaître à Grenade. 🙌",
+
+      hoursTitle:"Horaires",
+      hoursSub:"Sur place et à emporter",
+      dMon:"Lundi", dTue:"Mardi", dWed:"Mercredi", dThu:"Jeudi", dFri:"Vendredi", dSat:"Samedi", dSun:"Dimanche",
+      closed:"FERMÉ",
+
+      socialTitle:"Réseaux sociaux",
+      socialSub:"Suivez-nous pour les nouveautés",
+
+      contactTitle:"Contact",
+      contactSub:"Nous répondons sur WhatsApp",
+      phoneLabel:"📞 Téléphone",
+      writeNow:"Écrire maintenant ↗",
+      privacyBtn:"Confidentialité & cookies",
+      legalBtn:"Mentions légales",
+
+      navHome:"Accueil",
+      navMenu:"Carte",
+      navMap:"Plan",
+      navSocial:"Réseaux",
+      navWA:"WhatsApp"
     }
   };
 
   function applyLang(lang){
     const dict = i18n[lang] || i18n.es;
-
     document.documentElement.lang = lang;
     localStorage.setItem("lang", lang);
 
-    // Cambia textos
     document.querySelectorAll("[data-i18n]").forEach(el=>{
       const key = el.getAttribute("data-i18n");
-      if(dict[key]) el.textContent = dict[key];
+      if (dict[key]) el.textContent = dict[key];
     });
 
-    // Ajusta etiqueta del botón
+    // Botón muestra el siguiente idioma
     const btn = document.getElementById("langBtn");
-    btn.textContent = (lang === "es") ? "EN" : "ES";
+    const idx = LANGS.indexOf(lang);
+    const next = LANGS[(idx + 1) % LANGS.length];
+    btn.textContent = next.toUpperCase();
   }
 
-  // Botón idioma: alterna ES <-> EN
   document.getElementById("langBtn").addEventListener("click", ()=>{
     const current = localStorage.getItem("lang") || "es";
-    const next = (current === "es") ? "en" : "es";
+    const idx = LANGS.indexOf(current);
+    const next = LANGS[(idx + 1) % LANGS.length];
     applyLang(next);
   });
 
-  // Cargar idioma guardado (o ES por defecto)
   applyLang(localStorage.getItem("lang") || "es");
 </script>
 
