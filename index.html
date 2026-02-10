@@ -10,7 +10,7 @@
 
   <!-- SEO -->
   <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
-  <meta name="description" content="Arepas venezolanas artesanales en Granada. Tequeños, sancocho (según disponibilidad), bebidas latinas y tres leches casero. Comer aquí o para llevar. C. Obispo Hurtado, 27." />
+  <meta name="description" content="Arepas venezolanas artesanales en Granada. Tequeños, sancocho de gallina y ternera, bebidas latinas y tres leches casero. Comer aquí o para llevar. C. Obispo Hurtado, 27." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
 
   <!-- Open Graph -->
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="alternate" hreflang="es" href="https://elchiringuitodelaarepa.es/" />
-  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="icon" href="/assets/img/logo.png" />
 
   <!-- JSON-LD (SEO Local) -->
   <script type="application/ld+json">
@@ -48,12 +48,15 @@
   <style>
     :root{
       --bg:#060d0d;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.04);
       --text:#edf4f2;
       --muted: rgba(237,244,242,.74);
       --gold:#c7a45a;
       --gold2:#ad8741;
       --gold3:#e7d2a3;
       --wa:#25D366;
+      --line: rgba(255,255,255,.10);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --shadow2: 0 12px 30px rgba(0,0,0,.40);
       --r: 26px;
@@ -87,10 +90,19 @@
       display:flex; align-items:center; gap:12px;
     }
     .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
-    .brand img{ width:38px; height:38px; border-radius:14px; object-fit:cover; border:1px solid rgba(255,255,255,.10); }
+    .brand img{
+      width:38px; height:38px; border-radius:14px;
+      object-fit:cover; border:1px solid rgba(255,255,255,.10);
+    }
     .brand .t{ min-width:0; line-height:1.12; }
-    .brand .t b{ font-size:15.5px; letter-spacing:.2px; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .brand .t span{ font-size:13px; color:var(--muted); font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .brand .t b{
+      font-size:15.5px; letter-spacing:.2px; display:block;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .brand .t span{
+      font-size:13px; color:var(--muted); font-weight:800;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
 
     .pill{
       display:inline-flex; align-items:center; justify-content:center;
@@ -103,7 +115,6 @@
       white-space:nowrap;
       gap:10px;
       cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
     }
     .pill.gold{
       background: rgba(199,164,90,.20);
@@ -122,7 +133,7 @@
       color:#fff1d2;
     }
 
-    /* Hero */
+    /* Hero premium */
     .hero{
       margin-top: 16px;
       border-radius: var(--r);
@@ -143,6 +154,7 @@
       opacity:.9;
     }
     .hero > *{ position:relative; }
+
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       padding: 8px 12px;
@@ -159,6 +171,7 @@
       display:inline-block;
       box-shadow: 0 0 18px rgba(199,164,90,.55);
     }
+
     .hero h1{
       margin: 12px 0 8px;
       font-size: 46px;
@@ -199,7 +212,7 @@
       color: #eafff1;
     }
 
-    /* QR premium */
+    /* QR premium (marco dorado) */
     .qr-card{
       margin-top: 14px;
       border-radius: 22px;
@@ -221,6 +234,7 @@
         0 10px 26px rgba(0,0,0,.45),
         0 0 0 1px rgba(231,210,163,.35) inset;
       flex:0 0 auto;
+      display:block;
     }
     .qr-frame .inner{
       width:100%; height:100%;
@@ -420,7 +434,7 @@
       text-underline-offset: 4px;
     }
 
-    /* i18n */
+    /* Language swap */
     [data-i18n]{ display:none; }
     html[data-lang="es"] [data-i18n="es"]{ display:block; }
     html[data-lang="en"] [data-i18n="en"]{ display:block; }
@@ -428,6 +442,7 @@
 </head>
 
 <body>
+
   <header class="topbar">
     <div class="topbar-inner">
       <div class="brand">
@@ -475,13 +490,13 @@
         <a class="btn wa" href="https://wa.me/34651651291?text=Hello%20El%20Chiringuito%20de%20la%20Arepa%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener" data-i18n="en">Order on WhatsApp ↗</a>
       </div>
 
-      <!-- QR con marco dorado -->
+      <!-- QR con marco dorado (ARREGLADO) -->
       <div class="qr-card">
-        <div class="qr-frame">
+        <a class="qr-frame" href="/carta.html" aria-label="Abrir la carta">
           <div class="inner">
-            <img src="/assets/img/qr-menu.png" alt="QR Menu">
+            <img src="/assets/img/qr-menu.png?v=2" alt="QR Carta El Chiringuito de la Arepa">
           </div>
-        </div>
+        </a>
         <div class="qr-txt">
           <b data-i18n="es">Escanea y abre la carta</b>
           <b data-i18n="en">Scan to open the menu</b>
@@ -547,22 +562,14 @@
           </div>
         </div>
 
-        <div class="cta-row" style="margin-top:12px;">
-          <!-- BOTÓN REAL: ABRIR GOOGLE MAPS -->
-          <a class="btn gold"
-             href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada"
-             target="_blank" rel="noopener"
-             data-i18n="es">Abrir en Google Maps ↗</a>
-
-          <a class="btn gold"
-             href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%2018004%20Granada"
-             target="_blank" rel="noopener"
-             data-i18n="en">Open in Google Maps ↗</a>
+        <div style="margin-top:12px;">
+          <a class="btn gold" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener" data-i18n="es">Abrir en Google Maps ↗</a>
+          <a class="btn gold" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener" data-i18n="en">Open in Google Maps ↗</a>
         </div>
 
         <div class="map" aria-label="Mapa">
           <iframe
-            src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%2C%20C.%20Obispo%20Hurtado%2027%2C%20Granada&output=embed"
+            src="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
@@ -572,57 +579,52 @@
         <div class="review" aria-label="Reseñas Google">
           <div class="stars">★★★★★</div>
           <div style="margin-top:8px; font-weight:950;" data-i18n="es">Calificaciones en Google</div>
-          <div style="margin-top:8px; font-weight:950;" data-i18n="en">Ratings on Google</div>
+          <div style="margin-top:8px; font-weight:950;" data-i18n="en">Google ratings</div>
 
-          <!-- OJO: este link abre la ficha. Luego te paso el “Write a review” exacto cuando me envíes el Place ID -->
           <div style="margin-top:12px;">
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%20Granada" target="_blank" rel="noopener" data-i18n="es">Ver ficha en Google ↗</a>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%20Granada" target="_blank" rel="noopener" data-i18n="en">Open listing ↗</a>
+            <a class="btn" href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener" data-i18n="es">Ver ficha en Google ↗</a>
+            <a class="btn" href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener" data-i18n="en">Open on Google ↗</a>
           </div>
 
-          <p data-i18n="es">
-            Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌
-          </p>
-          <p data-i18n="en">
-            If you enjoyed it, a review helps us rank better on Google in Granada. 🙌
-          </p>
+          <p data-i18n="es">Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌</p>
+          <p data-i18n="en">If you enjoyed it, a review helps us appear better on Google in Granada. 🙌</p>
         </div>
       </div>
     </section>
 
     <section class="section" id="horarios">
       <h2 data-i18n="es">Horarios</h2>
-      <h2 data-i18n="en">Opening hours</h2>
+      <h2 data-i18n="en">Hours</h2>
       <div class="sub" data-i18n="es">Servicio para comer aquí y para llevar</div>
-      <div class="sub" data-i18n="en">Eat in or take away</div>
+      <div class="sub" data-i18n="en">Eat-in and takeaway</div>
 
       <div class="panel">
         <div class="hours">
-          <div class="hour"><div>Lunes</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Martes</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Miércoles</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Jueves</div><div class="right">CERRADO</div></div>
-          <div class="hour"><div>Viernes</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
-          <div class="hour"><div>Sábado</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
-          <div class="hour"><div>Domingo</div><div class="right">13:00–15:30 · 19:00–22:00</div></div>
+          <div class="hour"><div data-i18n="es">Lunes</div><div data-i18n="en">Monday</div><div class="right">19:00 – 23:00</div></div>
+          <div class="hour"><div data-i18n="es">Martes</div><div data-i18n="en">Tuesday</div><div class="right">19:00 – 23:00</div></div>
+          <div class="hour"><div data-i18n="es">Miércoles</div><div data-i18n="en">Wednesday</div><div class="right">19:00 – 23:00</div></div>
+          <div class="hour"><div data-i18n="es">Jueves</div><div data-i18n="en">Thursday</div><div class="right" data-i18n="es">CERRADO</div><div class="right" data-i18n="en">CLOSED</div></div>
+          <div class="hour"><div data-i18n="es">Viernes</div><div data-i18n="en">Friday</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
+          <div class="hour"><div data-i18n="es">Sábado</div><div data-i18n="en">Saturday</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
+          <div class="hour"><div data-i18n="es">Domingo</div><div data-i18n="en">Sunday</div><div class="right">13:00–15:30 · 19:00–22:00</div></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="redes">
       <h2 data-i18n="es">Redes sociales</h2>
-      <h2 data-i18n="en">Social</h2>
+      <h2 data-i18n="en">Social media</h2>
       <div class="sub" data-i18n="es">Síguenos y mira novedades</div>
-      <div class="sub" data-i18n="en">Follow us</div>
+      <div class="sub" data-i18n="en">Follow us for updates</div>
 
       <div class="panel">
         <div class="socials">
-          <a class="sbtn" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener"><span>Instagram</span><i>↗</i></a>
-          <a class="sbtn" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-93aIsqNk6GU" target="_blank" rel="noopener"><span>TikTok</span><i>↗</i></a>
-          <a class="sbtn" href="https://youtube.com/@elchiringuitodelaarepa?si=8x58P_E0hkadl2pp" target="_blank" rel="noopener"><span>YouTube</span><i>↗</i></a>
-          <a class="sbtn" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener"><span>Threads</span><i>↗</i></a>
-          <a class="sbtn" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener"><span>Facebook</span><i>↗</i></a>
-          <a class="sbtn" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener"><span>Canal WhatsApp</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Instagram</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>TikTok</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>YouTube</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Threads</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Facebook</span><i>↗</i></a>
+          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Canal WhatsApp</span><i>↗</i></a>
         </div>
       </div>
     </section>
@@ -631,18 +633,19 @@
       <h2 data-i18n="es">Contacto</h2>
       <h2 data-i18n="en">Contact</h2>
       <div class="sub" data-i18n="es">Pedidos rápidos por WhatsApp</div>
-      <div class="sub" data-i18n="en">Fast orders on WhatsApp</div>
+      <div class="sub" data-i18n="en">Fast orders via WhatsApp</div>
 
       <div class="panel">
-        <div class="address" style="margin-bottom:12px;">
+        <div class="address">
           <div style="font-size:18px; line-height:1;">📞</div>
           <div>
-            <b>Teléfono: <a href="tel:858830186">858 83 01 86</a></b>
-            <span>WhatsApp: <a href="https://wa.me/34651651291" target="_blank" rel="noopener">+34 651 65 12 91</a></span>
+            <b data-i18n="es">Teléfono: 858 83 01 86</b>
+            <b data-i18n="en">Phone: +34 858 83 01 86</b>
+            <span>WhatsApp: +34 651 65 12 91</span>
           </div>
         </div>
 
-        <div class="cta-row">
+        <div style="margin-top:12px;">
           <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" data-i18n="es">Pedir por WhatsApp ↗</a>
           <a class="btn wa" href="https://wa.me/34651651291?text=Hello%20El%20Chiringuito%20de%20la%20Arepa%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener" data-i18n="en">Order on WhatsApp ↗</a>
         </div>
@@ -655,34 +658,39 @@
 
   </main>
 
-  <div class="bottombar">
+  <!-- Barra inferior -->
+  <nav class="bottombar" aria-label="Navegación">
     <div class="inner">
       <a class="gold" href="/carta.html" data-i18n="es">Carta</a>
       <a class="gold" href="/carta.html" data-i18n="en">Menu</a>
+
       <a href="#ubicacion" data-i18n="es">Cómo llegar</a>
       <a href="#ubicacion" data-i18n="en">Location</a>
-      <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp ↗</a>
+
+      <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" data-i18n="es">WhatsApp ↗</a>
+      <a href="https://wa.me/34651651291?text=Hello%20El%20Chiringuito%20de%20la%20Arepa%2C%20I%20want%20to%20place%20an%20order." target="_blank" rel="noopener" data-i18n="en">WhatsApp ↗</a>
     </div>
-  </div>
+  </nav>
 
   <script>
-    // Idioma ES/EN con persistencia
-    const html = document.documentElement;
-    const btnES = document.getElementById('btnES');
-    const btnEN = document.getElementById('btnEN');
+    // Idioma persistente
+    const root = document.documentElement;
+    const btnES = document.getElementById("btnES");
+    const btnEN = document.getElementById("btnEN");
 
     function setLang(lang){
-      html.setAttribute('data-lang', lang);
-      localStorage.setItem('lang', lang);
-      btnES.classList.toggle('active', lang === 'es');
-      btnEN.classList.toggle('active', lang === 'en');
+      root.setAttribute("data-lang", lang);
+      localStorage.setItem("lang", lang);
+      btnES.classList.toggle("active", lang === "es");
+      btnEN.classList.toggle("active", lang === "en");
     }
 
-    const saved = localStorage.getItem('lang');
-    setLang(saved === 'en' ? 'en' : 'es');
+    // init
+    const saved = localStorage.getItem("lang");
+    setLang(saved === "en" ? "en" : "es");
 
-    btnES.addEventListener('click', () => setLang('es'));
-    btnEN.addEventListener('click', () => setLang('en'));
+    btnES.addEventListener("click", () => setLang("es"));
+    btnEN.addEventListener("click", () => setLang("en"));
   </script>
 </body>
 </html>
