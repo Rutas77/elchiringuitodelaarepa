@@ -1,121 +1,468 @@
-<!DOCTYPE html>
+<!-- =========================
+     carta.html (REEMPLAZO COMPLETO)
+     ========================= -->
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#071010" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0f0e" />
 
-  <title>Carta | El Chiringuito de la Arepa</title>
-  <meta name="description" content="Carta con precios de El Chiringuito de la Arepa en Granada." />
+  <title>Carta | El Chiringuito de la Arepa · Granada</title>
+  <meta name="description" content="Carta de El Chiringuito de la Arepa: arepas, raciones, tequeños, sancocho (según disponibilidad), postres y bebidas. Pide por WhatsApp." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/carta.html" />
 
-  <link rel="icon" href="/assets/img/logo.png" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=2" />
+  <style>
+    :root{
+      --bg:#0b0f0e;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.08);
+      --text:#f4f6f6;
+      --muted: rgba(244,246,246,.72);
+      --line: rgba(255,255,255,.12);
+      --gold:#d6b15e;
+      --gold2:#f1d18a;
+      --shadow: 0 14px 40px rgba(0,0,0,.48);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1100px;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{width:100%;max-width:100%;overflow-x:hidden}
+    img,svg,video{max-width:100%;height:auto;display:block}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(214,177,94,.18), transparent 55%),
+        radial-gradient(900px 600px at 90% 10%, rgba(241,209,138,.10), transparent 55%),
+        var(--bg);
+      line-height:1.35;
+    }
+    a{color:inherit;text-decoration:none}
+    a:focus{outline:2px solid rgba(214,177,94,.55);outline-offset:3px;border-radius:10px}
+
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      position:sticky;top:0;z-index:20;
+      padding:12px 10px;
+      background: linear-gradient(to bottom, rgba(11,15,14,.92), rgba(11,15,14,.66), transparent);
+      backdrop-filter: blur(10px);
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      font-weight:800;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px);background: rgba(255,255,255,.09);border-color: rgba(214,177,94,.35)}
+    .btn.primary{
+      border-color: rgba(214,177,94,.45);
+      background: linear-gradient(180deg, rgba(214,177,94,.18), rgba(255,255,255,.06));
+    }
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px 14px 52px}
+    @media(min-width:720px){ .wrap{padding:18px 18px 70px} }
+
+    .hero{
+      margin-top:10px;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid rgba(214,177,94,.18);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+    }
+    .hero-inner{
+      padding:18px 16px 16px;
+    }
+    @media(min-width:860px){ .hero-inner{padding:22px 22px 18px} }
+
+    h1{
+      margin:0 0 8px;
+      font-size: clamp(26px, 3.6vw, 40px);
+      letter-spacing:-.5px;
+    }
+    .lead{margin:0;color:var(--muted);font-weight:600}
+
+    .chips{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin-top: 14px;
+    }
+    .chip{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      font-weight:800;
+      color: rgba(244,246,246,.92);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      white-space:nowrap;
+    }
+    .chip:hover{transform: translateY(-1px);border-color: rgba(214,177,94,.40);background: rgba(255,255,255,.09)}
+    .chip.active{border-color: rgba(214,177,94,.55);background: rgba(214,177,94,.10)}
+
+    .panel{
+      margin-top: 14px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    .panel-inner{padding:16px}
+    @media(min-width:860px){ .panel-inner{padding:18px} }
+
+    .qr-wrap{
+      width: min(340px, 92vw);
+      margin: 14px auto 0;
+      border-radius: 16px;
+      overflow:hidden;
+      background:#fff;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+
+    .grid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    @media(min-width:860px){
+      .grid{grid-template-columns: 1fr 1fr}
+    }
+
+    .item{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+      box-shadow: 0 16px 46px rgba(0,0,0,.26);
+    }
+    .item figure{margin:0;position:relative}
+    .tag{
+      position:absolute;left:12px;bottom:12px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+    .item img{width:100%;height:250px;object-fit:cover}
+    @media(min-width:860px){ .item img{height:280px} }
+
+    .item .body{padding:14px 14px 12px}
+    .item h3{margin:0 0 6px;font-size:18px;letter-spacing:-.3px}
+    .item p{margin:0;color:var(--muted);font-weight:600}
+    .price{
+      margin-top:10px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      font-weight:900;
+    }
+    .price span{color:var(--gold2)}
+    .line{height:1px;background: rgba(255,255,255,.10);margin: 12px 0}
+
+    .sectionTitle{
+      margin: 18px 0 8px;
+      font-size: 20px;
+      letter-spacing:-.2px;
+    }
+    .sub{margin:0 0 12px;color:var(--muted);font-weight:600}
+
+    footer{
+      margin-top: 26px;
+      padding: 18px 0 0;
+      border-top:1px solid rgba(255,255,255,.10);
+      color: rgba(244,246,246,.72);
+      font-size: 13px;
+    }
+    .foot-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .legal a{color: rgba(244,246,246,.82)}
+    .legal a:hover{color: var(--gold2)}
+    .sep{opacity:.55}
+  </style>
 </head>
 
 <body>
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-      <div class="t">
-        <b>El Chiringuito de la Arepa</b>
-        <span>Sabores que abrazan el alma</span>
-      </div>
-    </div>
-    <a class="pill gold" href="/index.html">Inicio</a>
-  </div>
-</header>
-
-<main class="wrap">
-
-<section class="hero" id="top">
-  <h1>Carta</h1>
-  <p>Elige tu antojo y pídelo por WhatsApp.</p>
-
-  <div class="tabs">
-    <a class="btn gold" href="#arepas">Arepas</a>
-    <a class="btn" href="#raciones">Raciones</a>
-    <a class="btn" href="#tequenos">Tequeños</a>
-    <a class="btn" href="#bebidas">Bebidas</a>
-    <a class="btn" href="#postres">Postres</a>
-    <a class="btn" href="#sancocho">Sancocho</a>
-
-    <a class="btn wa" 
-       href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido."
-       target="_blank">
-      Pedir por WhatsApp ↗
+  <header class="topbar">
+    <a class="pill" href="index.html" aria-label="Inicio">
+      <span style="color:var(--gold);font-weight:900">●</span>
+      Inicio
     </a>
-  </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+      <a class="btn primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
+    </div>
+  </header>
 
-  <div class="qr-card">
-    <div class="qr-frame">
-      <div class="inner">
-        <img src="/assets/img/qr-menu.png?v=2" alt="QR Carta">
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Carta</h1>
+        <p class="lead">Elige tu antojo y pídelo por WhatsApp.</p>
+
+        <div class="chips" aria-label="Categorías">
+          <a class="chip active" href="#arepas">Arepas</a>
+          <a class="chip" href="#raciones">Raciones</a>
+          <a class="chip" href="#tequenos">Tequeños</a>
+          <a class="chip" href="#bebidas">Bebidas</a>
+          <a class="chip" href="#postres">Postres</a>
+          <a class="chip" href="#sancocho">Sancocho</a>
+        </div>
+
+        <div class="panel">
+          <div class="panel-inner">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+              <div style="font-weight:900;letter-spacing:.2px">Carta en QR</div>
+              <a class="btn" href="carta.html" aria-label="Abrir carta">Abrir</a>
+            </div>
+
+            <div class="qr-wrap">
+              <!-- CAMBIA ESTA RUTA SI TU QR TIENE OTRO NOMBRE -->
+              <img src="assets/qr-carta.png" alt="QR de la carta: elchiringuitodelaarepa.es/carta.html">
+            </div>
+
+            <div style="margin-top:12px;color:var(--muted);font-weight:600">
+              Escanea y abre la carta: <strong>elchiringuitodelaarepa.es/carta.html</strong>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="qr-txt">
-      <b>Escanea y abre la carta</b>
-      <span>elchiringuitodelaarepa.es/carta.html</span>
-    </div>
-    <a class="btn gold" href="/carta.html">Abrir</a>
-  </div>
-</section>
+    </section>
 
-<!-- RACIONES (CORREGIDO: tajadas.png) -->
-<section class="section" id="raciones">
-  <h2>Raciones</h2>
-  <div class="sub">Perfectas para compartir.</div>
+    <!-- AREPAS -->
+    <h2 id="arepas" class="sectionTitle">Arepas</h2>
+    <p class="sub">Masa recién hecha · rellenos naturales · sabor venezolano.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/arepa.jpg" alt="Arepa rellena">
+          <div class="tag">Arepas</div>
+        </figure>
+        <div class="body">
+          <h3>Arepa (elige tu relleno)</h3>
+          <p>Rellenos generosos, preparados con ingredientes naturales. Pregunta por las opciones del día.</p>
+          <div class="line"></div>
+          <div class="price"><div>Desde</div><span>—</span></div>
+        </div>
+      </article>
 
-  <div class="panel">
-    <div class="headline">
-      <div class="thumb">
-        <img src="/assets/img/tajadas.png" alt="Raciones">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/arepa2.jpg" alt="Arepa venezolana artesanal">
+          <div class="tag">Arepas</div>
+        </figure>
+        <div class="body">
+          <h3>Recomendación</h3>
+          <p>¿Primera vez? Te ayudamos a elegir el relleno perfecto según tu gusto.</p>
+          <div class="line"></div>
+          <div class="price"><div>Pregunta por</div><span>Especiales</span></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- RACIONES -->
+    <h2 id="raciones" class="sectionTitle">Raciones</h2>
+    <p class="sub">Perfectas para compartir.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/tajadas.jpg" alt="Tajadas de plátano frito">
+          <div class="tag">Raciones</div>
+        </figure>
+        <div class="body">
+          <h3>Tajadas de plátano frito</h3>
+          <p>Plátano macho maduro frito con queso blanco latino y mantequilla.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>4,50€</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/ensalada-atun.jpg" alt="Ensalada de atún con arepa">
+          <div class="tag">Raciones</div>
+        </figure>
+        <div class="body">
+          <h3>Ensalada de atún con arepa</h3>
+          <p>Fresca y completa, ideal para un almuerzo ligero.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>6,50€</span></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- TEQUEÑOS -->
+    <h2 id="tequenos" class="sectionTitle">Tequeños</h2>
+    <p class="sub">Crujientes, doraditos y adictivos.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/tequenos.jpg" alt="Tequeños venezolanos">
+          <div class="tag">Tequeños</div>
+        </figure>
+        <div class="body">
+          <h3>Tequeños (ración)</h3>
+          <p>Perfectos para picar. Pregunta por salsas disponibles.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/tequenos2.jpg" alt="Tequeños crujientes">
+          <div class="tag">Tequeños</div>
+        </figure>
+        <div class="body">
+          <h3>Tequeños (combo)</h3>
+          <p>Ideal para compartir con bebida latina bien fría.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- BEBIDAS -->
+    <h2 id="bebidas" class="sectionTitle">Bebidas</h2>
+    <p class="sub">Latinas y refrescantes.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/bebidas.jpg" alt="Bebidas latinas">
+          <div class="tag">Bebidas</div>
+        </figure>
+        <div class="body">
+          <h3>Bebidas latinas</h3>
+          <p>Maltas, refrescos y opciones del día. Pregunta en barra.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/salsas.jpg" alt="Salsas caseras">
+          <div class="tag">Extras</div>
+        </figure>
+        <div class="body">
+          <h3>Salsas</h3>
+          <p>Salsas y extras según disponibilidad.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- POSTRES -->
+    <h2 id="postres" class="sectionTitle">Postres</h2>
+    <p class="sub">Caseros, como en casa.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/tresleches.jpg" alt="Tres leches casero">
+          <div class="tag">Postres</div>
+        </figure>
+        <div class="body">
+          <h3>Tres leches</h3>
+          <p>Suave, cremoso y casero.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/postre2.jpg" alt="Postre casero">
+          <div class="tag">Postres</div>
+        </figure>
+        <div class="body">
+          <h3>Postre del día</h3>
+          <p>Pregunta por el postre disponible hoy.</p>
+          <div class="line"></div>
+          <div class="price"><div>Precio</div><span>—</span></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- SANCOCHO -->
+    <h2 id="sancocho" class="sectionTitle">Sancocho</h2>
+    <p class="sub">Pregunta por disponibilidad.</p>
+    <div class="grid">
+      <article class="item">
+        <figure>
+          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
+          <img src="assets/sancocho.jpg" alt="Sancocho venezolano">
+          <div class="tag">Sancocho</div>
+        </figure>
+        <div class="body">
+          <h3>Sancocho</h3>
+          <p>Tradicional, contundente y casero. Disponible según día.</p>
+          <div class="line"></div>
+          <div class="price"><div>Info</div><span>Consultar</span></div>
+        </div>
+      </article>
+
+      <article class="item">
+        <figure>
+          <img src="assets/local.jpg" alt="El Chiringuito de la Arepa Granada">
+          <div class="tag">Local</div>
+        </figure>
+        <div class="body">
+          <h3>¿Dónde estamos?</h3>
+          <p>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</p>
+          <div class="line"></div>
+          <div class="price">
+            <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Abrir Maps ↗</a>
+            <a class="btn primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener">Pedir ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <div class="foot-row">
+        <div>© <span id="year"></span> El Chiringuito de la Arepa</div>
+        <div class="legal">
+          <a href="privacidad.html">Privacidad</a>
+          <span class="sep"> · </span>
+          <a href="cookies.html">Cookies</a>
+        </div>
       </div>
-      <div>
-        <b>Raciones</b>
-        <span>Tajadas de plátano frito</span>
-      </div>
-    </div>
+    </footer>
+  </main>
 
-    <div class="photo">
-      <img src="/assets/img/tajadas.png" alt="Tajadas de plátano frito">
-    </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <div class="item">
-      <div>
-        <b>Plátano macho maduro frito</b>
-        <small>Con queso blanco latino y mantequilla.</small>
-      </div>
-      <div class="price">4,50€</div>
-    </div>
-
-    <div class="item">
-      <div>
-        <b>Ensalada de atún con arepa</b>
-        <small>—</small>
-      </div>
-      <div class="price">6,50€</div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 El Chiringuito de la Arepa ·
-  <a href="/legal.html">Legal</a> ·
-  <a href="/cookies.html">Cookies</a> ·
-  <a href="/privacidad.html">Privacidad</a>
-</footer>
-
-</main>
-
-<div class="wa-float">
-  <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido."
-     target="_blank">
-    <span>💬</span> <small>WhatsApp</small>
-  </a>
-</div>
-
+    // Marca chip activo al hacer click (solo UI)
+    document.querySelectorAll('.chip').forEach(ch => {
+      ch.addEventListener('click', () => {
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        ch.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
