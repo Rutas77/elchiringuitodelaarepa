@@ -1,6 +1,3 @@
-<!-- =========================
-     carta.html (REEMPLAZO COMPLETO)
-     ========================= -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -15,8 +12,6 @@
   <style>
     :root{
       --bg:#0b0f0e;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.08);
       --text:#f4f6f6;
       --muted: rgba(244,246,246,.72);
       --line: rgba(255,255,255,.12);
@@ -46,7 +41,7 @@
     .topbar{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
       position:sticky;top:0;z-index:20;
-      padding:12px 10px;
+      padding:12px 10px calc(12px + env(safe-area-inset-top));
       background: linear-gradient(to bottom, rgba(11,15,14,.92), rgba(11,15,14,.66), transparent);
       backdrop-filter: blur(10px);
     }
@@ -56,7 +51,7 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.05);
       box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      font-weight:700;
+      font-weight:900;
       white-space:nowrap;
     }
     .btn{
@@ -64,7 +59,7 @@
       padding:12px 14px;border-radius:999px;
       border:1px solid var(--line);
       background: rgba(255,255,255,.06);
-      font-weight:800;
+      font-weight:900;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
       white-space:nowrap;
     }
@@ -85,28 +80,19 @@
       background: rgba(255,255,255,.04);
       box-shadow: var(--shadow);
     }
-    .hero-inner{
-      padding:18px 16px 16px;
-    }
+    .hero-inner{padding:18px 16px 16px}
     @media(min-width:860px){ .hero-inner{padding:22px 22px 18px} }
 
-    h1{
-      margin:0 0 8px;
-      font-size: clamp(26px, 3.6vw, 40px);
-      letter-spacing:-.5px;
-    }
-    .lead{margin:0;color:var(--muted);font-weight:600}
+    h1{margin:0 0 8px;font-size: clamp(26px, 3.6vw, 40px);letter-spacing:-.5px}
+    .lead{margin:0;color:var(--muted);font-weight:750}
 
-    .chips{
-      display:flex;flex-wrap:wrap;gap:10px;
-      margin-top: 14px;
-    }
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top: 14px}
     .chip{
       display:inline-flex;align-items:center;justify-content:center;
       padding:10px 12px;border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
-      font-weight:800;
+      font-weight:950;
       color: rgba(244,246,246,.92);
       transition: transform .12s ease, border-color .12s ease, background .12s ease;
       white-space:nowrap;
@@ -124,6 +110,87 @@
     .panel-inner{padding:16px}
     @media(min-width:860px){ .panel-inner{padding:18px} }
 
+    .grid{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+    @media(min-width:860px){ .grid{grid-template-columns: 1fr 1fr} }
+
+    .item{
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+      box-shadow: 0 16px 46px rgba(0,0,0,.26);
+    }
+
+    /* FIGURE PREMIUM SIEMPRE:
+       - si no carga imagen, queda un “cover” elegante (no bloque vacío) */
+    .item figure{
+      margin:0;
+      position:relative;
+      height: 200px;
+      background:
+        radial-gradient(520px 240px at 20% 0%, rgba(214,177,94,.16), transparent 60%),
+        radial-gradient(520px 240px at 80% 20%, rgba(241,209,138,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.12));
+      overflow:hidden;
+    }
+    @media(min-width:860px){ .item figure{height: 240px} }
+
+    .item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:none; /* se muestra solo si carga */
+    }
+
+    .tag{
+      position:absolute;left:12px;bottom:12px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+      font-weight:950;
+      letter-spacing:.2px;
+    }
+
+    .ph{
+      position:absolute;inset:0;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;
+      padding:14px;
+      color: rgba(244,246,246,.70);
+      font-weight:850;
+      letter-spacing:.2px;
+    }
+    .ph span{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(214,177,94,.25);
+      background: rgba(0,0,0,.22);
+    }
+
+    .item .body{padding:14px 14px 12px}
+    .item h3{margin:0 0 6px;font-size:18px;letter-spacing:-.3px}
+    .item p{margin:0;color:var(--muted);font-weight:750}
+
+    .line{height:1px;background: rgba(255,255,255,.10);margin: 12px 0}
+
+    .price{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      font-weight:950;
+    }
+    .price span{color:var(--gold2)}
+
+    .sectionTitle{margin: 18px 0 8px;font-size: 20px;letter-spacing:-.2px;font-weight:950}
+    .sub{margin:0 0 12px;color:var(--muted);font-weight:750}
+
+    /* QR: siempre funciona (no depende de tu archivo png) */
     .qr-wrap{
       width: min(340px, 92vw);
       margin: 14px auto 0;
@@ -133,54 +200,6 @@
       border: 1px solid rgba(0,0,0,.08);
     }
 
-    .grid{
-      margin-top: 14px;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-    }
-    @media(min-width:860px){
-      .grid{grid-template-columns: 1fr 1fr}
-    }
-
-    .item{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      overflow:hidden;
-      box-shadow: 0 16px 46px rgba(0,0,0,.26);
-    }
-    .item figure{margin:0;position:relative}
-    .tag{
-      position:absolute;left:12px;bottom:12px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(0,0,0,.35);
-      backdrop-filter: blur(8px);
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .item img{width:100%;height:250px;object-fit:cover}
-    @media(min-width:860px){ .item img{height:280px} }
-
-    .item .body{padding:14px 14px 12px}
-    .item h3{margin:0 0 6px;font-size:18px;letter-spacing:-.3px}
-    .item p{margin:0;color:var(--muted);font-weight:600}
-    .price{
-      margin-top:10px;
-      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      font-weight:900;
-    }
-    .price span{color:var(--gold2)}
-    .line{height:1px;background: rgba(255,255,255,.10);margin: 12px 0}
-
-    .sectionTitle{
-      margin: 18px 0 8px;
-      font-size: 20px;
-      letter-spacing:-.2px;
-    }
-    .sub{margin:0 0 12px;color:var(--muted);font-weight:600}
-
     footer{
       margin-top: 26px;
       padding: 18px 0 0;
@@ -189,7 +208,7 @@
       font-size: 13px;
     }
     .foot-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-    .legal a{color: rgba(244,246,246,.82)}
+    .legal a{color: rgba(244,246,246,.82);font-weight:750}
     .legal a:hover{color: var(--gold2)}
     .sep{opacity:.55}
   </style>
@@ -198,12 +217,10 @@
 <body>
   <header class="topbar">
     <a class="pill" href="index.html" aria-label="Inicio">
-      <span style="color:var(--gold);font-weight:900">●</span>
+      <span style="color:var(--gold);font-weight:950">●</span>
       Inicio
     </a>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
-      <a class="btn primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
-    </div>
+    <a class="btn primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
   </header>
 
   <main class="wrap">
@@ -212,7 +229,7 @@
         <h1>Carta</h1>
         <p class="lead">Elige tu antojo y pídelo por WhatsApp.</p>
 
-        <div class="chips" aria-label="Categorías">
+        <div class="chips">
           <a class="chip active" href="#arepas">Arepas</a>
           <a class="chip" href="#raciones">Raciones</a>
           <a class="chip" href="#tequenos">Tequeños</a>
@@ -224,16 +241,18 @@
         <div class="panel">
           <div class="panel-inner">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-              <div style="font-weight:900;letter-spacing:.2px">Carta en QR</div>
+              <div style="font-weight:950;letter-spacing:.2px">Carta en QR</div>
               <a class="btn" href="carta.html" aria-label="Abrir carta">Abrir</a>
             </div>
 
             <div class="qr-wrap">
-              <!-- CAMBIA ESTA RUTA SI TU QR TIENE OTRO NOMBRE -->
-              <img src="assets/qr-carta.png" alt="QR de la carta: elchiringuitodelaarepa.es/carta.html">
+              <!-- QR automático del link (se acabó el “cuadro roto”) -->
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=520x520&data=https%3A%2F%2Felchiringuitodelaarepa.es%2Fcarta.html"
+                alt="QR de la carta: elchiringuitodelaarepa.es/carta.html">
             </div>
 
-            <div style="margin-top:12px;color:var(--muted);font-weight:600">
+            <div style="margin-top:12px;color:var(--muted);font-weight:750">
               Escanea y abre la carta: <strong>elchiringuitodelaarepa.es/carta.html</strong>
             </div>
           </div>
@@ -247,22 +266,22 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/arepa.jpg" alt="Arepa rellena">
+          <div class="ph"><span>Imagen · Arepas</span></div>
+          <img data-src="assets/arepa.jpg" alt="Arepa rellena">
           <div class="tag">Arepas</div>
         </figure>
         <div class="body">
           <h3>Arepa (elige tu relleno)</h3>
           <p>Rellenos generosos, preparados con ingredientes naturales. Pregunta por las opciones del día.</p>
           <div class="line"></div>
-          <div class="price"><div>Desde</div><span>—</span></div>
+          <div class="price"><div>Desde</div><span>Consultar</span></div>
         </div>
       </article>
 
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/arepa2.jpg" alt="Arepa venezolana artesanal">
+          <div class="ph"><span>Imagen · Especiales</span></div>
+          <img data-src="assets/arepa2.jpg" alt="Arepa venezolana artesanal">
           <div class="tag">Arepas</div>
         </figure>
         <div class="body">
@@ -280,8 +299,8 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/tajadas.jpg" alt="Tajadas de plátano frito">
+          <div class="ph"><span>Imagen · Tajadas</span></div>
+          <img data-src="assets/tajadas.jpg" alt="Tajadas de plátano frito">
           <div class="tag">Raciones</div>
         </figure>
         <div class="body">
@@ -294,8 +313,8 @@
 
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/ensalada-atun.jpg" alt="Ensalada de atún con arepa">
+          <div class="ph"><span>Imagen · Ensalada</span></div>
+          <img data-src="assets/ensalada-atun.jpg" alt="Ensalada de atún con arepa">
           <div class="tag">Raciones</div>
         </figure>
         <div class="body">
@@ -313,29 +332,29 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/tequenos.jpg" alt="Tequeños venezolanos">
+          <div class="ph"><span>Imagen · Tequeños</span></div>
+          <img data-src="assets/tequenos.jpg" alt="Tequeños venezolanos">
           <div class="tag">Tequeños</div>
         </figure>
         <div class="body">
           <h3>Tequeños (ración)</h3>
           <p>Perfectos para picar. Pregunta por salsas disponibles.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
 
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/tequenos2.jpg" alt="Tequeños crujientes">
+          <div class="ph"><span>Imagen · Combo</span></div>
+          <img data-src="assets/tequenos2.jpg" alt="Tequeños crujientes">
           <div class="tag">Tequeños</div>
         </figure>
         <div class="body">
           <h3>Tequeños (combo)</h3>
           <p>Ideal para compartir con bebida latina bien fría.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
     </div>
@@ -346,29 +365,29 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/bebidas.jpg" alt="Bebidas latinas">
+          <div class="ph"><span>Imagen · Bebidas</span></div>
+          <img data-src="assets/bebidas.jpg" alt="Bebidas latinas">
           <div class="tag">Bebidas</div>
         </figure>
         <div class="body">
           <h3>Bebidas latinas</h3>
           <p>Maltas, refrescos y opciones del día. Pregunta en barra.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
 
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/salsas.jpg" alt="Salsas caseras">
+          <div class="ph"><span>Imagen · Extras</span></div>
+          <img data-src="assets/salsas.jpg" alt="Salsas caseras">
           <div class="tag">Extras</div>
         </figure>
         <div class="body">
           <h3>Salsas</h3>
           <p>Salsas y extras según disponibilidad.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
     </div>
@@ -379,29 +398,29 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/tresleches.jpg" alt="Tres leches casero">
+          <div class="ph"><span>Imagen · Tres leches</span></div>
+          <img data-src="assets/tresleches.jpg" alt="Tres leches casero">
           <div class="tag">Postres</div>
         </figure>
         <div class="body">
           <h3>Tres leches</h3>
           <p>Suave, cremoso y casero.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
 
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/postre2.jpg" alt="Postre casero">
+          <div class="ph"><span>Imagen · Postre</span></div>
+          <img data-src="assets/postre2.jpg" alt="Postre casero">
           <div class="tag">Postres</div>
         </figure>
         <div class="body">
           <h3>Postre del día</h3>
           <p>Pregunta por el postre disponible hoy.</p>
           <div class="line"></div>
-          <div class="price"><div>Precio</div><span>—</span></div>
+          <div class="price"><div>Precio</div><span>Consultar</span></div>
         </div>
       </article>
     </div>
@@ -412,8 +431,8 @@
     <div class="grid">
       <article class="item">
         <figure>
-          <!-- CAMBIA ESTA RUTA SI TU FOTO TIENE OTRO NOMBRE -->
-          <img src="assets/sancocho.jpg" alt="Sancocho venezolano">
+          <div class="ph"><span>Imagen · Sancocho</span></div>
+          <img data-src="assets/sancocho.jpg" alt="Sancocho venezolano">
           <div class="tag">Sancocho</div>
         </figure>
         <div class="body">
@@ -426,7 +445,8 @@
 
       <article class="item">
         <figure>
-          <img src="assets/local.jpg" alt="El Chiringuito de la Arepa Granada">
+          <div class="ph"><span>El Chiringuito · Granada</span></div>
+          <img data-src="assets/local.jpg" alt="El Chiringuito de la Arepa Granada">
           <div class="tag">Local</div>
         </figure>
         <div class="body">
@@ -456,12 +476,28 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Marca chip activo al hacer click (solo UI)
+    // Chip activo (UI)
     document.querySelectorAll('.chip').forEach(ch => {
       ch.addEventListener('click', () => {
         document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
         ch.classList.add('active');
       });
+    });
+
+    // Carga de imágenes con fallback premium:
+    // - si la ruta existe, se muestra la foto
+    // - si NO existe, queda el placeholder elegante (sin cuadro vacío)
+    document.querySelectorAll('img[data-src]').forEach(img=>{
+      const src = img.getAttribute('data-src');
+      img.addEventListener('load', ()=>{
+        img.style.display = 'block';
+        const ph = img.parentElement.querySelector('.ph');
+        if(ph) ph.style.display = 'none';
+      });
+      img.addEventListener('error', ()=>{
+        img.style.display = 'none';
+      });
+      img.src = src;
     });
   </script>
 </body>
