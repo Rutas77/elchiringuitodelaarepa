@@ -1,6 +1,3 @@
-<!-- =========================
-     index.html (REEMPLAZO COMPLETO)
-     ========================= -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -14,25 +11,9 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="El Chiringuito de la Arepa | Arepas artesanales en Granada" />
-  <meta property="og:description" content="Arepas artesanales, sabor real. Rellenos naturales sin aditivos. Comer aquí o para llevar." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
-  <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/og.jpg" />
-
-  <!-- Preload (opcional) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <style>
-    /* =========================
-       Premium responsive base
-       ========================= */
     :root{
       --bg:#0b0f0e;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.08);
       --text:#f4f6f6;
       --muted: rgba(244,246,246,.72);
       --line: rgba(255,255,255,.12);
@@ -43,15 +24,12 @@
       --radius2: 24px;
       --max: 1100px;
     }
-
-    /* Fix scroll lateral SIEMPRE */
     *,*::before,*::after{box-sizing:border-box}
     html,body{width:100%;max-width:100%;overflow-x:hidden}
     img,svg,video{max-width:100%;height:auto;display:block}
-
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(214,177,94,.18), transparent 55%),
@@ -60,28 +38,23 @@
         var(--bg);
       line-height:1.35;
     }
-
     a{color:inherit;text-decoration:none}
     a:focus{outline:2px solid rgba(214,177,94,.55);outline-offset:3px;border-radius:10px}
 
     .wrap{max-width:var(--max);margin:0 auto;padding:18px 14px 44px}
     @media(min-width:720px){ .wrap{padding:22px 18px 60px} }
 
-    /* Header */
     .topbar{
       display:flex;align-items:center;justify-content:space-between;
       gap:12px;
       position:sticky;top:0;z-index:20;
-      padding:12px 10px;
+      padding:12px 10px calc(12px + env(safe-area-inset-top));
       margin: -18px -14px 12px;
       background: linear-gradient(to bottom, rgba(11,15,14,.92), rgba(11,15,14,.66), transparent);
       backdrop-filter: blur(10px);
     }
-    @media(min-width:720px){ .topbar{margin: -22px -18px 16px;padding:14px 16px} }
+    @media(min-width:720px){ .topbar{margin: -22px -18px 16px;padding:14px 16px calc(14px + env(safe-area-inset-top))} }
 
-    .brand{
-      display:flex;align-items:center;gap:10px;min-width:0
-    }
     .pill{
       display:inline-flex;align-items:center;gap:8px;
       padding:9px 12px;
@@ -89,15 +62,17 @@
       background: rgba(255,255,255,.05);
       border-radius:999px;
       box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      font-weight:600;
+      font-weight:700;
       letter-spacing:.2px;
       white-space:nowrap;
+      max-width: 74vw;
+      overflow:hidden;
+      text-overflow: ellipsis;
     }
-    .pill small{color:var(--muted);font-weight:600}
+    .pill small{color:var(--muted);font-weight:700}
 
-    .nav{
-      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end
-    }
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 14px;
@@ -105,7 +80,7 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.06);
       color:var(--text);
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
       user-select:none;
@@ -116,13 +91,8 @@
       border-color: rgba(214,177,94,.45);
       background: linear-gradient(180deg, rgba(214,177,94,.18), rgba(255,255,255,.06));
     }
-    .btn.icon{
-      padding:12px 13px;
-    }
 
-    /* Hero */
     .hero{
-      position:relative;
       border-radius: var(--radius2);
       overflow:hidden;
       border:1px solid rgba(214,177,94,.18);
@@ -131,28 +101,18 @@
         rgba(255,255,255,.04);
       box-shadow: var(--shadow);
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1fr;
-    }
-    @media(min-width:880px){
-      .hero-grid{grid-template-columns: 1.1fr .9fr}
-    }
+    .hero-grid{display:grid;grid-template-columns:1fr}
+    @media(min-width:880px){ .hero-grid{grid-template-columns:1.1fr .9fr} }
 
-    .hero-left{
-      padding:22px 18px 18px;
-    }
-    @media(min-width:880px){
-      .hero-left{padding:34px 34px 30px}
-    }
+    .hero-left{padding:22px 18px 18px}
+    @media(min-width:880px){ .hero-left{padding:34px 34px 30px} }
 
     .kicker{
       display:inline-flex;align-items:center;gap:10px;
       padding:8px 12px;border-radius:999px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(0,0,0,.22);
-      color: rgba(244,246,246,.88);
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
       width: fit-content;
     }
@@ -162,7 +122,6 @@
       box-shadow: 0 0 0 6px rgba(214,177,94,.14);
       flex:none;
     }
-
     h1{
       margin:14px 0 10px;
       font-size: clamp(30px, 4.8vw, 56px);
@@ -174,12 +133,10 @@
       color: var(--muted);
       font-size: clamp(15px, 1.55vw, 18px);
       max-width: 54ch;
+      font-weight: 650;
     }
 
-    .hero-actions{
-      display:flex;gap:10px;flex-wrap:wrap;
-      margin-top: 14px;
-    }
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top: 14px;}
 
     .cards{
       display:grid;
@@ -187,67 +144,64 @@
       gap:12px;
       margin-top: 18px;
     }
-    @media(min-width:720px){
-      .cards{grid-template-columns: repeat(3, 1fr)}
-    }
+    @media(min-width:720px){ .cards{grid-template-columns: repeat(3, 1fr)} }
+
     .card{
       border-radius: var(--radius);
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
       padding:14px 14px 12px;
-      min-height: 90px;
+      min-height: 92px;
     }
     .card strong{display:block;font-size:14px;letter-spacing:.2px;margin-bottom:6px}
-    .card span{color:var(--muted);font-size:13px}
+    .card span{color:var(--muted);font-size:13px;font-weight:650}
 
     .hero-right{
       padding: 16px 16px 18px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      justify-content:flex-end;
+      display:flex;flex-direction:column;gap:12px;justify-content:flex-end;
     }
-    @media(min-width:880px){
-      .hero-right{padding: 28px 28px 30px}
-    }
+    @media(min-width:880px){ .hero-right{padding: 28px 28px 30px} }
 
+    /* LOGO PREMIUM: si falla la imagen, se ve elegante igual */
     .logo-panel{
       border-radius: var(--radius2);
       border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.24);
+      background:
+        radial-gradient(600px 260px at 20% 0%, rgba(214,177,94,.14), transparent 60%),
+        radial-gradient(600px 260px at 80% 20%, rgba(241,209,138,.10), transparent 60%),
+        rgba(0,0,0,.26);
       overflow:hidden;
+      min-height: 180px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
     }
-    .logo-img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:cover;
+    .logo-panel[data-has-img="true"]{min-height:0}
+    .logo-img{width:100%;height:auto;object-fit:cover}
+    .logo-fallback{
+      padding: 18px;
+      text-align:center;
     }
-    .fine{
-      color: rgba(244,246,246,.72);
-      font-size: 13px;
-      line-height:1.4;
+    .logo-fallback .mark{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:54px;height:54px;border-radius:16px;
+      border:1px solid rgba(214,177,94,.35);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      color: var(--gold2);
+      font-weight: 950;
+      letter-spacing:.8px;
+      margin-bottom:10px;
     }
+    .logo-fallback .name{font-weight:950;letter-spacing:-.3px}
+    .logo-fallback .tagline{color:var(--muted);font-weight:650;margin-top:6px;font-size:13px}
 
-    /* Sections */
-    .section{
-      margin-top: 18px;
-      padding: 18px 0 0;
-    }
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing:-.3px;
-    }
+    .fine{color: rgba(244,246,246,.72);font-size: 13px;line-height:1.4;font-weight:650}
 
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:14px;
-    }
-    @media(min-width:860px){
-      .grid-2{grid-template-columns: 1fr 1fr}
-    }
+    .section{margin-top: 18px;padding: 18px 0 0;}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:860px){ .grid-2{grid-template-columns: 1fr 1fr} }
 
     .panel{
       border-radius: var(--radius2);
@@ -259,19 +213,10 @@
     .panel-inner{padding:16px}
     @media(min-width:860px){ .panel-inner{padding:18px} }
 
-    .row{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-    }
-    .row .muted{color:var(--muted);font-weight:600}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    .muted{color:var(--muted);font-weight:700}
 
-    .map-link{display:inline-flex;align-items:center;gap:10px}
-    .map-link svg{opacity:.9}
-
-    /* Social icons */
-    .socials{
-      display:flex;flex-wrap:wrap;gap:10px;
-      padding: 10px 0 0;
-    }
+    .socials{display:flex;flex-wrap:wrap;gap:10px;padding: 10px 0 0;}
     .soc{
       width:44px;height:44px;border-radius:999px;
       display:inline-flex;align-items:center;justify-content:center;
@@ -282,7 +227,6 @@
     .soc:hover{transform: translateY(-1px);border-color: rgba(214,177,94,.40);background: rgba(255,255,255,.09)}
     .soc svg{width:20px;height:20px}
 
-    /* Footer */
     footer{
       margin-top: 26px;
       padding: 18px 0 0;
@@ -291,14 +235,13 @@
       font-size: 13px;
     }
     .foot-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-    .legal a{color: rgba(244,246,246,.82)}
+    .legal a{color: rgba(244,246,246,.82);font-weight:700}
     .legal a:hover{color: var(--gold2)}
     .sep{opacity:.55}
 
     /* Cookie banner */
     .cookie{
-      position:fixed;
-      left:0;right:0;bottom:0;
+      position:fixed;left:0;right:0;bottom:0;
       padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
       z-index: 999;
       display:none;
@@ -312,51 +255,21 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 18px 60px rgba(0,0,0,.55);
       padding: 12px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      flex-wrap:wrap;
+      display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;
     }
-    .cookie p{
-      margin:0;
-      color: rgba(244,246,246,.78);
-      font-size: 13px;
-      max-width: 70ch;
-    }
+    .cookie p{margin:0;color: rgba(244,246,246,.78);font-size: 13px;max-width: 70ch;font-weight:650}
     .cookie-actions{display:flex;gap:8px;flex-wrap:wrap}
     .cookie-actions .btn{padding:10px 12px;font-size:13px}
   </style>
-
-  <!-- LocalBusiness Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Restaurant",
-    "name":"El Chiringuito de la Arepa",
-    "url":"https://elchiringuitodelaarepa.es/",
-    "servesCuisine":["Venezolana","Latina"],
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"C. Obispo Hurtado, 27",
-      "addressLocality":"Granada",
-      "postalCode":"18004",
-      "addressCountry":"ES"
-    },
-    "telephone":"+34 651 65 12 91"
-  }
-  </script>
 </head>
 
 <body>
   <header class="topbar">
-    <div class="brand">
-      <a class="pill" href="index.html" aria-label="Inicio">
-        <span style="color:var(--gold);font-weight:900">●</span>
-        <span>El Chiringuito de la Arepa</span>
-        <small>Granada</small>
-      </a>
-    </div>
+    <a class="pill" href="index.html" aria-label="Inicio">
+      <span style="color:var(--gold);font-weight:950">●</span>
+      <span>El Chiringuito de la Arepa</span>
+      <small>Granada</small>
+    </a>
 
     <nav class="nav" aria-label="Navegación">
       <a class="btn" href="carta.html">Carta</a>
@@ -373,42 +286,34 @@
           <p class="lead">
             Masa recién hecha, rellenos generosos y recetas tradicionales.
             Ingredientes naturales, sin aditivos químicos.
-            Tequeños crujientes, sancocho (según disponibilidad), bebidas latinas y postres caseros.
-            Comer aquí o para llevar.
+            Tequeños crujientes, sancocho (según disponibilidad),
+            bebidas latinas y postres caseros. Comer aquí o para llevar.
           </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="carta.html">Ver la carta</a>
             <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Cómo llegar ↗</a>
-            <a class="btn icon" href="#redes" aria-label="Ir a redes">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Redes
-            </a>
+            <a class="btn" href="#redes">Redes</a>
           </div>
 
-          <div class="cards" aria-label="Ventajas">
-            <div class="card">
-              <strong>Artesanal</strong>
-              <span>Preparación diaria, sabor auténtico.</span>
-            </div>
-            <div class="card">
-              <strong>Natural</strong>
-              <span>Rellenos sin aditivos químicos.</span>
-            </div>
-            <div class="card">
-              <strong>Rápido</strong>
-              <span>Para comer aquí o para llevar.</span>
-            </div>
+          <div class="cards">
+            <div class="card"><strong>Artesanal</strong><span>Preparación diaria, sabor auténtico.</span></div>
+            <div class="card"><strong>Natural</strong><span>Rellenos sin aditivos químicos.</span></div>
+            <div class="card"><strong>Rápido</strong><span>Para comer aquí o para llevar.</span></div>
           </div>
         </div>
 
-        <aside class="hero-right" aria-label="Imagen principal">
-          <div class="logo-panel">
-            <!-- CAMBIA ESTA RUTA SI TU LOGO TIENE OTRO NOMBRE -->
-            <img class="logo-img" src="assets/logo.jpg" alt="El Chiringuito de la Arepa" />
+        <aside class="hero-right">
+          <div class="logo-panel" id="logoPanel" data-has-img="false">
+            <!-- Si tu logo existe, pon la ruta correcta aquí -->
+            <img class="logo-img" id="logoImg" src="assets/logo.jpg" alt="El Chiringuito de la Arepa" style="display:none" />
+            <div class="logo-fallback" id="logoFallback">
+              <div class="mark">ECA</div>
+              <div class="name">El Chiringuito de la Arepa</div>
+              <div class="tagline">Sabores que abrazan el alma</div>
+            </div>
           </div>
+
           <div class="fine">
             📍 <strong>C. Obispo Hurtado, 27</strong> · Ronda · 18004 Granada<br/>
             🕒 Miércoles a Domingo: <strong>13:00 – 23:00</strong> · Lunes y Martes: <strong>Cerrado</strong>
@@ -417,22 +322,22 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Info">
+    <section class="section">
       <div class="grid-2">
         <div class="panel">
           <div class="panel-inner">
             <div class="row">
               <div>
-                <h2 style="margin:0 0 8px">Ubicación</h2>
+                <div style="font-size:22px;font-weight:950;letter-spacing:-.3px">Ubicación</div>
                 <div class="muted">Google Maps directo al restaurante</div>
               </div>
-              <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">
-                Abrir Maps ↗
-              </a>
+              <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Abrir Maps ↗</a>
             </div>
-            <div style="margin-top:12px;color:var(--muted);font-size:14px">
+
+            <div style="margin-top:12px;color:var(--muted);font-size:14px;font-weight:650">
               Servicio para comer aquí y para llevar. Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌
             </div>
+
             <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
               <a class="btn primary" href="https://www.google.com/search?q=El%20Chiringuito%20de%20la%20Arepa%20Granada%20rese%C3%B1a" target="_blank" rel="noopener">Ver ficha en Google ↗</a>
               <a class="btn" href="carta.html">Ver carta</a>
@@ -442,64 +347,36 @@
 
         <div class="panel">
           <div class="panel-inner">
-            <h2 id="redes" style="margin:0 0 8px">Redes sociales</h2>
-            <div class="muted" style="font-weight:600">Síguenos y descubre promos, platos y novedades.</div>
+            <div style="font-size:22px;font-weight:950;letter-spacing:-.3px" id="redes">Redes sociales</div>
+            <div class="muted">Síguenos y descubre promos, platos y novedades.</div>
 
-            <div class="socials" aria-label="Enlaces a redes">
-              <!-- CAMBIA LOS LINKS POR LOS TUYOS (si ya los tienes) -->
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                </svg>
+            <!-- PON TUS LINKS REALES ABAJO.
+                 Si un link queda en "#", el icono se OCULTA automáticamente. -->
+            <div class="socials" id="socials">
+              <a class="soc" data-url="#" aria-label="Instagram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
               </a>
-
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="TikTok">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 3v10.2a4.8 4.8 0 1 1-4-4.72" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M14 6.2c1.3 2.1 3.2 3.3 5 3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+              <a class="soc" data-url="#" aria-label="TikTok" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M14 3v10.2a4.8 4.8 0 1 1-4-4.72" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 6.2c1.3 2.1 3.2 3.3 5 3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </a>
-
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M21 12s0-4-1-5-3-1-8-1-7 0-8 1-1 5-1 5 0 4 1 5 3 1 8 1 7 0 8-1 1-5 1-5Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M11 9.5 15.5 12 11 14.5V9.5Z" fill="currentColor"/>
-                </svg>
+              <a class="soc" data-url="#" aria-label="YouTube" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M21 12s0-4-1-5-3-1-8-1-7 0-8 1-1 5-1 5 0 4 1 5 3 1 8 1 7 0 8-1 1-5 1-5Z" stroke="currentColor" stroke-width="2"/><path d="M11 9.5 15.5 12 11 14.5V9.5Z" fill="currentColor"/></svg>
               </a>
-
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/>
-                </svg>
+              <a class="soc" data-url="#" aria-label="Facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/></svg>
               </a>
-
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Threads">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M8.5 13.2c.3 2.6 2.1 4.1 4.4 4.1 2.6 0 4.6-1.7 4.6-4.4 0-2.6-2.1-4.1-4.8-4.1-2 0-3.8.8-4.2 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+              <a class="soc" data-url="#" aria-label="Threads" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9Z" stroke="currentColor" stroke-width="2"/><path d="M8.5 13.2c.3 2.6 2.1 4.1 4.4 4.1 2.6 0 4.6-1.7 4.6-4.4 0-2.6-2.1-4.1-4.8-4.1-2 0-3.8.8-4.2 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </a>
-
-              <a class="soc" href="#" target="_blank" rel="noopener" aria-label="Linktree">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M7 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 3h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+              <a class="soc" data-url="#" aria-label="Linktree" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 3h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </a>
-
-              <a class="soc" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M20 11.5A8.5 8.5 0 1 1 7.5 4.2 8.5 8.5 0 0 1 20 11.5Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M7 20l1.1-3.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M9.3 8.7c.2-.4.5-.4.7-.4h.6c.2 0 .4.1.5.4l.7 1.7c.1.3.1.6-.1.8l-.4.5c-.1.2-.1.4 0 .6.5.9 1.3 1.7 2.2 2.2.2.1.4.1.6 0l.5-.4c.2-.2.5-.2.8-.1l1.7.7c.3.1.4.3.4.5v.6c0 .2 0 .5-.4.7-.5.3-1.5.6-2.8.2-3-.9-5.5-3.4-6.4-6.4-.4-1.3-.1-2.3.2-2.8Z" fill="currentColor"/>
-                </svg>
+              <a class="soc" data-url="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" aria-label="WhatsApp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 11.5A8.5 8.5 0 1 1 7.5 4.2 8.5 8.5 0 0 1 20 11.5Z" stroke="currentColor" stroke-width="2"/><path d="M7 20l1.1-3.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9.3 8.7c.2-.4.5-.4.7-.4h.6c.2 0 .4.1.5.4l.7 1.7c.1.3.1.6-.1.8l-.4.5c-.1.2-.1.4 0 .6.5.9 1.3 1.7 2.2 2.2.2.1.4.1.6 0l.5-.4c.2-.2.5-.2.8-.1l1.7.7c.3.1.4.3.4.5v.6c0 .2 0 .5-.4.7-.5.3-1.5.6-2.8.2-3-.9-5.5-3.4-6.4-6.4-.4-1.3-.1-2.3.2-2.8Z" fill="currentColor"/></svg>
               </a>
             </div>
 
-            <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            <div style="margin-top:12px;color:var(--muted);font-size:13px;font-weight:650">
               ¿Pedido rápido? Toca el botón de WhatsApp y te atendemos.
             </div>
           </div>
@@ -519,13 +396,12 @@
     </footer>
   </main>
 
-  <!-- Cookie Banner (cumplimiento básico) -->
   <div class="cookie" id="cookieBanner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
     <div class="box">
       <p>
         Usamos cookies para mejorar la experiencia y medir el rendimiento. Puedes aceptar o configurar.
-        Consulta <a href="cookies.html" style="color:var(--gold2);font-weight:800">Cookies</a> y
-        <a href="privacidad.html" style="color:var(--gold2);font-weight:800">Privacidad</a>.
+        Consulta <a href="cookies.html" style="color:var(--gold2);font-weight:900">Cookies</a> y
+        <a href="privacidad.html" style="color:var(--gold2);font-weight:900">Privacidad</a>.
       </p>
       <div class="cookie-actions">
         <button class="btn" id="cookieConfig" type="button">Configurar</button>
@@ -535,27 +411,43 @@
   </div>
 
   <script>
-    // Año
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Cookies
     const banner = document.getElementById('cookieBanner');
     const KEY = 'eca_cookie_consent_v1';
-
-    function showBanner(){ banner.style.display = 'block'; }
-    function hideBanner(){ banner.style.display = 'none'; }
-
-    const saved = localStorage.getItem(KEY);
-    if(!saved){ showBanner(); }
-
+    if(!localStorage.getItem(KEY)){ banner.style.display = 'block'; }
     document.getElementById('cookieAccept').addEventListener('click', () => {
       localStorage.setItem(KEY, JSON.stringify({accepted:true, date: new Date().toISOString()}));
-      hideBanner();
+      banner.style.display = 'none';
+    });
+    document.getElementById('cookieConfig').addEventListener('click', () => {
+      window.location.href = 'cookies.html';
     });
 
-    document.getElementById('cookieConfig').addEventListener('click', () => {
-      // Config simple: por ahora solo redirige a la política
-      window.location.href = 'cookies.html';
+    // Logo: si carga, lo muestra; si no, queda el fallback premium
+    const logoImg = document.getElementById('logoImg');
+    const logoPanel = document.getElementById('logoPanel');
+    const logoFallback = document.getElementById('logoFallback');
+    logoImg.addEventListener('load', () => {
+      logoImg.style.display = 'block';
+      logoFallback.style.display = 'none';
+      logoPanel.setAttribute('data-has-img','true');
+    });
+    logoImg.addEventListener('error', () => {
+      logoImg.style.display = 'none';
+      logoFallback.style.display = 'block';
+      logoPanel.setAttribute('data-has-img','false');
+    });
+
+    // Redes: si no hay URL real, oculta el icono (para que no se vea “horrible”)
+    document.querySelectorAll('#socials .soc').forEach(a=>{
+      const url = (a.getAttribute('data-url') || '').trim();
+      if(!url || url === '#'){
+        a.style.display = 'none';
+      }else{
+        a.href = url;
+      }
     });
   </script>
 </body>
