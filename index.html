@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Chiringuito de la Arepa | Granada</title>
 
-<title>El Chiringuito de la Arepa | Arepas venezolanas en Granada</title>
+  <meta name="description" content="Arepas artesanales venezolanas en Granada. Tequeños crujientes, sancocho casero, bebidas latinas y tres leches artesanal. Comer aquí o para llevar." />
 
-<meta name="description" content="Arepas artesanales venezolanas en Granada. Masa recién hecha, rellenos naturales, tequeños, sancocho, bebidas latinas y tres leches casero. Comer aquí o para llevar.">
-
-<link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
 
-<header class="top-bar">
-  <div class="brand">
-    <img src="assets/img/logo.png" alt="El Chiringuito de la Arepa logo">
+<header class="header">
+  <div class="header-brand">
+    <img src="assets/img/logo.png" alt="El Chiringuito de la Arepa" class="logo" />
     <div>
       <h1>El Chiringuito de la Arepa</h1>
       <p>Sabores que abrazan el alma</p>
     </div>
   </div>
-  <a class="btn-gold" href="carta.html">Carta</a>
+
+  <nav class="header-nav">
+    <a href="#menu" class="btn btn-gold">Carta</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <span class="tag">Cocina venezolana • Granada</span>
-  <h2>Arepas artesanales, sabor real.</h2>
-  <p>
-    Masa recién hecha, rellenos generosos y recetas tradicionales.  
-    Tequeños crujientes, sancocho de gallina y ternera (según disponibilidad),  
-    bebidas latinas y tres leches casero. Comer aquí o para llevar.
-  </p>
+  <div class="hero-content">
+    <span class="badge">Cocina venezolana · Granada</span>
+    <h2>Arepas artesanales, sabor real.</h2>
+    <p>
+      Masa recién hecha, rellenos generosos y recetas tradicionales.  
+      Tequeños crujientes, sancocho de gallina y ternera (según disponibilidad),  
+      bebidas latinas y tres leches casero. Comer aquí o para llevar.
+    </p>
 
-  <div class="cta-buttons">
-    <a class="btn-gold" href="carta.html">Ver la carta</a>
-    <a class="btn-green" href="https://wa.me/34651651291" target="_blank">Pedir por WhatsApp</a>
-  </div>
+    <div class="hero-buttons">
+      <a href="carta.html" class="btn btn-gold">Ver la carta</a>
+      <a href="https://wa.me/34651651291" class="btn btn-whatsapp" target="_blank">
+        Pedir por WhatsApp
+      </a>
+    </div>
 
-  <div class="qr-block">
-    <img src="assets/img/qr-menu.png" alt="QR para abrir la carta">
-    <p>Escanea y abre la carta</p>
-    <small>elchiringuitodelaarepa.es/carta.html</small>
-    <a class="btn-gold" href="carta.html">Abrir</a>
+    <div class="qr-block">
+      <img src="assets/img/qr-menu.png" alt="QR Carta" class="qr" />
+      <p>Escanea y abre la carta<br>
+        <strong>elchiringuitodelaarepa.es/carta.html</strong>
+      </p>
+      <a href="carta.html" class="btn btn-outline">Abrir</a>
+    </div>
   </div>
 </section>
 
-<section class="menu-preview">
+<section id="menu" class="menu-preview">
   <h2>Nuestra oferta</h2>
 
   <div class="card">
-    <img src="assets/img/arepa.png" alt="Arepas venezolanas">
+    <img src="assets/img/arepa.png" alt="Arepa venezolana" />
     <h3>Arepas</h3>
-    <p>Reina Pepiada • Pabellón • Mechada • Jamón y queso • Atún</p>
+    <p>Reina Pepiada · Pabellón · Mechada · Jamón y queso · Atún</p>
   </div>
 
   <div class="card">
-    <img src="assets/img/tequenos.png" alt="Tequeños venezolanos">
+    <img src="assets/img/tequenos.png" alt="Tequeños" />
     <h3>Tequeños</h3>
     <p>5 o 10 unidades</p>
   </div>
 
   <div class="card">
-    <img src="assets/img/sancocho.png" alt="Sancocho venezolano">
+    <img src="assets/img/sancocho.png" alt="Sancocho" />
     <h3>Sancocho</h3>
     <p>Pregunta por disponibilidad</p>
   </div>
 
   <div class="card">
-    <img src="assets/img/tresleches.png" alt="Tres leches casero">
+    <img src="assets/img/tresleches.png" alt="Tres leches casero" />
     <h3>Postres</h3>
     <p>Tres leches casero</p>
   </div>
 
   <div class="card">
-    <img src="assets/img/bebidas.png" alt="Bebidas latinas">
+    <img src="assets/img/bebidas.png" alt="Bebidas" />
     <h3>Bebidas</h3>
     <p>Agua, refrescos, maltín, Polar, Frescolita y más.</p>
   </div>
@@ -82,16 +89,16 @@
 
 <section class="location">
   <h2>Ubicación</h2>
-  <p>C. Obispo Hurtado, 27 • Ronda • 18004 Granada</p>
-  <a class="btn-gold" target="_blank"
-     href="https://www.google.com/maps/search/?api=1&query=El+Chiringuito+de+la+Arepa+Granada">
-     Abrir en Google Maps
+  <p><strong>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</strong></p>
+
+  <a href="https://maps.google.com/?q=El+Chiringuito+de+la+Arepa+Granada" target="_blank" class="btn btn-gold">
+    Abrir en Google Maps
   </a>
 
   <iframe
     src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed"
-    loading="lazy">
-  </iframe>
+    loading="lazy"
+  ></iframe>
 </section>
 
 <section class="hours">
@@ -100,53 +107,103 @@
     <li>Lunes: 19:00 – 23:00</li>
     <li>Martes: 19:00 – 23:00</li>
     <li>Miércoles: 19:00 – 23:00</li>
-    <li>Jueves: CERRADO</li>
-    <li>Viernes: 13:00–15:30 • 19:00–23:00</li>
-    <li>Sábado: 13:00–15:30 • 19:00–23:00</li>
-    <li>Domingo: 13:00–15:30 • 19:00–22:00</li>
+    <li>Jueves: <strong>CERRADO</strong></li>
+    <li>Viernes: 13:00–15:30 · 19:00–23:00</li>
+    <li>Sábado: 13:00–15:30 · 19:00–23:00</li>
+    <li>Domingo: 13:00–15:30 · 19:00–22:00</li>
   </ul>
 </section>
 
 <section class="reviews">
   <h2>Calificaciones en Google</h2>
-  <a class="btn-gold" target="_blank"
-     href="https://www.google.com/search?q=El+Chiringuito+de+la+Arepa+Granada">
-     Ver ficha en Google
-  </a>
+  <p>
+    <a href="https://g.page/r/YOUR_GOOGLE_ID/review" target="_blank">
+      Ver ficha en Google
+    </a>
+  </p>
   <p>Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 👏</p>
 </section>
 
 <section class="social">
   <h2>Redes sociales</h2>
   <ul>
-    <li><a target="_blank" href="https://www.instagram.com/elchiringuitodelaarepa">Instagram</a></li>
-    <li><a target="_blank" href="https://www.tiktok.com/@elchiringuitodelaarepa">TikTok</a></li>
-    <li><a target="_blank" href="https://youtube.com/@elchiringuitodelaarepa">YouTube</a></li>
-    <li><a target="_blank" href="https://www.threads.com/@elchiringuitodelaarepa">Threads</a></li>
-    <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61584130088879">Facebook</a></li>
-    <li><a target="_blank" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">Canal WhatsApp</a></li>
-    <li><a target="_blank" href="https://linktr.ee/elchiringuitodelaarepa">Linktree</a></li>
+    <li><a href="https://www.instagram.com/elchiringuitodelaarepa" target="_blank">Instagram</a></li>
+    <li><a href="https://www.tiktok.com/@elchiringuitodelaarepa" target="_blank">TikTok</a></li>
+    <li><a href="https://youtube.com/@elchiringuitodelaarepa" target="_blank">YouTube</a></li>
+    <li><a href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank">Threads</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank">Facebook</a></li>
+    <li><a href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank">Canal WhatsApp</a></li>
+    <li><a href="https://linktr.ee/elchiringuitodelaarepa" target="_blank">Linktree</a></li>
   </ul>
 </section>
 
-<section class="contact">
-  <h2>Contacto</h2>
-  <p>Teléfono: 858 83 01 86</p>
-  <p>WhatsApp: +34 651 65 12 91</p>
-  <a class="btn-green" target="_blank" href="https://wa.me/34651651291">
-    Pedir por WhatsApp
-  </a>
-</section>
+<footer class="footer">
+  <p>
+    © 2026 El Chiringuito de la Arepa · Granada ·  
+    <a href="privacidad.html">Privacidad</a> ·  
+    <a href="cookies.html">Cookies</a>
+  </p>
 
-<footer>
-  <p>© 2026 El Chiringuito de la Arepa • <a href="legal.html">Legal</a></p>
+  <nav class="footer-nav">
+    <a href="carta.html">Carta</a> ·
+    <a href="#location">Cómo llegar</a> ·
+    <a href="https://wa.me/34651651291" target="_blank">WhatsApp</a>
+  </nav>
 </footer>
 
-<nav class="bottom-nav">
-  <a class="active" href="carta.html">Carta</a>
-  <a href="#location">Cómo llegar</a>
-  <a target="_blank" href="https://wa.me/34651651291">WhatsApp</a>
-</nav>
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner" aria-live="polite" aria-label="Aviso de cookies" hidden>
+  <div class="cookie-card">
+    <p class="cookie-text">
+      Usamos cookies para mejorar tu experiencia y analizar el tráfico básico del sitio.
+      Puedes aceptar o rechazar. Más info en nuestras políticas.
+    </p>
+
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn btn-primary" type="button">Aceptar</button>
+      <button id="cookie-reject" class="btn btn-secondary" type="button">Rechazar</button>
+    </div>
+
+    <div class="cookie-links">
+      <a href="cookies.html">Política de Cookies</a>
+      <a href="privacidad.html">Política de Privacidad</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const KEY = "eca_cookie_consent"; // accepted | rejected
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("cookie-accept");
+  const rejectBtn = document.getElementById("cookie-reject");
+
+  function showBanner() {
+    if (!banner) return;
+    banner.hidden = false;
+    banner.classList.add("is-visible");
+  }
+
+  function hideBanner() {
+    if (!banner) return;
+    banner.classList.remove("is-visible");
+    banner.hidden = true;
+  }
+
+  const saved = localStorage.getItem(KEY);
+  if (!saved) showBanner();
+
+  acceptBtn?.addEventListener("click", () => {
+    localStorage.setItem(KEY, "accepted");
+    hideBanner();
+  });
+
+  rejectBtn?.addEventListener("click", () => {
+    localStorage.setItem(KEY, "rejected");
+    hideBanner();
+  });
+})();
+</script>
 
 </body>
 </html>
