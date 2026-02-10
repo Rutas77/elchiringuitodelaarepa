@@ -1,613 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#071010" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Verificación Google -->
-  <meta name="google-site-verification" content="wtSPSMo8RQoyttAs3DnVvIGF-RRALAuNy5CWo0d54_M" />
+<title>El Chiringuito de la Arepa | Arepas venezolanas en Granada</title>
 
-  <!-- SEO -->
-  <title>El Chiringuito de la Arepa | Arepas Venezolanas en Granada</title>
-  <meta name="description" content="Arepas venezolanas artesanales en Granada. Tequeños, sancocho de gallina y ternera, bebidas latinas y tres leches casero. Comer aquí o para llevar. C. Obispo Hurtado, 27." />
-  <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
+<meta name="description" content="Arepas artesanales venezolanas en Granada. Masa recién hecha, rellenos naturales, tequeños, sancocho, bebidas latinas y tres leches casero. Comer aquí o para llevar.">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="El Chiringuito de la Arepa | Arepas Venezolanas en Granada" />
-  <meta property="og:description" content="Arepas venezolanas artesanales en Granada. Tequeños, sancocho, bebidas y tres leches. Sabores que abrazan el alma." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
-  <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" href="/assets/img/logo.png" />
-
-  <!-- JSON-LD (SEO Local) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Restaurant",
-    "name":"El Chiringuito de la Arepa",
-    "image":"https://elchiringuitodelaarepa.es/assets/img/logo.png",
-    "url":"https://elchiringuitodelaarepa.es/",
-    "telephone":"+34 858 83 01 86",
-    "servesCuisine":["Venezuelan","Latin American"],
-    "priceRange":"€€",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"C. Obispo Hurtado, 27",
-      "addressLocality":"Granada",
-      "postalCode":"18004",
-      "addressCountry":"ES"
-    }
-  }
-  </script>
-
-  <style>
-    :root{
-      --bg:#060d0d;
-      --text:#edf4f2;
-      --muted: rgba(237,244,242,.74);
-      --gold:#c7a45a;
-      --wa:#25D366;
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --shadow2: 0 12px 30px rgba(0,0,0,.40);
-      --r: 26px;
-    }
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(900px 500px at 20% 5%, rgba(199,164,90,.22), transparent 60%),
-        radial-gradient(700px 380px at 88% 12%, rgba(37,211,102,.16), transparent 62%),
-        linear-gradient(180deg, #060d0d 0%, #030707 100%);
-      padding-bottom: 120px;
-    }
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
-    .wrap{ max-width: 980px; margin:0 auto; padding: 16px 14px 60px; }
-
-    /* Topbar */
-    .topbar{
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(6,13,13,.70);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .topbar-inner{
-      max-width: 980px; margin:0 auto;
-      padding: 12px 14px;
-      display:flex; align-items:center; gap:12px;
-    }
-    .brand{ display:flex; align-items:center; gap:10px; min-width:0; flex:1; }
-    .brand img{
-      width:38px; height:38px; border-radius:14px;
-      object-fit:cover; border:1px solid rgba(255,255,255,.10);
-    }
-    .brand .t{ min-width:0; line-height:1.12; }
-    .brand .t b{
-      font-size:15.5px; letter-spacing:.2px; display:block;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .brand .t span{
-      font-size:13px; color:var(--muted); font-weight:800;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-
-    .pill{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      box-shadow: var(--shadow2);
-      font-weight: 950;
-      white-space:nowrap;
-      gap:10px;
-      cursor:pointer;
-    }
-    .pill.gold{
-      background: rgba(199,164,90,.20);
-      border-color: rgba(199,164,90,.30);
-      color: #fff1d2;
-    }
-
-    /* Hero */
-    .hero{
-      margin-top: 16px;
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(800px 300px at 30% 0%, rgba(199,164,90,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      padding: 22px 18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(600px 200px at 80% 10%, rgba(199,164,90,.18), transparent 55%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .hero > *{ position:relative; }
-
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(0,0,0,.30);
-      border: 1px solid rgba(255,255,255,.10);
-      font-weight: 950;
-      color: rgba(255,255,255,.92);
-      width: fit-content;
-    }
-    .kicker i{
-      width:8px; height:8px; border-radius:99px;
-      background: var(--gold);
-      display:inline-block;
-      box-shadow: 0 0 18px rgba(199,164,90,.55);
-    }
-
-    .hero h1{
-      margin: 12px 0 8px;
-      font-size: 46px;
-      letter-spacing: -1px;
-      line-height: 1.05;
-    }
-    .hero p{
-      margin:0;
-      color: var(--muted);
-      font-weight: 800;
-      line-height: 1.65;
-      max-width: 70ch;
-    }
-
-    .cta-row{
-      margin-top: 14px;
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight: 950;
-      box-shadow: var(--shadow2);
-      gap:10px;
-    }
-    .btn.gold{
-      background: rgba(199,164,90,.22);
-      border-color: rgba(199,164,90,.34);
-      color: #fff1d2;
-    }
-    .btn.wa{
-      background: rgba(37,211,102,.18);
-      border-color: rgba(37,211,102,.25);
-      color: #eafff1;
-    }
-
-    /* QR */
-    .qr-card{
-      margin-top: 14px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow2);
-      padding: 14px;
-      display:flex;
-      gap:14px;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .qr-frame{
-      width:112px; height:112px;
-      border-radius: 18px;
-      padding: 6px;
-      background: linear-gradient(135deg, rgba(199,164,90,.95), rgba(173,135,65,.85));
-      box-shadow:
-        0 10px 26px rgba(0,0,0,.45),
-        0 0 0 1px rgba(231,210,163,.35) inset;
-      flex:0 0 auto;
-      display:block;
-    }
-    .qr-frame .inner{
-      width:100%; height:100%;
-      border-radius: 14px;
-      background: rgba(6,13,13,.70);
-      padding: 6px;
-      border: 1px solid rgba(231,210,163,.25);
-    }
-    .qr-frame img{
-      width:100%; height:100%;
-      border-radius: 10px;
-      object-fit: cover;
-      background:#fff;
-    }
-    .qr-txt b{ display:block; font-size:16px; letter-spacing:-.2px; }
-    .qr-txt span{ display:block; color: var(--muted); font-weight: 850; margin-top: 4px; }
-
-    .section{ margin-top: 22px; }
-    .section h2{ margin:0; font-size: 38px; letter-spacing:-.8px; }
-    .sub{ margin-top: 6px; color: var(--muted); font-weight: 850; }
-
-    .panel{
-      margin-top: 12px;
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.10);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      box-shadow: var(--shadow);
-      padding: 16px;
-    }
-
-    /* Cards */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-    @media (max-width: 680px){
-      .grid{ grid-template-columns: 1fr; }
-      .hero h1{ font-size: 40px; }
-    }
-    .card{
-      display:flex; gap:12px; align-items:center;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding: 12px;
-      box-shadow: var(--shadow2);
-      transition: transform .18s ease, border-color .18s ease;
-    }
-    .card:hover{ transform: translateY(-2px); border-color: rgba(199,164,90,.30); }
-    .thumb{
-      width: 78px; height: 78px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.25);
-      flex:0 0 auto;
-    }
-    .thumb img{ width:100%; height:100%; object-fit:cover; }
-    .card b{ display:block; font-size: 18px; letter-spacing:-.2px; }
-    .card span{ display:block; color: var(--muted); font-weight: 850; margin-top: 3px; }
-
-    /* Ubicación + Mapa */
-    .address{
-      display:flex; gap:12px; align-items:flex-start;
-      padding: 14px 12px;
-      border-radius: 18px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(255,255,255,.07);
-    }
-    .address b{ display:block; margin-bottom:4px; }
-    .address span{ color: var(--muted); font-weight: 850; }
-
-    .map{
-      margin-top: 12px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.25);
-      box-shadow: var(--shadow2);
-    }
-    .map iframe{ width:100%; height: 260px; border:0; }
-
-    /* Reseñas */
-    .review{
-      margin-top: 12px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding: 14px 12px;
-      text-align:center;
-      box-shadow: var(--shadow2);
-    }
-    .stars{
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: var(--gold);
-      display:inline-block;
-      animation: glow 2.2s ease-in-out infinite;
-      text-shadow: 0 0 18px rgba(199,164,90,.35);
-      font-weight: 1000;
-    }
-    @keyframes glow{
-      0%{ transform: scale(1); opacity:.80; }
-      50%{ transform: scale(1.04); opacity:1; }
-      100%{ transform: scale(1); opacity:.80; }
-    }
-    .review p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-weight: 850;
-      line-height: 1.5;
-    }
-
-    /* Horarios */
-    .hours{ display:grid; gap: 8px; margin-top: 10px; }
-    .hour{
-      display:flex; justify-content:space-between; gap:12px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid rgba(255,255,255,.07);
-      font-weight: 900;
-    }
-    .hour .right{ color: #fff1d2; }
-
-    /* Redes */
-    .socials{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-    @media (max-width: 520px){
-      .socials{ grid-template-columns: 1fr; }
-    }
-    .sbtn{
-      padding: 12px 12px;
-      border-radius: 16px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10);
-      font-weight: 950;
-      box-shadow: var(--shadow2);
-      display:flex; justify-content:space-between; align-items:center;
-    }
-    .sbtn span{ color: rgba(237,244,242,.92); }
-    .sbtn i{ color: rgba(237,244,242,.70); font-style:normal; }
-
-    /* Barra inferior fija */
-    .bottombar{
-      position: fixed;
-      left: 0; right: 0;
-      bottom: 0;
-      z-index: 90;
-      background: rgba(6,13,13,.92);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
-    }
-    .bottombar .inner{
-      max-width: 980px;
-      margin:0 auto;
-      display:flex;
-      gap:10px;
-      justify-content: space-between;
-    }
-    .bottombar a{
-      flex:1;
-      text-align:center;
-      padding: 10px 8px;
-      border-radius: 14px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.08);
-      font-weight: 950;
-      color: rgba(237,244,242,.92);
-      font-size: 13px;
-      white-space:nowrap;
-    }
-    .bottombar a.gold{
-      background: rgba(199,164,90,.22);
-      border-color: rgba(199,164,90,.34);
-      color:#fff1d2;
-    }
-
-    footer{
-      margin-top: 18px;
-      text-align:center;
-      color: rgba(237,244,242,.60);
-      font-weight: 850;
-      font-size: 13px;
-      padding: 18px 6px 10px;
-    }
-    footer a{
-      color: rgba(237,244,242,.78);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-  </style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-        <div class="t">
-          <b>El Chiringuito de la Arepa</b>
-          <span>Sabores que abrazan el alma</span>
-        </div>
-      </div>
-
-      <a class="pill gold" href="/carta.html">Carta</a>
+<header class="top-bar">
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="El Chiringuito de la Arepa logo">
+    <div>
+      <h1>El Chiringuito de la Arepa</h1>
+      <p>Sabores que abrazan el alma</p>
     </div>
-  </header>
+  </div>
+  <a class="btn-gold" href="carta.html">Carta</a>
+</header>
 
-  <main class="wrap">
+<section class="hero">
+  <span class="tag">Cocina venezolana • Granada</span>
+  <h2>Arepas artesanales, sabor real.</h2>
+  <p>
+    Masa recién hecha, rellenos generosos y recetas tradicionales.  
+    Tequeños crujientes, sancocho de gallina y ternera (según disponibilidad),  
+    bebidas latinas y tres leches casero. Comer aquí o para llevar.
+  </p>
 
-    <section class="hero" id="inicio">
-      <div class="kicker"><i></i> Cocina venezolana · Granada</div>
+  <div class="cta-buttons">
+    <a class="btn-gold" href="carta.html">Ver la carta</a>
+    <a class="btn-green" href="https://wa.me/34651651291" target="_blank">Pedir por WhatsApp</a>
+  </div>
 
-      <h1>Arepas artesanales, sabor real.</h1>
+  <div class="qr-block">
+    <img src="assets/img/qr-menu.png" alt="QR para abrir la carta">
+    <p>Escanea y abre la carta</p>
+    <small>elchiringuitodelaarepa.es/carta.html</small>
+    <a class="btn-gold" href="carta.html">Abrir</a>
+  </div>
+</section>
 
-      <p>
-        Masa recién hecha, rellenos generosos y recetas tradicionales.
-        Tequeños crujientes, sancocho de gallina y ternera (según disponibilidad),
-        bebidas latinas y tres leches casero. Comer aquí o para llevar.
-      </p>
+<section class="menu-preview">
+  <h2>Nuestra oferta</h2>
 
-      <div class="cta-row">
-        <a class="btn gold" href="/carta.html">Ver la carta</a>
+  <div class="card">
+    <img src="assets/img/arepa.png" alt="Arepas venezolanas">
+    <h3>Arepas</h3>
+    <p>Reina Pepiada • Pabellón • Mechada • Jamón y queso • Atún</p>
+  </div>
 
-        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
-      </div>
+  <div class="card">
+    <img src="assets/img/tequenos.png" alt="Tequeños venezolanos">
+    <h3>Tequeños</h3>
+    <p>5 o 10 unidades</p>
+  </div>
 
-      <!-- QR con marco dorado -->
-      <div class="qr-card">
-        <a class="qr-frame" href="/carta.html" aria-label="Abrir la carta">
-          <div class="inner">
-            <img src="/assets/img/qr-menu.png?v=2" alt="QR Carta El Chiringuito de la Arepa">
-          </div>
-        </a>
-        <div class="qr-txt">
-          <b>Escanea y abre la carta</b>
-          <span>elchiringuitodelaarepa.es/carta.html</span>
-        </div>
-        <a class="btn gold" href="/carta.html">Abrir</a>
-      </div>
+  <div class="card">
+    <img src="assets/img/sancocho.png" alt="Sancocho venezolano">
+    <h3>Sancocho</h3>
+    <p>Pregunta por disponibilidad</p>
+  </div>
 
-      <div class="grid" aria-label="Categorías destacadas">
-        <a class="card" href="/carta.html#arepas">
-          <div class="thumb"><img src="/assets/img/arepa.png" alt="Arepas venezolanas"></div>
-          <div>
-            <b>Arepas</b>
-            <span>Reina Pepiada · Pabellón · Mechada…</span>
-          </div>
-        </a>
+  <div class="card">
+    <img src="assets/img/tresleches.png" alt="Tres leches casero">
+    <h3>Postres</h3>
+    <p>Tres leches casero</p>
+  </div>
 
-        <a class="card" href="/carta.html#tequenos">
-          <div class="thumb"><img src="/assets/img/tequenos.png" alt="Tequeños"></div>
-          <div>
-            <b>Tequeños</b>
-            <span>5 o 10 unidades</span>
-          </div>
-        </a>
+  <div class="card">
+    <img src="assets/img/bebidas.png" alt="Bebidas latinas">
+    <h3>Bebidas</h3>
+    <p>Agua, refrescos, maltín, Polar, Frescolita y más.</p>
+  </div>
+</section>
 
-        <a class="card" href="/carta.html#sancocho">
-          <div class="thumb"><img src="/assets/img/sancocho.png" alt="Sancocho"></div>
-          <div>
-            <b>Sancocho</b>
-            <span>Pregunta por disponibilidad</span>
-          </div>
-        </a>
+<section class="location">
+  <h2>Ubicación</h2>
+  <p>C. Obispo Hurtado, 27 • Ronda • 18004 Granada</p>
+  <a class="btn-gold" target="_blank"
+     href="https://www.google.com/maps/search/?api=1&query=El+Chiringuito+de+la+Arepa+Granada">
+     Abrir en Google Maps
+  </a>
 
-        <a class="card" href="/carta.html#postres">
-          <div class="thumb"><img src="/assets/img/tresleches.png" alt="Tres leches"></div>
-          <div>
-            <b>Postres</b>
-            <span>Tres leches casero</span>
-          </div>
-        </a>
-      </div>
-    </section>
+  <iframe
+    src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
 
-    <section class="section" id="ubicacion">
-      <h2>Ubicación</h2>
-      <div class="sub">Cómo llegar</div>
+<section class="hours">
+  <h2>Horarios</h2>
+  <ul>
+    <li>Lunes: 19:00 – 23:00</li>
+    <li>Martes: 19:00 – 23:00</li>
+    <li>Miércoles: 19:00 – 23:00</li>
+    <li>Jueves: CERRADO</li>
+    <li>Viernes: 13:00–15:30 • 19:00–23:00</li>
+    <li>Sábado: 13:00–15:30 • 19:00–23:00</li>
+    <li>Domingo: 13:00–15:30 • 19:00–22:00</li>
+  </ul>
+</section>
 
-      <div class="panel">
-        <div class="address">
-          <div style="font-size:18px; line-height:1;">📍</div>
-          <div>
-            <b>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</b>
-            <span>El Chiringuito de la Arepa · Granada</span>
-          </div>
-        </div>
+<section class="reviews">
+  <h2>Calificaciones en Google</h2>
+  <a class="btn-gold" target="_blank"
+     href="https://www.google.com/search?q=El+Chiringuito+de+la+Arepa+Granada">
+     Ver ficha en Google
+  </a>
+  <p>Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 👏</p>
+</section>
 
-        <div style="margin-top:12px;">
-          <a class="btn gold" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener">Abrir en Google Maps ↗</a>
-        </div>
+<section class="social">
+  <h2>Redes sociales</h2>
+  <ul>
+    <li><a target="_blank" href="https://www.instagram.com/elchiringuitodelaarepa">Instagram</a></li>
+    <li><a target="_blank" href="https://www.tiktok.com/@elchiringuitodelaarepa">TikTok</a></li>
+    <li><a target="_blank" href="https://youtube.com/@elchiringuitodelaarepa">YouTube</a></li>
+    <li><a target="_blank" href="https://www.threads.com/@elchiringuitodelaarepa">Threads</a></li>
+    <li><a target="_blank" href="https://www.facebook.com/profile.php?id=61584130088879">Facebook</a></li>
+    <li><a target="_blank" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d">Canal WhatsApp</a></li>
+    <li><a target="_blank" href="https://linktr.ee/elchiringuitodelaarepa">Linktree</a></li>
+  </ul>
+</section>
 
-        <div class="map" aria-label="Mapa">
-          <iframe
-            src="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
-          </iframe>
-        </div>
+<section class="contact">
+  <h2>Contacto</h2>
+  <p>Teléfono: 858 83 01 86</p>
+  <p>WhatsApp: +34 651 65 12 91</p>
+  <a class="btn-green" target="_blank" href="https://wa.me/34651651291">
+    Pedir por WhatsApp
+  </a>
+</section>
 
-        <div class="review" aria-label="Reseñas Google">
-          <div class="stars">★★★★★</div>
-          <div style="margin-top:8px; font-weight:950;">Calificaciones en Google</div>
+<footer>
+  <p>© 2026 El Chiringuito de la Arepa • <a href="legal.html">Legal</a></p>
+</footer>
 
-          <div style="margin-top:12px;">
-            <a class="btn" href="https://share.google/Z389me5gyMTsDlDG6" target="_blank" rel="noopener">Ver ficha en Google ↗</a>
-          </div>
-
-          <p>Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="horarios">
-      <h2>Horarios</h2>
-      <div class="sub">Servicio para comer aquí y para llevar</div>
-
-      <div class="panel">
-        <div class="hours">
-          <div class="hour"><div>Lunes</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Martes</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Miércoles</div><div class="right">19:00 – 23:00</div></div>
-          <div class="hour"><div>Jueves</div><div class="right">CERRADO</div></div>
-          <div class="hour"><div>Viernes</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
-          <div class="hour"><div>Sábado</div><div class="right">13:00–15:30 · 19:00–23:00</div></div>
-          <div class="hour"><div>Domingo</div><div class="right">13:00–15:30 · 19:00–22:00</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="redes">
-      <h2>Redes sociales</h2>
-      <div class="sub">Síguenos y mira novedades</div>
-
-      <div class="panel">
-        <div class="socials">
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Instagram</span><i>↗</i></a>
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>TikTok</span><i>↗</i></a>
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>YouTube</span><i>↗</i></a>
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Threads</span><i>↗</i></a>
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Facebook</span><i>↗</i></a>
-          <a class="sbtn" href="#" target="_blank" rel="noopener"><span>Canal WhatsApp</span><i>↗</i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <h2>Contacto</h2>
-      <div class="sub">Pedidos rápidos por WhatsApp</div>
-
-      <div class="panel">
-        <div class="address">
-          <div style="font-size:18px; line-height:1;">📞</div>
-          <div>
-            <b>Teléfono: 858 83 01 86</b>
-            <span>WhatsApp: +34 651 65 12 91</span>
-          </div>
-        </div>
-
-        <div style="margin-top:12px;">
-          <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
-        </div>
-      </div>
-
-      <footer>
-        © 2026 El Chiringuito de la Arepa · <a href="/legal.html">Legal</a>
-      </footer>
-    </section>
-
-  </main>
-
-  <!-- Barra inferior -->
-  <nav class="bottombar" aria-label="Navegación">
-    <div class="inner">
-      <a class="gold" href="/carta.html">Carta</a>
-      <a href="#ubicacion">Cómo llegar</a>
-      <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp ↗</a>
-    </div>
-  </nav>
+<nav class="bottom-nav">
+  <a class="active" href="carta.html">Carta</a>
+  <a href="#location">Cómo llegar</a>
+  <a target="_blank" href="https://wa.me/34651651291">WhatsApp</a>
+</nav>
 
 </body>
 </html>
