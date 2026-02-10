@@ -43,7 +43,7 @@
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color:var(--text);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding-bottom: 220px;
+      padding-bottom: 240px;
     }
     a{ color:inherit; text-decoration:none; }
     img{ max-width:100%; display:block; }
@@ -213,12 +213,13 @@
     }
     .photo img{
       width: 100%;
-      height: 220px;
+      height: 240px;
       object-fit: cover;
       display:block;
     }
     @media (max-width: 520px){
-      .photo img{ height: 200px; }
+      .hero h1{ font-size: 44px; }
+      .photo img{ height: 220px; }
     }
 
     .qr-card{
@@ -275,8 +276,8 @@
     .wa-float{
       position: fixed;
       right: 16px;
-      bottom: calc(16px + env(safe-area-inset-bottom));
-      z-index: 60;
+      bottom: calc(88px + env(safe-area-inset-bottom));
+      z-index: 90;
     }
     .wa-float a{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
@@ -290,6 +291,87 @@
     }
     .wa-float a span{ font-size: 18px; }
     .wa-float a small{ font-weight: 900; opacity: .9; font-size: 16px; }
+
+    .nav-bottom{
+      position: fixed;
+      left: 0; right: 0;
+      bottom: 0;
+      padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+      background: rgba(7,16,16,.82);
+      border-top: 1px solid rgba(255,255,255,.06);
+      backdrop-filter: blur(16px);
+      z-index: 80;
+    }
+    .nav-bottom .inner{
+      max-width: 980px;
+      margin: 0 auto;
+      display:flex;
+      gap: 10px;
+    }
+    .nav-bottom a{
+      flex:1;
+      text-align:center;
+      padding: 12px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow2);
+      font-weight: 950;
+      white-space:nowrap;
+    }
+    .nav-bottom a.gold{
+      background: rgba(184,148,82,.20);
+      border-color: rgba(184,148,82,.28);
+      color:#fff1d6;
+    }
+    .nav-bottom a.wa{
+      background: rgba(37,211,102,.16);
+      border-color: rgba(37,211,102,.22);
+      color:#eafff1;
+    }
+
+    /* ====== COOKIES (banner premium) ====== */
+    .cookie-banner{
+      position: fixed;
+      left: 14px; right: 14px;
+      bottom: calc(168px + env(safe-area-inset-bottom));
+      z-index: 120;
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(7,16,16,.86);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 48px rgba(0,0,0,.55);
+      padding: 14px;
+      display:none;
+    }
+    .cookie-banner.show{ display:block; }
+    .cookie-banner p{
+      margin: 0 0 10px;
+      color: rgba(234,241,239,.78);
+      font-weight: 800;
+      line-height: 1.45;
+    }
+    .cookie-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .cookie-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .cookie-links a{
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      color: rgba(234,241,239,.78);
+      font-weight: 900;
+      white-space:nowrap;
+    }
   </style>
 </head>
 
@@ -320,15 +402,13 @@
         <a class="btn" href="#bebidas">Bebidas</a>
         <a class="btn" href="#postres">Postres</a>
         <a class="btn" href="#sancocho">Sancocho</a>
-
         <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
       </div>
 
-      <!-- QR MENU -->
       <div class="qr-card">
         <div class="qr-frame">
           <div class="inner">
-            <img src="/assets/img/qr-menu.png?v=2" alt="QR Carta">
+            <img src="/assets/img/qr-menu.png" alt="QR Carta">
           </div>
         </div>
         <div class="qr-txt">
@@ -401,11 +481,16 @@
 
       <div class="panel">
         <div class="headline">
-          <div class="thumb"><img src="/assets/img/sancocho.png" alt="Raciones"></div>
+          <div class="thumb"><img src="/assets/img/raciones.png" alt="Raciones"></div>
           <div>
             <b>Raciones</b>
-            <span>Un acompañante que engancha.</span>
+            <span>Tajadas de plátano frito y más.</span>
           </div>
+        </div>
+
+        <!-- FOTO: TAJADAS (si tu archivo es .jpg, cambia .png) -->
+        <div class="photo">
+          <img src="/assets/img/tajadas.png" alt="Tajadas de plátano frito">
         </div>
 
         <div class="item"><div><b>Plátano macho maduro frito</b><small>Con queso blanco latino y mantequilla.</small></div><div class="price">4,50€</div></div>
@@ -432,7 +517,7 @@
       </div>
     </section>
 
-    <!-- BEBIDAS (ARREGLADO: ya no se corta) -->
+    <!-- BEBIDAS -->
     <section class="section" id="bebidas">
       <h2>Bebidas</h2>
       <div class="sub">Para acompañar tu arepa.</div>
@@ -450,7 +535,6 @@
           <img src="/assets/img/bebidas.png" alt="Selección de bebidas">
         </div>
 
-        <!-- Puedes ajustar nombres/precios si quieres -->
         <div class="item"><div><b>Agua</b><small>—</small></div><div class="price">1,50€</div></div>
         <div class="item"><div><b>Refresco</b><small>—</small></div><div class="price">2,00€</div></div>
         <div class="item"><div><b>Café</b><small>—</small></div><div class="price">1,50€</div></div>
@@ -507,17 +591,63 @@
     </section>
 
     <footer>
-      © 2026 El Chiringuito de la Arepa · <a href="/legal.html">Legal</a>
+      © 2026 El Chiringuito de la Arepa · Granada ·
+      <a href="/privacidad.html">Privacidad</a> ·
+      <a href="/cookies.html">Cookies</a>
     </footer>
-
   </main>
 
-  <!-- WhatsApp flotante -->
   <div class="wa-float">
     <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
       <span>💬</span> <small>WhatsApp</small>
     </a>
   </div>
 
+  <nav class="nav-bottom" aria-label="Navegación">
+    <div class="inner">
+      <a class="gold" href="/carta.html">Carta</a>
+      <a href="/index.html#ubicacion">Cómo llegar</a>
+      <a class="wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+  </nav>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p>Usamos cookies para mejorar tu experiencia y analizar el tráfico básico del sitio. Puedes aceptar o rechazar. Más info en nuestras políticas.</p>
+    <div class="cookie-actions">
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn gold" id="cookieAccept" type="button">Aceptar</button>
+        <button class="btn" id="cookieReject" type="button">Rechazar</button>
+      </div>
+      <div class="cookie-links">
+        <a href="/cookies.html">Política de Cookies</a>
+        <a href="/privacidad.html">Política de Privacidad</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const key = "eca_cookie_choice_v1";
+      const banner = document.getElementById("cookieBanner");
+      const accept = document.getElementById("cookieAccept");
+      const reject = document.getElementById("cookieReject");
+
+      function show(){ banner.classList.add("show"); }
+      function hide(){ banner.classList.remove("show"); }
+
+      const choice = localStorage.getItem(key);
+      if(!choice){ show(); }
+
+      accept.addEventListener("click", function(){
+        localStorage.setItem(key, "accepted");
+        hide();
+      });
+
+      reject.addEventListener("click", function(){
+        localStorage.setItem(key, "rejected");
+        hide();
+      });
+    })();
+  </script>
 </body>
 </html>
