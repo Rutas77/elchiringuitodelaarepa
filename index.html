@@ -1,454 +1,306 @@
+<!-- index.html (REEMPLAZA TODO TU index.html POR ESTO) -->
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b0f0e" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0d" />
   <title>El Chiringuito de la Arepa | Arepas artesanales en Granada</title>
-  <meta name="description" content="Arepas artesanales en Granada. Rellenos naturales sin aditivos, tequeños, sancocho (según disponibilidad), bebidas latinas y postres. Comer aquí o para llevar." />
-  <meta name="keywords" content="arepas Granada, comida venezolana Granada, tequeños Granada, sancocho Granada, arepera Granada, Obispo Hurtado 27" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
+  <meta name="description" content="Arepas artesanales en Granada. Masa recién hecha, rellenos naturales sin aditivos. Tequeños, raciones, bebidas latinas, postres caseros y sancocho según disponibilidad." />
 
   <style>
     :root{
-      --bg:#0b0f0e;
-      --text:#f4f6f6;
-      --muted: rgba(244,246,246,.72);
-      --line: rgba(255,255,255,.12);
-      --gold:#d6b15e;
-      --gold2:#f1d18a;
-      --shadow: 0 14px 40px rgba(0,0,0,.48);
-      --radius: 18px;
-      --radius2: 24px;
-      --max: 1100px;
+      --bg:#0b0b0d;
+      --panel:#111116;
+      --panel2:#0f0f13;
+      --text:#f3f3f6;
+      --muted:#b6b6c2;
+      --line:rgba(255,255,255,.10);
+      --gold:#d7b66a;
+      --gold2:#b8943f;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius:18px;
+      --radius2:26px;
     }
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{width:100%;max-width:100%;overflow-x:hidden}
-    img,svg,video{max-width:100%;height:auto;display:block}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
       background:
-        radial-gradient(1200px 700px at 20% -10%, rgba(214,177,94,.18), transparent 55%),
-        radial-gradient(900px 600px at 90% 10%, rgba(241,209,138,.10), transparent 55%),
-        radial-gradient(900px 600px at 30% 120%, rgba(214,177,94,.10), transparent 55%),
-        var(--bg);
-      line-height:1.35;
+        radial-gradient(900px 600px at 20% 0%, rgba(215,182,106,.12), transparent 60%),
+        radial-gradient(800px 500px at 85% 15%, rgba(215,182,106,.10), transparent 55%),
+        linear-gradient(180deg, #07070a 0%, #0b0b0d 40%, #07070a 100%);
+      color:var(--text);
+      overflow-x:hidden; /* evita scroll lateral */
     }
     a{color:inherit;text-decoration:none}
-    a:focus{outline:2px solid rgba(214,177,94,.55);outline-offset:3px;border-radius:10px}
-
-    .wrap{max-width:var(--max);margin:0 auto;padding:18px 14px 44px}
-    @media(min-width:720px){ .wrap{padding:22px 18px 60px} }
-
+    .wrap{max-width:980px;margin:0 auto;padding:18px 16px 36px}
     .topbar{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;
-      position:sticky;top:0;z-index:20;
-      padding:12px 10px calc(12px + env(safe-area-inset-top));
-      margin: -18px -14px 12px;
-      background: linear-gradient(to bottom, rgba(11,15,14,.92), rgba(11,15,14,.66), transparent);
+      position:sticky; top:0; z-index:20;
       backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(11,11,13,.92), rgba(11,11,13,.70));
+      border-bottom:1px solid var(--line);
     }
-    @media(min-width:720px){ .topbar{margin: -22px -18px 16px;padding:14px 16px calc(14px + env(safe-area-inset-top))} }
-
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:9px 12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.05);
-      border-radius:999px;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-      font-weight:700;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      max-width: 74vw;
-      overflow:hidden;
-      text-overflow: ellipsis;
+    .topbar .inner{
+      max-width:980px; margin:0 auto; padding:12px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
-    .pill small{color:var(--muted);font-weight:700}
-
-    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(215,182,106,.12)}
+    .brand h1{font-size:15px;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand small{color:var(--muted);margin-left:6px}
+    .ctaTop{
+      display:flex; gap:10px; align-items:center;
+    }
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:11px 14px;
       border-radius:999px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.03);
       color:var(--text);
-      font-weight:800;
+      font-weight:650;
       letter-spacing:.2px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      user-select:none;
-      white-space:nowrap;
+      box-shadow: 0 10px 22px rgba(0,0,0,.22);
+      max-width:100%;
     }
-    .btn:hover{transform: translateY(-1px);background: rgba(255,255,255,.09);border-color: rgba(214,177,94,.35)}
-    .btn.primary{
-      border-color: rgba(214,177,94,.45);
-      background: linear-gradient(180deg, rgba(214,177,94,.18), rgba(255,255,255,.06));
+    .btn:hover{border-color:rgba(215,182,106,.35)}
+    .btn.gold{
+      border-color:rgba(215,182,106,.45);
+      background: linear-gradient(180deg, rgba(215,182,106,.18), rgba(215,182,106,.08));
     }
-
+    .btn svg{width:16px;height:16px;opacity:.9}
     .hero{
-      border-radius: var(--radius2);
-      overflow:hidden;
-      border:1px solid rgba(214,177,94,.18);
-      background:
-        linear-gradient(120deg, rgba(214,177,94,.12), transparent 60%),
-        rgba(255,255,255,.04);
+      margin-top:18px;
+      border-radius:var(--radius2);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       box-shadow: var(--shadow);
+      overflow:hidden;
     }
-    .hero-grid{display:grid;grid-template-columns:1fr}
-    @media(min-width:880px){ .hero-grid{grid-template-columns:1.1fr .9fr} }
-
-    .hero-left{padding:22px 18px 18px}
-    @media(min-width:880px){ .hero-left{padding:34px 34px 30px} }
-
-    .kicker{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.22);
-      font-weight:800;
-      letter-spacing:.2px;
-      width: fit-content;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(214,177,94,.14);
-      flex:none;
-    }
-    h1{
-      margin:14px 0 10px;
-      font-size: clamp(30px, 4.8vw, 56px);
-      line-height:1.02;
-      letter-spacing:-.8px;
-    }
-    .lead{
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: clamp(15px, 1.55vw, 18px);
-      max-width: 54ch;
-      font-weight: 650;
-    }
-
-    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top: 14px;}
-
-    .cards{
+    .heroInner{
+      padding:18px;
       display:grid;
-      grid-template-columns: 1fr;
-      gap:12px;
-      margin-top: 18px;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;
+      align-items:stretch;
     }
-    @media(min-width:720px){ .cards{grid-template-columns: repeat(3, 1fr)} }
-
-    .card{
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      padding:14px 14px 12px;
-      min-height: 92px;
+    @media (max-width:760px){
+      .heroInner{grid-template-columns:1fr}
     }
-    .card strong{display:block;font-size:14px;letter-spacing:.2px;margin-bottom:6px}
-    .card span{color:var(--muted);font-size:13px;font-weight:650}
-
-    .hero-right{
-      padding: 16px 16px 18px;
-      display:flex;flex-direction:column;gap:12px;justify-content:flex-end;
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:600;
+      width:max-content;
     }
-    @media(min-width:880px){ .hero-right{padding: 28px 28px 30px} }
-
-    /* LOGO PREMIUM: si falla la imagen, se ve elegante igual */
-    .logo-panel{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(600px 260px at 20% 0%, rgba(214,177,94,.14), transparent 60%),
-        radial-gradient(600px 260px at 80% 20%, rgba(241,209,138,.10), transparent 60%),
-        rgba(0,0,0,.26);
-      overflow:hidden;
-      min-height: 180px;
+    .kicker .pill{width:10px;height:10px;border-radius:50%;background:var(--gold)}
+    .hero h2{font-size:44px;line-height:1.03;margin:14px 0 10px}
+    @media (max-width:760px){ .hero h2{font-size:38px} }
+    .hero p{margin:0;color:var(--muted);font-size:16px;line-height:1.55;max-width:60ch}
+    .heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .panelRight{
+      border-radius:20px;
+      border:1px solid var(--line);
+      background: radial-gradient(450px 260px at 20% 0%, rgba(215,182,106,.18), transparent 60%),
+                  rgba(0,0,0,.25);
+      padding:14px;
       display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
+      flex-direction:column;
+      gap:12px;
+      justify-content:space-between;
+      min-height:220px;
     }
-    .logo-panel[data-has-img="true"]{min-height:0}
-    .logo-img{width:100%;height:auto;object-fit:cover}
-    .logo-fallback{
-      padding: 18px;
-      text-align:center;
+    .logoBox{
+      display:flex;align-items:center;gap:12px;
     }
-    .logo-fallback .mark{
+    .logoBox img{
+      width:56px;height:56px;border-radius:14px;object-fit:cover;
+      border:1px solid rgba(215,182,106,.25);
+      background: rgba(255,255,255,.02);
+    }
+    .logoBox .t{min-width:0}
+    .logoBox .t b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .logoBox .t span{color:var(--muted);font-size:13px}
+    .miniGrid{
+      display:grid;grid-template-columns:1fr;gap:10px;
+    }
+    .miniCard{
+      border-radius:16px;border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding:12px;
+    }
+    .miniCard b{display:block;font-size:14px;margin-bottom:4px}
+    .miniCard span{color:var(--muted);font-size:13px;line-height:1.45}
+    .sections{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:760px){.sections{grid-template-columns:1fr}}
+    .card{
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      box-shadow: 0 14px 40px rgba(0,0,0,.38);
+      padding:16px;
+    }
+    .card h3{margin:0 0 8px;font-size:22px}
+    .card p{margin:0;color:var(--muted);line-height:1.55}
+    .rowBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .hr{height:1px;background:var(--line);margin:16px 0}
+    .socials{
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:12px
+    }
+    .iconBtn{
+      width:44px;height:44px;border-radius:14px;
       display:inline-flex;align-items:center;justify-content:center;
-      width:54px;height:54px;border-radius:16px;
-      border:1px solid rgba(214,177,94,.35);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 16px 40px rgba(0,0,0,.35);
-      color: var(--gold2);
-      font-weight: 950;
-      letter-spacing:.8px;
-      margin-bottom:10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
     }
-    .logo-fallback .name{font-weight:950;letter-spacing:-.3px}
-    .logo-fallback .tagline{color:var(--muted);font-weight:650;margin-top:6px;font-size:13px}
-
-    .fine{color: rgba(244,246,246,.72);font-size: 13px;line-height:1.4;font-weight:650}
-
-    .section{margin-top: 18px;padding: 18px 0 0;}
-    .grid-2{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:860px){ .grid-2{grid-template-columns: 1fr 1fr} }
-
-    .panel{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 18px 48px rgba(0,0,0,.30);
-      overflow:hidden;
-    }
-    .panel-inner{padding:16px}
-    @media(min-width:860px){ .panel-inner{padding:18px} }
-
-    .row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
-    .muted{color:var(--muted);font-weight:700}
-
-    .socials{display:flex;flex-wrap:wrap;gap:10px;padding: 10px 0 0;}
-    .soc{
-      width:44px;height:44px;border-radius:999px;
-      display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
-    }
-    .soc:hover{transform: translateY(-1px);border-color: rgba(214,177,94,.40);background: rgba(255,255,255,.09)}
-    .soc svg{width:20px;height:20px}
-
+    .iconBtn:hover{border-color:rgba(215,182,106,.35)}
+    .iconBtn svg{width:20px;height:20px;opacity:.9}
     footer{
-      margin-top: 26px;
-      padding: 18px 0 0;
-      border-top:1px solid rgba(255,255,255,.10);
-      color: rgba(244,246,246,.72);
-      font-size: 13px;
+      margin-top:18px;
+      color:rgba(255,255,255,.45);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
     }
-    .foot-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
-    .legal a{color: rgba(244,246,246,.82);font-weight:700}
-    .legal a:hover{color: var(--gold2)}
-    .sep{opacity:.55}
-
-    /* Cookie banner */
-    .cookie{
-      position:fixed;left:0;right:0;bottom:0;
-      padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
-      z-index: 999;
-      display:none;
-    }
-    .cookie .box{
-      max-width: var(--max);
-      margin: 0 auto;
-      border-radius: 16px;
-      border:1px solid rgba(214,177,94,.22);
-      background: rgba(8,10,10,.88);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      padding: 12px;
-      display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;
-    }
-    .cookie p{margin:0;color: rgba(244,246,246,.78);font-size: 13px;max-width: 70ch;font-weight:650}
-    .cookie-actions{display:flex;gap:8px;flex-wrap:wrap}
-    .cookie-actions .btn{padding:10px 12px;font-size:13px}
+    .footlinks a{color:rgba(255,255,255,.55)}
+    .footlinks a:hover{color:rgba(215,182,106,.9)}
   </style>
 </head>
 
 <body>
   <header class="topbar">
-    <a class="pill" href="index.html" aria-label="Inicio">
-      <span style="color:var(--gold);font-weight:950">●</span>
-      <span>El Chiringuito de la Arepa</span>
-      <small>Granada</small>
-    </a>
-
-    <nav class="nav" aria-label="Navegación">
-      <a class="btn" href="carta.html">Carta</a>
-      <a class="btn primary" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
-    </nav>
+    <div class="inner">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <h1>El Chiringuito de la Arepa <small>Granada</small></h1>
+      </div>
+      <div class="ctaTop">
+        <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20un%20pedido%20en%20El%20Chiringuito%20de%20la%20Arepa." aria-label="Pedir por WhatsApp">
+          Pedir por WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a class="btn" href="carta.html" aria-label="Ver la carta">Carta</a>
+      </div>
+    </div>
   </header>
 
   <main class="wrap">
-    <section class="hero" aria-label="Portada">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <div class="kicker"><span class="dot"></span> Cocina venezolana · Granada</div>
-          <h1>Arepas artesanales,<br/>sabor real.</h1>
-          <p class="lead">
+    <section class="hero" aria-label="Presentación">
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><span class="pill" aria-hidden="true"></span> Cocina venezolana • Granada</div>
+          <h2>Arepas artesanales,<br/>sabor real.</h2>
+          <p>
             Masa recién hecha, rellenos generosos y recetas tradicionales.
             Ingredientes naturales, sin aditivos químicos.
-            Tequeños crujientes, sancocho (según disponibilidad),
-            bebidas latinas y postres caseros. Comer aquí o para llevar.
+            Tequeños crujientes, raciones para compartir, bebidas latinas y postres caseros.
+            <b>Comer aquí o para llevar.</b>
           </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="carta.html">Ver la carta</a>
-            <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Cómo llegar ↗</a>
+          <div class="heroActions">
+            <a class="btn gold" href="carta.html">
+              Ver la carta
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
+            <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener">
+              Cómo llegar
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </a>
             <a class="btn" href="#redes">Redes</a>
-          </div>
-
-          <div class="cards">
-            <div class="card"><strong>Artesanal</strong><span>Preparación diaria, sabor auténtico.</span></div>
-            <div class="card"><strong>Natural</strong><span>Rellenos sin aditivos químicos.</span></div>
-            <div class="card"><strong>Rápido</strong><span>Para comer aquí o para llevar.</span></div>
           </div>
         </div>
 
-        <aside class="hero-right">
-          <div class="logo-panel" id="logoPanel" data-has-img="false">
-            <!-- Si tu logo existe, pon la ruta correcta aquí -->
-            <img class="logo-img" id="logoImg" src="assets/logo.jpg" alt="El Chiringuito de la Arepa" style="display:none" />
-            <div class="logo-fallback" id="logoFallback">
-              <div class="mark">ECA</div>
-              <div class="name">El Chiringuito de la Arepa</div>
-              <div class="tagline">Sabores que abrazan el alma</div>
+        <aside class="panelRight">
+          <div class="logoBox">
+            <img src="assets/img/logo.png" alt="Logo El Chiringuito de la Arepa" loading="lazy" />
+            <div class="t">
+              <b>El Chiringuito de la Arepa</b>
+              <span>Sabores que abrazan el alma</span>
             </div>
           </div>
 
-          <div class="fine">
-            📍 <strong>C. Obispo Hurtado, 27</strong> · Ronda · 18004 Granada<br/>
-            🕒 Miércoles a Domingo: <strong>13:00 – 23:00</strong> · Lunes y Martes: <strong>Cerrado</strong>
+          <div class="miniGrid">
+            <div class="miniCard">
+              <b>Horario</b>
+              <span>Miércoles a Domingo: 13:00 – 23:00<br/>Lunes y Martes: <b>Cerrado</b></span>
+            </div>
+            <div class="miniCard">
+              <b>Dirección</b>
+              <span>C. Obispo Hurtado, 27 · Ronda · 18004 Granada</span>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="grid-2">
-        <div class="panel">
-          <div class="panel-inner">
-            <div class="row">
-              <div>
-                <div style="font-size:22px;font-weight:950;letter-spacing:-.3px">Ubicación</div>
-                <div class="muted">Google Maps directo al restaurante</div>
-              </div>
-              <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado%2C%2027%2C%2018004%20Granada" target="_blank" rel="noopener">Abrir Maps ↗</a>
-            </div>
+    <section class="sections">
+      <article class="card">
+        <h3>Ubicación</h3>
+        <p>Google Maps directo al restaurante.</p>
+        <div class="rowBtns">
+          <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener">
+            Abrir Maps
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <!-- Reemplaza el enlace por tu ficha real de Google si lo tienes -->
+          <a class="btn gold" href="#" onclick="alert('Pega aquí el enlace de tu ficha de Google (Google Business Profile).');return false;">
+            Ver ficha en Google
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+        <div class="hr"></div>
+        <p>Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌</p>
+      </article>
 
-            <div style="margin-top:12px;color:var(--muted);font-size:14px;font-weight:650">
-              Servicio para comer aquí y para llevar. Si te gustó, una reseña nos ayuda muchísimo a aparecer mejor en Google en Granada. 🙌
-            </div>
+      <article class="card" id="redes">
+        <h3>Redes sociales</h3>
+        <p>Síguenos y descubre promos, platos y novedades.</p>
 
-            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn primary" href="https://www.google.com/search?q=El%20Chiringuito%20de%20la%20Arepa%20Granada%20rese%C3%B1a" target="_blank" rel="noopener">Ver ficha en Google ↗</a>
-              <a class="btn" href="carta.html">Ver carta</a>
-            </div>
-          </div>
+        <div class="socials" aria-label="Enlaces a redes">
+          <!-- Sustituye los href por tus enlaces reales -->
+          <a class="iconBtn" href="#" aria-label="Instagram" onclick="alert('Pega aquí tu enlace de Instagram');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z" stroke="currentColor" stroke-width="2"/><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </a>
+          <a class="iconBtn" href="#" aria-label="TikTok" onclick="alert('Pega aquí tu enlace de TikTok');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 3v10.2a4.8 4.8 0 1 1-4-4.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 6c1.2 2.4 3.4 4 6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a class="iconBtn" href="#" aria-label="YouTube" onclick="alert('Pega aquí tu enlace de YouTube');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M21 12s0-4-1-5-4-1-8-1-7 0-8 1-1 5-1 5 0 4 1 5 4 1 8 1 7 0 8-1 1-5 1-5Z" stroke="currentColor" stroke-width="2"/><path d="M10 9.5v5l5-2.5-5-2.5Z" fill="currentColor"/></svg>
+          </a>
+          <a class="iconBtn" href="#" aria-label="Facebook" onclick="alert('Pega aquí tu enlace de Facebook');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 8h3V5h-3a4 4 0 0 0-4 4v3H7v3h3v6h3v-6h3l1-3h-4V9a1 1 0 0 1 1-1Z" fill="currentColor"/></svg>
+          </a>
+          <a class="iconBtn" href="#" aria-label="Threads" onclick="alert('Pega aquí tu enlace de Threads');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 7c2-2 6-2 8 0 2 2 2 6 0 8-2 2-6 2-8 0-2-2-2-6 0-8Z" stroke="currentColor" stroke-width="2"/><path d="M9 14c1.8 1.8 4.2 1.8 6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a class="iconBtn" href="#" aria-label="Linktree" onclick="alert('Pega aquí tu enlace de Linktree');return false;">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 7l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="iconBtn" href="https://wa.me/34651651291?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20un%20pedido%20en%20El%20Chiringuito%20de%20la%20Arepa." aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 11.5a7.5 7.5 0 0 1-11.8 6.2L4 19l1.4-4.1A7.5 7.5 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9c.5 2 2.5 4 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
         </div>
 
-        <div class="panel">
-          <div class="panel-inner">
-            <div style="font-size:22px;font-weight:950;letter-spacing:-.3px" id="redes">Redes sociales</div>
-            <div class="muted">Síguenos y descubre promos, platos y novedades.</div>
-
-            <!-- PON TUS LINKS REALES ABAJO.
-                 Si un link queda en "#", el icono se OCULTA automáticamente. -->
-            <div class="socials" id="socials">
-              <a class="soc" data-url="#" aria-label="Instagram" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-              </a>
-              <a class="soc" data-url="#" aria-label="TikTok" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M14 3v10.2a4.8 4.8 0 1 1-4-4.72" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 6.2c1.3 2.1 3.2 3.3 5 3.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
-              <a class="soc" data-url="#" aria-label="YouTube" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M21 12s0-4-1-5-3-1-8-1-7 0-8 1-1 5-1 5 0 4 1 5 3 1 8 1 7 0 8-1 1-5 1-5Z" stroke="currentColor" stroke-width="2"/><path d="M11 9.5 15.5 12 11 14.5V9.5Z" fill="currentColor"/></svg>
-              </a>
-              <a class="soc" data-url="#" aria-label="Facebook" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z" fill="currentColor"/></svg>
-              </a>
-              <a class="soc" data-url="#" aria-label="Threads" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9Z" stroke="currentColor" stroke-width="2"/><path d="M8.5 13.2c.3 2.6 2.1 4.1 4.4 4.1 2.6 0 4.6-1.7 4.6-4.4 0-2.6-2.1-4.1-4.8-4.1-2 0-3.8.8-4.2 2.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
-              <a class="soc" data-url="#" aria-label="Linktree" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 7l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 3h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
-              <a class="soc" data-url="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido.%20%F0%9F%98%8A" aria-label="WhatsApp" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M20 11.5A8.5 8.5 0 1 1 7.5 4.2 8.5 8.5 0 0 1 20 11.5Z" stroke="currentColor" stroke-width="2"/><path d="M7 20l1.1-3.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9.3 8.7c.2-.4.5-.4.7-.4h.6c.2 0 .4.1.5.4l.7 1.7c.1.3.1.6-.1.8l-.4.5c-.1.2-.1.4 0 .6.5.9 1.3 1.7 2.2 2.2.2.1.4.1.6 0l.5-.4c.2-.2.5-.2.8-.1l1.7.7c.3.1.4.3.4.5v.6c0 .2 0 .5-.4.7-.5.3-1.5.6-2.8.2-3-.9-5.5-3.4-6.4-6.4-.4-1.3-.1-2.3.2-2.8Z" fill="currentColor"/></svg>
-              </a>
-            </div>
-
-            <div style="margin-top:12px;color:var(--muted);font-size:13px;font-weight:650">
-              ¿Pedido rápido? Toca el botón de WhatsApp y te atendemos.
-            </div>
-          </div>
-        </div>
-      </div>
+        <div class="hr"></div>
+        <p><b>¿Pedido rápido?</b> Toca WhatsApp y te atendemos.</p>
+      </article>
     </section>
 
     <footer>
-      <div class="foot-row">
-        <div>© <span id="year"></span> El Chiringuito de la Arepa</div>
-        <div class="legal">
-          <a href="privacidad.html">Privacidad</a>
-          <span class="sep"> · </span>
-          <a href="cookies.html">Cookies</a>
-        </div>
+      <div>© 2026 El Chiringuito de la Arepa</div>
+      <div class="footlinks">
+        <a href="legal.html">Legal</a> ·
+        <a href="cookies.html">Cookies</a> ·
+        <a href="privacidad.html">Privacidad</a>
       </div>
     </footer>
   </main>
-
-  <div class="cookie" id="cookieBanner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
-    <div class="box">
-      <p>
-        Usamos cookies para mejorar la experiencia y medir el rendimiento. Puedes aceptar o configurar.
-        Consulta <a href="cookies.html" style="color:var(--gold2);font-weight:900">Cookies</a> y
-        <a href="privacidad.html" style="color:var(--gold2);font-weight:900">Privacidad</a>.
-      </p>
-      <div class="cookie-actions">
-        <button class="btn" id="cookieConfig" type="button">Configurar</button>
-        <button class="btn primary" id="cookieAccept" type="button">Aceptar</button>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Cookies
-    const banner = document.getElementById('cookieBanner');
-    const KEY = 'eca_cookie_consent_v1';
-    if(!localStorage.getItem(KEY)){ banner.style.display = 'block'; }
-    document.getElementById('cookieAccept').addEventListener('click', () => {
-      localStorage.setItem(KEY, JSON.stringify({accepted:true, date: new Date().toISOString()}));
-      banner.style.display = 'none';
-    });
-    document.getElementById('cookieConfig').addEventListener('click', () => {
-      window.location.href = 'cookies.html';
-    });
-
-    // Logo: si carga, lo muestra; si no, queda el fallback premium
-    const logoImg = document.getElementById('logoImg');
-    const logoPanel = document.getElementById('logoPanel');
-    const logoFallback = document.getElementById('logoFallback');
-    logoImg.addEventListener('load', () => {
-      logoImg.style.display = 'block';
-      logoFallback.style.display = 'none';
-      logoPanel.setAttribute('data-has-img','true');
-    });
-    logoImg.addEventListener('error', () => {
-      logoImg.style.display = 'none';
-      logoFallback.style.display = 'block';
-      logoPanel.setAttribute('data-has-img','false');
-    });
-
-    // Redes: si no hay URL real, oculta el icono (para que no se vea “horrible”)
-    document.querySelectorAll('#socials .soc').forEach(a=>{
-      const url = (a.getAttribute('data-url') || '').trim();
-      if(!url || url === '#'){
-        a.style.display = 'none';
-      }else{
-        a.href = url;
-      }
-    });
-  </script>
 </body>
 </html>
