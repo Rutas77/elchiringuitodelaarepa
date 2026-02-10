@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0b0b0d" />
   <title>Carta | El Chiringuito de la Arepa</title>
-  <meta name="description" content="Carta de El Chiringuito de la Arepa en Granada: arepas artesanales, raciones, tequeños, bebidas, postres y sancocho según disponibilidad." />
-  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Carta de El Chiringuito de la Arepa en Granada: arepas artesanales, raciones, tequeños, bebidas latinas y postres." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/carta.html" />
 
   <style>
     :root{
       --bg:#0b0b0d;
-      --panel:#111116;
-      --text:#f3f3f6;
-      --muted:#b6b6c2;
-      --line:rgba(255,255,255,.10);
+      --text:#f4f4f7;
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.55);
+      --line: rgba(255,255,255,.10);
       --gold:#d7b66a;
       --shadow: 0 18px 60px rgba(0,0,0,.55);
       --radius:18px;
       --radius2:26px;
+      --max: 1020px;
     }
     *{box-sizing:border-box}
     body{
@@ -30,23 +30,24 @@
         linear-gradient(180deg, #07070a 0%, #0b0b0d 45%, #07070a 100%);
       color:var(--text);
       overflow-x:hidden;
-      -webkit-font-smoothing:antialiased;
     }
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:980px;margin:0 auto;padding:16px 16px 36px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:16px 16px 36px}
+
     .topbar{
-      position:sticky; top:0; z-index:30;
+      position:sticky; top:0; z-index:50;
       backdrop-filter: blur(10px);
       background: linear-gradient(180deg, rgba(11,11,13,.92), rgba(11,11,13,.72));
       border-bottom:1px solid var(--line);
     }
     .topbar .inner{
-      max-width:980px; margin:0 auto; padding:12px 16px;
+      max-width:var(--max); margin:0 auto; padding:12px 16px;
       display:flex; align-items:center; justify-content:space-between; gap:12px;
     }
     .brand{display:flex;align-items:center;gap:10px;min-width:0}
     .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(215,182,106,.12)}
     .brand b{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:11px 14px;
@@ -54,17 +55,18 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.03);
       color:var(--text);
-      font-weight:650;
+      font-weight:750;
       box-shadow: 0 10px 22px rgba(0,0,0,.22);
       max-width:100%;
       white-space:nowrap;
-      touch-action:manipulation;
+      cursor:pointer;
     }
+    .btn:hover{border-color:rgba(215,182,106,.35)}
     .btn.gold{
-      border-color:rgba(215,182,106,.45);
-      background: linear-gradient(180deg, rgba(215,182,106,.18), rgba(215,182,106,.08));
+      border-color:rgba(215,182,106,.50);
+      background: linear-gradient(180deg, rgba(215,182,106,.20), rgba(215,182,106,.08));
     }
-    .btn svg{width:16px;height:16px;opacity:.9}
+
     .hero{
       margin-top:14px;
       border-radius:var(--radius2);
@@ -75,10 +77,42 @@
     }
     .heroIn{padding:16px}
     .heroTop{
-      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px; flex-wrap:wrap;
     }
     .hero h1{margin:6px 0 4px;font-size:34px;letter-spacing:.2px}
     .hero p{margin:0;color:var(--muted);line-height:1.55}
+
+    .tools{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .search{
+      flex: 1 1 260px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.20);
+    }
+    .search input{
+      width:100%;
+      border:0;
+      outline:0;
+      background:transparent;
+      color:var(--text);
+      font-size:15px;
+    }
+    .search span{
+      color:var(--muted2);
+      font-weight:800;
+    }
+
     .tabs{
       margin-top:14px;
       display:flex;
@@ -94,14 +128,15 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.03);
       color:var(--text);
-      font-weight:650;
+      font-weight:800;
       cursor:pointer;
       user-select:none;
     }
     .tab[aria-selected="true"]{
-      border-color:rgba(215,182,106,.45);
-      background: linear-gradient(180deg, rgba(215,182,106,.18), rgba(215,182,106,.08));
+      border-color:rgba(215,182,106,.50);
+      background: linear-gradient(180deg, rgba(215,182,106,.20), rgba(215,182,106,.08));
     }
+
     .grid{margin-top:14px;display:grid;grid-template-columns:1fr;gap:14px}
     .section{
       border-radius:var(--radius);
@@ -134,10 +169,22 @@
     }
     .itemTop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
     .item h3{margin:0;font-size:16px}
-    .price{color:var(--gold);font-weight:750;white-space:nowrap}
+    .price{color:var(--gold);font-weight:900;white-space:nowrap}
     .desc{margin:6px 0 0;color:var(--muted);line-height:1.5}
-    .note{margin:6px 0 0;color:rgba(255,255,255,.55);font-size:12px;line-height:1.45}
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .actions{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    .smallBtn{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-weight:850;
+      cursor:pointer;
+    }
+    .smallBtn.gold{
+      border-color:rgba(215,182,106,.50);
+      background: linear-gradient(180deg, rgba(215,182,106,.20), rgba(215,182,106,.08));
+    }
+
     .qrBox{
       margin-top:14px;
       border-radius:var(--radius);
@@ -160,6 +207,7 @@
     }
     .qrText b{display:block;font-size:15px;margin-bottom:6px}
     .qrText span{display:block;color:var(--muted);line-height:1.45}
+
     footer{
       margin-top:18px;
       color:rgba(255,255,255,.45);
@@ -172,17 +220,6 @@
     .footlinks a{color:rgba(255,255,255,.55)}
     .footlinks a:hover{color:rgba(215,182,106,.9)}
   </style>
-
-  <script>
-    const CFG = {
-      whatsapp: "34651651291",
-      whatsappMsg: "Hola 👋 Quiero hacer un pedido en El Chiringuito de la Arepa.",
-      mapsUrl: "https://share.google/ZUtKVZkb33HRP1GR1"
-    };
-    function waLink(){
-      return "https://wa.me/" + CFG.whatsapp + "?text=" + encodeURIComponent(CFG.whatsappMsg);
-    }
-  </script>
 </head>
 
 <body>
@@ -192,11 +229,10 @@
         <span class="dot" aria-hidden="true"></span>
         <b>El Chiringuito de la Arepa</b>
       </div>
-      <div style="display:flex;gap:10px;align-items:center;">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end;">
         <a class="btn" href="index.html">Inicio</a>
-        <a class="btn gold" id="waTop" href="#" aria-label="Pedir por WhatsApp">
+        <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20un%20pedido%20en%20El%20Chiringuito%20de%20la%20Arepa." aria-label="Pedir por WhatsApp">
           Pedir
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </a>
       </div>
     </div>
@@ -210,10 +246,18 @@
             <h1>Carta</h1>
             <p>Elige tu antojo y pídelo por WhatsApp. <b>Comer aquí o para llevar.</b></p>
           </div>
-          <div class="ctaRow">
-            <a class="btn" id="mapsBtn" href="#" target="_blank" rel="noopener">Cómo llegar</a>
-            <a class="btn gold" id="waBtn" href="#">Pedir por WhatsApp</a>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn gold" href="https://wa.me/34651651291?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20un%20pedido%20en%20El%20Chiringuito%20de%20la%20Arepa.">Pedir por WhatsApp</a>
           </div>
+        </div>
+
+        <div class="tools">
+          <div class="search" role="search" aria-label="Buscar en la carta">
+            <span>🔎</span>
+            <input id="q" type="search" placeholder="Buscar: reina, tequeños, frescolita, pernil..." autocomplete="off" />
+          </div>
+          <button class="btn" id="clear">Limpiar</button>
         </div>
 
         <div class="tabs" role="tablist" aria-label="Categorías">
@@ -222,7 +266,6 @@
           <button class="tab" role="tab" aria-selected="false" data-filter="tequenos">Tequeños</button>
           <button class="tab" role="tab" aria-selected="false" data-filter="bebidas">Bebidas</button>
           <button class="tab" role="tab" aria-selected="false" data-filter="postres">Postres</button>
-          <button class="tab" role="tab" aria-selected="false" data-filter="sancocho">Sancocho</button>
         </div>
 
         <div class="qrBox" aria-label="Carta en QR">
@@ -239,32 +282,163 @@
     </section>
 
     <section class="grid" id="menu">
+
       <!-- AREPAS -->
       <article class="section" data-section="arepas">
         <div class="secHead">
           <div>
             <h2>Arepas</h2>
-            <span>Masa recién hecha • rellenos naturales • sabor venezolano</span>
+            <span>Hechas al momento • rellenos generosos</span>
           </div>
         </div>
         <img class="secImg" src="assets/img/arepa.png" alt="Arepas artesanales" loading="lazy">
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Arepa (elige tu relleno)</h3>
-              <div class="price">Desde · Consultar</div>
-            </div>
-            <div class="desc">Rellenos generosos, preparados con ingredientes naturales. Pregunta por las opciones del día.</div>
-            <div class="note">Si es tu primera vez, te ayudamos a elegir según tu gusto.</div>
+
+          <!-- (nombre, precio, categoría) -->
+          <div class="item" data-name="Reina Pepiada" data-price="6,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Reina Pepiada</h3><div class="price">6,50€</div></div>
+            <div class="desc">Clásica venezolana, cremosa y contundente.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
 
-          <div class="item">
-            <div class="itemTop">
-              <h3>Especiales</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Recomendaciones de la casa. Opciones limitadas según disponibilidad.</div>
+          <div class="item" data-name="Huevo de codorniz" data-price="5,80€" data-cat="arepas">
+            <div class="itemTop"><h3>Huevo de codorniz</h3><div class="price">5,80€</div></div>
+            <div class="desc">Sabor casero, perfecto si quieres algo diferente.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
+
+          <div class="item" data-name="Jamón York" data-price="4,90€" data-cat="arepas">
+            <div class="itemTop"><h3>Jamón York</h3><div class="price">4,90€</div></div>
+            <div class="desc">Simple, suave y rápido.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Ensalada de atún" data-price="5,80€" data-cat="arepas">
+            <div class="itemTop"><h3>Ensalada de atún</h3><div class="price">5,80€</div></div>
+            <div class="desc">Fresca, ligera y completa.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Salchichas" data-price="5,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Salchichas</h3><div class="price">5,50€</div></div>
+            <div class="desc">Sabor clásico, ideal para antojo rápido.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Pabellón" data-price="7,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Pabellón</h3><div class="price">7,50€</div></div>
+            <div class="desc">La reina de las arepas: contundente y tradicional.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Queso blanco y cheddar" data-price="5,00€" data-cat="arepas">
+            <div class="itemTop"><h3>Queso blanco y cheddar</h3><div class="price">5,00€</div></div>
+            <div class="desc">Doble queso, puro confort.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Queso blanco" data-price="4,60€" data-cat="arepas">
+            <div class="itemTop"><h3>Queso blanco</h3><div class="price">4,60€</div></div>
+            <div class="desc">Sencilla, cremosa, venezolana.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Queso cheddar" data-price="4,60€" data-cat="arepas">
+            <div class="itemTop"><h3>Queso cheddar</h3><div class="price">4,60€</div></div>
+            <div class="desc">Suave, sabrosa y rápida.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Malafollá" data-price="5,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Malafollá</h3><div class="price">5,50€</div></div>
+            <div class="desc">La especial de la casa con personalidad.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Perico" data-price="5,60€" data-cat="arepas">
+            <div class="itemTop"><h3>Perico</h3><div class="price">5,60€</div></div>
+            <div class="desc">Sabor de desayuno venezolano, todo el día.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Catira" data-price="5,90€" data-cat="arepas">
+            <div class="itemTop"><h3>Catira</h3><div class="price">5,90€</div></div>
+            <div class="desc">Un clásico que nunca falla.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Carne picada" data-price="6,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Carne picada</h3><div class="price">6,50€</div></div>
+            <div class="desc">Potente y sabrosa.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Pernil al horno" data-price="6,80€" data-cat="arepas">
+            <div class="itemTop"><h3>Pernil al horno</h3><div class="price">6,80€</div></div>
+            <div class="desc">Jugoso, tradicional, de los favoritos.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Alubias con queso" data-price="5,30€" data-cat="arepas">
+            <div class="itemTop"><h3>Alubias con queso</h3><div class="price">5,30€</div></div>
+            <div class="desc">Veggie-friendly y muy llena.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Mechada sola" data-price="6,30€" data-cat="arepas">
+            <div class="itemTop"><h3>Mechada sola</h3><div class="price">6,30€</div></div>
+            <div class="desc">Carne mechada clásica.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Mechada con queso" data-price="6,80€" data-cat="arepas">
+            <div class="itemTop"><h3>Mechada con queso</h3><div class="price">6,80€</div></div>
+            <div class="desc">La combinación ganadora.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Pollo solo" data-price="5,80€" data-cat="arepas">
+            <div class="itemTop"><h3>Pollo solo</h3><div class="price">5,80€</div></div>
+            <div class="desc">Suave, rico y rápido.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Huevo revuelto" data-price="4,90€" data-cat="arepas">
+            <div class="itemTop"><h3>Huevo revuelto</h3><div class="price">4,90€</div></div>
+            <div class="desc">Clásico y siempre funciona.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Vegetariana/Vegana" data-price="6,60€" data-cat="arepas">
+            <div class="itemTop"><h3>Vegetariana / Vegana</h3><div class="price">6,60€</div></div>
+            <div class="desc">Opción vegetal llena de sabor.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="La viuda" data-price="1,00€" data-cat="arepas">
+            <div class="itemTop"><h3>La viuda</h3><div class="price">1,00€</div></div>
+            <div class="desc">Arepa sin relleno.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Relleno extra" data-price="0,90€" data-cat="arepas">
+            <div class="itemTop"><h3>Relleno extra</h3><div class="price">0,90€</div></div>
+            <div class="desc">Añade más relleno a tu arepa.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Salsa" data-price="0,60€" data-cat="arepas">
+            <div class="itemTop"><h3>Salsa</h3><div class="price">0,60€</div></div>
+            <div class="desc">Salsa extra.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Queso a la plancha" data-price="1,50€" data-cat="arepas">
+            <div class="itemTop"><h3>Queso a la plancha</h3><div class="price">1,50€</div></div>
+            <div class="desc">Extra premium para tu arepa.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
         </div>
       </article>
 
@@ -276,22 +450,24 @@
             <span>Perfectas para compartir</span>
           </div>
         </div>
-        <img class="secImg" src="assets/img/tajadas.png" alt="Tajadas de plátano frito" loading="lazy">
+        <img class="secImg" src="assets/img/tajadas.png" alt="Raciones" loading="lazy">
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Tajadas de plátano frito</h3>
-              <div class="price">4,50€</div>
-            </div>
-            <div class="desc">Plátano macho maduro frito con queso blanco latino y mantequilla.</div>
+          <div class="item" data-name="Plátano macho frito" data-price="4,50€" data-cat="raciones">
+            <div class="itemTop"><h3>Plátano macho frito</h3><div class="price">4,50€</div></div>
+            <div class="desc">Plátano macho maduro frito.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
 
-          <div class="item">
-            <div class="itemTop">
-              <h3>Ensalada de atún con arepa</h3>
-              <div class="price">6,50€</div>
-            </div>
+          <div class="item" data-name="Ensalada atún con arepa" data-price="6,50€" data-cat="raciones">
+            <div class="itemTop"><h3>Ensalada atún con arepa</h3><div class="price">6,50€</div></div>
             <div class="desc">Fresca y completa, ideal para un almuerzo ligero.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
+          <div class="item" data-name="Pernil con aguacate" data-price="8,00€" data-cat="raciones">
+            <div class="itemTop"><h3>Pernil con aguacate</h3><div class="price">8,00€</div></div>
+            <div class="desc">Ración contundente, combinación top.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
         </div>
       </article>
@@ -301,25 +477,21 @@
         <div class="secHead">
           <div>
             <h2>Tequeños</h2>
-            <span>Perfectos para picar</span>
+            <span>Crujientes y adictivos</span>
           </div>
         </div>
         <img class="secImg" src="assets/img/tequenos.png" alt="Tequeños" loading="lazy">
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Tequeños (ración)</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Crujientes por fuera, queso fundido por dentro. Pregunta por salsas disponibles.</div>
+          <div class="item" data-name="Tequeños (5 unidades)" data-price="6,00€" data-cat="tequenos">
+            <div class="itemTop"><h3>Tequeños (5 unidades)</h3><div class="price">6,00€</div></div>
+            <div class="desc">Perfectos para picar.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
 
-          <div class="item">
-            <div class="itemTop">
-              <h3>Tequeños (combo)</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Ideal para compartir con bebida latina bien fría.</div>
+          <div class="item" data-name="Tequeños (10 unidades)" data-price="11,00€" data-cat="tequenos">
+            <div class="itemTop"><h3>Tequeños (10 unidades)</h3><div class="price">11,00€</div></div>
+            <div class="desc">Para compartir en serio.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
         </div>
       </article>
@@ -329,18 +501,88 @@
         <div class="secHead">
           <div>
             <h2>Bebidas</h2>
-            <span>Latinas y refrescantes</span>
+            <span>Frías, latinas y refrescantes</span>
           </div>
         </div>
         <img class="secImg" src="assets/img/bebidas.png" alt="Bebidas" loading="lazy">
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Bebidas latinas</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Opciones disponibles en nevera. Pregunta por marcas y sabores.</div>
+
+          <div class="item" data-name="Café / Café con leche" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Café / Café con leche</h3><div class="price">1,50€</div></div>
+            <div class="desc">Caliente, recién hecho.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
+          <div class="item" data-name="Infusión" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Infusión</h3><div class="price">1,50€</div></div>
+            <div class="desc">Pregunta por opciones.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Coca-Cola" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Coca-Cola</h3><div class="price">1,50€</div></div>
+            <div class="desc">Bien fría.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Fanta" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Fanta</h3><div class="price">1,50€</div></div>
+            <div class="desc">Bien fría.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Fuze Tea" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Fuze Tea</h3><div class="price">1,50€</div></div>
+            <div class="desc">Refrescante.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Aquarius" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Aquarius</h3><div class="price">1,50€</div></div>
+            <div class="desc">Perfecto para acompañar.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Zumo Don Simón" data-price="1,00€" data-cat="bebidas">
+            <div class="itemTop"><h3>Zumo Don Simón</h3><div class="price">1,00€</div></div>
+            <div class="desc">Opción rápida.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Zumo natural" data-price="4,00€" data-cat="bebidas">
+            <div class="itemTop"><h3>Zumo natural</h3><div class="price">4,00€</div></div>
+            <div class="desc">Pregunta por el sabor disponible.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Maltín Polar" data-price="2,80€" data-cat="bebidas">
+            <div class="itemTop"><h3>Maltín Polar</h3><div class="price">2,80€</div></div>
+            <div class="desc">Clásico venezolano.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Postobón" data-price="2,80€" data-cat="bebidas">
+            <div class="itemTop"><h3>Postobón</h3><div class="price">2,80€</div></div>
+            <div class="desc">Latina y refrescante.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Frescolita" data-price="2,80€" data-cat="bebidas">
+            <div class="itemTop"><h3>Frescolita</h3><div class="price">2,80€</div></div>
+            <div class="desc">La favorita de muchos.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Agua 0,5L" data-price="1,00€" data-cat="bebidas">
+            <div class="itemTop"><h3>Agua 0,5L</h3><div class="price">1,00€</div></div>
+            <div class="desc">Fría.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Agua 1,5L" data-price="1,50€" data-cat="bebidas">
+            <div class="itemTop"><h3>Agua 1,5L</h3><div class="price">1,50€</div></div>
+            <div class="desc">Para compartir.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Cervezas" data-price="1,30€" data-cat="bebidas">
+            <div class="itemTop"><h3>Cervezas</h3><div class="price">1,30€</div></div>
+            <div class="desc">Pregunta por disponibilidad.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+          <div class="item" data-name="Cerveza Polar" data-price="2,90€" data-cat="bebidas">
+            <div class="itemTop"><h3>Cerveza Polar</h3><div class="price">2,90€</div></div>
+            <div class="desc">Polar bien fría.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
+          </div>
+
         </div>
       </article>
 
@@ -352,34 +594,12 @@
             <span>Caseros</span>
           </div>
         </div>
-        <img class="secImg" src="assets/img/tresleches.png" alt="Postres" loading="lazy">
+        <img class="secImg" src="assets/img/tresleches.png" alt="Tres leches" loading="lazy">
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Postre del día</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Pregunta por el postre disponible hoy.</div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SANCOCHO -->
-      <article class="section" data-section="sancocho">
-        <div class="secHead">
-          <div>
-            <h2>Sancocho</h2>
-            <span>Tradicional, contundente y casero</span>
-          </div>
-        </div>
-        <img class="secImg" src="assets/img/sancocho.png" alt="Sancocho venezolano" loading="lazy">
-        <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Sancocho</h3>
-              <div class="price">Consultar</div>
-            </div>
-            <div class="desc">Disponible según día. Pregunta por disponibilidad.</div>
+          <div class="item" data-name="Tres leches" data-price="4,00€" data-cat="postres">
+            <div class="itemTop"><h3>Tres leches</h3><div class="price">4,00€</div></div>
+            <div class="desc">Cremoso, casero y brutal.</div>
+            <div class="actions"><button class="smallBtn gold" data-order>🟡 Pedir</button></div>
           </div>
         </div>
       </article>
@@ -393,25 +613,22 @@
           </div>
         </div>
         <div class="items">
-          <div class="item">
-            <div class="itemTop">
-              <h3>Pedido</h3>
-              <div class="price">WhatsApp</div>
+          <div class="item" data-name="Ubicación" data-price="" data-cat="local">
+            <div class="itemTop"><h3>Horario</h3><div class="price"></div></div>
+            <div class="desc">
+              Lunes, Martes y Miércoles: 19:00 – 23:00<br/>
+              Jueves: <b>Cerrado</b><br/>
+              Viernes y Sábado: 13:00 – 15:30 / 19:00 – 23:00<br/>
+              Domingo: 13:00 – 15:30 / 19:00 – 22:00
             </div>
-            <div class="desc">Te atendemos rápido por WhatsApp.</div>
-            <div class="ctaRow">
-              <a class="btn" id="mapsBtn2" href="#" target="_blank" rel="noopener">
-                Abrir Maps
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
-              <a class="btn gold" id="waBtn2" href="#">
-                Pedir
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 5h5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 14L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M19 14v5H5V5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </a>
+            <div class="actions">
+              <a class="smallBtn" href="https://www.google.com/maps?q=C.%20Obispo%20Hurtado,%2027,%2018004%20Granada" target="_blank" rel="noopener">Abrir Maps</a>
+              <button class="smallBtn gold" id="quick">🟡 Pedir por WhatsApp</button>
             </div>
           </div>
         </div>
       </article>
+
     </section>
 
     <footer>
@@ -425,30 +642,70 @@
   </main>
 
   <script>
-    // Links
-    const wa = waLink();
-    document.getElementById("waTop").href = wa;
-    document.getElementById("waBtn").href = wa;
-    document.getElementById("waBtn2").href = wa;
+    const WA = "https://wa.me/34651651291?text=";
 
-    document.getElementById("mapsBtn").href = CFG.mapsUrl;
-    document.getElementById("mapsBtn2").href = CFG.mapsUrl;
+    function waText(msg){
+      return WA + encodeURIComponent(msg);
+    }
 
-    // Tabs premium: filtra por secciones sin recargar
+    function orderMessage(name, price){
+      const p = price ? ` (${price})` : "";
+      return `Hola 👋 Quiero pedir: ${name}${p}. ¿Me confirmas disponibilidad y tiempo de preparación?`;
+    }
+
+    // Tabs
     const tabs = Array.from(document.querySelectorAll('.tab'));
     const sections = Array.from(document.querySelectorAll('[data-section]'));
+    const menu = document.getElementById('menu');
 
     function select(filter){
       tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.filter === filter ? 'true' : 'false'));
-      sections.forEach(s => {
-        const show = (s.dataset.section === filter) || (filter === 'all');
-        s.style.display = show ? '' : 'none';
-      });
-      document.getElementById('menu').scrollIntoView({behavior:'smooth', block:'start'});
+      sections.forEach(s => s.style.display = (s.dataset.section === filter) ? '' : 'none');
+      menu.scrollIntoView({behavior:'smooth', block:'start'});
+      document.getElementById('q').value = "";
+      filterItems(""); // reset búsqueda
     }
 
     tabs.forEach(t => t.addEventListener('click', () => select(t.dataset.filter)));
+
+    // Estado inicial
     sections.forEach(s => s.style.display = (s.dataset.section === 'arepas') ? '' : 'none');
+
+    // Pedir por WhatsApp en cada item
+    document.querySelectorAll('[data-order]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const item = e.target.closest('.item');
+        const name = item.getAttribute('data-name') || "Pedido";
+        const price = item.getAttribute('data-price') || "";
+        window.open(waText(orderMessage(name, price)), "_blank", "noopener");
+      });
+    });
+
+    document.getElementById('quick').addEventListener('click', () => {
+      window.open(waText("Hola 👋 Quiero hacer un pedido en El Chiringuito de la Arepa. ¿Qué opciones me recomiendas hoy?"), "_blank", "noopener");
+    });
+
+    // Búsqueda (filtra dentro de la sección visible)
+    const input = document.getElementById('q');
+    const clear = document.getElementById('clear');
+
+    function filterItems(query){
+      const q = (query || "").trim().toLowerCase();
+      const visibleSection = sections.find(s => s.style.display !== 'none');
+      if(!visibleSection) return;
+
+      const items = Array.from(visibleSection.querySelectorAll('.item'));
+      items.forEach(it => {
+        const name = (it.getAttribute('data-name') || "").toLowerCase();
+        const price = (it.getAttribute('data-price') || "").toLowerCase();
+        const text = (it.innerText || "").toLowerCase();
+        const show = !q || name.includes(q) || price.includes(q) || text.includes(q);
+        it.style.display = show ? "" : "none";
+      });
+    }
+
+    input.addEventListener('input', () => filterItems(input.value));
+    clear.addEventListener('click', () => { input.value=""; filterItems(""); });
   </script>
 </body>
 </html>
