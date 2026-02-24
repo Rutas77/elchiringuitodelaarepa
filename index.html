@@ -1,564 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#071010" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Chiringuito de la Arepa | Granada</title>
+<meta name="description" content="El Chiringuito de la Arepa en Granada. Autenticidad venezolana, hecha al momento.">
+<link rel="icon" href="/assets/img/logo.png">
 
-  <title>El Chiringuito de la Arepa | Arepas artesanales en Granada</title>
-  <meta name="description" content="Arepas venezolanas artesanales en Granada. Carta online, pedidos por WhatsApp, raciones, tequeños, sopas (viernes a domingo), bebidas latinas y tres leches casero." />
-  <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <meta property="og:title" content="El Chiringuito de la Arepa | Arepas artesanales en Granada" />
-  <meta property="og:description" content="Arepas venezolanas artesanales. Carta online y pedidos por WhatsApp. Granada." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
-  <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+<style>
 
-  <link rel="icon" href="/assets/img/logo.png" />
+:root{
+--gold:#c6a75e;
+--gold-soft:#e7d2a3;
+--bg:#050505;
+--bg2:#0b0b0b;
+--text:#f5f5f5;
+--muted:rgba(255,255,255,0.65);
+}
 
-  <style>
-    :root{
-      --bg:#071010;
-      --bg2:#050b0b;
-      --text:#eaf1ef;
-      --muted:rgba(234,241,239,.72);
-      --brand:#b89452;
-      --brand2:#e7d2a3;
-      --wa:#25D366;
+*{box-sizing:border-box;margin:0;padding:0}
 
-      --r-lg:26px;
-      --shadow: 0 14px 40px rgba(0,0,0,.45);
-      --shadow2: 0 10px 24px rgba(0,0,0,.35);
-      --line: rgba(255,255,255,.08);
-    }
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      background:
-        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.22), transparent 60%),
-        radial-gradient(700px 340px at 88% 14%, rgba(231,210,163,.12), transparent 62%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      color:var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding-bottom: 140px; /* espacio para barra inferior */
-      overflow-x:hidden;
-    }
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
-    .wrap{ max-width: 980px; margin:0 auto; padding: 18px 14px 60px; }
+body{
+font-family:'Inter',sans-serif;
+background:
+radial-gradient(900px 500px at 50% -10%, rgba(198,167,94,0.25), transparent 60%),
+linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+color:var(--text);
+}
 
-    /* TOPBAR */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,16,16,.72);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .topbar-inner{
-      max-width:980px; margin:0 auto;
-      padding: 12px 14px;
-      display:flex; align-items:center; gap:10px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width:0; flex:1;
-    }
-    .brand img{
-      width:36px; height:36px;
-      border-radius:12px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .brand .t{
-      min-width:0;
-      display:flex; flex-direction:column;
-      line-height:1.1;
-    }
-    .brand .t b{
-      font-size:16px;
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-    }
-    .brand .t span{
-      font-size:13px;
-      color:var(--muted);
-      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-      font-weight:800;
-    }
+a{text-decoration:none;color:inherit}
 
-    .pill{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,.22);
-      font-weight: 900;
-      white-space:nowrap;
-    }
-    .pill.gold{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.28);
-      color:#f2e5cf;
-    }
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
 
-    /* HERO NUEVO */
-    .hero{
-      margin-top: 18px;
-      padding: 22px 18px 18px;
-      border-radius: var(--r-lg);
-      border: 1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(820px 300px at 50% -10%, rgba(184,148,82,.28), transparent 60%),
-        radial-gradient(620px 260px at 70% 120%, rgba(37,211,102,.10), transparent 60%);
-      pointer-events:none;
-    }
-    .hero-inner{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      text-align:center;
-      align-items:center;
-    }
+/* HERO */
 
-    .hero-logo{
-      width: 190px;
-      height: 190px;
-      margin: 6px auto 0;
-      border-radius: 26px;
-      overflow:hidden;
-      border: 1px solid rgba(231,210,163,.25);
-      background: rgba(0,0,0,.35);
-      box-shadow:
-        0 18px 50px rgba(0,0,0,.55),
-        0 0 0 1px rgba(184,148,82,.25) inset;
-      position:relative;
-    }
-    .hero-logo::after{
-      content:"";
-      position:absolute; inset:-18px;
-      background: radial-gradient(220px 220px at 50% 50%, rgba(184,148,82,.28), transparent 62%);
-      filter: blur(6px);
-      pointer-events:none;
-    }
-    .hero-logo img{
-      width:100%; height:100%;
-      object-fit:cover;
-      transform: scale(1.02);
-      position:relative;
-      z-index:1;
-    }
+.hero{
+text-align:center;
+padding:80px 20px 60px;
+}
 
-    .badge{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(184,148,82,.14);
-      border: 1px solid rgba(184,148,82,.22);
-      color:#f2e5cf;
-      font-weight: 950;
-      margin: 0 auto;
-      max-width: fit-content;
-    }
+.hero img{
+width:140px;
+margin-bottom:30px;
+filter: drop-shadow(0 0 25px rgba(198,167,94,0.35));
+}
 
-    .hero h1{
-      margin: 6px 0 0;
-      font-size: 44px;
-      letter-spacing: -1px;
-      line-height: 1.02;
-    }
-    .hero h1 span{
-      display:block;
-      font-weight: 950;
-      color:#fff;
-    }
-    .hero p{
-      margin: 8px auto 0;
-      color: rgba(234,241,239,.78);
-      font-size: 16px;
-      line-height: 1.6;
-      max-width: 62ch;
-      font-weight: 800;
-    }
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:48px;
+font-weight:600;
+letter-spacing:0.5px;
+margin-bottom:15px;
+}
 
-    /* BOTONES HERO */
-    .cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-      margin-top: 8px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: 13px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight: 950;
-      box-shadow: var(--shadow2);
-      cursor:pointer;
-      gap:10px;
-      min-width: 160px;
-    }
-    .btn.gold{
-      background: rgba(184,148,82,.22);
-      border-color: rgba(184,148,82,.30);
-      color: #fff1d6;
-    }
-    .btn.wa{
-      background: rgba(37,211,102,.18);
-      border-color: rgba(37,211,102,.24);
-      color: #eafff1;
-    }
-    .btn.ghost{
-      background: rgba(255,255,255,.04);
-      border-color: rgba(255,255,255,.08);
-      color: rgba(234,241,239,.90);
-      min-width: 180px;
-    }
+.hero p{
+color:var(--gold-soft);
+font-size:18px;
+margin-bottom:40px;
+}
 
-    /* SECCIÓN */
-    .section{ margin-top: 18px; }
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 22px;
-      letter-spacing: -.2px;
-    }
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
 
-    /* TARJETAS MENU */
-    .cards{
-      display:grid;
-      gap:12px;
-    }
-    .card{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding: 14px;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow2);
-      position:relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(420px 160px at 18% 20%, rgba(184,148,82,.14), transparent 62%);
-      pointer-events:none;
-    }
-    .card .img{
-      width: 92px;
-      height: 72px;
-      border-radius: 18px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.25);
-      flex:0 0 auto;
-      position:relative;
-      z-index:1;
-    }
-    .card .img img{
-      width:100%; height:100%;
-      object-fit:cover;
-    }
-    .card .txt{
-      min-width:0;
-      position:relative;
-      z-index:1;
-    }
-    .card .txt b{
-      display:block;
-      font-size: 26px;
-      letter-spacing:-.6px;
-    }
-    .card .txt span{
-      display:block;
-      margin-top: 2px;
-      color: var(--muted);
-      font-weight: 850;
-      line-height:1.25;
-    }
-    .card a{
-      margin-left:auto;
-      position:relative;
-      z-index:1;
-      white-space:nowrap;
-    }
-    .card .go{
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight: 950;
-    }
-    .card .go.gold{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.26);
-      color:#f2e5cf;
-    }
+.btn{
+padding:14px 28px;
+border-radius:40px;
+font-weight:500;
+transition:0.3s ease;
+}
 
-    /* REDES */
-    .socials{
-      margin-top: 16px;
-      border-radius: 26px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow2);
-      padding: 16px;
-      text-align:center;
-    }
-    .socials h3{
-      margin:0 0 12px;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .social-grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:10px;
-    }
-    @media (min-width: 520px){
-      .social-grid{ grid-template-columns: repeat(5, minmax(0,1fr)); }
-    }
-    .social-grid a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px;
-      border-radius:999px;
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);
-      font-weight:900;
-      transition:.18s ease;
-    }
-    .social-grid a:hover{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.30);
-      color:#f2e5cf;
-      transform: translateY(-1px);
-    }
+.btn-gold{
+background:var(--gold);
+color:#000;
+}
 
-    /* FOOTER */
-    footer{
-      margin-top: 18px;
-      text-align:center;
-      color: rgba(234,241,239,.62);
-      font-weight: 800;
-      padding: 18px 6px 8px;
-    }
-    footer a{
-      color: rgba(234,241,239,.80);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+.btn-gold:hover{
+background:var(--gold-soft);
+}
 
-    /* BARRA INFERIOR */
-    .nav{
-      position: fixed;
-      left: 0; right: 0;
-      bottom: 0;
-      z-index: 60;
-      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(7,16,16,.76);
-      backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner{
-      max-width: 980px;
-      margin: 0 auto;
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-    }
-    .nav a{
-      display:flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding: 14px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      font-weight: 950;
-      box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      white-space:nowrap;
-    }
-    .nav a.gold{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.26);
-      color:#f2e5cf;
-    }
-    .nav a.wa{
-      background: rgba(37,211,102,.18);
-      border-color: rgba(37,211,102,.24);
-      color:#eafff1;
-    }
+.btn-dark{
+border:1px solid var(--gold);
+color:var(--gold);
+}
 
-    /* MICRO-ANIMACIÓN */
-    @media (prefers-reduced-motion: no-preference){
-      .hero, .card, .socials{ animation: pop .38s ease both; }
-      .card:nth-child(2){ animation-delay: .03s; }
-      .card:nth-child(3){ animation-delay: .06s; }
-      .card:nth-child(4){ animation-delay: .09s; }
-      .card:nth-child(5){ animation-delay: .12s; }
-      @keyframes pop{
-        from{ transform: translateY(10px); opacity:0; }
-        to{ transform: translateY(0); opacity:1; }
-      }
-    }
-  </style>
+.btn-dark:hover{
+background:var(--gold);
+color:#000;
+}
+
+/* GOOGLE RATING */
+
+.rating{
+margin-top:60px;
+text-align:center;
+}
+
+.stars{
+color:var(--gold);
+font-size:22px;
+letter-spacing:4px;
+}
+
+.rating span{
+display:block;
+color:var(--muted);
+margin-top:8px;
+}
+
+/* MAP */
+
+.map{
+margin-top:60px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* SOCIAL */
+
+.social{
+margin-top:60px;
+text-align:center;
+}
+
+.social a{
+margin:0 12px;
+color:var(--muted);
+transition:0.3s;
+}
+
+.social a:hover{
+color:var(--gold);
+}
+
+footer{
+margin-top:80px;
+text-align:center;
+color:rgba(255,255,255,0.4);
+font-size:14px;
+padding-bottom:40px;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:36px}
+.hero img{width:110px}
+}
+
+</style>
 </head>
 
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-        <div class="t">
-          <b>El Chiringuito de la Arepa</b>
-          <span>Sabores que abrazan el alma</span>
-        </div>
-      </div>
 
-      <a class="pill gold" href="/carta.html">Carta</a>
-    </div>
-  </header>
+<section class="hero">
+<img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
 
-  <main class="wrap">
+<h1>El Chiringuito de la Arepa</h1>
+<p>Autenticidad venezolana, hecha al momento.</p>
 
-    <!-- HERO NUEVO -->
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="badge">• Cocina venezolana • Granada</div>
+<div class="buttons">
+<a href="/carta.html" class="btn btn-gold">Ver la carta</a>
+<a href="https://wa.me/34651651291" target="_blank" class="btn btn-dark">Pedir por WhatsApp</a>
+</div>
+</section>
 
-        <div class="hero-logo">
-          <img src="/assets/img/logo.png" alt="El Chiringuito de la Arepa">
-        </div>
+<section class="rating container">
+<div class="stars">★★★★★</div>
+<span>Valorado en Google · Granada</span>
+<a href="https://share.google/Fx9vS5iBtkuTLXuWh" target="_blank" class="btn btn-dark" style="margin-top:20px;display:inline-block;">Ver reseñas</a>
+</section>
 
-        <h1>
-          <span>EL CHIRINGUITO</span>
-          <span>DE LA AREPA</span>
-        </h1>
+<section class="container">
+<div class="map">
+<iframe 
+src="https://www.google.com/maps?q=El+Chiringuito+de+la+Arepa+Granada&output=embed"
+width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
+</div>
+</section>
 
-        <p>
-          Arepas venezolanas artesanales en Granada.<br>
-          <b>Sabor real. Sin imitaciones.</b>
-        </p>
+<section class="social container">
+<a href="https://www.instagram.com/elchiringuitodelaarepa" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank">Facebook</a>
+<a href="https://www.tiktok.com/@elchiringuitodelaarepa" target="_blank">TikTok</a>
+<a href="https://youtube.com/@elchiringuitodelaarepa" target="_blank">YouTube</a>
+<a href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank">Threads</a>
+<a href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank">Canal WhatsApp</a>
+</section>
 
-        <div class="cta">
-          <a class="btn gold" href="/carta.html">Ver la carta</a>
-          <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
-          <a class="btn ghost" href="#oferta">Nuestra oferta</a>
-        </div>
-      </div>
-    </section>
+<footer>
+© 2026 El Chiringuito de la Arepa · Granada
+</footer>
 
-    <!-- NUESTRA OFERTA (tarjetas de navegación) -->
-    <section class="section" id="oferta">
-      <h2>Nuestra oferta</h2>
-
-      <div class="cards">
-        <div class="card">
-          <div class="img"><img src="/assets/img/arepa.png" alt="Arepas"></div>
-          <div class="txt">
-            <b>Arepas</b>
-            <span>Reina Pepiada · Pabellón · Mechada · Jamón y queso</span>
-          </div>
-          <a class="go gold" href="/carta.html#arepas">Ver ↗</a>
-        </div>
-
-        <div class="card">
-          <div class="img"><img src="/assets/img/tajadas.png" alt="Raciones"></div>
-          <div class="txt">
-            <b>Raciones</b>
-            <span>Tajadas · Ensalada con arepa · Huevos de codorniz</span>
-          </div>
-          <a class="go" href="/carta.html#raciones">Ver ↗</a>
-        </div>
-
-        <div class="card">
-          <div class="img"><img src="/assets/img/tequenos.png" alt="Tequeños"></div>
-          <div class="txt">
-            <b>Tequeños</b>
-            <span>5 o 10 unidades</span>
-          </div>
-          <a class="go" href="/carta.html#tequenos">Ver ↗</a>
-        </div>
-
-        <div class="card">
-          <div class="img"><img src="/assets/img/sancocho.png" alt="Sopas"></div>
-          <div class="txt">
-            <b>Sopas</b>
-            <span>Viernes · Sábados · Domingos (según disponibilidad)</span>
-          </div>
-          <a class="go" href="/carta.html#sopas">Ver ↗</a>
-        </div>
-
-        <div class="card">
-          <div class="img"><img src="/assets/img/tresleches.png" alt="Postres"></div>
-          <div class="txt">
-            <b>Postres</b>
-            <span>Tres leches casero</span>
-          </div>
-          <a class="go" href="/carta.html#postres">Ver ↗</a>
-        </div>
-
-        <div class="card">
-          <div class="img"><img src="/assets/img/bebidas.png" alt="Bebidas"></div>
-          <div class="txt">
-            <b>Bebidas</b>
-            <span>Agua · refrescos · Maltín Polar · Frescolita y más</span>
-          </div>
-          <a class="go" href="/carta.html#bebidas">Ver ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- REDES -->
-    <section class="socials" id="redes">
-      <h3>Síguenos en redes</h3>
-
-      <div class="social-grid">
-        <!-- Sustituye estos enlaces por los tuyos reales -->
-        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://threads.net/" target="_blank" rel="noopener">Threads</a>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 El Chiringuito de la Arepa ·
-      <a href="/legal.html">Legal</a> ·
-      <a href="/privacidad.html">Privacidad</a> ·
-      <a href="/cookies.html">Cookies</a>
-    </footer>
-
-  </main>
-
-  <!-- BARRA INFERIOR -->
-  <nav class="nav" aria-label="Navegación principal">
-    <div class="nav-inner">
-      <a class="gold" href="/carta.html">Carta</a>
-      <a href="https://www.google.com/maps?q=El+Chiringuito+de+la+Arepa+Granada" target="_blank" rel="noopener">Cómo llegar</a>
-      <a class="wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp ↗</a>
-    </div>
-  </nav>
 </body>
-</html>
+  </html>
