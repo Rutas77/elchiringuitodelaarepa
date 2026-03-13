@@ -143,6 +143,18 @@
       color: #eafff1;
     }
 
+    .call-btn{
+      background: linear-gradient(90deg, rgba(184,148,82,.88), rgba(231,210,163,.96));
+      color:#1b1408;
+      border:1px solid rgba(231,210,163,.38);
+      box-shadow:
+        0 12px 28px rgba(0,0,0,.35),
+        0 0 0 1px rgba(255,255,255,.06) inset;
+    }
+    .call-btn:hover{
+      filter: brightness(1.03);
+    }
+
     .section{ margin-top: 22px; }
     .section h2{ margin:0; font-size: 44px; letter-spacing:-.9px; }
     .section .sub{ margin-top:6px; color: var(--muted); font-weight:800; }
@@ -254,24 +266,35 @@
       text-underline-offset: 4px;
     }
 
-    .wa-float{
+    .call-float{
       position: fixed;
       right: 16px;
       bottom: calc(16px + env(safe-area-inset-bottom));
       z-index: 60;
     }
-    .wa-float a{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    .call-float a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       padding: 14px 18px;
       border-radius: 999px;
-      background: var(--wa);
-      color:#03210f;
+      background: linear-gradient(90deg, rgba(184,148,82,.92), rgba(231,210,163,.98));
+      color:#1b1408;
       font-weight: 950;
       box-shadow: 0 18px 42px rgba(0,0,0,.50);
       border: 1px solid rgba(255,255,255,.10);
+      animation: pulseCall 2.4s ease-in-out infinite;
     }
-    .wa-float a span{ font-size: 18px; }
-    .wa-float a small{ font-weight: 900; opacity: .9; font-size: 16px; }
+    .call-float a small{
+      font-weight: 900;
+      font-size: 16px;
+    }
+
+    @keyframes pulseCall{
+      0%,100%{ transform: scale(1); }
+      50%{ transform: scale(1.04); }
+    }
   </style>
 </head>
 
@@ -293,7 +316,7 @@
   <main class="wrap">
     <section class="hero" id="top">
       <h1>Carta</h1>
-      <p>Elige tu antojo y pídelo por WhatsApp. Precios claros, pedido rápido.</p>
+      <p>Elige tu antojo y llama al local. Precios claros, pedido rápido.</p>
 
       <div class="tabs">
         <a class="btn gold" href="#arepas">Arepas</a>
@@ -303,7 +326,7 @@
         <a class="btn" href="#bebidas">Bebidas</a>
         <a class="btn" href="#postres">Postres</a>
 
-        <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">Pedir por WhatsApp ↗</a>
+        <a class="btn call-btn" href="tel:+34858830186">📞 Llamar ahora</a>
       </div>
 
       <div class="qr-card">
@@ -437,7 +460,7 @@
         </div>
 
         <div style="margin-top:12px;">
-          <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20%C2%BFHay%20sopa%20hoy%3F" target="_blank" rel="noopener">Preguntar por WhatsApp ↗</a>
+          <a class="btn call-btn" href="tel:+34858830186">📞 Llamar por sopas</a>
         </div>
       </div>
     </section>
@@ -508,11 +531,14 @@
 
   </main>
 
-  <div class="wa-float">
-    <a href="https://wa.me/34651651291?text=Hola%20El%20Chiringuito%20de%20la%20Arepa%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">
-      <span>💬</span> <small>WhatsApp</small>
+  <div class="call-float">
+    <a href="tel:+34858830186">
+      <span>📞</span> <small>Llamar</small>
     </a>
   </div>
 
   <script>
-    d
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
