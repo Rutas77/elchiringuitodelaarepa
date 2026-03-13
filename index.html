@@ -28,16 +28,14 @@
       --bg2:#070707;
       --text:#f2f2f2;
       --muted:rgba(242,242,242,.70);
-
       --gold:#b8954c;
       --gold2:#e5c97b;
       --cream:#f1e6cf;
-
       --wa:#25D366;
-
       --shadow: 0 18px 50px rgba(0,0,0,.55);
       --shadow2: 0 10px 26px rgba(0,0,0,.40);
     }
+
     *{ box-sizing:border-box; margin:0; padding:0; }
     html{ scroll-behavior:smooth; }
     body{
@@ -53,7 +51,6 @@
 
     .wrap{ max-width:980px; margin:auto; padding:18px 14px 40px; }
 
-    /* Topbar */
     .topbar{
       position:sticky; top:0;
       background:rgba(5,5,5,.72);
@@ -67,13 +64,29 @@
     }
     .brand{
       display:flex; align-items:center; gap:10px;
+      min-width:0;
     }
     .brand img{
       width:38px; border-radius:12px;
       border:1px solid rgba(255,255,255,.10);
+      flex:0 0 auto;
     }
-    .brand .t b{font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-    .brand .t span{font-size:12px; color:var(--muted);}
+    .brand .t{ min-width:0; }
+    .brand .t b{
+      font-size:15px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      display:block;
+    }
+    .brand .t span{
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      display:block;
+    }
 
     .pill{
       padding:10px 14px;
@@ -83,9 +96,9 @@
       font-weight:900;
       color:var(--gold2);
       white-space:nowrap;
+      flex:0 0 auto;
     }
 
-    /* Hero */
     .hero{
       margin-top:16px;
       border-radius:26px;
@@ -104,7 +117,11 @@
       opacity:.28;
       pointer-events:none;
     }
-    .hero-inner{position:relative; padding:28px 18px 22px; text-align:center;}
+    .hero-inner{
+      position:relative;
+      padding:28px 18px 22px;
+      text-align:center;
+    }
 
     .hero-logo{
       width:76px; height:76px;
@@ -117,13 +134,20 @@
       margin-bottom:14px;
       animation: floaty 6s ease-in-out infinite;
     }
-    .hero-logo img{width:100%;height:100%;border-radius:999px;}
+    .hero-logo img{
+      width:100%;
+      height:100%;
+      border-radius:999px;
+      object-fit:cover;
+    }
 
     .hero-title{
       font-family:'Playfair Display',serif;
-      font-size:42px; font-weight:700;
+      font-size:42px;
+      font-weight:700;
       color:var(--cream);
       margin-bottom:8px;
+      line-height:1.08;
     }
     .hero-sub{
       color:rgba(242,242,242,.78);
@@ -131,7 +155,12 @@
       margin-bottom:20px;
     }
 
-    .cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+    .cta-row{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
     .btn{
       padding:14px 22px;
       border-radius:999px;
@@ -139,45 +168,42 @@
       min-width:180px;
       text-align:center;
       transition:0.2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border:1px solid transparent;
     }
     .btn.gold{
       background:linear-gradient(90deg, rgba(184,149,76,.85), rgba(229,201,123,.92));
       color:#1a1408;
     }
-    .btn.gold:hover{opacity:.92;}
+    .btn.gold:hover{ opacity:.92; }
     .btn.wa{
       background:rgba(37,211,102,.18);
       color:#eafff1;
+      border-color:rgba(37,211,102,.20);
     }
     .btn.ghost{
       border:1px solid rgba(229,201,123,.35);
       color:rgba(229,201,123,.95);
+      background:rgba(255,255,255,.03);
     }
 
-    /* Secciones */
     .section-title{
       font-family:'Playfair Display',serif;
       font-size:28px;
       color:var(--gold2);
-      margin-bottom:10px;
+      margin:22px 0 10px;
     }
 
-    .card{background:rgba(255,255,255,.04);border-radius:20px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow2);padding:16px;margin-top:12px;}
-    .thumb{width:72px;height:72px;border-radius:18px;overflow:hidden;margin-right:12px;}
-    .thumb img{width:100%;height:100%;object-fit:cover;}
-    .menu-item{display:flex;align-items:center;padding:12px;border-radius:18px;transition:0.18s ease;cursor:pointer;}
-    .menu-item:hover{background:rgba(255,255,255,.07);}
-
-    /* Reseñas */
-    .stars{color:var(--gold2);font-size:20px;letter-spacing:2px;text-align:center;margin-bottom:4px;}
-    .reviews-sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:10px;}
-
-    /* Map */
-    .map-wrap{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.10);margin-top:12px;}
-    iframe{width:100%;height:300px;border:0;}
-
-    /* Socials */
-    .socials{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px;}
+    .socials{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-top:12px;
+    }
     .social{
       padding:12px 14px;
       border-radius:999px;
@@ -187,13 +213,95 @@
       font-weight:900;
       transition:0.18s ease;
     }
-    .social:hover{background:rgba(184,149,76,.12);border-color:rgba(184,149,76,.35);}
+    .social:hover{
+      background:rgba(184,149,76,.12);
+      border-color:rgba(184,149,76,.35);
+    }
 
-    footer{text-align:center;color:rgba(255,255,255,.55);font-size:14px;margin-top:22px;padding-bottom:22px;}
+    .reviews-card,
+    .map-card{
+      background:rgba(255,255,255,.04);
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow2);
+      padding:16px;
+      margin-top:12px;
+    }
+
+    .stars{
+      color:var(--gold2);
+      font-size:22px;
+      letter-spacing:3px;
+      text-align:center;
+      margin-bottom:6px;
+    }
+    .reviews-sub{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:14px;
+    }
+    .reviews-actions{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .map-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      margin-top:12px;
+    }
+    iframe{
+      width:100%;
+      height:300px;
+      border:0;
+    }
+
+    footer{
+      text-align:center;
+      color:rgba(255,255,255,.55);
+      font-size:14px;
+      margin-top:22px;
+      padding-bottom:22px;
+      line-height:1.6;
+    }
+    footer a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .call-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      z-index:999;
+    }
+    .call-float a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#25D366;
+      color:#03210f;
+      font-weight:900;
+      font-size:16px;
+      padding:14px 18px;
+      border-radius:999px;
+      box-shadow:0 12px 30px rgba(0,0,0,.5);
+    }
 
     @keyframes floaty{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-4px);}
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-4px); }
+    }
+
+    @media (max-width: 640px){
+      .hero-title{ font-size:34px; }
+      .hero-sub{ font-size:16px; }
+      .btn{ min-width:100%; }
+      .topbar-inner{ gap:10px; }
     }
   </style>
 </head>
@@ -205,7 +313,7 @@
       <div class="brand">
         <img src="/assets/img/logo.png" alt="El Chiringuito de la Arepa">
         <div class="t">
-          <b>El Chiringuito de la Arepa</b><br>
+          <b>El Chiringuito de la Arepa</b>
           <span>Autenticidad venezolana, hecha al momento</span>
         </div>
       </div>
@@ -226,27 +334,37 @@
 
         <div class="cta-row">
           <a class="btn gold" href="/carta.html">Ver la carta</a>
-          <a class="btn wa" href="https://wa.me/34651651291?text=Hola%20quiero%20hacer%20un%20pedido" target="_blank">Pedir por WhatsApp</a>
+          <a class="btn wa" href="tel:+34858830186">📞 Llamar ahora</a>
         </div>
       </div>
     </section>
 
-    <section class="section-title">Redes sociales</section>
+    <h2 class="section-title">Redes sociales</h2>
     <div class="socials">
-      <a class="social" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank">Instagram</a>
-      <a class="social" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-94BlrIxKGPu" target="_blank">TikTok</a>
-      <a class="social" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank">Facebook</a>
-      <a class="social" href="https://www.youtube.com/@elchiringuitodelaarepa?si=zr0Qh6bfYSwAbhcG" target="_blank">YouTube</a>
-      <a class="social" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank">Threads</a>
-      <a class="social" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank">Canal WhatsApp</a>
+      <a class="social" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram</a>
+      <a class="social" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-94BlrIxKGPu" target="_blank" rel="noopener">TikTok</a>
+      <a class="social" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook</a>
+      <a class="social" href="https://www.youtube.com/@elchiringuitodelaarepa?si=zr0Qh6bfYSwAbhcG" target="_blank" rel="noopener">YouTube</a>
+      <a class="social" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads</a>
+      <a class="social" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp</a>
     </div>
 
-    <section class="section-title" style="margin-top:22px;">Cómo llegar</section>
-    <div class="stars">★★★★★</div>
-    <div class="reviews-sub">Valorado en Google · Granada</div>
+    <h2 class="section-title">Cómo llegar</h2>
 
-    <div class="map-wrap">
-      <iframe src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed" loading="lazy"></iframe>
+    <div class="reviews-card">
+      <div class="stars">★★★★★</div>
+      <div class="reviews-sub">Valorado en Google · Granada</div>
+
+      <div class="reviews-actions">
+        <a class="btn ghost" href="https://share.google/Fx9vS5iBtkuTLXuWh" target="_blank" rel="noopener">Ver reseñas</a>
+        <a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%20Granada" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed" loading="lazy"></iframe>
+      </div>
     </div>
 
     <footer>
@@ -257,6 +375,10 @@
     </footer>
 
   </main>
+
+  <div class="call-float">
+    <a href="tel:+34858830186">📞 Llamar</a>
+  </div>
 
 </body>
 </html>
