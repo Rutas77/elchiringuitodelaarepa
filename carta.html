@@ -4,199 +4,209 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#071010" />
-
   <title>Carta | El Chiringuito de la Arepa</title>
   <meta name="description" content="Carta con precios de El Chiringuito de la Arepa en Granada: arepas, patacones, raciones, tequeños, sopas, bebidas y postres." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/carta.html" />
-
-  <meta property="og:title" content="Carta | El Chiringuito de la Arepa" />
-  <meta property="og:description" content="Arepas venezolanas artesanales, patacones, raciones, tequeños, sopas, bebidas latinas y postres. Granada." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://elchiringuitodelaarepa.es/carta.html" />
-  <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="/assets/img/logo.png" />
 
   <style>
     :root{
-      --bg:#071010;
-      --bg2:#050b0b;
-      --text:#eaf1ef;
-      --muted:rgba(234,241,239,.72);
-      --brand:#b89452;
-      --brand2:#e7d2a3;
-      --wa:#25D366;
-      --r-lg:26px;
-      --shadow: 0 14px 40px rgba(0,0,0,.45);
-      --shadow2: 0 10px 24px rgba(0,0,0,.35);
-      --line: rgba(255,255,255,.08);
+      --bg:#071010;--bg2:#050b0b;--text:#eaf1ef;--muted:rgba(234,241,239,.72);
+      --brand:#b89452;--brand2:#e7d2a3;--r-lg:26px;
+      --shadow:0 14px 40px rgba(0,0,0,.45);--shadow2:0 10px 24px rgba(0,0,0,.35);
     }
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:
-        radial-gradient(900px 420px at 22% 8%, rgba(184,148,82,.22), transparent 60%),
-        radial-gradient(700px 340px at 88% 14%, rgba(231,210,163,.12), transparent 62%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      background:radial-gradient(900px 420px at 22% 8%,rgba(184,148,82,.22),transparent 60%),
+      radial-gradient(700px 340px at 88% 14%,rgba(231,210,163,.12),transparent 62%),
+      linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
       color:var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      padding-bottom: 220px;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      padding-bottom:120px;
     }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:980px;margin:0 auto;padding:18px 14px 56px}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,16,16,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+    .topbar-inner{max-width:980px;margin:0 auto;padding:12px 14px;display:flex;align-items:center;gap:10px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+    .brand img{width:36px;height:36px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.10)}
+    .brand .t{min-width:0;display:flex;flex-direction:column;line-height:1.1}
+    .brand .t b{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .brand .t span{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800}
+    .pill,.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);box-shadow:var(--shadow2);font-weight:900;white-space:nowrap}
+    .btn{padding:12px 16px;gap:10px}
+    .gold{background:rgba(184,148,82,.22);border-color:rgba(184,148,82,.30);color:#fff1d6}
+    .call-btn{background:linear-gradient(90deg,rgba(184,148,82,.88),rgba(231,210,163,.96));color:#1b1408}
+    .hero{margin-top:18px;padding:22px 18px;border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));box-shadow:var(--shadow)}
+    .hero h1{margin:0 0 8px;font-size:54px;letter-spacing:-.9px;line-height:1.02}
+    .hero p{margin:0;color:var(--muted);font-size:16px;line-height:1.6;font-weight:800}
+    .tabs{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .section{margin-top:22px}
+    .section h2{margin:0;font-size:44px;letter-spacing:-.9px}
+    .sub{margin-top:6px;color:var(--muted);font-weight:800}
+    .panel{margin-top:12px;border-radius:var(--r-lg);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.035));box-shadow:var(--shadow);padding:16px}
+    .headline{display:flex;align-items:center;gap:12px;padding:12px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);box-shadow:var(--shadow2)}
+    .thumb{width:76px;height:76px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.25);flex:0 0 auto}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .headline b{font-size:22px}
+    .headline span{color:var(--muted);font-weight:800;display:block}
+    .item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px 12px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-top:10px}
+    .item b{display:block;font-size:18px}
+    .item small{display:block;color:var(--muted);font-weight:800;margin-top:3px;line-height:1.35}
+    .price{white-space:nowrap;font-weight:950;color:#f2e5cf;padding-left:10px}
+    .note{margin-top:12px;color:rgba(234,241,239,.70);font-weight:800;line-height:1.5;border-top:1px solid rgba(255,255,255,.06);padding-top:12px}
+    footer{margin-top:26px;text-align:center;color:rgba(234,241,239,.62);font-weight:800;padding:18px 6px 8px}
+    footer a{text-decoration:underline;text-underline-offset:4px}
+    @media(max-width:640px){.hero h1{font-size:38px}.section h2{font-size:32px}.headline b{font-size:20px}.item b{font-size:17px}}
+  </style>
+</head>
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+      <div class="t">
+        <b>El Chiringuito de la Arepa</b>
+        <span>Sabores que abrazan el alma</span>
+      </div>
+    </div>
+    <a class="pill gold" href="/index.html">Inicio</a>
+  </div>
+</header>
 
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:18px 14px 56px;
-    }
+<main class="wrap">
+  <section class="hero">
+    <h1>Carta</h1>
+    <p>Precios claros, comida recién hecha.</p>
+    <div class="tabs">
+      <a class="btn gold" href="#arepas">Arepas</a>
+      <a class="btn" href="#patacones">Patacones</a>
+      <a class="btn" href="#raciones">Raciones</a>
+      <a class="btn" href="#tequenos">Tequeños</a>
+      <a class="btn" href="#sopas">Sopas</a>
+      <a class="btn" href="#bebidas">Bebidas</a>
+      <a class="btn" href="#postres">Postres</a>
+      <a class="btn call-btn" href="tel:+34858830186">📞 Llamar ahora</a>
+    </div>
+  </section>
 
-    .topbar{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(14px);
-      background: rgba(7,16,16,.72);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+  <section class="section" id="arepas">
+    <h2>Arepas</h2>
+    <div class="sub">Recién hechas. Rellenos generosos.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/arepa.png" alt="Arepas"></div><div><b>Arepas</b><span>Tradición venezolana en Granada.</span></div></div>
 
-    .topbar-inner{
-      max-width:980px;
-      margin:0 auto;
-      padding:12px 14px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+      <div class="item"><div><b>Reina Pepiada</b><small>(Pollo, aguacate, mayonesa)</small></div><div class="price">6,70 €</div></div>
+      <div class="item"><div><b>Huevos de codorniz</b><small>(En salsa rosa)</small></div><div class="price">5,90 €</div></div>
+      <div class="item"><div><b>Jamón York</b><small>(Con queso blanco latino)</small></div><div class="price">4,90 €</div></div>
+      <div class="item"><div><b>Ensalada de atún</b><small>(Pimiento rojo, aceituna, tomate, cebolla, pepinillo)</small></div><div class="price">5,90 €</div></div>
+      <div class="item"><div><b>Salchichas</b><small>(Con huevos revueltos)</small></div><div class="price">5,60 €</div></div>
+      <div class="item"><div><b>Salchichas</b><small>(Con mayonesa)</small></div><div class="price">4,90 €</div></div>
+      <div class="item"><div><b>Pabellón</b><small>(Carne mechada de ternera, alubias negras, plátano macho maduro frito y queso blanco latino)</small></div><div class="price">7,60 €</div></div>
+      <div class="item"><div><b>Queso blanco latino y cheddar</b><small>—</small></div><div class="price">5,10 €</div></div>
+      <div class="item"><div><b>Queso blanco latino</b><small>—</small></div><div class="price">4,75 €</div></div>
+      <div class="item"><div><b>Queso cheddar</b><small>—</small></div><div class="price">4,80 €</div></div>
+      <div class="item"><div><b>Malafollá</b><small>(Chorizo picante con queso blanco latino)</small></div><div class="price">5,60 €</div></div>
+      <div class="item"><div><b>Perico</b><small>(Huevo, guiso de tomate y cebolla pochada con queso latino)</small></div><div class="price">5,75 €</div></div>
+      <div class="item"><div><b>Catira</b><small>(Pollo y queso cheddar)</small></div><div class="price">6,00 €</div></div>
+      <div class="item"><div><b>Carne picada</b><small>(Con queso blanco latino)</small></div><div class="price">6,60 €</div></div>
+      <div class="item"><div><b>Pernil al horno</b><small>(En salsa de vegetales y zumo de naranja)</small></div><div class="price">6,80 €</div></div>
+      <div class="item"><div><b>Alubias</b><small>(Con queso blanco latino)</small></div><div class="price">5,30 €</div></div>
+      <div class="item"><div><b>Mechada</b><small>(Sola)</small></div><div class="price">6,40 €</div></div>
+      <div class="item"><div><b>Mechada</b><small>(Con queso blanco latino)</small></div><div class="price">6,90 €</div></div>
+      <div class="item"><div><b>Pollo</b><small>(Solo)</small></div><div class="price">5,85 €</div></div>
+      <div class="item"><div><b>Huevos revueltos</b><small>—</small></div><div class="price">4,50 €</div></div>
+      <div class="item"><div><b>Vegetariana / vegana</b><small>(Por encargo)</small></div><div class="price">6,60 €</div></div>
+      <div class="item"><div><b>La Viuda</b><small>(Arepa sin relleno)</small></div><div class="price">1,00 €</div></div>
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width:0;
-      flex:1;
-    }
+      <div class="note">
+        <b>Extras</b><br>
+        • Por cada relleno adicional: <b>1,00 €</b><br>
+        • Salsa de ajo: <b>0,60 €</b><br>
+        • Salsa de maíz: <b>0,60 €</b><br>
+        • Queso a la plancha: <b>1,50 €</b>
+      </div>
+    </div>
+  </section>
 
-    .brand img{
-      width:36px;
-      height:36px;
-      border-radius:12px;
-      object-fit:cover;
-      border:1px solid rgba(255,255,255,.10);
-    }
+  <section class="section" id="patacones">
+    <h2>Patacones</h2>
+    <div class="sub">Crujientes, completos y bien resueltos.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/patacones.png" alt="Patacones"></div><div><b>Patacones</b><span>Plátano macho frito relleno.</span></div></div>
+      <div class="item"><div><b>Patacón o Tostón</b><small>Plátano macho frito relleno con lechuga, tomate, jamón cocido, huevo frito, queso latino a la plancha, plátano macho maduro frito, carne mechada de ternera o pollo. Salsas de ajo, maíz, ketchup y rosa.</small></div><div class="price">7,40 €</div></div>
+    </div>
+  </section>
 
-    .brand .t{
-      min-width:0;
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
+  <section class="section" id="raciones">
+    <h2>Raciones</h2>
+    <div class="sub">Perfectas para compartir.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/tajadas.png" alt="Raciones"></div><div><b>Raciones</b><span>Un acompañante que engancha.</span></div></div>
+      <div class="item"><div><b>Plátanos macho maduro frito</b><small>Con queso blanco latino y mantequilla.</small></div><div class="price">4,65 €</div></div>
+      <div class="item"><div><b>Ensalada de atún con arepa</b><small>—</small></div><div class="price">6,90 €</div></div>
+      <div class="item"><div><b>Pernil al horno</b><small>Con aguacate y arepa.</small></div><div class="price">8,50 €</div></div>
+      <div class="item"><div><b>Huevos de codorniz</b><small>En salsa rosa.</small></div><div class="price">3,60 €</div></div>
+    </div>
+  </section>
 
-    .brand .t b{
-      font-size:16px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
+  <section class="section" id="tequenos">
+    <h2>Tequeños</h2>
+    <div class="sub">Crujientes. Perfectos para compartir.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/tequenos.png" alt="Tequeños"></div><div><b>Tequeños</b><span>Recién hechos.</span></div></div>
+      <div class="item"><div><b>1/2 ración</b><small>Cinco unidades.</small></div><div class="price">6,00 €</div></div>
+      <div class="item"><div><b>1 ración</b><small>Diez unidades.</small></div><div class="price">11,00 €</div></div>
+    </div>
+  </section>
 
-    .brand .t span{
-      font-size:13px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      font-weight:800;
-    }
+  <section class="section" id="sopas">
+    <h2>Sopas</h2>
+    <div class="sub">Viernes, sábados y domingos.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/sancocho.png" alt="Sancocho"></div><div><b>Sancocho</b><span>Sopa de gallina y costilla de ternera.</span></div></div>
+      <div class="item"><div><b>1 sopa</b><small>Gallina + costilla de ternera + arepa con queso.</small></div><div class="price">12,00 €</div></div>
+      <div class="item"><div><b>1/2 sopa</b><small>Incluye arepa con queso.</small></div><div class="price">9,00 €</div></div>
+    </div>
+  </section>
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,.22);
-      font-weight:900;
-      white-space:nowrap;
-    }
+  <section class="section" id="bebidas">
+    <h2>Bebidas</h2>
+    <div class="sub">Para acompañar tu arepa.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/bebidas.png" alt="Bebidas"></div><div><b>Bebidas</b><span>Frías, calientes y naturales.</span></div></div>
+      <div class="item"><div><b>Café solo</b><small>—</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Café con leche</b><small>—</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Infusión de manzanilla</b><small>—</small></div><div class="price">1,00 €</div></div>
+      <div class="item"><div><b>Coca Cola</b><small>Original o cero.</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Fanta naranja</b><small>—</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Fuze Tea maracuyá</b><small>—</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Aquarius</b><small>Limón o naranja.</small></div><div class="price">1,50 €</div></div>
+      <div class="item"><div><b>Zumo Don Simón</b><small>—</small></div><div class="price">1,00 €</div></div>
+      <div class="item"><div><b>Maltín Polar</b><small>Bebida a base de malta de cebada, sin alcohol.</small></div><div class="price">2,80 €</div></div>
+      <div class="item"><div><b>Postobón</b><small>Gaseosa sabor uva o manzana.</small></div><div class="price">2,90 €</div></div>
+      <div class="item"><div><b>Frescolita</b><small>Gaseosa refrescante aromatizada.</small></div><div class="price">2,90 €</div></div>
+      <div class="item"><div><b>Agua mineral</b><small>0,5 Lt.</small></div><div class="price">1,00 €</div></div>
+    </div>
+  </section>
 
-    .pill.gold{
-      background: rgba(184,148,82,.18);
-      border-color: rgba(184,148,82,.28);
-      color:#f2e5cf;
-    }
+  <section class="section" id="postres">
+    <h2>Postres</h2>
+    <div class="sub">Dulce final de la casa.</div>
+    <div class="panel">
+      <div class="headline"><div class="thumb"><img src="/assets/img/tresleches.png" alt="Postres"></div><div><b>Postres</b><span>Pregunta disponibilidad.</span></div></div>
+      <div class="item"><div><b>Tres leches</b><small>Postre casero.</small></div><div class="price">Consultar</div></div>
+    </div>
+  </section>
 
-    .hero{
-      margin-top:18px;
-      padding:22px 18px;
-      border-radius:var(--r-lg);
-      border:1px solid rgba(255,255,255,.08);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(800px 260px at 30% -10%, rgba(184,148,82,.18), transparent 60%);
-      pointer-events:none;
-    }
-
-    .hero h1{
-      margin:0 0 8px;
-      font-size:54px;
-      letter-spacing:-.9px;
-      line-height:1.02;
-      position:relative;
-    }
-
-    .hero p{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.6;
-      max-width:70ch;
-      font-weight:800;
-      position:relative;
-    }
-
-    .tabs{
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      position:relative;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      font-weight:950;
-      box-shadow:var(--shadow2);
-      cursor:pointer;
-      gap:10px;
-    }
-
-    .btn.gold{
-      background: rgba(184,148,82,.22);
-      border-color: rgba(184,148,82,.30);
-      color:#fff1d6;
-    }
-
-    .call-btn{
-      background: linear
+  <footer>
+    © 2026 El Chiringuito de la Arepa<br>
+    <a href="/legal.html">Legal</a> · <a href="/cookies.html">Cookies</a> · <a href="/privacidad.html">Privacidad</a>
+  </footer>
+</main>
+</body>
+</html>
