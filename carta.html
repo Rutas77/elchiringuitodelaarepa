@@ -19,9 +19,10 @@
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      background:radial-gradient(900px 420px at 22% 8%,rgba(184,148,82,.22),transparent 60%),
-      radial-gradient(700px 340px at 88% 14%,rgba(231,210,163,.12),transparent 62%),
-      linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
+      background:
+        radial-gradient(900px 420px at 22% 8%,rgba(184,148,82,.22),transparent 60%),
+        radial-gradient(700px 340px at 88% 14%,rgba(231,210,163,.12),transparent 62%),
+        linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);
       color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       padding-bottom:120px;
@@ -60,7 +61,12 @@
     .note{margin-top:12px;color:rgba(234,241,239,.70);font-weight:800;line-height:1.5;border-top:1px solid rgba(255,255,255,.06);padding-top:12px}
     footer{margin-top:26px;text-align:center;color:rgba(234,241,239,.62);font-weight:800;padding:18px 6px 8px}
     footer a{text-decoration:underline;text-underline-offset:4px}
-    @media(max-width:640px){.hero h1{font-size:38px}.section h2{font-size:32px}.headline b{font-size:20px}.item b{font-size:17px}}
+    @media(max-width:640px){
+      .hero h1{font-size:38px}
+      .section h2{font-size:32px}
+      .headline b{font-size:20px}
+      .item b{font-size:17px}
+    }
   </style>
 </head>
 
@@ -82,6 +88,7 @@
   <section class="hero">
     <h1>Carta</h1>
     <p>Precios claros, comida recién hecha.</p>
+
     <div class="tabs">
       <a class="btn gold" href="#arepas">Arepas</a>
       <a class="btn" href="#patacones">Patacones</a>
@@ -97,31 +104,38 @@
   <section class="section" id="arepas">
     <h2>Arepas</h2>
     <div class="sub">Recién hechas. Rellenos generosos.</div>
-    <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/arepa.png" alt="Arepas"></div><div><b>Arepas</b><span>Tradición venezolana en Granada.</span></div></div>
 
-      <div class="item"><div><b>Reina Pepiada</b><small>(Pollo, aguacate, mayonesa)</small></div><div class="price">6,70 €</div></div>
-      <div class="item"><div><b>Huevos de codorniz</b><small>(En salsa rosa)</small></div><div class="price">5,90 €</div></div>
-      <div class="item"><div><b>Jamón York</b><small>(Con queso blanco latino)</small></div><div class="price">4,90 €</div></div>
-      <div class="item"><div><b>Ensalada de atún</b><small>(Pimiento rojo, aceituna, tomate, cebolla, pepinillo)</small></div><div class="price">5,90 €</div></div>
-      <div class="item"><div><b>Salchichas</b><small>(Con huevos revueltos)</small></div><div class="price">5,60 €</div></div>
-      <div class="item"><div><b>Salchichas</b><small>(Con mayonesa)</small></div><div class="price">4,90 €</div></div>
-      <div class="item"><div><b>Pabellón</b><small>(Carne mechada de ternera, alubias negras, plátano macho maduro frito y queso blanco latino)</small></div><div class="price">7,60 €</div></div>
+    <div class="panel">
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/arepa.png" alt="Arepas"></div>
+        <div>
+          <b>Arepas</b>
+          <span>Tradición venezolana en Granada.</span>
+        </div>
+      </div>
+
+      <div class="item"><div><b>Reina Pepiada</b><small>Pollo, aguacate, mayonesa.</small></div><div class="price">6,70 €</div></div>
+      <div class="item"><div><b>Huevos de codorniz</b><small>En salsa rosa.</small></div><div class="price">5,90 €</div></div>
+      <div class="item"><div><b>Jamón York</b><small>Con queso blanco latino.</small></div><div class="price">4,90 €</div></div>
+      <div class="item"><div><b>Ensalada de atún</b><small>Pimiento rojo, aceituna, tomate, cebolla, pepinillo.</small></div><div class="price">5,90 €</div></div>
+      <div class="item"><div><b>Salchichas</b><small>Con huevos revueltos.</small></div><div class="price">5,60 €</div></div>
+      <div class="item"><div><b>Salchichas</b><small>Con mayonesa.</small></div><div class="price">4,90 €</div></div>
+      <div class="item"><div><b>Pabellón</b><small>Carne mechada de ternera, alubias negras, plátano macho maduro frito y queso blanco latino.</small></div><div class="price">7,60 €</div></div>
       <div class="item"><div><b>Queso blanco latino y cheddar</b><small>—</small></div><div class="price">5,10 €</div></div>
       <div class="item"><div><b>Queso blanco latino</b><small>—</small></div><div class="price">4,75 €</div></div>
       <div class="item"><div><b>Queso cheddar</b><small>—</small></div><div class="price">4,80 €</div></div>
-      <div class="item"><div><b>Malafollá</b><small>(Chorizo picante con queso blanco latino)</small></div><div class="price">5,60 €</div></div>
-      <div class="item"><div><b>Perico</b><small>(Huevo, guiso de tomate y cebolla pochada con queso latino)</small></div><div class="price">5,75 €</div></div>
-      <div class="item"><div><b>Catira</b><small>(Pollo y queso cheddar)</small></div><div class="price">6,00 €</div></div>
-      <div class="item"><div><b>Carne picada</b><small>(Con queso blanco latino)</small></div><div class="price">6,60 €</div></div>
-      <div class="item"><div><b>Pernil al horno</b><small>(En salsa de vegetales y zumo de naranja)</small></div><div class="price">6,80 €</div></div>
-      <div class="item"><div><b>Alubias</b><small>(Con queso blanco latino)</small></div><div class="price">5,30 €</div></div>
-      <div class="item"><div><b>Mechada</b><small>(Sola)</small></div><div class="price">6,40 €</div></div>
-      <div class="item"><div><b>Mechada</b><small>(Con queso blanco latino)</small></div><div class="price">6,90 €</div></div>
-      <div class="item"><div><b>Pollo</b><small>(Solo)</small></div><div class="price">5,85 €</div></div>
+      <div class="item"><div><b>Malafollá</b><small>Chorizo picante con queso blanco latino.</small></div><div class="price">5,60 €</div></div>
+      <div class="item"><div><b>Perico</b><small>Huevo, guiso de tomate y cebolla pochada con queso latino.</small></div><div class="price">5,75 €</div></div>
+      <div class="item"><div><b>Catira</b><small>Pollo y queso cheddar.</small></div><div class="price">6,00 €</div></div>
+      <div class="item"><div><b>Carne picada</b><small>Con queso blanco latino.</small></div><div class="price">6,60 €</div></div>
+      <div class="item"><div><b>Pernil al horno</b><small>En salsa de vegetales y zumo de naranja.</small></div><div class="price">6,80 €</div></div>
+      <div class="item"><div><b>Alubias</b><small>Con queso blanco latino.</small></div><div class="price">5,30 €</div></div>
+      <div class="item"><div><b>Mechada</b><small>Sola.</small></div><div class="price">6,40 €</div></div>
+      <div class="item"><div><b>Mechada</b><small>Con queso blanco latino.</small></div><div class="price">6,90 €</div></div>
+      <div class="item"><div><b>Pollo</b><small>Solo.</small></div><div class="price">5,85 €</div></div>
       <div class="item"><div><b>Huevos revueltos</b><small>—</small></div><div class="price">4,50 €</div></div>
-      <div class="item"><div><b>Vegetariana / vegana</b><small>(Por encargo)</small></div><div class="price">6,60 €</div></div>
-      <div class="item"><div><b>La Viuda</b><small>(Arepa sin relleno)</small></div><div class="price">1,00 €</div></div>
+      <div class="item"><div><b>Vegetariana / vegana</b><small>Por encargo.</small></div><div class="price">6,60 €</div></div>
+      <div class="item"><div><b>La Viuda</b><small>Arepa sin relleno.</small></div><div class="price">1,00 €</div></div>
 
       <div class="note">
         <b>Extras</b><br>
@@ -136,17 +150,39 @@
   <section class="section" id="patacones">
     <h2>Patacones</h2>
     <div class="sub">Crujientes, completos y bien resueltos.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/patacones.png" alt="Patacones"></div><div><b>Patacones</b><span>Plátano macho frito relleno.</span></div></div>
-      <div class="item"><div><b>Patacón o Tostón</b><small>Plátano macho frito relleno con lechuga, tomate, jamón cocido, huevo frito, queso latino a la plancha, plátano macho maduro frito, carne mechada de ternera o pollo. Salsas de ajo, maíz, ketchup y rosa.</small></div><div class="price">7,40 €</div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/patacones.png" alt="Patacones"></div>
+        <div>
+          <b>Patacones</b>
+          <span>Plátano macho frito relleno.</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>
+          <b>Patacón o Tostón</b>
+          <small>Plátano macho frito relleno con lechuga, tomate, jamón cocido, huevo frito, queso latino a la plancha, plátano macho maduro frito, carne mechada de ternera o pollo. Salsas de ajo, maíz, ketchup y rosa.</small>
+        </div>
+        <div class="price">7,60 €</div>
+      </div>
     </div>
   </section>
 
   <section class="section" id="raciones">
     <h2>Raciones</h2>
     <div class="sub">Perfectas para compartir.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/tajadas.png" alt="Raciones"></div><div><b>Raciones</b><span>Un acompañante que engancha.</span></div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/tajadas.png" alt="Raciones"></div>
+        <div>
+          <b>Raciones</b>
+          <span>Un acompañante que engancha.</span>
+        </div>
+      </div>
+
       <div class="item"><div><b>Plátanos macho maduro frito</b><small>Con queso blanco latino y mantequilla.</small></div><div class="price">4,65 €</div></div>
       <div class="item"><div><b>Ensalada de atún con arepa</b><small>—</small></div><div class="price">6,90 €</div></div>
       <div class="item"><div><b>Pernil al horno</b><small>Con aguacate y arepa.</small></div><div class="price">8,50 €</div></div>
@@ -157,8 +193,16 @@
   <section class="section" id="tequenos">
     <h2>Tequeños</h2>
     <div class="sub">Crujientes. Perfectos para compartir.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/tequenos.png" alt="Tequeños"></div><div><b>Tequeños</b><span>Recién hechos.</span></div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/tequenos.png" alt="Tequeños"></div>
+        <div>
+          <b>Tequeños</b>
+          <span>Recién hechos.</span>
+        </div>
+      </div>
+
       <div class="item"><div><b>1/2 ración</b><small>Cinco unidades.</small></div><div class="price">6,00 €</div></div>
       <div class="item"><div><b>1 ración</b><small>Diez unidades.</small></div><div class="price">11,00 €</div></div>
     </div>
@@ -167,8 +211,16 @@
   <section class="section" id="sopas">
     <h2>Sopas</h2>
     <div class="sub">Viernes, sábados y domingos.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/sancocho.png" alt="Sancocho"></div><div><b>Sancocho</b><span>Sopa de gallina y costilla de ternera.</span></div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/sancocho.png" alt="Sancocho"></div>
+        <div>
+          <b>Sancocho</b>
+          <span>Sopa de gallina y costilla de ternera.</span>
+        </div>
+      </div>
+
       <div class="item"><div><b>1 sopa</b><small>Gallina + costilla de ternera + arepa con queso.</small></div><div class="price">12,00 €</div></div>
       <div class="item"><div><b>1/2 sopa</b><small>Incluye arepa con queso.</small></div><div class="price">9,00 €</div></div>
     </div>
@@ -177,8 +229,16 @@
   <section class="section" id="bebidas">
     <h2>Bebidas</h2>
     <div class="sub">Para acompañar tu arepa.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/bebidas.png" alt="Bebidas"></div><div><b>Bebidas</b><span>Frías, calientes y naturales.</span></div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/bebidas.png" alt="Bebidas"></div>
+        <div>
+          <b>Bebidas</b>
+          <span>Frías, calientes y naturales.</span>
+        </div>
+      </div>
+
       <div class="item"><div><b>Café solo</b><small>—</small></div><div class="price">1,50 €</div></div>
       <div class="item"><div><b>Café con leche</b><small>—</small></div><div class="price">1,50 €</div></div>
       <div class="item"><div><b>Infusión de manzanilla</b><small>—</small></div><div class="price">1,00 €</div></div>
@@ -197,15 +257,25 @@
   <section class="section" id="postres">
     <h2>Postres</h2>
     <div class="sub">Dulce final de la casa.</div>
+
     <div class="panel">
-      <div class="headline"><div class="thumb"><img src="/assets/img/tresleches.png" alt="Postres"></div><div><b>Postres</b><span>Pregunta disponibilidad.</span></div></div>
+      <div class="headline">
+        <div class="thumb"><img src="/assets/img/tresleches.png" alt="Postres"></div>
+        <div>
+          <b>Postres</b>
+          <span>Pregunta disponibilidad.</span>
+        </div>
+      </div>
+
       <div class="item"><div><b>Tres leches</b><small>Postre casero.</small></div><div class="price">Consultar</div></div>
     </div>
   </section>
 
   <footer>
     © 2026 El Chiringuito de la Arepa<br>
-    <a href="/legal.html">Legal</a> · <a href="/cookies.html">Cookies</a> · <a href="/privacidad.html">Privacidad</a>
+    <a href="/legal.html">Legal</a> ·
+    <a href="/cookies.html">Cookies</a> ·
+    <a href="/privacidad.html">Privacidad</a>
   </footer>
 </main>
 </body>
