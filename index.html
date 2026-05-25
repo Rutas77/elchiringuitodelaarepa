@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#050505" />
 
-  <title>El Chiringuito de la Arepa | Arepas venezolanas en Granada</title>
-  <meta name="description" content="Arepas venezolanas artesanales en Granada. Reina Pepiada, tequeños, patacones, sopas y comida recién hecha con ingredientes reales." />
+  <title>Arepas venezolanas en Granada | El Chiringuito de la Arepa</title>
+  <meta name="description" content="Arepas venezolanas artesanales en Granada. Patacones, tequeños, sancocho y comida recién hecha. Delivery y pedidos para llevar." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
   <link rel="icon" href="/assets/img/logo.png" />
 
@@ -36,7 +36,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
 
     body{
@@ -135,7 +134,7 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.86)),
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.90)),
         url('/assets/img/arepa.png');
       background-size:cover;
       background-position:center;
@@ -147,8 +146,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:
-        radial-gradient(900px 500px at 50% 20%, rgba(184,149,76,.16), transparent 70%);
+      background:radial-gradient(900px 500px at 50% 20%, rgba(184,149,76,.16), transparent 70%);
     }
 
     .hero-content{
@@ -160,9 +158,9 @@
     }
 
     .hero-logo{
-      width:110px;
-      height:110px;
-      margin:0 auto 40px;
+      width:96px;
+      height:96px;
+      margin:0 auto 34px;
       border-radius:999px;
       overflow:hidden;
       border:1px solid rgba(230,203,134,.20);
@@ -187,10 +185,36 @@
     .hero p{
       max-width:760px;
       margin:28px auto 0;
-      color:rgba(255,255,255,.84);
+      color:rgba(255,255,255,.88);
       font-size:20px;
       line-height:1.7;
-      font-weight:700;
+      font-weight:800;
+    }
+
+    .google-rating{
+      margin:28px auto 0;
+      display:inline-flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+      padding:14px 22px;
+      border-radius:999px;
+      background:rgba(0,0,0,.42);
+      border:1px solid rgba(230,203,134,.22);
+      box-shadow:0 14px 34px rgba(0,0,0,.35);
+    }
+
+    .stars{
+      color:var(--gold2);
+      font-size:22px;
+      letter-spacing:3px;
+      line-height:1;
+    }
+
+    .rating-text{
+      color:rgba(255,255,255,.88);
+      font-size:15px;
+      font-weight:800;
     }
 
     .hero-actions{
@@ -384,11 +408,11 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:14px 18px;
+      padding:12px 16px;
       border-radius:999px;
       background:linear-gradient(90deg, rgba(184,149,76,.96), rgba(230,203,134,.98));
       color:#1b1408;
-      font-size:18px;
+      font-size:17px;
       font-weight:900;
       box-shadow:0 18px 45px rgba(0,0,0,.45);
     }
@@ -417,6 +441,10 @@
       .map-box iframe{height:320px}
       .brand-text b{font-size:15px}
       .brand-text span{font-size:12px}
+      .google-rating{
+        width:100%;
+        border-radius:24px;
+      }
     }
   </style>
 </head>
@@ -450,6 +478,13 @@
       Ingredientes reales.
       Sabor venezolano auténtico en Granada.
     </p>
+
+    <div class="google-rating">
+      <div class="stars">★★★★★</div>
+      <div class="rating-text">
+        <strong>5,0 en Google</strong> · 122 opiniones
+      </div>
+    </div>
 
     <div class="hero-actions">
       <a class="btn btn-gold" href="/carta.html">Ver la carta</a>
