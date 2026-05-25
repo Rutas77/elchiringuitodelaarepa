@@ -6,160 +6,242 @@
   <meta name="theme-color" content="#050505" />
 
   <title>El Chiringuito de la Arepa | Arepas venezolanas en Granada</title>
-  <meta name="description" content="Autenticidad venezolana, hecha al momento. Arepas artesanales, tequeños, raciones, sopas, bebidas latinas y tres leches casero en Granada." />
+
+  <meta name="description" content="Arepas venezolanas artesanales en Granada. Reina Pepiada, tequeños, patacones, sopas y comida recién hecha con ingredientes reales." />
+
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
+  <link rel="icon" href="/assets/img/logo.png" />
 
   <meta property="og:title" content="El Chiringuito de la Arepa" />
-  <meta property="og:description" content="Autenticidad venezolana, hecha al momento. Arepas venezolanas artesanales en Granada." />
+  <meta property="og:description" content="Autenticidad venezolana, hecha al momento." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
   <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/assets/img/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+
     :root{
       --bg:#050505;
-      --bg2:#070707;
-      --text:#f2f2f2;
-      --muted:rgba(242,242,242,.72);
+      --bg2:#090909;
+      --text:#f3f3f3;
+      --muted:rgba(255,255,255,.70);
       --gold:#b8954c;
-      --gold2:#e5c97b;
-      --cream:#f1e6cf;
-      --green:#25D366;
-      --shadow:0 18px 50px rgba(0,0,0,.55);
-      --shadow2:0 10px 26px rgba(0,0,0,.40);
+      --gold2:#e6cb86;
+      --cream:#f4ead7;
       --line:rgba(255,255,255,.08);
+
+      --shadow:
+      0 20px 60px rgba(0,0,0,.55);
+
+      --shadow2:
+      0 12px 30px rgba(0,0,0,.45);
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family:'Inter',sans-serif;
       color:var(--text);
+      font-family:'Inter',sans-serif;
+
       background:
-        radial-gradient(1000px 520px at 18% 8%, rgba(184,149,76,.16), transparent 60%),
-        radial-gradient(900px 420px at 85% 20%, rgba(229,201,123,.09), transparent 62%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      padding-bottom:180px;
+      radial-gradient(
+      1200px 600px at 20% 0%,
+      rgba(184,149,76,.14),
+      transparent 60%
+      ),
+
+      radial-gradient(
+      1000px 500px at 90% 10%,
+      rgba(230,203,134,.08),
+      transparent 60%
+      ),
+
+      linear-gradient(
+      180deg,
+      var(--bg) 0%,
+      var(--bg2) 100%
+      );
+
+      overflow-x:hidden;
     }
 
-    a{ color:inherit; text-decoration:none; }
-    img{ display:block; max-width:100%; }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
 
     .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:18px 14px 40px;
+      max-width:1200px;
+      margin:auto;
+      padding:0 20px;
     }
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:80;
+      z-index:999;
+
       background:rgba(5,5,5,.78);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,.06);
+
+      backdrop-filter:blur(16px);
+
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
-      max-width:980px;
-      margin:0 auto;
-      padding:12px 14px;
+      height:78px;
+
       display:flex;
       align-items:center;
-      gap:10px;
+      justify-content:space-between;
+
+      gap:20px;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
+      gap:12px;
       min-width:0;
-      flex:1;
     }
 
     .brand img{
-      width:38px;
-      height:38px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
+      width:44px;
+      height:44px;
+      border-radius:14px;
       object-fit:cover;
-      flex:0 0 auto;
+
+      border:1px solid rgba(255,255,255,.10);
     }
 
-    .brand .t{
+    .brand-text{
       min-width:0;
-      line-height:1.1;
     }
 
-    .brand .t b{
+    .brand-text b{
       display:block;
-      font-size:15px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      font-size:16px;
+      color:#fff;
     }
 
-    .brand .t span{
+    .brand-text span{
       display:block;
-      font-size:12px;
       color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      font-weight:800;
+      font-size:13px;
+      font-weight:700;
     }
 
-    .pill{
+    .nav-btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:10px 14px;
+
+      padding:12px 18px;
+
       border-radius:999px;
-      border:1px solid rgba(184,149,76,.35);
-      background:rgba(184,149,76,.10);
+
+      background:rgba(255,255,255,.04);
+
+      border:1px solid rgba(230,203,134,.18);
+
       color:var(--gold2);
-      font-weight:900;
-      white-space:nowrap;
-      flex:0 0 auto;
-      box-shadow:var(--shadow2);
+
+      font-weight:800;
+
+      transition:.25s ease;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
     }
 
     .hero{
-      margin-top:16px;
-      border-radius:28px;
-      border:1px solid rgba(255,255,255,.08);
-      overflow:hidden;
       position:relative;
-      box-shadow:var(--shadow);
-      background:
-        radial-gradient(1100px 520px at 30% 10%, rgba(184,149,76,.18), transparent 60%),
-        radial-gradient(900px 420px at 90% 20%, rgba(229,201,123,.10), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+
+      min-height:88vh;
+
+      display:flex;
+      align-items:center;
+
+      overflow:hidden;
     }
 
-    .hero-inner{
+    .hero::before{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,.74),
+      rgba(0,0,0,.82)
+      ),
+
+      url('/assets/img/hero.jpg');
+
+      background-size:cover;
+      background-position:center;
+
+      transform:scale(1.03);
+    }
+
+    .hero::after{
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      background:
+      radial-gradient(
+      900px 500px at 50% 20%,
+      rgba(184,149,76,.12),
+      transparent 70%
+      );
+    }
+
+    .hero-content{
       position:relative;
-      padding:28px 18px 24px;
+      z-index:2;
+
+      width:100%;
       text-align:center;
+
+      padding:100px 0;
     }
 
     .hero-logo{
-      width:86px;
-      height:86px;
-      margin:0 auto 16px;
+      width:110px;
+      height:110px;
+
+      margin:0 auto 28px;
+
       border-radius:999px;
       overflow:hidden;
-      border:1px solid rgba(229,201,123,.28);
-      background:rgba(0,0,0,.45);
-      box-shadow:0 18px 46px rgba(0,0,0,.55);
+
+      border:1px solid rgba(230,203,134,.20);
+
+      box-shadow:
+      0 18px 50px rgba(0,0,0,.55);
     }
 
     .hero-logo img{
@@ -168,365 +250,625 @@
       object-fit:cover;
     }
 
-    .hero-title{
+    .hero h1{
+      margin:0;
+
       font-family:'Playfair Display',serif;
-      font-size:42px;
-      line-height:1.08;
+
+      font-size:72px;
+      line-height:1;
+
       color:var(--cream);
-      margin:0 0 10px;
-      letter-spacing:-.6px;
+
+      letter-spacing:-2px;
     }
 
-    .hero-sub{
-      margin:0 0 22px;
-      font-size:18px;
-      line-height:1.45;
-      color:rgba(242,242,242,.82);
-      font-weight:700;
+    .hero p{
+      max-width:760px;
+
+      margin:28px auto 0;
+
+      color:rgba(255,255,255,.82);
+
+      font-size:20px;
+      line-height:1.7;
+
+      font-weight:600;
     }
 
-    .cta-row{
+    .hero-actions{
       display:flex;
-      flex-wrap:wrap;
-      gap:12px;
       justify-content:center;
+      flex-wrap:wrap;
+
+      gap:14px;
+
+      margin-top:38px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
-      min-width:180px;
-      padding:14px 22px;
+
+      padding:16px 28px;
+
       border-radius:999px;
+
       font-weight:900;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:var(--shadow2);
-      transition:.18s ease;
-      text-align:center;
+
+      transition:.25s ease;
+
+      border:1px solid transparent;
     }
 
-    .btn.gold{
-      background:linear-gradient(90deg, rgba(184,149,76,.88), rgba(229,201,123,.96));
+    .btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-gold{
+      background:
+      linear-gradient(
+      90deg,
+      rgba(184,149,76,.95),
+      rgba(230,203,134,.98)
+      );
+
       color:#1b1408;
-      border-color:rgba(229,201,123,.34);
+
+      box-shadow:
+      0 14px 35px rgba(0,0,0,.45);
     }
 
-    .btn.call{
-      background:rgba(37,211,102,.18);
-      color:#eafff1;
-      border-color:rgba(37,211,102,.20);
-    }
+    .btn-dark{
+      background:rgba(255,255,255,.06);
 
-    .btn.ghost{
-      background:rgba(255,255,255,.03);
-      color:var(--gold2);
-      border-color:rgba(229,201,123,.24);
+      border:1px solid rgba(255,255,255,.08);
+
+      color:#fff;
+
+      backdrop-filter:blur(10px);
     }
 
     .section{
-      margin-top:28px;
+      padding:90px 0;
     }
 
     .section-title{
+      text-align:center;
+
       font-family:'Playfair Display',serif;
-      font-size:30px;
+
+      font-size:54px;
+
       color:var(--gold2);
-      margin:0 0 12px;
+
+      margin:0 0 18px;
     }
 
-    .cards{
+    .section-sub{
+      text-align:center;
+
+      color:var(--muted);
+
+      max-width:760px;
+
+      margin:0 auto 50px;
+
+      line-height:1.8;
+
+      font-weight:600;
+    }
+
+    .grid{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:16px;
+
+      grid-template-columns:
+      repeat(3,minmax(0,1fr));
+
+      gap:26px;
     }
 
     .card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
       overflow:hidden;
+
+      border-radius:28px;
+
+      background:rgba(255,255,255,.03);
+
+      border:1px solid rgba(255,255,255,.05);
+
+      transition:.35s ease;
+
       box-shadow:var(--shadow2);
     }
 
-    .card-img{
+    .card:hover{
+      transform:translateY(-6px);
+    }
+
+    .card img{
       width:100%;
-      height:180px;
+      height:320px;
       object-fit:cover;
-      display:block;
     }
 
     .card-body{
-      padding:14px;
+      padding:24px;
     }
 
-    .card-body b{
-      display:block;
-      font-size:20px;
-      margin-bottom:6px;
+    .card-body h3{
+      margin:0 0 10px;
+
+      font-size:28px;
+
+      color:var(--cream);
+
+      font-family:'Playfair Display',serif;
     }
 
     .card-body p{
       margin:0;
+
       color:var(--muted);
-      font-weight:700;
-      line-height:1.45;
+
+      line-height:1.7;
+
+      font-weight:600;
     }
 
-    .reviews-card,
-    .map-card{
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:22px;
-      box-shadow:var(--shadow2);
-      padding:16px;
-      margin-top:12px;
-    }
+    .experience{
+      padding:120px 0;
 
-    .stars{
       text-align:center;
+    }
+
+    .experience-box{
+      max-width:980px;
+
+      margin:auto;
+
+      padding:70px 40px;
+
+      border-radius:34px;
+
+      background:
+      linear-gradient(
+      180deg,
+      rgba(255,255,255,.05),
+      rgba(255,255,255,.02)
+      );
+
+      border:1px solid rgba(255,255,255,.06);
+
+      box-shadow:var(--shadow);
+    }
+
+    .experience h2{
+      margin:0 0 20px;
+
+      font-size:60px;
+
       color:var(--gold2);
-      font-size:22px;
-      letter-spacing:3px;
-      margin-bottom:6px;
+
+      font-family:'Playfair Display',serif;
     }
 
-    .reviews-sub{
-      text-align:center;
-      color:var(--muted);
-      font-weight:700;
-      margin-bottom:14px;
-    }
+    .experience p{
+      margin:0 auto;
 
-    .reviews-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      justify-content:center;
-    }
+      max-width:760px;
 
-    .map-wrap{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      margin-top:10px;
-    }
+      color:rgba(255,255,255,.80);
 
-    .map-wrap iframe{
-      width:100%;
-      height:300px;
-      border:0;
-      display:block;
+      line-height:2;
+
+      font-size:18px;
+
+      font-weight:600;
     }
 
     .socials{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
       justify-content:center;
+
+      gap:14px;
     }
 
     .social{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:12px 14px;
+
+      padding:14px 18px;
+
       border-radius:999px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(229,201,123,.18);
-      color:rgba(241,230,207,.92);
-      font-weight:900;
+
+      background:rgba(255,255,255,.04);
+
+      border:1px solid rgba(230,203,134,.14);
+
+      color:var(--cream);
+
+      font-weight:800;
+
+      transition:.25s ease;
+    }
+
+    .social:hover{
+      transform:translateY(-2px);
+    }
+
+    .map-box{
+      overflow:hidden;
+
+      border-radius:28px;
+
+      border:1px solid rgba(255,255,255,.08);
+
       box-shadow:var(--shadow2);
     }
 
+    .map-box iframe{
+      width:100%;
+      height:420px;
+      border:0;
+      display:block;
+    }
+
     footer{
-      margin-top:26px;
+      padding:40px 20px 120px;
+
       text-align:center;
-      color:rgba(255,255,255,.58);
-      font-size:14px;
-      line-height:1.7;
-      padding-bottom:20px;
+
+      color:rgba(255,255,255,.55);
+
+      line-height:1.8;
     }
 
     footer a{
-      color:rgba(255,255,255,.74);
       text-decoration:underline;
-      text-underline-offset:3px;
+      text-underline-offset:4px;
     }
 
-    .call-float,
-    .glovo-float{
+    .float-call{
       position:fixed;
+
       right:16px;
+      bottom:16px;
+
       z-index:999;
     }
 
-    .call-float{
-      bottom:calc(16px + env(safe-area-inset-bottom));
-    }
-
-    .glovo-float{
-      bottom:calc(86px + env(safe-area-inset-bottom));
-    }
-
-    .call-float a,
-    .glovo-float a{
+    .float-call a{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      padding:14px 18px;
+
+      padding:16px 22px;
+
       border-radius:999px;
-      font-weight:950;
-      box-shadow:0 18px 42px rgba(0,0,0,.50);
-      border:1px solid rgba(255,255,255,.10);
-    }
 
-    .call-float a{
-      background:linear-gradient(90deg, rgba(184,149,76,.92), rgba(229,201,123,.98));
+      background:
+      linear-gradient(
+      90deg,
+      rgba(184,149,76,.96),
+      rgba(230,203,134,.98)
+      );
+
       color:#1b1408;
+
+      font-weight:900;
+
+      box-shadow:
+      0 18px 45px rgba(0,0,0,.45);
     }
 
-    .glovo-float a{
-      background:rgba(255,255,255,.06);
-      color:var(--gold2);
-      backdrop-filter:blur(10px);
-      border-color:rgba(229,201,123,.22);
-    }
+    @media(max-width:980px){
 
-    @media (max-width: 900px){
-      .cards{
+      .grid{
         grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:52px;
+      }
+
+      .section-title{
+        font-size:42px;
+      }
+
+      .experience h2{
+        font-size:44px;
       }
     }
 
-    @media (max-width: 640px){
-      .hero-title{ font-size:34px; }
-      .hero-sub{ font-size:16px; }
-      .btn{ min-width:100%; }
-      .map-wrap iframe{ height:260px; }
-      .glovo-float{ bottom:calc(88px + env(safe-area-inset-bottom)); }
+    @media(max-width:640px){
+
+      .hero{
+        min-height:80vh;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .section-title{
+        font-size:34px;
+      }
+
+      .experience h2{
+        font-size:34px;
+      }
+
+      .experience-box{
+        padding:50px 24px;
+      }
+
+      .card img{
+        height:260px;
+      }
+
+      .map-box iframe{
+        height:320px;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <img src="/assets/img/logo.png" alt="El Chiringuito de la Arepa">
-        <div class="t">
-          <b>El Chiringuito de la Arepa</b>
-          <span>Autenticidad venezolana, hecha al momento</span>
-        </div>
+<header class="topbar">
+
+  <div class="wrap topbar-inner">
+
+    <div class="brand">
+
+      <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+
+      <div class="brand-text">
+        <b>El Chiringuito de la Arepa</b>
+        <span>Sabores que abrazan el alma</span>
       </div>
-      <a class="pill" href="/carta.html">Carta</a>
+
     </div>
-  </header>
 
-  <main class="wrap">
+    <a class="nav-btn" href="/carta.html">
+      Ver carta
+    </a>
 
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-logo">
-          <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
-        </div>
-
-        <h1 class="hero-title">El Chiringuito de la Arepa</h1>
-        <p class="hero-sub">Autenticidad venezolana, hecha al momento.</p>
-
-        <div class="cta-row">
-          <a class="btn gold" href="/carta.html">Ver la carta</a>
-          <a class="btn call" href="tel:+34858830186">📞 Llamar ahora</a>
-          <a class="btn ghost" href="https://glovoapp.com/es/es/granada/stores/el-chiringuito-de-la-arepa-granada" target="_blank" rel="noopener">🛵 Pedir a domicilio</a>
-          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%20Granada" target="_blank" rel="noopener">Cómo llegar</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Especialidades</h2>
-
-      <div class="cards">
-        <article class="card">
-          <img class="card-img" src="/assets/img/arepa.png" alt="Arepas">
-          <div class="card-body">
-            <b>Arepas</b>
-            <p>Reina Pepiada, pabellón, mechada y muchas más.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img class="card-img" src="/assets/img/tequenos.png" alt="Tequeños">
-          <div class="card-body">
-            <b>Tequeños</b>
-            <p>Crujientes, dorados y recién hechos.</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <img class="card-img" src="/assets/img/sancocho.png" alt="Sopas">
-          <div class="card-body">
-            <b>Sopas</b>
-            <p>Viernes, sábados y domingos, según disponibilidad.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Redes sociales</h2>
-      <div class="socials">
-        <a class="social" href="https://www.instagram.com/elchiringuitodelaarepa?igsh=MXV1OGNiaGd5ZnZhZA==" target="_blank" rel="noopener">Instagram</a>
-        <a class="social" href="https://www.tiktok.com/@elchiringuitodelaarepa?_r=1&_t=ZN-94BlrIxKGPu" target="_blank" rel="noopener">TikTok</a>
-        <a class="social" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank" rel="noopener">Facebook</a>
-        <a class="social" href="https://youtube.com/@elchiringuitodelaarepa?si=zr0Qh6bfYSwAbhcG" target="_blank" rel="noopener">YouTube</a>
-        <a class="social" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank" rel="noopener">Threads</a>
-        <a class="social" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank" rel="noopener">Canal WhatsApp</a>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="section-title">Cómo llegar</h2>
-
-      <div class="reviews-card">
-        <div class="stars">★★★★★</div>
-        <div class="reviews-sub">Valorado en Google · Granada</div>
-
-        <div class="reviews-actions">
-          <a class="btn ghost" href="https://share.google/Fx9vS5iBtkuTLXuWh" target="_blank" rel="noopener">Ver reseñas</a>
-          <a class="btn gold" href="https://www.google.com/maps/search/?api=1&query=El%20Chiringuito%20de%20la%20Arepa%20Granada" target="_blank" rel="noopener">Abrir en Google Maps</a>
-        </div>
-      </div>
-
-      <div class="map-card">
-        <div class="map-wrap">
-          <iframe src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> El Chiringuito de la Arepa · Granada ·
-      <a href="/legal.html">Legal</a> ·
-      <a href="/privacidad.html">Privacidad</a> ·
-      <a href="/cookies.html">Cookies</a>
-    </footer>
-
-  </main>
-
-  <div class="glovo-float">
-    <a href="https://glovoapp.com/es/es/granada/stores/el-chiringuito-de-la-arepa-granada" target="_blank" rel="noopener">🛵 Glovo</a>
   </div>
 
-  <div class="call-float">
-    <a href="tel:+34858830186">📞 Llamar</a>
+</header>
+
+<section class="hero">
+
+  <div class="wrap hero-content">
+
+    <div class="hero-logo">
+      <img src="/assets/img/logo.png" alt="Logo">
+    </div>
+
+    <h1>
+      Arepas venezolanas<br>
+      con alma.
+    </h1>
+
+    <p>
+      Cocina artesanal venezolana en Granada.
+      Ingredientes reales.
+      Comida recién hecha.
+      Sabor auténtico en cada bocado.
+    </p>
+
+    <div class="hero-actions">
+
+      <a class="btn btn-gold" href="/carta.html">
+        Ver la carta
+      </a>
+
+      <a class="btn btn-dark" href="https://glovoapp.com/es/es/granada/stores/el-chiringuito-de-la-arepa-granada" target="_blank">
+        🛵 Pedir en Glovo
+      </a>
+
+      <a class="btn btn-dark" href="tel:+34858830186">
+        📞 Llamar ahora
+      </a>
+
+    </div>
+
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+</section>
+
+<section class="section">
+
+  <div class="wrap">
+
+    <h2 class="section-title">
+      Especialidades
+    </h2>
+
+    <p class="section-sub">
+      Arepas recién hechas, tequeños dorados, patacones completos y sabores venezolanos preparados al momento.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+
+        <img src="/assets/img/arepa.png" alt="Arepas">
+
+        <div class="card-body">
+          <h3>Arepas</h3>
+
+          <p>
+            Reina Pepiada, mechada, pabellón y rellenos preparados al momento.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="card">
+
+        <img src="/assets/img/tequenos.png" alt="Tequeños">
+
+        <div class="card-body">
+          <h3>Tequeños</h3>
+
+          <p>
+            Crujientes, dorados y recién hechos. Perfectos para compartir.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="card">
+
+        <img src="/assets/img/sancocho.png" alt="Sancocho">
+
+        <div class="card-body">
+          <h3>Sancocho</h3>
+
+          <p>
+            Tradición venezolana servida viernes, sábados y domingos.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="experience">
+
+  <div class="wrap">
+
+    <div class="experience-box">
+
+      <h2>
+        Más que una arepa.
+      </h2>
+
+      <p>
+        Cada pedido se prepara al momento con ingredientes frescos y cocina artesanal.
+        Queremos que cada persona que visite El Chiringuito de la Arepa sienta el sabor auténtico de Venezuela en Granada.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="wrap">
+
+    <h2 class="section-title">
+      Redes sociales
+    </h2>
+
+    <p class="section-sub">
+      Síguenos y descubre nuevos platos, promociones y contenido del Chiringuito.
+    </p>
+
+    <div class="socials">
+
+      <a class="social" href="https://www.instagram.com/elchiringuitodelaarepa" target="_blank">
+        Instagram
+      </a>
+
+      <a class="social" href="https://www.tiktok.com/@elchiringuitodelaarepa" target="_blank">
+        TikTok
+      </a>
+
+      <a class="social" href="https://www.facebook.com/profile.php?id=61584130088879" target="_blank">
+        Facebook
+      </a>
+
+      <a class="social" href="https://youtube.com/@elchiringuitodelaarepa" target="_blank">
+        YouTube
+      </a>
+
+      <a class="social" href="https://www.threads.com/@elchiringuitodelaarepa" target="_blank">
+        Threads
+      </a>
+
+      <a class="social" href="https://whatsapp.com/channel/0029Vb79T8z1yT2EYLaLOd1d" target="_blank">
+        Canal WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="wrap">
+
+    <h2 class="section-title">
+      Cómo llegar
+    </h2>
+
+    <p class="section-sub">
+      Estamos en Granada. Ven a disfrutar comida venezolana recién hecha.
+    </p>
+
+    <div class="map-box">
+
+      <iframe
+      src="https://www.google.com/maps?q=El%20Chiringuito%20de%20la%20Arepa%20Granada&output=embed"
+      loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  © <span id="year"></span> El Chiringuito de la Arepa · Granada<br>
+
+  <a href="/legal.html">Legal</a> ·
+  <a href="/privacidad.html">Privacidad</a> ·
+  <a href="/cookies.html">Cookies</a>
+
+</footer>
+
+<div class="float-call">
+
+  <a href="tel:+34858830186">
+    📞 Llamar
+  </a>
+
+</div>
+
+<script>
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
 </body>
 </html>
