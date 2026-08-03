@@ -8,13 +8,13 @@
   <title>Arepas venezolanas en Granada | El Chiringuito de la Arepa</title>
   <meta name="description" content="Arepas venezolanas artesanales en Granada. Patacones, tequeños, sancocho y comida recién hecha. Delivery y pedidos para llevar." />
   <link rel="canonical" href="https://elchiringuitodelaarepa.es/" />
-  <link rel="icon" href="/assets/img/logo.png" />
+  <link rel="icon" href="/assets/img/logo-aniversario.png" />
 
   <meta property="og:title" content="El Chiringuito de la Arepa" />
   <meta property="og:description" content="Autenticidad venezolana, hecha al momento." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://elchiringuitodelaarepa.es/" />
-  <meta property="og:image" content="https://elchiringuitodelaarepa.es/assets/img/logo.png" />
+  <meta property="og:image" content="/assets/img/logo-aniversario.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -458,6 +458,72 @@
       box-shadow:0 18px 45px rgba(0,0,0,.45);
     }
 
+
+    .promo-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:26px;
+    }
+
+    .promo-card{
+      overflow:hidden;
+      border-radius:28px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(230,203,134,.16);
+      box-shadow:var(--shadow2);
+      transition:.35s ease;
+    }
+
+    .promo-card:hover{transform:translateY(-6px)}
+
+    .promo-card img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      transition:.5s ease;
+    }
+
+    .promo-card:hover img{transform:scale(1.04)}
+
+    .promo-body{padding:26px}
+
+    .promo-kicker{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      margin-bottom:14px;
+      border-radius:999px;
+      background:rgba(184,149,76,.15);
+      border:1px solid rgba(230,203,134,.20);
+      color:var(--gold2);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+
+    .promo-body h3{
+      margin:0 0 10px;
+      color:var(--cream);
+      font-family:'Playfair Display',serif;
+      font-size:32px;
+    }
+
+    .promo-body p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-weight:700;
+    }
+
+    .promo-price{
+      display:block;
+      margin-top:18px;
+      color:var(--gold2);
+      font-size:30px;
+      font-weight:900;
+    }
+
     @media(max-width:1100px){
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
@@ -478,6 +544,8 @@
       .experience h2{font-size:34px}
       .experience-box{padding:50px 24px}
       .grid{grid-template-columns:1fr}
+      .promo-grid{grid-template-columns:1fr}
+      .promo-card img{height:280px}
       .card img{height:260px}
       .map-box iframe{height:320px}
       .brand-text b{font-size:15px}
@@ -502,7 +570,7 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
     <div class="brand">
-      <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+      <img src="/assets/img/logo-aniversario.png" alt="Logo El Chiringuito de la Arepa">
       <div class="brand-text">
         <b>El Chiringuito de la Arepa</b>
         <span>Sabores que abrazan el alma</span>
@@ -516,7 +584,7 @@
 <section class="hero">
   <div class="wrap hero-content">
     <div class="hero-logo">
-      <img src="/assets/img/logo.png" alt="Logo El Chiringuito de la Arepa">
+      <img src="/assets/img/logo-aniversario.png" alt="Logo El Chiringuito de la Arepa">
     </div>
 
     <h1>Arepas venezolanas<br>con alma.</h1>
@@ -588,6 +656,38 @@
         <div class="card-body">
           <h3>Sancocho</h3>
           <p>Tradición venezolana servida viernes, sábados y domingos.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="promociones">
+  <div class="wrap">
+    <h2 class="section-title">Promociones</h2>
+
+    <p class="section-sub">
+      Sabores especiales para celebrar nuestro primer aniversario.
+    </p>
+
+    <div class="promo-grid">
+      <article class="promo-card">
+        <img src="/assets/img/promo-arepa-cocacola.png" alt="Promoción de arepa con Coca-Cola">
+        <div class="promo-body">
+          <span class="promo-kicker">Martes y miércoles</span>
+          <h3>Arepa + Coca-Cola</h3>
+          <p>Una promoción sorpresa con arepa recién hecha y Coca-Cola bien fría. Consulta el relleno disponible.</p>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <img src="/assets/img/promo-tres-leches.png" alt="Promoción de tres leches con café o Coca-Cola">
+        <div class="promo-body">
+          <span class="promo-kicker">Promoción de aniversario</span>
+          <h3>Tres Leches + Café o Coca-Cola</h3>
+          <p>Postre tres leches artesanal acompañado de café con leche o Coca-Cola.</p>
+          <span class="promo-price">3,50 €</span>
         </div>
       </article>
     </div>
